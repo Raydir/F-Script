@@ -3,7 +3,7 @@
 # 
 # Kunde:     Opacc Software AG
 # 
-# Autor:     OPACC Software AG, Rothenburg - Roman Vonwil
+# Autor:     OPACC Laboratory AG, Rothenburg - Roman Vonwil
 # 
 # ******************************************************************************************************
 /headerreport
