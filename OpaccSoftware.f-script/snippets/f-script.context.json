@@ -1,0 +1,213 @@
+{
+	"CONTEXT.GetInfoScript": {
+		"prefix": "✅ CONTEXT.Meta.GetInfoScript",
+		"description": "Insert GetInfoScript\r",
+		"body": [
+			"/GetInfoScript",
+			"«XFAS(head=SupportsScreenOutput)»",
+			"«XFAS(head=SupportsBoArgs)»",
+			"«XFAS(head=SupportedBoType)»",
+			"«XFAS(head=MlsKey)»",
+			"# ------------------------------------------------------------------------------------------------------",
+			"# ScreenOutput unterstützt",
+			"«XFAS(cell=${1|0,1|})»",
+			"# BoArgs unterstützt",
+			"«XFAS(cell=${2|0,1|})»",
+			"# BOTyp welcher geliefert werden soll",
+			"«XFAS(cell=${3:})»",
+			"# Gewünschter MLS-Key - wenn nicht gefunden wird Key zurück gegeben.",
+			"«XFAS(cell=U.ScriptReport.«XCNT(arg:ScriptName)»)»",
+			"/"
+		]
+	},
+	"CONTEXT.GetInfoScriptArg.AddAsCells": {
+		"prefix": "✅ CONTEXT.Meta.GetInfoScriptArg.AddAsCells",
+		"description": "Insert GetInfoScriptArg\r",
+		"body": [
+			"/GetInfoScriptArg",
+			"«XFAS(heads=Argument,StateCd,DataTypeCd,Format,RelationshipCd,RelatedObject,RelatedIndex)»",
+			"«XFAS(heads=RelatedConstraint,ConstraintType,CheckExpression,DefaultValue,EntryMode,WithPrevious,MlsKey)»",
+			"# ------------------------------------------------------------------------------------------------------",
+			"# Argument-Definition",
+			"«XFAS(cells=ScriptArg1,1,N,8.0,1,Addr.Number,,,,,,0,0,ScriptArg1)»",
+			"/"
+		]
+	},
+	"CONTEXT.GetInfoScriptArg": {
+		"prefix": "✅ CONTEXT.Meta.GetInfoScriptArg",
+		"description": "Insert GetInfoScriptArg\r",
+		"body": [
+			"/GetInfoScriptArg",
+			"«XFAS(heads=Argument,StateCd,DataTypeCd,Format,RelationshipCd,RelatedObject,RelatedIndex)»",
+			"«XFAS(heads=RelatedConstraint,ConstraintType,CheckExpression,DefaultValue,EntryMode,WithPrevious,MlsKey)»",
+			"# ------------------------------------------------------------------------------------------------------",
+			"# Argument-Definition",
+			"«XFAS(newRow)»",
+			"«XFAS(col=Argument,${1:ScriptArg1})»",
+			"# 0: passiv, 1: active",
+			"«XFAS(col=StateCd,${2|0,1|})»",
+			"# A: AlphaAll, X: AlphaUC, R: NumAll, N: NumNotNeg, D: Date, H: Time, B: Boolean, T: Text",
+			"«XFAS(col=DataTypeCd,${3|A,X,R,N,D,H,B,T|})»",
+			"«XFAS(col=Format,${4|100,10,10.0, |})»",
+			"# 0: No, 1: Bo, 1S: BoSet, 2: BoOption, 3: Code, 4: CodeOption, 5: Range, 6: RangeOption, 7: ApsKeyword, 8: ApsKeywordOption, I: InstallationFile, J: FileStorage",
+			"«XFAS(col=RelationshipCd,${5|0,1,1S,2,3,4,5,6,7,8,I,J|})»",
+			"# e.g.: No, Bo, Code, ApsKeyword, InstallationFile, FileStoratge",
+			"«XFAS(col=RelatedObject,)»",
+			"«XFAS(col=RelatedIndex,)»",
+			"«XFAS(col=RelatedConstraint,)»",
+			"«XFAS(col=ConstraintType,)»",
+			"«XFAS(col=CheckExpression,)»",
+			"«XFAS(col=DefaultValue,)»",
+			"# 0: Default, 1: Must, 2: Locked",
+			"«XFAS(col=EntryMode,0)»",
+			"# 0: on new line, 1: on same line",
+			"«XFAS(col=WithPrevious,0)»",
+			"«XFAS(col=MlsKey,${1})»",
+			"/"
+		]
+	},
+	"CONTEXT.GetInfoScriptArg.AddArgument": {
+		"prefix": "✅ CONTEXT.Meta.GetInfoScriptArg.AddArgument",
+		"description": "Insert GetInfoScriptArg\r",
+		"body": [
+			"«XFAS(newRow)»",
+			"«XFAS(col=Argument,${1:ScriptArg1})»",
+			"# 0: passiv, 1: active",
+			"«XFAS(col=StateCd,${2|0,1|})»",
+			"# A: AlphaAll, X: AlphaUC, R: NumAll, N: NumNotNeg, D: Date, H: Time, B: Boolean, T: Text",
+			"«XFAS(col=DataTypeCd,${3|A,X,R,N,D,H,B,T|})»",
+			"«XFAS(col=Format,${4|100,10,10.0, |})»",
+			"# 0: No, 1: Bo, 1S: BoSet, 2: BoOption, 3: Code, 4: CodeOption, 5: Range, 6: RangeOption, 7: ApsKeyword, 8: ApsKeywordOption, I: InstallationFile, J: FileStorage",
+			"«XFAS(col=RelationshipCd,${5|0,1,1S,2,3,4,5,6,7,8,I,J|})»",
+			"# e.g.: No, Bo, Code, ApsKeyword, InstallationFile, FileStoratge",
+			"«XFAS(col=RelatedObject,)»",
+			"«XFAS(col=RelatedIndex,)»",
+			"«XFAS(col=RelatedConstraint,)»",
+			"«XFAS(col=ConstraintType,)»",
+			"«XFAS(col=CheckExpression,)»",
+			"«XFAS(col=DefaultValue,)»",
+			"# 0: Default, 1: Must, 2: Locked",
+			"«XFAS(col=EntryMode,0)»",
+			"# 0: on new line, 1: on same line",
+			"«XFAS(col=WithPrevious,0)»",
+			"«XFAS(col=MlsKey,${1})»"
+		]
+	},
+	"CONTEXT.GetInfoScriptArg.Example": {
+		"prefix": "✅ CONTEXT.Meta.GetInfoScriptArg.Example",
+		"description": "Insert GetInfoScriptArg Variations\r",
+		"body": [
+			"/GetInfoScriptArg",
+			"«XFAS(heads=Argument,StateCd,DataTypeCd,Format,RelationshipCd,RelatedObject,RelatedIndex)»",
+			"«XFAS(heads=RelatedConstraint,ConstraintType,CheckExpression,DefaultValue,EntryMode,WithPrevious,MlsKey)»",
+			"# ------------------------------------------------------------------------------------------------------",
+			"# Status=0 --> unterdrücken (ACHTUNG trotzdem an Script übergeben!)",
+			"«XFAS(cells=ScriptArg0,0,A,10,0,,,,,,nok,0,0,State.0)»",
+			"# EntryMode=1 --> Eingabe zwingend",
+			"«XFAS(cells=ScriptArg1,1,A,10,0,,,,,,helloworld,1,1,EntryMode.1)»",
+			"# EntryMode=2 --> Eingabe gesperrt",
+			"«XFAS(cells=ScriptArg2,1,A,10,0,,,,,,xxx,2,1,EntryMode.2)»",
+			"# ------------------------------------------------------------------------------------------------------",
+			"# RelationShipCd=1 --> BO.Attribut",
+			"«XFAS(cells=ScriptArg3,1,A,10,1,Addr.Number,9,,,,,0,1,Relationship.1)»",
+			"# RelationShipCd=3 --> Code",
+			"«XFAS(cells=ScriptArg4,1,A,10,3,DocState,,Value<>10,,,30,0,0,Relationship.3)»",
+			"# RelationShipCd=5 --> Range (von-bis)",
+			"«XFAS(cells=ScriptArg5,1,N,1.0,5)» «XFAS(cell=2,9)» «XFAS(cells=,,,,1,0,0,Relationship.5)»",
+			"# RelationShipCd=1S --> BO-Sets (FreeTableItem)",
+			"«XFAS(cells=ScriptArg6,1,A,500,1S,FreeTableItem.Value,,FreeTableItem.TableNo=1000,,,«(DELIM+\"A\"+DELIM+\"B\"+DELIM)\\E»,0,0,Relationship.1S)»",
+			"# ------------------------------------------------------------------------------------------------------",
+			"# Formatierung Alphanummerisch",
+			"«XFAS(cells=ScriptArg7,1,A,10,0,,,,,,Alpha,0,0,DataType.A)»",
+			"# Formatierung Uppercase",
+			"«XFAS(cells=ScriptArg8,0,X,10,0,,,,,,BIG,0,0,DataType.X)»",
+			"# Formatierung Nummerisch",
+			"«XFAS(cells=ScriptArg9,1,R,8.2,0,,,,,,-100.2,0,0,DataType.R)»",
+			"# Formatierung Nummerisch nicht negativ",
+			"«XFAS(cells=ScriptArg10,1,N,8.2,0,,,,,,100.2,0,1,DataType.N)»",
+			"# Formatierung Datum",
+			"«XFAS(cells=ScriptArg11,1,D,,0,,,,,,«TODAY\\D10»,0,1,DataType.D)»",
+			"# Formatierung Zeit",
+			"«XFAS(cells=ScriptArg12,1,H,,0,,,,,,«SYS(TIME)»,0,1,DataType.H)»",
+			"# Formatierung Boolean",
+			"«XFAS(cells=ScriptArg13,1,B,,0,,,,,,0,0,0,DataType.B)»",
+			"# Formatierung Textblock",
+			"«XFAS(cells=ScriptArg14,1,T,4000,0,,,,,,firstLine«'\\n'»secondline,0,0,DataType.T)»",
+			"# ------------------------------------------------------------------------------------------------------",
+			"# CheckExpression",
+			"«XFAS(cells=ScriptArg15,1,R,8.2,0,,,,,Value < -0.0,-100.2,0,0,CheckExpression)»",
+			"# ------------------------------------------------------------------------------------------------------",
+			"# RelationsShip 'File'",
+			"«XFAS(cells=ScriptArg16,1,A,250,I,TX,,IMPORT\\*.CSV,,,sample.csv,0,0,RelationShip.I)»",
+			"# ------------------------------------------------------------------------------------------------------",
+			"# RelationsShip 'File'",
+			"«XFAS(cells=ScriptArg17,1,A,250,J,FileStorageName,,,,,sample.csv,0,0,RelationShip.J)»",
+			"/"
+		]
+	},
+	"CONTEXT.GetInfoScriptCol": {
+		"prefix": "✅ CONTEXT.Meta.GetInfoScriptCol",
+		"description": "Insert GetInfoScriptCol\r",
+		"body": [
+			"/GetInfoScriptCol",
+			"«XFAS(heads=Column,DataTypeCd,Format,RelationshipCd,RelatedObject,RelatedIndex,RelatedConstraint,AdditionalInfo)»",
+			"«XFAS(heads=OnDemand,MlsKey)»",
+			"# ------------------------------------------------------------------------------------------------------",
+			"# Werte für 1. Spalte",
+			"«XFAS(cells=ScriptCol1,A,100,0,,,,,0,Addr.Number)»",
+			"«XFAS(cells=ScriptCol2,A,250,I,TX,,,Info5,0,Output.File)»",
+			"/"
+		]
+	},
+	"CONTEXT.Check.BusActive": {
+		"prefix": "✅ CONTEXT.Check.BusActive",
+		"description": "Insert check if access to BUS is possible\r",
+		"body": [
+			"# ------------------------------------------------------------------------------------------------------",
+			"# Check if BUS is accessible (0/1)",
+			"«nz~XCNT(busActive)\\I»«SYS(MSG ERROR Access to BUS not possible)»«SYS(STOP)»",
+			""
+		]
+	},
+	"CONTEXT.Check.BOTypeAndId": {
+		"prefix": "✅ CONTEXT.Check.BOTypeAndId",
+		"description": "Insert check for active BOType and ID\r",
+		"body": [
+			"# ------------------------------------------------------------------------------------------------------",
+			"«X(${1:Context.BoType}\t=«XCNT(arg:BoType)»)»",
+			"«X(${2:Context.BoId}\t\t=«XCNT(arg:BoId)»)»",
+			"# ------------------------------------------------------------------------------------------------------",
+			"# Check if BOType is correct:",
+			"«nz~X($1)=${3:Addr}\\A»\t«SYS(MSG ERROR ${4:Wrong BOType according to context!})»«SYS(STOP)»",
+			""
+		]
+	},
+	"CONTEXT.ScriptArgs": {
+		"prefix": "✅ CONTEXT.ScriptArgs",
+		"description": "List of possible scriptarguments:\r- ScriptName\r- PrinterNo\r- OutputTypeCd\r- NumberOfCopies\r- PrintAsPdf\r- LangNo\r- BoType\r- BoId\r- BoOrganizerCd\r- BackgroundPdfModeCd\r- freeArgCount\r- freeArg:1\r- freeArg:NameOfArg\r",
+		"body": [
+			"«XCNT(${1|arg:ScriptName,arg:PrinterNo,arg:OutputTypeCd,arg:NumberOfCopies,arg:PrintAsPdf,arg:LangNo,arg:BoType,arg:BoId,arg:BoOrganizerCd,arg:BackgroundPdfModeCd,freeArgCount,freeArg:1,freeArg:NameOfArgument|})»",
+			""
+		]
+	},
+	"CONTEXT.FreeScriptArgs": {
+		"prefix": "✅ CONTEXT.ScriptArgsList",
+		"description": "Creates a construct to automaticly fill scriptparams into X-Vars\r\r\r",
+		"body": [
+			"«nz XCNT(freeArgCount)=0\\N»«GOTO(# JUMP.${4:SCRIPTARGS.END})»",
+			"«nNO(${1|1,2,3,4,5,6,7,8,9|},NULL)»",
+			"«nREPEAT($1)»",
+			"«nNO($1)»",
+			"# ------------------------------------------------------------------------------------------------------",
+			"# Create Variables from scriptArgs:",
+			"«nXCNT(freeArg:«NO($1,0)»>${2:ScriptArg.Free}«NO($1,0)»)»",
+			"# ------------------------------------------------------------------------------------------------------",
+			"# Output:",
+			"$2«NO($1,0)»:\t«X($2«NO($1,0)»)»",
+			"# ------------------------------------------------------------------------------------------------------",
+			"«nz NO($1,0)<«XCNT(freeArgCount)\\N»\\N»«LOOP($1)»",
+			"# JUMP.$4",
+			""
+		]
+	}
+}

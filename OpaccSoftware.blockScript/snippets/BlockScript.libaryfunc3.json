@@ -1,0 +1,423 @@
+{
+	"Standard: `DMASFunctions_RequestTable_Create`": {
+		"prefix": "📗 Standard: DMASFunctions_RequestTable_Create",
+		"scope": "blockScript",
+		"description": [
+			"🔐 using \"ST-DMASFunctions.FBL\" 🔐\n",
+			"Function:\tDMASFunctions_RequestTable_Create()</b>",
+			"Description:\tCreates new nameValueArray for DMAS requests",
+			"-----------------------------------------------------------------------------------------------------",
+			"Description:\tAdds name/value to nameValueArray for DMAS requests",
+			"Arguments:\targName\t\t: string > ArgumentName (Attribute)",
+			"\t\targValue\t: string > ArgumentValue",
+			"\n"
+		],
+		"body": [
+		"// -----------------------------------------------------------------------------------------------------",
+		"/// Description:\tCreates new nameValueArray for DMAS requests",
+		"DMASFunctions_RequestTable_Create()",
+		"// -----------------------------------------------------------------------------------------------------",
+		"/// Description:\tAdds name/value to nameValueArray for DMAS requests",
+		"DMASFunctions_RequestTable_AddArgument('${1|DocumentCategoryId!, |}','${2|2020, |}')",
+		"DMASFunctions_RequestTable_AddArgument('${3|Title, |}','${4|Document Title, |}')"
+		]
+	},
+	"Standard: `DMASFunctions_RequestTable_AddArgument`": {
+		"prefix": "📗 Standard: DMASFunctions_RequestTable_AddArgument",
+		"scope": "blockScript",
+		"description": [
+			"🔐 using \"ST-DMASFunctions.FBL\" 🔐\n",
+			"<b>Function:\tDMASFunctions_RequestTable_Create()</b>",
+			"Description:\tAdds name/value to nameValueArray for DMAS requests",
+			"Arguments:\targName\t\t: string > ArgumentName (Attribute)",
+			"\t\targValue\t: string > ArgumentValue",
+			"-----------------------------------------------------------------------------------------------------",
+			"\n"
+		],
+		"body": [
+		"// -----------------------------------------------------------------------------------------------------",
+		"/// Description:\tAdds name/value to nameValueArray for DMAS requests",
+		"DMASFunctions_RequestTable_AddArgument('${1:argName}','${2:argValue}')"
+		]
+	},
+	"Template: `DMASFunctions_AddDocument_Template`": {
+		"prefix": "📗 Template: DMASFunctions_AddDocument_Template",
+		"scope": "blockScript",
+		"description": [
+			"🔐 using \"ST-DMASFunctions.FBL\" 🔐\n",
+			"Description:\tCreates a template for creation of DMAS Document with given nameValueArray a",
+			"-----------------------------------------------------------------------------------------------------",
+			"\n"
+		],
+		"body": [
+		"// -----------------------------------------------------------------------------------------------------",
+		"/// Description:\tCreates new nameValueArray for DMAS requests",
+		"DMASFunctions_RequestTable_Create()",
+		"// -----------------------------------------------------------------------------------------------------",
+		"/// Description:\tAdds name/value to nameValueArray for DMAS requests",
+		"DMASFunctions_RequestTable_AddArgument('${1|DocumentCategoryId!, |}','${2|2020, |}')",
+		"DMASFunctions_RequestTable_AddArgument('${3|Title, |}','${4|Document Title, |}')",
+		"// -----------------------------------------------------------------------------------------------------",
+		"/// Description:\tCreates DMAS Document",
+		"var dmsDocumentId := DMASFunctions_AddDocument()"
+		]
+	},
+	"Standard: `DMASFunctions_AddDocument`": {
+		"prefix": "📗 Standard: DMASFunctions_AddDocument",
+		"scope": "blockScript",
+		"description": [
+			"🔐 using \"ST-DMASFunctions.FBL\" 🔐\n",
+			"Description:\tCreates DMAS Document with given nameValueArray",
+			"Attention:\tcreation of requesttable (DMASFunctions_RequestTable_Create) needed!",
+			"-----------------------------------------------------------------------------------------------------",
+			"\n"
+		],
+		"body": [
+		"// -----------------------------------------------------------------------------------------------------",
+		"// ATTENTION:\tcreation of requestTable (DMASFunctions_RequestTable_Create/_AddArgument) needed!",
+		"/// Description:\tCreates DMAS Document",
+		"var dmsDocumentId := DMASFunctions_AddDocument()"
+		]
+	},
+	"Standard: `DMASFunctions_GetDocumentList`": {
+		"prefix": "📗 Standard: DMASFunctions_GetDocumentList",
+		"scope": "blockScript",
+		"description": [
+			"🔐 using \"ST-DMASFunctions.FBL\" 🔐\n",
+			"Description:\tGets DMAS documents with given nameValueArray",
+			"Attention:\tcreation of requesttable (DMASFunctions_RequestTable_Create) needed!",
+			"-----------------------------------------------------------------------------------------------------",
+			"\n"
+		],
+		"body": [
+		"// -----------------------------------------------------------------------------------------------------",
+		"// ATTENTION:\tcreation of requestTable (DMASFunctions_RequestTable_Create/_AddArgument) needed!",
+		"/// Description:\tGets DMAS documents with given nameValueArray",
+		"/// Arguments:\t\tsortBy\t > Results sorted by given column (optional)",
+		"var sortBy\t\t\t:= 'CreatedTS desc'",
+		"var resultName\t\t:= DMASFunctions_GetDocumentList(sortBy)"
+		]
+	},
+	"Standard: `DMASFunctions_CheckinDocument`": {
+		"prefix": "📗 Standard: DMASFunctions_CheckinDocument",
+		"scope": "blockScript",
+		"description": [
+			"🔐 using \"ST-DMASFunctions.FBL\" 🔐\n",
+			"Description:\tCheckin DMAS Document",
+			"-----------------------------------------------------------------------------------------------------",
+			"\n"
+		],
+		"body": [
+		"// -----------------------------------------------------------------------------------------------------",
+		"/// Arguments:\tdmsDocumentId\t\t\t > DMS documentId",
+		"/// \t\t\tenforceCreateNewVersion\t > default: FALSE",
+		"/// \t\t\tremainCreatorPass\t\t > default: FALSE",
+		"/// \t\t\tversionComment\t\t\t > default: ''",
+		"DMASFunctions_CheckinDocument(dmsDocumentId,FALSE,FALSE,'')"
+		]
+	},
+	"Standard: `DMASFunctions_CheckoutDocument`": {
+		"prefix": "📗 Standard: DMASFunctions_CheckoutDocument",
+		"scope": "blockScript",
+		"description": [
+			"🔐 using \"ST-DMASFunctions.FBL\" 🔐\n",
+			"Description:\tCheckin DMAS Document",
+			"-----------------------------------------------------------------------------------------------------",
+			"\n"
+		],
+		"body": [
+		"// -----------------------------------------------------------------------------------------------------",
+		"/// Arguments:\tdmsDocumentId\t\t\t > DMS documentId",
+		"/// \t\t\tdmsVersionId\t\t\t > default: 0",
+		"DMASFunctions_CheckoutDocument(dmsDocumentId,0)"
+		]
+	},
+	"Standard: `DMASFunctions_RemoveDocument`": {
+		"prefix": "📗 Standard: DMASFunctions_RemoveDocument",
+		"scope": "blockScript",
+		"description": [
+			"🔐 using \"ST-DMASFunctions.FBL\" 🔐\n",
+			"Description:\tRemoves DMAS Document",
+			"-----------------------------------------------------------------------------------------------------",
+			"\n"
+		],
+		"body": [
+		"// -----------------------------------------------------------------------------------------------------",
+		"/// Arguments:\t\tdmsDocumentId\t > DMS documentId",
+		"DMASFunctions_RemoveDocument(dmsDocumentId)"
+		]
+	},
+	"Standard: `DMASFunctions_ArchiveDocument`": {
+		"prefix": "📗 Standard: DMASFunctions_ArchiveDocument",
+		"scope": "blockScript",
+		"description": [
+			"🔐 using \"ST-DMASFunctions.FBL\" 🔐\n",
+			"Description:\tArchives DMAS Document",
+			"-----------------------------------------------------------------------------------------------------",
+			"\n"
+		],
+		"body": [
+		"// -----------------------------------------------------------------------------------------------------",
+		"/// Arguments:\t\tdmsDocumentId\t > DMS documentId",
+		"DMASFunctions_ArchiveDocument(dmsDocumentId)"
+		]
+	},
+	"Standard: `DMASFunctions_GetDocument`": {
+		"prefix": "📗 Standard: DMASFunctions_GetDocument",
+		"scope": "blockScript",
+		"description": [
+			"🔐 using \"ST-DMASFunctions.FBL\" 🔐\n",
+			"Description:\tGets DMAS Document",
+			"-----------------------------------------------------------------------------------------------------",
+			"\n"
+		],
+		"body": [
+		"// -----------------------------------------------------------------------------------------------------",
+		"/// Arguments:\t\tdmsDocumentId\t > DMS documentId",
+		"var resultName := DMASFunctions_GetDocument(dmsDocumentId)"
+		]
+	},
+	"Standard: `DMASFunctions_GetDocumentOOLinkList`": {
+		"prefix": "📗 Standard: DMASFunctions_GetDocumentOOLinkList",
+		"scope": "blockScript",
+		"description": [
+			"🔐 using \"ST-DMASFunctions.FBL\" 🔐\n",
+			"Description:\tGet DMAS document OOLinkList",
+			"-----------------------------------------------------------------------------------------------------",
+			"\n"
+		],
+		"body": [
+		"// -----------------------------------------------------------------------------------------------------",
+		"/// Arguments:\t\tdmsDocumentId\t > DMS documentId",
+		"/// \t\t\t\tboType\t\t\t > BOType",
+		"/// \t\t\t\tboId\t\t\t > BOId",
+		"/// \t\t\t\tooLinkType\t\t > LinkType (optional)",
+		"/// \t\t\t\toolinkValidFrom\t > ValidFrom (optional)",
+		"/// \t\t\t\toolinkValidUntil > ValidUntil (optional)",
+		"/// \t\t\t\tsortBy\t\t\t > Results sorted by given column (optional)",
+		"var resultName := DMASFunctions_GetDocumentOOLinkList(dmsDocumentId,'Addr','2','','01.01.2024','31.12.2024','CreatedTS desc')"
+		]
+	},
+	"Standard: `DMASFunctions_GetDocumentVersionList`": {
+		"prefix": "📗 Standard: DMASFunctions_GetDocumentVersionList",
+		"scope": "blockScript",
+		"description": [
+			"🔐 using \"ST-DMASFunctions.FBL\" 🔐\n",
+			"Description:\tGets DMAS documents versionList with given nameValueArray",
+			"INFO:\toptional creation of RequestTable (DMASFunctions_RequestTable_Create/_AddArgument) supported",
+			"-----------------------------------------------------------------------------------------------------",
+			"\n"
+		],
+		"body": [
+		"// -----------------------------------------------------------------------------------------------------",
+		"// INFO: optional creation of RequestTable (DMASFunctions_RequestTable_Create/_AddArgument) supported",
+		"/// Description:\tGets DMAS documents versionList",
+		"/// Arguments:\t\tdmsDocumentId\t > DMS documentId",
+		"/// \t\t\t\tsortBy\t\t\t > Results sorted by given column (optional)",
+		"var resultName\t\t:= DMASFunctions_GetDocumentVersionList(dmsDocumentId,'DateTimeTS asc')"
+		]
+	},
+	"Standard: `DMASFunctions_GetDocumentVersionFileList`": {
+		"prefix": "📗 Standard: DMASFunctions_GetDocumentVersionFileList",
+		"scope": "blockScript",
+		"description": [
+			"🔐 using \"ST-DMASFunctions.FBL\" 🔐\n",
+			"Description:\tGets DMAS documents versionfileList with given nameValueArray",
+			"INFO:\toptional creation of RequestTable (DMASFunctions_RequestTable_Create/_AddArgument) supported",
+			"-----------------------------------------------------------------------------------------------------",
+			"\n"
+		],
+		"body": [
+		"// -----------------------------------------------------------------------------------------------------",
+		"// INFO: optional creation of RequestTable (DMASFunctions_RequestTable_Create/_AddArgument) supported",
+		"/// Description:\tGets DMAS documents versionList",
+		"/// Arguments:\t\tdmsDocumentId\t > DMS documentId",
+		"/// \t\t\t\tversionId\t\t > DMAS document versionId (default: 0=latest)",
+		"/// \t\t\t\tsortBy\t\t\t > Results sorted by given column (optional)",
+		"var resultName\t\t:= DMASFunctions_GetDocumentVersionFileList(dmsDocumentId,0,'RealFileName asc')"
+		]
+	},
+	"Standard: `DMASFunctions_GetFile`": {
+		"prefix": "📗 Standard: DMASFunctions_GetFile",
+		"scope": "blockScript",
+		"description": [
+			"🔐 using \"ST-DMASFunctions.FBL\" 🔐\n",
+			"Description:\tGets DMAS document file with given fileId",
+			"-----------------------------------------------------------------------------------------------------",
+			"\n"
+		],
+		"body": [
+		"// -----------------------------------------------------------------------------------------------------",
+		"/// Description:\tGets DMAS document file",
+		"/// Arguments:\t\tdmsFileId\t\t > DMS fileId",
+		"var resultName\t\t:= DMASFunctions_GetDocumentVersionFileList(dmsFileId)"
+		]
+	},
+	"Standard: `DMASFunctions_ModifyDocument`": {
+		"prefix": "📗 Standard: DMASFunctions_ModifyDocument",
+		"scope": "blockScript",
+		"description": [
+			"🔐 using \"ST-DMASFunctions.FBL\" 🔐\n",
+			"Description:\tModifies DMAS Document with given nameValueArray",
+			"Attention:\tcreation of requesttable (DMASFunctions_RequestTable_Create) needed!",
+			"-----------------------------------------------------------------------------------------------------",
+			"\n"
+		],
+		"body": [
+		"// -----------------------------------------------------------------------------------------------------",
+		"// ATTENTION:\tcreation of requestTable (DMASFunctions_RequestTable_Create/_AddArgument) needed!",
+		"/// Description:\tModifies DMAS Document",
+		"/// Arguments:\t\tdmsDocumentId\t > DMS documentId",
+		"/// \t\t\t\treturnStruct\t > return all attributes? (Default: FALSE)",
+		"var resultName\t\t:= DMASFunctions_ModifyDocument(dmsDocumentId,FALSE)"
+		]
+	},
+	"Standard: `DMASFunctions_ModifyDocumentAddOOLink`": {
+		"prefix": "📗 Standard: DMASFunctions_ModifyDocumentAddOOLink",
+		"scope": "blockScript",
+		"description": [
+			"🔐 using \"ST-DMASFunctions.FBL\" 🔐\n",
+			"Description:\tModifies DMAS Document with given nameValueArray",
+			"-----------------------------------------------------------------------------------------------------",
+			"\n"
+		],
+		"body": [
+		"// -----------------------------------------------------------------------------------------------------",
+		"/// Description:\tAdds OOLink to DMAS Document",
+		"/// Arguments:\t\tdmsDocumentId\t > DMS documentId",
+		"/// \t\t\t\tboType\t\t\t > BOType",
+		"/// \t\t\t\tboId\t\t\t > BOId",
+		"/// \t\t\t\tooLinkType\t\t > LinkType (optional)",
+		"/// \t\t\t\toolinkValidFrom\t > ValidFrom (optional)",
+		"/// \t\t\t\toolinkValidUntil > ValidUntil (optional)",
+		"var ooLinkId\t\t:= DMASFunctions_ModifyDocumentAddOOLink(dmsDocumentId,'Addr','2','','01.01.2024','31.12.2024')"
+		]
+	},
+	"Standard: `DMASFunctions_ModifyDocumentOOLink`": {
+		"prefix": "📗 Standard: DMASFunctions_ModifyDocumentOOLink",
+		"scope": "blockScript",
+		"description": [
+			"🔐 using \"ST-DMASFunctions.FBL\" 🔐\n",
+			"Description:\tModifies DMAS Document OOLink",
+			"-----------------------------------------------------------------------------------------------------",
+			"\n"
+		],
+		"body": [
+		"// -----------------------------------------------------------------------------------------------------",
+		"/// Description:\tModifies DMAS Document OOLink",
+		"/// Arguments:\t\tdmsOOLinkId\t\t > DMS OOLinkId",
+		"/// \t\t\t\tooLinkType\t\t > LinkType (optional)",
+		"/// \t\t\t\toolinkValidFrom\t > ValidFrom (optional)",
+		"/// \t\t\t\toolinkValidUntil > ValidUntil (optional)",
+		"/// \t\t\t\treturnStruct\t > return all attributes? (Default: FALSE)",
+		"var ooLinkId\t\t:= DMASFunctions_ModifyDocumentOOLink(dmsOOLinkId,'Addr','2','','01.01.2024','31.12.2024')"
+		]
+	},
+	"Standard: `DMASFunctions_ModifyDocumentRemoveOOLink`": {
+		"prefix": "📗 Standard: DMASFunctions_ModifyDocumentRemoveOOLink",
+		"scope": "blockScript",
+		"description": [
+			"🔐 using \"ST-DMASFunctions.FBL\" 🔐\n",
+			"Description:\tRemoves DMAS Document OOLink",
+			"-----------------------------------------------------------------------------------------------------",
+			"\n"
+		],
+		"body": [
+		"// -----------------------------------------------------------------------------------------------------",
+		"/// Description:\tRemoves DMAS Document OOLink",
+		"/// Arguments:\t\tdmsOOLinkId\t\t > DMS OOLinkId",
+		"var resultName\t\t:= DMASFunctions_ModifyDocumentRemoveOOLink(dmsOOLinkId)"
+		]
+	},
+	"Standard: `DMASFunctions_ModifyDocumentState`": {
+		"prefix": "📗 Standard: DMASFunctions_ModifyDocumentState",
+		"scope": "blockScript",
+		"description": [
+			"🔐 using \"ST-DMASFunctions.FBL\" 🔐\n",
+			"Description:\tChanges the DMAS Document state",
+			"-----------------------------------------------------------------------------------------------------",
+			"\n"
+		],
+		"body": [
+		"// -----------------------------------------------------------------------------------------------------",
+		"/// Description:\tChanges the DMAS Document state",
+		"/// Arguments:\t\tdmsDocumentId\t > DMS documentId",
+		"/// \t\t\t\tdmsVersionId\t > default: 0",
+		"/// \t\t\t\tversionState\t > (0: NEW / 1: AVAILABLE / 2: RELEASED / 3: RETIRED)",
+		"/// \t\t\t\tallVersions\t\t > Alle Versionen? (Default: FALSE)",
+		"var resultName\t\t:= DMASFunctions_ModifyDocumentState(dmsDocumentId,0,'${1|RELEASED,RETIRED,NEW,AVAILABLE|}',${2|FALSE,TRUE|})"
+		]
+	},
+	"Standard: `DMASFunctions_ModifyDocumentRemoveFile`": {
+		"prefix": "📗 Standard: DMASFunctions_ModifyDocumentRemoveFile",
+		"scope": "blockScript",
+		"description": [
+			"🔐 using \"ST-DMASFunctions.FBL\" 🔐\n",
+			"Description:\tRemoves file from the DMAS Document",
+			"-----------------------------------------------------------------------------------------------------",
+			"\n"
+		],
+		"body": [
+		"// -----------------------------------------------------------------------------------------------------",
+		"/// Description:\tRemoves file from the DMAS Document",
+		"/// Arguments:\t\tdmsDocumentId\t > DMS documentId",
+		"/// \t\t\t\tdmsFileId\t\t > DMAS fileId",
+		"var resultName\t\t:= DMASFunctions_ModifyDocumentRemoveFile(dmsDocumentId,dmsFileId)"
+		]
+	},
+	"Standard: `DMASFunctions_AddFileFromFileSystem`": {
+		"prefix": "📗 Standard: DMASFunctions_AddFileFromFileSystem",
+		"scope": "blockScript",
+		"description": [
+			"🔐 using \"ST-DMASFunctions.FBL\" 🔐\n",
+			"Description:\tAdds a file from the filesystem to the DMAS Document",
+			"-----------------------------------------------------------------------------------------------------",
+			"\n"
+		],
+		"body": [
+		"// -----------------------------------------------------------------------------------------------------",
+		"/// Description:\tAdds a file from filesystem to the DMAS Document",
+		"/// Arguments:\t\tdmsDocumentId\t > DMS documentId",
+		"/// \t\t\t\tfilePathAndName\t > Path and fileName (relative to 'insyde')",
+		"/// \t\t\t\tsetAsMasterFile\t > default: TRUE",
+		"/// \t\t\t\tsetAsViewerFile\t > default: TRUE",
+		"var resultName\t\t:= DMASFunctions_AddFileFromFileSystem(dmsDocumentId,'${1:..\\\\\\\\tmp\\\\\\\\fileName.txt}',${2|TRUE,FALSE|},${3|TRUE,FALSE|})"
+		]
+	},
+	"Standard: `DMASFunctions_ModifyFileFromFileSystem`": {
+		"prefix": "📗 Standard: DMASFunctions_ModifyFileFromFileSystem",
+		"scope": "blockScript",
+		"description": [
+			"🔐 using \"ST-DMASFunctions.FBL\" 🔐\n",
+			"Description:\tChanges a file of the DMAS Document with a file from filesystem",
+			"-----------------------------------------------------------------------------------------------------",
+			"\n"
+		],
+		"body": [
+		"// -----------------------------------------------------------------------------------------------------",
+		"/// Description:\tChanges a file of the DMAS Document with a file from filesystem",
+		"/// Arguments:\t\tdmsDocumentId\t > DMS documentId",
+		"/// \t\t\t\tdmsFileId\t\t > DMAS fileId",
+		"/// \t\t\t\ttmpFileName\t\t > TMP-fileName (file must be in tmp-directory)",
+		"var resultName\t\t:= DMASFunctions_ModifyFileFromFileSystem(dmsDocumentId,dmsFileId,'${1:fileName.txt}')"
+		]
+	},
+	"Standard: `DMASFunctions_WriteFileToFileSystem`": {
+		"prefix": "📗 Standard: DMASFunctions_WriteFileToFileSystem",
+		"scope": "blockScript",
+		"description": [
+			"🔐 using \"ST-DMASFunctions.FBL\" 🔐\n",
+			"Description:\tWrites a file from the DMAS Document to the filesystem",
+			"-----------------------------------------------------------------------------------------------------",
+			"\n"
+		],
+		"body": [
+		"// -----------------------------------------------------------------------------------------------------",
+		"/// Description:\tWrites a file from the DMAS Document to the filesystem",
+		"/// Arguments:\t\tdmsFileId\t\t\t > dmsFileId",
+		"/// \t\t\t\tfilePathAndName\t\t > Path and fileName (relative to 'insyde')",
+		"/// \t\t\t\toverwriteExisting\t > default: TRUE",
+		"var resultName\t\t:= DMASFunctions_WriteFileToFileSystem(dmsFileId,'${1:..\\\\\\\\tmp\\\\\\\\fileName.txt}',${2|TRUE,FALSE|})"
+		]
+	}	
+}

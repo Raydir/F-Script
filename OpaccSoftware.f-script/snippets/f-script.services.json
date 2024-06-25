@@ -1,0 +1,36 @@
+{
+	"SERVICES.Result.XRES":
+	{
+		"prefix": "✅ SERVICES.Result.XRES",
+		"description": "Insert REPEAT/LOOP for XRES-Result .\r",
+		"body": 
+		[
+			"# ------------------------------------------------------------------------------------------------------",
+			"«X(${1:Result.Count}=«XRES(${2:Result.Name}:rows)»)»",
+			"«nz X($1)=0\\N»«GOTO(/)»",
+			"«nNO(${3|1,2,3,4,5,6,7,8,9|},NULL)»",
+			"«REPEAT($3)»",
+			"«nNO($3)»",
+			"# Wert direkt in XVariable abfüllen:",
+			"«nXRES($2:${4:AttributeName},«NO($3,0)»>This.${4})»",
+			"«nz NO($3,0)<«X($1)\\N»\\N»«LOOP($3)»"
+		]
+	},
+	"SERVICES.Result.XQRS":
+	{
+		"prefix": "✅ SERVICES.Result.XQRS",
+		"description": "Insert REPEAT/LOOP for XQRS-Result .\r",
+		"body": 
+		[
+			"# ------------------------------------------------------------------------------------------------------",
+			"«X(${1:Result.Count}=«XQRS(${2:Result.Name}:rows)»)»",
+			"«nz X($1)=0\\N»«GOTO(/)»",
+			"«nNO(${3|1,2,3,4,5,6,7,8,9|},NULL)»",
+			"«REPEAT($3)»",
+			"«nNO($3)»",
+			"# Wert direkt in XVariable abfüllen:",
+			"«nXQRS($2:${4:AttributeName},«NO($3,0)»>This.${4})»",
+			"«nz NO($3,0)<«X($1)\\N»\\N»«LOOP($3)»"
+		]
+	}	
+}

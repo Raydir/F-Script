@@ -1,0 +1,452 @@
+{
+	"\\$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "F-Script",
+	"patterns": [
+		{
+			"include": "#brackets"
+		},
+		{
+			"include": "#legacyFunctions"
+		},
+		{
+			"include": "#scriptbrackets"
+		},
+		{
+			"include": "#metasubroutines"
+		},
+		{
+			"include": "#subroutines"
+		},
+		{
+			"include": "#subroutinecalls"
+		},
+		{
+			"include": "#commentsDiv"
+		},
+		{
+			"include": "#comments"
+		},
+		{
+			"include": "#formatextensions"
+		},
+		{
+			"include": "#variableprefixes"
+		},
+		{
+			"include": "#libraries"
+		},
+		{
+			"include": "#operators"
+		},
+		{
+			"include": "#printcommands"
+		},
+		{
+			"include": "#operations"
+		},
+		{
+			"include": "#commands"
+		},
+		{
+			"include": "#strings"
+		},
+		{
+			"include": "source.f-script.blockscript"
+		},
+		{
+			"include": "source.f-script.blockscript2"
+		},
+		{
+			"include": "source.f-script.extended"
+		},
+		{
+			"include": "source.f-script.context"
+		},
+		{
+			"include": "source.f-script.attributes"
+		},
+		{
+			"include": "source.f-script.deprecated"
+		}
+	],
+	"repository": {
+		"brackets": {
+			"patterns": [
+				{
+					"name": "entity.name.class",
+					"match": "[(){}]{1,}"
+				}
+			]
+		},
+		"scriptbrackets": {
+			"patterns": [
+				{
+					"name": "entity.name.tag",
+					"match": "[«»]{1}"
+				}
+			]
+		},
+		"metasubroutines": {
+			"patterns": [
+				{
+					"name": "markup.heading",
+					"match": "(^/(GetInfoScriptCol|GetInfoScriptArg|GetInfoScript)$)"
+				}
+			]
+		},
+		"subroutines": {
+			"patterns": [
+				{
+					"name": "support.class",
+					"match": "(^/[a-zA-Z0-9|_.\\-«»/(/)]{0,})"
+				},
+				{
+					"name": "support.class",
+					"match": "(?!//)function(\\s){1}[A-Z]{1}[a-zA-Z0-9_.]{3,}(?=\\(.*\\))"
+				}
+			]
+		},
+		"subroutinecalls": {
+			"patterns": [
+				{
+					"name": "support.function",
+					"match": "(?<=«/).*(?=»)\\b"
+				},
+				{
+					"name": "support.function",
+					"match": "/(?!«)[a-zA-Z0-9_.\\-«»\\(\\)]{1,}(?=»)\\b"
+				},
+				{
+					"name": "support.function",
+					"match": "/(?!«)[a-zA-Z0-9_.\\-«»\\(\\)]{1,}(?=\\)»)"
+				},
+				{
+					"name": "support.function",
+					"match": "/(?![«]{0})[a-zA-Z0-9_.\\-«»\\(\\)]{1,}|(?=\\)»)"
+				},
+				{
+					"name": "support.function",
+					"match": "GOTO[(]{1}(# [a-zA-Z0-9|_.-]{1,}|/)[)]{1}"
+				},
+				{
+					"name": "support.function",
+					"match": "^(#\\s)JUMP.*"
+				},
+				{
+					"name": "support.function",
+					"match": "«\\.([a-zA-Z]{2}|«X\\(FFKZ\\)»)-[a-zA-Z0-9]{1,}\\.[a-zA-Z]{2,3}[1-9]{,2}"
+				},
+				{
+					"name": "support.function",
+					"match": "/(?!=«)[a-zA-Z0-9_.\\-«»\\(\\)]{1,}[,-:.a-zA-Z0-9]{0,}(?=\\)»)"
+				},
+				{
+					"name": "support.function",
+					"match": ".ST-BIZSERVICES.FS"
+				}
+			]
+		},
+		"commentsDiv": {
+			"patterns": [
+				{
+					"name": "commentsDiv",
+					"match": "\\s[/]{2}\\s(?!(ACHTUNG|ATTENTION|TIPP|INFO|HINWEIS|TODO|FIXME)).*"
+				},
+				{
+					"name": "commentsAttention",
+					"match": "\\s[/]{2}\\s(ACHTUNG|ATTENTION).*"
+				},
+				{
+					"name": "commentsAttention",
+					"match": "^#\\s(ACHTUNG|ATTENTION).*"
+				},
+				{
+					"name": "commentsTipp",
+					"match": "\\s[/]{2}\\s(TIPP|INFO|HINWEIS).*"
+				},
+				{
+					"name": "commentsTipp",
+					"match": "^#\\s(TIPP|INFO|HINWEIS).*"
+				},
+				{
+					"name": "commentsTodo",
+					"match": "\\s[/]{2}\\s(TODO|FIXME).*"
+				},
+				{
+					"name": "commentsTodo",
+					"match": "^#\\s(TODO|FIXME).*"
+				}
+			]
+		},
+		"comments": {
+			"patterns": [
+				{
+					"name": "comment",
+					"match": "\\s[/]{2}\\s.*"
+				},
+				{
+					"name": "comment",
+					"match": "^((#\\s)|(^# «)|(#\\s)|(#[,]{0,1}[0-9]{1,})).{0,}[*-/─?_]{0,}"
+				},
+				{
+					"name": "comment",
+					"match": "#[,]{0,1}[0-9]{1,}"
+				},
+				{
+					"name": "comment",
+					"match": "^#\\B"
+				}
+			]
+		},
+		"formatextensions": {
+			"patterns": [
+				{
+					"name": "variable.other.readwrite",
+					"match": "\\\\[NDIEa]{1}[ 0-9,.F'tp]{0,}\\b"
+				},
+				{
+					"name": "variable.other.readwrite",
+					"match": "\\\\[A]{1}[-]{0,1}[ 0-9,.F'tp]{0,}\\b"
+				},
+				{
+					"name": "variable.other.readwrite",
+					"match": "\\[(N,0vt0|N,000t0|N,.00t'|N[0-9]{0,},F0|A[0-9]{0,})\\][p]{0,1}(?=»)"
+				},
+				{
+					"name": "variable.other.readwrite",
+					"match": "(?<=\\N,)0vt0p(?=»)"
+				},
+				{
+					"name": "variable.other.readwrite",
+					"match": "(?!«)(fi|if|ei|ie)\\(.*\\)\\\\C»"
+				}
+			]
+		},
+		"variableprefixes": {
+			"patterns": [
+				{
+					"name": "variable.language",
+					"match": "(?<=«)[nszvmfe&~ ]{1,}[0-9]{,1}"
+				},
+				{
+					"name": "variable.language",
+					"match": "(var\\s)"
+				}
+			]
+		},
+		"libraries": {
+			"patterns": [
+				{
+					"name": "keyword",
+					"match": "(?<=LIB\\()[a-zA-Z0-9\\s\\(\\)/\\-.|,#]{1,}(?=\\)»)"
+				},
+				{
+					"name": "keyword",
+					"match": "(?<=LIB\\()[a-zA-Z0-9\\s\\(\\)/\\-.\\|│,#]{1,}(?=\\)»)"
+				},
+				{
+					"name": "keyword",
+					"match": "(?<=LIB\\()[a-zA-Z0-9\\s\\(\\)/\\-.\\|│,#]{1,}(?=\\)\\\\A1»)"
+				},
+				{
+					"name": "keyword",
+					"match": "(?<=(«|n|z|s|m|v|~|\\+|\\-|&|f|e|[0-9]| ))LIB(?=\\()"
+				},
+				{
+					"name": "keyword",
+					"match": "(?<=(=|:=|return|,|\\()[\\s]{0,})(TRUE|FALSE)\\b"
+				}
+			]
+		},
+		"operations": {
+			"patterns": [
+				{
+					"name": "constant.numeric.octal",
+					"match": "(?<=(«|n|z|s|~|f|e| ))(REPEAT|LOOP)[(]{0,1}[0-9,]{0,}[)]{0,1}"
+				},
+				{
+					"name": "constant.numeric.octal",
+					"match": "(?<=(«|n|z|s|~|f|e| ))WRITE[(]{0,1}[1-4]{1}:(DIRECT |APPEND |ANSI |UTF8 |UT-8 |-ANSI |-UTF8 |-UT-8 |ANSI<|UTF8<|UT-8<|-ANSI<|-UTF8<|-UT-8<|LINECOUNT|CLOSE|-<|<|)[)]{,1}"
+				},
+				{
+					"name": "constant.numeric.octal",
+					"match": "(?<=(«|n|z|s|~|f|e| ))READ[(]{0,1}[1-4]{1}:(DIRECT DIR: |DIRECTANSI DIR |DIRECTUTF8 DIR |DIRECT |DIRECTANSI |DIRECTUTF8 |BLOCK |MEM|SIZE|CLOSE|)[)]{,1}"
+				},
+				{
+					"name": "constant.numeric.octal",
+					"match": "(?<=(«|n|z|s|~|f|e| ))READ(?=\\()\\b"
+				},
+				{
+					"name": "constant.numeric.octal",
+					"match": "(?<=(«|n|z|s|m|v|~|\\+|\\-|&|f|e|[0-9]| ))(NO[(]{0,1}[0-9]{0,1}[,]{0,1}(NULL|[0-9]{1,}|)[)]{0,1})(?=»)"
+				},
+				{
+					"name": "constant.numeric.octal",
+					"match": "(?<=(«|n|z|s|m|v|~|\\+|\\-|&|f|e|[0-9]| ))(NO[(]{0,1}[0-9]{0,1}[,]{0,1}(NULL|[0-9]{1,}|)[)]{1})"
+				},
+				{
+					"name": "constant.numeric.octal",
+					"match": "(?<=(«|n|z|s|m|v|~|\\+|\\-|&|f|e|[0-9]| ))(TODAY\\((F|DY|DW|DN|D|MN|M|W|Y2W|YW|Y2|Y)|«(n|z|s|m|v|~|\\+|\\-|&|f|e|[1-9]{0,1}| )|TODAY)"
+				}
+			]
+		},
+		"commands": {
+			"patterns": [
+				{
+					"name": "constant.numeric.float",
+					"match": "(?<=(«|n|z|s|m|v|~|\\+|\\-|&|f|e|[0-9]|\\s))(SPLIT|BREAKST|BREAKSH|BREAK\\(CLEAR\\)|BREAK|LIST|POS|J|SYS|PROGRESS|MEM|VAR|MEA|MEX|SUM|XARR|HARRAY|ARRAY|ROUND|L-RAND|LMARGIN|X)(?=\\()"
+				},
+				{
+					"name": "constant.numeric.float",
+					"match": "(?<=(«|n|z|s|m|v|~|\\+|\\-|&|f|e|[0-9]|\\s))(BREAKST|BREAKSH|BREAK|MEM|VAR|MEA|MEX|SUM|TIMESTAMP|XARR|HARRAY|ARRAY|ROUND|L-RAND|LMARGIN)(?=»)"
+				},
+				{
+					"name": "constant.numeric.float",
+					"match": "(?<=(«|n|z|s|m|v|~|\\+|\\-|&|f|e|[0-9]|\\s))MARK\\([0-9]{0,1}[,]{0,1}(ON|OFF)\\)(?=.*»)"
+				},
+				{
+					"name": "constant.numeric.float",
+					"match": "(?<=(«|n|z|s|m|v|~|\\+|\\-|&|f|e|[0-9]|\\s))MARK\\([0-9]{0,1}\\)"
+				}
+			]
+		},
+		"printcommands": {
+			"patterns": [
+				{
+					"name": "variable",
+					"match": "(?<=(«|n|z|s|m|v|~|&|f|e| )PAGE\\()(LINE|END|FEED|COUNT)[:]{0,1}"
+				},
+				{
+					"name": "variable",
+					"match": "(?<=(«|n|z|s|m|v|~|&|f|e| ))PAGE(?=\\((LINE|END|FEED|COUNT)\\)»)"
+				},
+				{
+					"name": "variable",
+					"match": "(?<=(«|n|z|s|m|v|~|\\+|\\-|&|f|e|[0-9]| ))(PRT|ZUS6|ZUS5|ZUS4|ZUS3|ZUS2|ZUS1|SPOOLER|TOTALPAGE|PAGE|PDF-SCHACHT|SCHACHT4|SCHACHT3|SCHACHT2|SCHACHT1|VIO|ROT|ORA|BLA|GEL|SCH|GRU|FIXLINE\\(-\\)|FIXLINE)\\b"
+				},
+				{
+					"name": "variable",
+					"match": "(?<=(«|n|z|s|m|v|~|\\+|\\-|&|f|e|[0-9]| ))((HEADER|CARRY)\\((ON|OFF)\\)|CARRY|HEADER)(?=.*»)"
+				},
+				{
+					"name": "variable",
+					"match": "(?<=(«|n|z|s|m|v|~|\\+|\\-|&|f|e|[0-9]| ))(SYDRK-SETIK|SYDRK-SCREEN|SYDRK-LISTA4S|SYDRK-LISTA4Q|SYDRK-LISTA4H|SYDRK-FILE|SYDRK-FAX-START|SYDRK-FAX-ENDE|SYDRK-ETIK|SYDRK-ESRJN|SYDRK-ESR|SYDRK-BRIEF|SYDRK-BAHN|SYDRK-ART-ETIK)\\b"
+				},
+				{
+					"name": "variable",
+					"match": "(?<=(«|n|z|s|m|v|~|\\+|\\-|&|f|e|[0-9]| ))(PROPJN|NICHTLEERJN|LASTFFJN|HT|GRF7-BEZ|GRF7|GRF6-BEZ|GRF6|GRF5-BEZ|GRF5|GRF4-BEZ|GRF4|GRF3-BEZ|GRF3|GRF2-BEZ|GRF2|GRF1-BEZ|GRF1TELEXJN|FAX-START|FAX-JN|FAX-ENDE)\\b"
+				},
+				{
+					"name": "variable",
+					"match": "(?<=(«|n|z|s|m|v|~|\\+|\\-|&|f|e|[0-9]| ))(DRK-TEXT2|DRK-TEXT1|DRK-TAB-FAKTOR|DRK-SEITE|DRK-PDF-JN|DRK-PCL-JN|DRK-NR|DRK-LINKER-RAND|DRK-INIT-M|DRK-INIT|DRK-DEVICE|DRK-BLATT|DRK-ACTIVE|CONVERTJN)\\b"
+				},
+				{
+					"name": "variable",
+					"match": "(?<=(«|n|z|s|m|v|~|\\+|\\-|&|f|e|[0-9]| ))(Z\\+|\\-|Z\\-|F\\+|\\-|F\\-|E\\+|\\-|E\\-|B\\+|\\-|B\\-|U\\+|\\-|U\\-|K\\+|\\-|K\\-)\\B"
+				}
+			]
+		},
+		"operators": {
+			"patterns": [
+				{
+					"name": "entity.name.tag",
+					"match": "(:={1})"
+				},
+				{
+					"name": "entity.name.tag",
+					"match": "([/:/+-/*/|///<=/>]{1})"
+				},
+				{
+					"name": "entity.name.tag",
+					"match": "(?<= )(and|or|contains|matches|max|min)(?= )"
+				},
+				{
+					"name": "entity.name.tag",
+					"match": "\\bDELIM\\b"
+				},
+				{
+					"name": "entity.name.tag",
+					"match": "((?<=\\()|)(set_remove|set_add|set_contains)(?=\\()\\b"
+				},
+				{
+					"name": "entity.name.tag",
+					"match": "((?<=\\()|)(append|assign|ascii|character|center|date|if|insert|integer|left|length|lowercase|ltrim|mid|mod|not|number|overstrike|pad|pos|random|remove|repeat|replaces|replace|right|rtrim|round|string|trim|uc_char|uc_int|uppercase|guid|regExCi|regEx|asDate|asInteger|asNumber|computeSha256|computeSha512|computeMd5|decodeBase64|encodeBase64|escapeUriData|unescapeUriData|abs|sqrt)(?=\\()\\b"
+				},
+				{
+					"name": "entity.name.tag",
+					"match": "((?<=\\()|)(time|timestamp|asTime|asTimestamp|isTime|isTimestamp|dateToStr|timeToStr|timestampToStr|today|now|dateAdd|dayOfDate|monthOfDate|yearOfDate|dateInTz|timeInTz|timestampInTz|dateStrInTz|timeStrInTz|timestampStrInTz|encrypt|decrypt)(?=\\()\\b"
+				},
+				{
+					"name": "entity.name.tag",
+					"match": "((?<=\\()|)(lPad|rPad|lTruncPad|rTruncPad|nmbToStr|nmbToStrEx|split)(?=\\()\\b"
+				},
+				{
+					"name": "entity.name.tag",
+					"match": "(else|return|throw|for(?=\\()|while(?=\\())\\b"
+				},
+				{
+					"name": "entity.name.tag",
+					"match": "((?<=\\()|)(isDate|isInteger|isNumber)(?=\\()\\b"
+				},
+				{
+					"name": "entity.name.tag",
+					"match": "(?<=SYS\\()(STOP|ANZEXEMP|FULLPATH|FULLPASS|GUID CREATE|LOGADRNR|LOGUSERNR|LOGADMLEVEL|LOGIMPERSNR|LOGADRSPR|MANDANT|MEMORY|SECONDS|STACK_LEVEL|START_SESSION|LOGPASSNR|OUTTYPE|LOGSYSSPR|MENUNR|OUTNAME|PATHTX|USEDMEM|USERCOUNT)(?=\\)»)\\b"
+				},
+				{
+					"name": "entity.name.tag",
+					"match": "(?<=SYS\\()(MSG INFO|MSG EXCL|MSG CRIT|MSG ERROR|CHAIN|COPYFILE|CREATEDIR|DECRYPT_SYM|ENCRYPT_SYM|DECRYPT|ENCRYPT|DELETEDIR|ERASEFILE|EXISTFILE|RUNI|TIME|RUNM|RUN|WAIT|MOVEFILE|RENAMEFILE|OUTNAME=|EXISTDIR|GETENV|DIALOG)"
+				},
+				{
+					"name": "entity.name.tag",
+					"match": "(?<=PROGRESS\\()(Active|ProcCancel|JobCancel|StepCancel|SetNoCancel|SetProcCancel|SetJobCancel|SetStepCancel|Id)(?=\\)»)"
+				},
+				{
+					"name": "entity.name.tag",
+					"match": "(?<=PROGRESS\\()(NewJob,[a-zA-Z0-9|_.\\-«»/(/)]{1,},[0-1]{1}|Job,[0-9]{1,3}|NewStep,[a-zA-Z0-9|_.\\-«»/(/)]{1,},[0-1]{1}|Step,[0-9]{1,3}|NewStepPause,[1-9]{1,},[a-zA-Z0-9|_.\\-«»/(/)]{1,})(?=\\)»)"
+				}
+			]
+		},
+		"legacyFunctions": {
+			"patterns": [
+				{
+					"name": "constant.numeric.octal",
+					"match": "[\\s]{0,}(LAGER_BESTAND|LAGER_PREIS|PLAN_BEWEGUNG|LAGER_BEWEGUNG)(?=\\(.*\\))"
+				},
+				{
+					"name": "constant.numeric.octal",
+					"match": "[\\s]{0,}(ART_ACTIVE|ART_ACTIVE5)(?=\\(.*\\))"
+				}
+			]
+		},
+		"strings": {
+			"name": "string.quoted.double.f-script",
+			"patterns": [
+				{
+					"name": "string.quoted.double.f-script",
+					"match": "((?:\")[a-zA-ZäáàâÄÁÀÂëéèêËÉÈÊöÖóòôÖÓÒÔüúùûÜÚÙÛ 0-9_.,;\\[\\]\\\"!? <>\\*#\\(\\)\\/\\|\\│$£°&%ß@`^~:=+-]{0,}(?:')|(?:\")[a-zA-ZäáàâÄÁÀÂëéèêËÉÈÊöÖóòôÖÓÒÔüúùûÜÚÙÛ 0-9_.,;\\[\\]\\\\'!? <>\\*#\\(\\)\\/\\|\\│$£°&%ß@`^~:=+-]{0,}(?:\"))\\B"
+				},
+				{
+					"name": "string.quoted.single.f-script",
+					"match": "((?:')[a-zA-ZäáàâÄÁÀÂëéèêËÉÈÊöÖóòôÖÓÒÔüúùûÜÚÙÛ 0-9_.,;\\[\\]\\\"!? <>\\*#\\(\\)\\/\\|\\│$£°&%ß@`^~:=+-]{0,}(?:')|(?:\")[a-zA-ZäáàâÄÁÀÂëéèêËÉÈÊöÖóòôÖÓÒÔüúùûÜÚÙÛ 0-9_.,;\\[\\]\\\\'!? <>\\*#\\(\\)\\/\\|\\│$£°&%ß@`^~:=+-]{0,}(?:'))\\B"
+				},
+				{
+					"name": "string.quoted.double.f-script",
+					"match": "((?:\")[a-zA-ZäáàâÄÁÀÂëéèêËÉÈÊöÖóòôÖÓÒÔüúùûÜÚÙÛ 0-9_.,;\\[\\]\\\"!? <>\\*#\\(\\)\\/\\|\\│$£°&%ß@`^~:=+-]{0,}(?:')|(?:\")[a-zA-ZäáàâÄÁÀÂëéèêËÉÈÊöÖóòôÖÓÒÔüúùûÜÚÙÛ 0-9_.,;\\[\\]\\\\'!? <>\\*#\\(\\)\\/\\|\\│$£°&%ß@`^~:=+-]{0,}(?:'))\\B"
+				},
+				{
+					"name": "string.quoted.single.f-script",
+					"match": "((?:')[a-zA-ZäáàâÄÁÀÂëéèêËÉÈÊöÖóòôÖÓÒÔüúùûÜÚÙÛ 0-9_.,;\\[\\]\\\"!? <>\\*#\\(\\)\\/\\|\\│$£°&%ß@`^~:=+-]{0,}(?:')|(?:\")[a-zA-ZäáàâÄÁÀÂëéèêËÉÈÊöÖóòôÖÓÒÔüúùûÜÚÙÛ 0-9_.,;\\[\\]\\\\'!? <>\\*#\\(\\)\\/\\|\\│$£°&%ß@`^~:=+-]{0,}(?:\"))\\B"
+				},
+				{
+					"name": "string.quoted.single.f-script",
+					"match": "((?:')(?:\"))\\B"
+				},
+				{
+					"name": "string.quoted.single.f-script",
+					"match": "((?:\")(?:'))\\B"
+				}
+			]
+		}
+	},
+	"scopeName": "source.f-script.main"
+}

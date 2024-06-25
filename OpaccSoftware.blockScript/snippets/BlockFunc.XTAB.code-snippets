@@ -1,0 +1,368 @@
+{
+	"BLOCKFUNC: XTAB.AddCol":	{
+		"prefix":	"🔐  BlockFunc.XTAB.AddCol",
+		"description":	["Spalte hinzufügen. Zurückgegeben wird Nummer der eingefügten Spalte. Aktuell unterstützt werden die Datentypen 'A', 'B', 'D' und 'R'. Standardmässig (ohne nähere Angabe) wird eine 'A'-Spalte erstellt."],
+		"body":	[
+			"\tvar ${1:numberVal} := XTAB.AddCol(${2:xTabName}, ${3:colName}, ${4:colDataTypeAndFormat})",		]
+	},
+	"BLOCKFUNC: XTAB.AddIndexByColNames":	{
+		"prefix":	"🔐  BlockFunc.XTAB.AddIndexByColNames",
+		"description":	["Index (Unique-Constraint) anhand der übergebenen Spalten-Namen hinzufügen. Zurückgegeben wird Index-Nummer. ACHTUNG: Kann bei Tabellen mit vielen Zeilen langsam sein!"],
+		"body":	[
+			"\tvar ${1:numberVal} := XTAB.AddIndexByColNames(${2:xTabName}, ${3:colNames})",		]
+	},
+	"BLOCKFUNC: XTAB.AddIndexByColNos":	{
+		"prefix":	"🔐  BlockFunc.XTAB.AddIndexByColNos",
+		"description":	["Index (Unique-Constraint) anhand der übergebenen Spalten-Nummern hinzufügen. Zurückgegeben wird Index-Nummer. ACHTUNG: Kann bei Tabellen mit vielen Zeilen langsam sein!"],
+		"body":	[
+			"\tvar ${1:numberVal} := XTAB.AddIndexByColNos(${2:xTabName}, ${3:oneBasedColNos})",		]
+	},
+	"BLOCKFUNC: XTAB.AddRow":	{
+		"prefix":	"🔐  BlockFunc.XTAB.AddRow",
+		"description":	["Zusätzliche Zeile hinzufügen, wobei die Spalten-Werte optional mitgegeben werden können. Fehler, wenn Constraint-Violation (üblicherweise Unique-Index-Verletzung). Fehler, wenn einer der übergebenen Werte nicht passt und auch nicht umgewandelt werden kann."],
+		"body":	[
+			"XTAB.AddRow(${2:xTabName}, ${3:values})",		]
+	},
+	"BLOCKFUNC: XTAB.AddRowAndReturnNo":	{
+		"prefix":	"🔐  BlockFunc.XTAB.AddRowAndReturnNo",
+		"description":	["Zusätzliche Zeile hinzufügen, wobei die Spalten-Werte optional mitgegeben werden können. Fehler, wenn Constraint-Violation (üblicherweise Unique-Index-Verletzung). Fehler, wenn einer der übergebenen Werte nicht passt und auch nicht umgewandelt werden kann. Zurückgegeben wird die Nummer der neu eingefügten Row (wenn diese gemäss allfällig vorhandenem Filter sichtbar ist - ansonsten 0). ACHTUNG: Kann bei Tabellen mit vielen Zeilen langsam sein!"],
+		"body":	[
+			"\tvar ${1:numberVal} := XTAB.AddRowAndReturnNo(${2:xTabName}, ${3:values})",		]
+	},
+	"BLOCKFUNC: XTAB.ClearView":	{
+		"prefix":	"🔐  BlockFunc.XTAB.ClearView",
+		"description":	["View (Filter und Sortierung) zurücksetzen."],
+		"body":	[
+			"XTAB.ClearView(${2:xTabName})",		]
+	},
+	"BLOCKFUNC: XTAB.ClearViewFilter":	{
+		"prefix":	"🔐  BlockFunc.XTAB.ClearViewFilter",
+		"description":	["Filter zurücksetzen. Zurückgegeben wird die Anzahl Zeilen welche nach dem Entfernen des Filters sichtbar ist (alle Zeilen)."],
+		"body":	[
+			"\tvar ${1:numberVal} := XTAB.ClearViewFilter(${2:xTabName})",		]
+	},
+	"BLOCKFUNC: XTAB.ClearViewOrder":	{
+		"prefix":	"🔐  BlockFunc.XTAB.ClearViewOrder",
+		"description":	["Sortierreihenfolge zurücksetzen."],
+		"body":	[
+			"XTAB.ClearViewOrder(${2:xTabName})",		]
+	},
+	"BLOCKFUNC: XTAB.CreateOrClear":	{
+		"prefix":	"🔐  BlockFunc.XTAB.CreateOrClear",
+		"description":	["Neue Tabelle definieren resp. bestehende Tabelle (Daten und Struktur) zurücksetzen."],
+		"body":	[
+			"XTAB.CreateOrClear(${2:xTabName})",		]
+	},
+	"BLOCKFUNC: XTAB.DeleteRow":	{
+		"prefix":	"🔐  BlockFunc.XTAB.DeleteRow",
+		"description":	["Bestimmte Zeile löschen (standardmässig unter Einbezug einer allfälligen View). Fehler wenn adressierte Zeile nicht existiert."],
+		"body":	[
+			"XTAB.DeleteRow(${2:xTabName}, ${3:oneBasedRowNo}, ${4:withoutView})",		]
+	},
+	"BLOCKFUNC: XTAB.DeleteRows":	{
+		"prefix":	"🔐  BlockFunc.XTAB.DeleteRows",
+		"description":	["Alle Zeilen löschen (standardmässig unter Einbezug einer allfälligen View). Zurückgegeben wird die Anzahl gelöschter Zeilen."],
+		"body":	[
+			"\tvar ${1:numberVal} := XTAB.DeleteRows(${2:xTabName}, ${3:withoutView})",		]
+	},
+	"BLOCKFUNC: XTAB.FindFirstRow":	{
+		"prefix":	"🔐  BlockFunc.XTAB.FindFirstRow",
+		"description":	["Liefert Nummer der ersten passenden Zeile. 0 wenn keine Zeile passt. Übergebenes Filter wirkt (standardmässig) additiv zu für ganze Tabelle gesetztem View-Filter (kann durch entsprechendes Argument übersteuert werden). ACHTUNG: Kann bei Tabellen mit vielen Zeilen langsam sein!"],
+		"body":	[
+			"\tvar ${1:numberVal} := XTAB.FindFirstRow(${2:xTabName}, ${3:filterExpression}, ${4:withoutView})",		]
+	},
+	"BLOCKFUNC: XTAB.FindRowByIndex":	{
+		"prefix":	"🔐  BlockFunc.XTAB.FindRowByIndex",
+		"description":	["Liefert Nummer, der für die übergebenen Index-Segmente passenden Zeile. 0 wenn keine Zeile passt. Allenfalls für Tabelle gesetzte View wird miteinbezogen, das heisst nur zu Filter passende Zeilen sind für Prüfung relevant. ACHTUNG: Kann bei Tabellen mit vielen Zeilen langsam sein!"],
+		"body":	[
+			"\tvar ${1:numberVal} := XTAB.FindRowByIndex(${2:xTabName}, ${3:oneBasedIndexNo}, ${4:indexSegmentValues})",		]
+	},
+	"BLOCKFUNC: XTAB.FindRowByIndexWithoutView":	{
+		"prefix":	"🔐  BlockFunc.XTAB.FindRowByIndexWithoutView",
+		"description":	["Liefert Nummer, der für die übergebenen Index-Segmente passenden Zeile. 0 wenn keine Zeile passt. Allenfalls für Tabelle gesetzte View wird _NICHT_ miteinbezogen, das heisst alle Zeilen sind für Prüfung relevant. ACHTUNG: Kann bei Tabellen mit vielen Zeilen langsam sein!"],
+		"body":	[
+			"\tvar ${1:numberVal} := XTAB.FindRowByIndexWithoutView(${2:xTabName}, ${3:oneBasedIndexNo}, ${4:indexSegmentValues})",		]
+	},
+	"BLOCKFUNC: XTAB.GetBoolVal":	{
+		"prefix":	"🔐  BlockFunc.XTAB.GetBoolVal",
+		"description":	["Bestimmten Wert (standardmässig unter Einbezug einer allfälligen View) als Boolean abholen. Fehler wenn Casting nicht möglich ist. Standardmässig Fehler, wenn adressierter Wert nicht vorhanden ist. Wenn dieser Fehler unterdrückt wird, wird false geliefert."],
+		"body":	[
+			"\tvar ${1:boolVal} := XTAB.GetBoolVal(${2:xTabName}, ${3:oneBasedColNo}, ${4:oneBasedRowNo}, ${5:withoutView}, ${6:suppressExceptionIfNotAvailable})",		]
+	},
+	"BLOCKFUNC: XTAB.GetBoolValByColName":	{
+		"prefix":	"🔐  BlockFunc.XTAB.GetBoolValByColName",
+		"description":	["Bestimmten Wert (standardmässig unter Einbezug einer allfälligen View) als Boolean abholen. Fehler wenn Casting nicht möglich ist. Standardmässig Fehler, wenn adressierter Wert nicht vorhanden ist. Wenn dieser Fehler unterdrückt wird, wird false geliefert."],
+		"body":	[
+			"\tvar ${1:boolVal} := XTAB.GetBoolValByColName(${2:xTabName}, ${3:colName}, ${4:oneBasedRowNo}, ${5:withoutView}, ${6:suppressExceptionIfNotAvailable})",		]
+	},
+	"BLOCKFUNC: XTAB.GetColDataTypeAndFormatByName":	{
+		"prefix":	"🔐  BlockFunc.XTAB.GetColDataTypeAndFormatByName",
+		"description":	["Liefert Spalten-Datentyp und Format zum übergebenen Spalten-Namen. Standardmässig Fehler, wenn nicht vorhanden. Andernfalls Leerstring."],
+		"body":	[
+			"\tvar ${1:stringVal} := XTAB.GetColDataTypeAndFormatByName(${2:xTabName}, ${3:colName}, ${4:suppressExceptionIfNotAvailable})",		]
+	},
+	"BLOCKFUNC: XTAB.GetColDataTypeAndFormatByNo":	{
+		"prefix":	"🔐  BlockFunc.XTAB.GetColDataTypeAndFormatByNo",
+		"description":	["Liefert Spalten-Datentyp und Format zur übergebenen Spalten-Nummer. Standardmässig Fehler, wenn nicht vorhanden. Andernfalls Leerstring."],
+		"body":	[
+			"\tvar ${1:stringVal} := XTAB.GetColDataTypeAndFormatByNo(${2:xTabName}, ${3:oneBasedColNo}, ${4:suppressExceptionIfNotAvailable})",		]
+	},
+	"BLOCKFUNC: XTAB.GetColName":	{
+		"prefix":	"🔐  BlockFunc.XTAB.GetColName",
+		"description":	["Liefert Spalten-Namen zur übergebenen Spalten-Nummer. Standardmässig Fehler, wenn nicht vorhanden. Andernfalls Leerstring."],
+		"body":	[
+			"\tvar ${1:stringVal} := XTAB.GetColName(${2:xTabName}, ${3:oneBasedColNo}, ${4:suppressExceptionIfNotAvailable})",		]
+	},
+	"BLOCKFUNC: XTAB.GetColNo":	{
+		"prefix":	"🔐  BlockFunc.XTAB.GetColNo",
+		"description":	["Liefert Spalten-Nummer zum übergebenen Spalten-Namen. Standardmässig Fehler, wenn nicht vorhanden. Andernfalls 0."],
+		"body":	[
+			"\tvar ${1:numberVal} := XTAB.GetColNo(${2:xTabName}, ${3:colName}, ${4:suppressExceptionIfNotAvailable})",		]
+	},
+	"BLOCKFUNC: XTAB.GetDateVal":	{
+		"prefix":	"🔐  BlockFunc.XTAB.GetDateVal",
+		"description":	["Bestimmten Wert (standardmässig unter Einbezug einer allfälligen View) als Datum abholen. Fehler wenn Casting nicht möglich ist. Standardmässig Fehler, wenn adressierter Wert nicht vorhanden ist. Wenn dieser Fehler unterdrückt wird, wird 'Leer-Datum' (01.01.0001) geliefert."],
+		"body":	[
+			"\tvar ${1:dateVal} := XTAB.GetDateVal(${2:xTabName}, ${3:oneBasedColNo}, ${4:oneBasedRowNo}, ${5:withoutView}, ${6:suppressExceptionIfNotAvailable})",		]
+	},
+	"BLOCKFUNC: XTAB.GetDateValByColName":	{
+		"prefix":	"🔐  BlockFunc.XTAB.GetDateValByColName",
+		"description":	["Bestimmten Wert (standardmässig unter Einbezug einer allfälligen View) als Datum abholen. Fehler wenn Casting nicht möglich ist. Standardmässig Fehler, wenn adressierter Wert nicht vorhanden ist. Wenn dieser Fehler unterdrückt wird, wird 'Leer-Datum' (01.01.0001) geliefert."],
+		"body":	[
+			"\tvar ${1:dateVal} := XTAB.GetDateValByColName(${2:xTabName}, ${3:colName}, ${4:oneBasedRowNo}, ${5:withoutView}, ${6:suppressExceptionIfNotAvailable})",		]
+	},
+	"BLOCKFUNC: XTAB.GetNmbOfCols":	{
+		"prefix":	"🔐  BlockFunc.XTAB.GetNmbOfCols",
+		"description":	["Liefert Anzahl Spalten."],
+		"body":	[
+			"\tvar ${1:numberVal} := XTAB.GetNmbOfCols(${2:xTabName})",		]
+	},
+	"BLOCKFUNC: XTAB.GetNmbOfRows":	{
+		"prefix":	"🔐  BlockFunc.XTAB.GetNmbOfRows",
+		"description":	["Liefert Anzahl Zeilen (standardmässig unter Einbezug einer allfälligen View)."],
+		"body":	[
+			"\tvar ${1:numberVal} := XTAB.GetNmbOfRows(${2:xTabName}, ${3:withoutView})",		]
+	},
+	"BLOCKFUNC: XTAB.GetNmbVal":	{
+		"prefix":	"🔐  BlockFunc.XTAB.GetNmbVal",
+		"description":	["Bestimmten Wert (standardmässig unter Einbezug einer allfälligen View) als Zahl abholen. Fehler wenn Casting nicht möglich ist. Standardmässig Fehler, wenn adressierter Wert nicht vorhanden ist. Wenn dieser Fehler unterdrückt wird, wird 0.0 geliefert."],
+		"body":	[
+			"\tvar ${1:numberVal} := XTAB.GetNmbVal(${2:xTabName}, ${3:oneBasedColNo}, ${4:oneBasedRowNo}, ${5:withoutView}, ${6:suppressExceptionIfNotAvailable})",		]
+	},
+	"BLOCKFUNC: XTAB.GetNmbValByColName":	{
+		"prefix":	"🔐  BlockFunc.XTAB.GetNmbValByColName",
+		"description":	["Bestimmten Wert (standardmässig unter Einbezug einer allfälligen View) als Zahl abholen. Fehler wenn Casting nicht möglich ist. Standardmässig Fehler, wenn adressierter Wert nicht vorhanden ist. Wenn dieser Fehler unterdrückt wird, wird 0.0 geliefert."],
+		"body":	[
+			"\tvar ${1:numberVal} := XTAB.GetNmbValByColName(${2:xTabName}, ${3:colName}, ${4:oneBasedRowNo}, ${5:withoutView}, ${6:suppressExceptionIfNotAvailable})",		]
+	},
+	"BLOCKFUNC: XTAB.GetRowByKey":	{
+		"prefix":	"🔐  BlockFunc.XTAB.GetRowByKey",
+		"description":	["Liefert Nummer einer Zeile gemäss Schlüssel-Werten oder 0 falls nicht vorhanden. Prüfung in View (= nur Zeilen gemäss Filter). Sortierung gemäss Schlüssel muss aktiv sein! Auch für Tabellen mit vielen Zeilen schnell."],
+		"body":	[
+			"\tvar ${1:numberVal} := XTAB.GetRowByKey(${2:xTabName}, ${3:keySegmentValues})",		]
+	},
+	"BLOCKFUNC: XTAB.GetRowByKeyWithoutView":	{
+		"prefix":	"🔐  BlockFunc.XTAB.GetRowByKeyWithoutView",
+		"description":	["Liefert Nummer einer Zeile gemäss Schlüssel-Werten oder 0 falls nicht vorhanden. Prüfung in ganzer Tabelle ohne View (= alle Zeilen). Auch für Tabellen mit vielen Zeilen schnell."],
+		"body":	[
+			"\tvar ${1:numberVal} := XTAB.GetRowByKeyWithoutView(${2:xTabName}, ${3:keySegmentValues})",		]
+	},
+	"BLOCKFUNC: XTAB.GetStrVal":	{
+		"prefix":	"🔐  BlockFunc.XTAB.GetStrVal",
+		"description":	["Bestimmten Wert (standardmässig unter Einbezug einer allfälligen View) als String abholen. Fehler wenn Casting nicht möglich ist. Standardmässig Fehler, wenn adressierter Wert nicht vorhanden ist. Wenn dieser Fehler unterdrückt wird, wird '' (Leerstring) geliefert."],
+		"body":	[
+			"\tvar ${1:stringVal} := XTAB.GetStrVal(${2:xTabName}, ${3:oneBasedColNo}, ${4:oneBasedRowNo}, ${5:withoutView}, ${6:suppressExceptionIfNotAvailable})",		]
+	},
+	"BLOCKFUNC: XTAB.GetStrValByColName":	{
+		"prefix":	"🔐  BlockFunc.XTAB.GetStrValByColName",
+		"description":	["Bestimmten Wert (standardmässig unter Einbezug einer allfälligen View) als String abholen. Fehler wenn Casting nicht möglich ist. Standardmässig Fehler, wenn adressierter Wert nicht vorhanden ist. Wenn dieser Fehler unterdrückt wird, wird '' (Leerstring) geliefert."],
+		"body":	[
+			"\tvar ${1:stringVal} := XTAB.GetStrValByColName(${2:xTabName}, ${3:colName}, ${4:oneBasedRowNo}, ${5:withoutView}, ${6:suppressExceptionIfNotAvailable})",		]
+	},
+	"BLOCKFUNC: XTAB.GetViewFilter":	{
+		"prefix":	"🔐  BlockFunc.XTAB.GetViewFilter",
+		"description":	["Aktuellen Filter abholen."],
+		"body":	[
+			"\tvar ${1:stringVal} := XTAB.GetViewFilter(${2:xTabName})",		]
+	},
+	"BLOCKFUNC: XTAB.HasColWithName":	{
+		"prefix":	"🔐  BlockFunc.XTAB.HasColWithName",
+		"description":	["Prüfen ob Spalte mit dem übergebenen Namen vorhanden ist."],
+		"body":	[
+			"\tvar ${1:boolVal} := XTAB.HasColWithName(${2:xTabName}, ${3:colName})",		]
+	},
+	"BLOCKFUNC: XTAB.HasColWithNo":	{
+		"prefix":	"🔐  BlockFunc.XTAB.HasColWithNo",
+		"description":	["Prüfen ob Spalte mit der übergebenen Nummer vorhanden ist."],
+		"body":	[
+			"\tvar ${1:boolVal} := XTAB.HasColWithNo(${2:xTabName}, ${3:oneBasedColNo})",		]
+	},
+	"BLOCKFUNC: XTAB.HasIndex":	{
+		"prefix":	"🔐  BlockFunc.XTAB.HasIndex",
+		"description":	["Prüfen ob Index mit der übergebenen Nummer vorhanden ist."],
+		"body":	[
+			"\tvar ${1:boolVal} := XTAB.HasIndex(${2:xTabName}, ${3:oneBasedIndexNo})",		]
+	},
+	"BLOCKFUNC: XTAB.HasKey":	{
+		"prefix":	"🔐  BlockFunc.XTAB.HasKey",
+		"description":	["Prüfen ob ein Key definiert ist."],
+		"body":	[
+			"\tvar ${1:boolVal} := XTAB.HasKey(${2:xTabName})",		]
+	},
+	"BLOCKFUNC: XTAB.HasRowByIndex":	{
+		"prefix":	"🔐  BlockFunc.XTAB.HasRowByIndex",
+		"description":	["Prüft, ob bereits eine Zeile für die übergebenen Index-Segmente vorhanden ist. Allenfalls für Tabelle gesetzte View- wird miteinbezogen, das heisst nur zu Filter passende Zeilen sind für Prüfung relevant. ACHTUNG: Kann bei Tabellen mit vielen Zeilen langsam sein!"],
+		"body":	[
+			"\tvar ${1:boolVal} := XTAB.HasRowByIndex(${2:xTabName}, ${3:oneBasedIndexNo}, ${4:indexSegmentValues})",		]
+	},
+	"BLOCKFUNC: XTAB.HasRowByIndexWithoutView":	{
+		"prefix":	"🔐  BlockFunc.XTAB.HasRowByIndexWithoutView",
+		"description":	["Prüft, ob bereits eine Zeile für die übergebenen Index-Segmente vorhanden ist. Allenfalls für Tabelle gesetzte View wird NICHT miteinbezogen, das heisst alle Zeilen sind für Prüfung relevant. ACHTUNG: Kann bei Tabellen mit vielen Zeilen langsam sein!"],
+		"body":	[
+			"\tvar ${1:boolVal} := XTAB.HasRowByIndexWithoutView(${2:xTabName}, ${3:oneBasedIndexNo}, ${4:indexSegmentValues})",		]
+	},
+	"BLOCKFUNC: XTAB.HasRowByKey":	{
+		"prefix":	"🔐  BlockFunc.XTAB.HasRowByKey",
+		"description":	["Ist eine bestimmte Zeile gemäss Schlüssel-Werten bereits vorhanden? Prüfung in View (= nur Zeilen gemäss Filter). Sortierung gemäss Schlüssel muss aktiv sein! Auch für Tabellen mit vielen Zeilen schnell."],
+		"body":	[
+			"\tvar ${1:boolVal} := XTAB.HasRowByKey(${2:xTabName}, ${3:keySegmentValues})",		]
+	},
+	"BLOCKFUNC: XTAB.HasRowByKeyWithoutView":	{
+		"prefix":	"🔐  BlockFunc.XTAB.HasRowByKeyWithoutView",
+		"description":	["Ist eine bestimmte Zeile gemäss Schlüssel-Werten bereits vorhanden? Prüfung in ganzer Tabelle ohne View (= alle Zeilen). Auch für Tabellen mit vielen Zeilen schnell."],
+		"body":	[
+			"\tvar ${1:boolVal} := XTAB.HasRowByKeyWithoutView(${2:xTabName}, ${3:keySegmentValues})",		]
+	},
+	"BLOCKFUNC: XTAB.IsDefined":	{
+		"prefix":	"🔐  BlockFunc.XTAB.IsDefined",
+		"description":	["Ermittelt, ob eine bestimmte Tabelle existiert."],
+		"body":	[
+			"\tvar ${1:boolVal} := XTAB.IsDefined(${2:xTabName})",		]
+	},
+	"BLOCKFUNC: XTAB.SetKeyByColNames":	{
+		"prefix":	"🔐  BlockFunc.XTAB.SetKeyByColNames",
+		"description":	["Schlüssel gemäss den übergebenen Spalten setzen. Definiert automatisch einen 'Unique - Constraint'. ACHTUNG: Kann bei Tabellen mit vielen Zeilen langsam sein!"],
+		"body":	[
+			"XTAB.SetKeyByColNames(${2:xTabName}, ${3:colNames})",		]
+	},
+	"BLOCKFUNC: XTAB.SetKeyByColNos":	{
+		"prefix":	"🔐  BlockFunc.XTAB.SetKeyByColNos",
+		"description":	["Schlüssel gemäss den übergebenen Spalten setzen. Definiert automatisch einen 'Unique - Constraint'. ACHTUNG: Kann bei Tabellen mit vielen Zeilen langsam sein!"],
+		"body":	[
+			"XTAB.SetKeyByColNos(${2:xTabName}, ${3:oneBasedColNos})",		]
+	},
+	"BLOCKFUNC: XTAB.SetVal":	{
+		"prefix":	"🔐  BlockFunc.XTAB.SetVal",
+		"description":	["Einen Wert setzen (standardmässig unter Einbezug einer allfälligen View). Fehler, wenn Constraint-Violation (üblicherweise Unique-Index-Verletzung). Fehler, wenn übergebener Wert nicht zur adressierten Spalte passt und auch nicht umgewandelt werden kann. Standardmässig Fehler, wenn Spalte oder Zeile nicht existiert. Rückgabewert besagt, ob Wert gesetzt wurde oder nicht."],
+		"body":	[
+			"\tvar ${1:boolVal} := XTAB.SetVal(${2:xTabName}, ${3:oneBasedColNo}, ${4:oneBasedRowNo}, ${5:value}, ${6:withoutView}, ${7:suppressExceptionIfNotAvailable})",		]
+	},
+	"BLOCKFUNC: XTAB.SetValByColName":	{
+		"prefix":	"🔐  BlockFunc.XTAB.SetValByColName",
+		"description":	["Einen Wert setzen (standardmässig unter Einbezug einer allfälligen View). Fehler, wenn Constraint-Violation (üblicherweise Unique-Index-Verletzung). Fehler, wenn übergebener Wert nicht zur adressierten Spalte passt und auch nicht umgewandelt werden kann. Standardmässig Fehler, wenn Spalte oder Zeile nicht existiert. Rückgabewert besagt, ob Wert gesetzt wurde oder nicht."],
+		"body":	[
+			"\tvar ${1:boolVal} := XTAB.SetValByColName(${2:xTabName}, ${3:colName}, ${4:oneBasedRowNo}, ${5:value}, ${6:withoutView}, ${7:suppressExceptionIfNotAvailable})",		]
+	},
+	"BLOCKFUNC: XTAB.SetViewFilter":	{
+		"prefix":	"🔐  BlockFunc.XTAB.SetViewFilter",
+		"description":	["Einen Filter setzen: Nach dem Setzen ist nur noch ein Subset der Zeilen sichtbar. Zurückgegeben, wird die Anzahl der 'sichtbaren' Zeilen. ACHTUNG: Kann bei Tabellen mit vielen Zeilen langsam sein!"],
+		"body":	[
+			"\tvar ${1:numberVal} := XTAB.SetViewFilter(${2:xTabName}, ${3:filterExpression})",		]
+	},
+	"BLOCKFUNC: XTAB.SetViewOrderByColNames":	{
+		"prefix":	"🔐  BlockFunc.XTAB.SetViewOrderByColNames",
+		"description":	["Sortierreihenfolge gemäss den übergebenen Spalten-Namen setzen. Prefix '-' = absteigende Sortierung. ACHTUNG: Kann bei Tabellen mit vielen Zeilen langsam sein!"],
+		"body":	[
+			"XTAB.SetViewOrderByColNames(${2:xTabName}, ${3:colNames})",		]
+	},
+	"BLOCKFUNC: XTAB.SetViewOrderByColNos":	{
+		"prefix":	"🔐  BlockFunc.XTAB.SetViewOrderByColNos",
+		"description":	["Sortierreihenfolge gemäss den übergebenen Spalten-Nummern setzen. Negative Nummern = absteigende Sortierung. ACHTUNG: Kann bei Tabellen mit vielen Zeilen langsam sein!"],
+		"body":	[
+			"XTAB.SetViewOrderByColNos(${2:xTabName}, ${3:oneBasedColNos})",		]
+	},
+	"BLOCKFUNC: XTAB.SetViewOrderByIndex":	{
+		"prefix":	"🔐  BlockFunc.XTAB.SetViewOrderByIndex",
+		"description":	["Sortierreihenfolge gemäss Index setzen. Fehler wenn Index nicht vorhanden ist. ACHTUNG: Kann bei Tabellen mit vielen Zeilen langsam sein!"],
+		"body":	[
+			"XTAB.SetViewOrderByIndex(${2:xTabName}, ${3:oneBasedIndexNo})",		]
+	},
+	"BLOCKFUNC: XTAB.SetViewOrderByKey":	{
+		"prefix":	"🔐  BlockFunc.XTAB.SetViewOrderByKey",
+		"description":	["Sortierreihenfolge gemäss Schlüssel setzen. Fehler wenn Schlüssel nicht definiert wurde."],
+		"body":	[
+			"XTAB.SetViewOrderByKey(${2:xTabName})",		]
+	},
+	"BLOCKFUNC: XTAB.TryAddRow":	{
+		"prefix":	"🔐  BlockFunc.XTAB.TryAddRow",
+		"description":	["Zusätzliche Zeile hinzufügen, wobei die Spalten-Werte optional mitgegeben werden können. Im Constraint-Violation-Fehlerfall (üblicherweise Unique-Index-Verletzung) wird nicht eingefügt und false zurückgegeben. Wenn einer der übergebenen Werte nicht passt und auch nicht umgewandelt werden kann, wird nicht eingefügt und false zurückgegeben. Wenn erfolgreich eingefügt werden kann, wird true zurückgegeben."],
+		"body":	[
+			"\tvar ${1:boolVal} := XTAB.TryAddRow(${2:xTabName}, ${3:values})",		]
+	},
+	"BLOCKFUNC: XTAB.TryAddRowAndReturnNo":	{
+		"prefix":	"🔐  BlockFunc.XTAB.TryAddRowAndReturnNo",
+		"description":	["Zusätzliche Zeile hinzufügen, wobei die Spalten-Werte optional mitgegeben werden können. Zurückgegeben wird die Nummer der neu eingefügten Row (wenn diese gemäss allfällig vorhandenem Filter sichtbar ist - ansonsten 0). Im Constraint-Violation-Fehlerfall (üblicherweise Unique-Index-Verletzung) wird nicht eingefügt und -1 zurückgegeben. Wenn einer der übergebenen Werte nicht passt und auch nicht umgewandelt werden kann, wird nicht eingefügt und -2 zurückgegeben. ACHTUNG: Kann bei Tabellen mit vielen Zeilen langsam sein!"],
+		"body":	[
+			"\tvar ${1:numberVal} := XTAB.TryAddRowAndReturnNo(${2:xTabName}, ${3:values})",		]
+	},
+	"BLOCKFUNC: XTAB.TryGetBoolVal":	{
+		"prefix":	"🔐  BlockFunc.XTAB.TryGetBoolVal",
+		"description":	["Bestimmten Wert (standardmässig unter Einbezug einer allfälligen View) als Boolean abholen. Wenn Casting nicht möglich ist, wird false zurückgegeben. Standardmässig Fehler, wenn adressierter Wert nicht vorhanden ist. Wenn dieser Fehler unterdrückt wird, wird false geliefert."],
+		"body":	[
+			"\tvar ${1:boolVal} := XTAB.TryGetBoolVal(${2:xTabName}, ${3:oneBasedColNo}, ${4:oneBasedRowNo}, ${5:withoutView}, ${6:suppressExceptionIfNotAvailable})",		]
+	},
+	"BLOCKFUNC: XTAB.TryGetBoolValByColName":	{
+		"prefix":	"🔐  BlockFunc.XTAB.TryGetBoolValByColName",
+		"description":	["Bestimmten Wert (standardmässig unter Einbezug einer allfälligen View) als Boolean abholen. Wenn Casting nicht möglich ist, wird false zurückgegeben. Standardmässig Fehler, wenn adressierter Wert nicht vorhanden ist. Wenn dieser Fehler unterdrückt wird, wird false geliefert."],
+		"body":	[
+			"\tvar ${1:boolVal} := XTAB.TryGetBoolValByColName(${2:xTabName}, ${3:colName}, ${4:oneBasedRowNo}, ${5:withoutView}, ${6:suppressExceptionIfNotAvailable})",		]
+	},
+	"BLOCKFUNC: XTAB.TryGetDateVal":	{
+		"prefix":	"🔐  BlockFunc.XTAB.TryGetDateVal",
+		"description":	["Bestimmten Wert (standardmässig unter Einbezug einer allfälligen View) als Datum abholen. Wenn Casting nicht möglich ist, wird 'Leer-Datum' (01.01.0001) zurückgegeben. Standardmässig Fehler, wenn adressierter Wert nicht vorhanden ist. Wenn dieser Fehler unterdrückt wird, wird 'Leer-Datum' (01.01.0001) geliefert."],
+		"body":	[
+			"\tvar ${1:dateVal} := XTAB.TryGetDateVal(${2:xTabName}, ${3:oneBasedColNo}, ${4:oneBasedRowNo}, ${5:withoutView}, ${6:suppressExceptionIfNotAvailable})",		]
+	},
+	"BLOCKFUNC: XTAB.TryGetDateValByColName":	{
+		"prefix":	"🔐  BlockFunc.XTAB.TryGetDateValByColName",
+		"description":	["Bestimmten Wert (standardmässig unter Einbezug einer allfälligen View) als Datum abholen. Wenn Casting nicht möglich ist, wird 'Leer-Datum' (01.01.0001) zurückgegeben. Standardmässig Fehler, wenn adressierter Wert nicht vorhanden ist. Wenn dieser Fehler unterdrückt wird, wird 'Leer-Datum' (01.01.0001) geliefert."],
+		"body":	[
+			"\tvar ${1:dateVal} := XTAB.TryGetDateValByColName(${2:xTabName}, ${3:colName}, ${4:oneBasedRowNo}, ${5:withoutView}, ${6:suppressExceptionIfNotAvailable})",		]
+	},
+	"BLOCKFUNC: XTAB.TryGetNmbVal":	{
+		"prefix":	"🔐  BlockFunc.XTAB.TryGetNmbVal",
+		"description":	["Bestimmten Wert (standardmässig unter Einbezug einer allfälligen View) als Zahl abholen. Wenn Casting nicht möglich ist, wird 0.0 zurückgegeben. Standardmässig Fehler, wenn adressierter Wert nicht vorhanden ist. Wenn dieser Fehler unterdrückt wird, wird 0.0 geliefert."],
+		"body":	[
+			"\tvar ${1:numberVal} := XTAB.TryGetNmbVal(${2:xTabName}, ${3:oneBasedColNo}, ${4:oneBasedRowNo}, ${5:withoutView}, ${6:suppressExceptionIfNotAvailable})",		]
+	},
+	"BLOCKFUNC: XTAB.TryGetNmbValByColName":	{
+		"prefix":	"🔐  BlockFunc.XTAB.TryGetNmbValByColName",
+		"description":	["Bestimmten Wert (standardmässig unter Einbezug einer allfälligen View) als Zahl abholen. Wenn Casting nicht möglich ist, wird 0.0 zurückgegeben. Standardmässig Fehler, wenn adressierter Wert nicht vorhanden ist. Wenn dieser Fehler unterdrückt wird, wird 0.0 geliefert."],
+		"body":	[
+			"\tvar ${1:numberVal} := XTAB.TryGetNmbValByColName(${2:xTabName}, ${3:colName}, ${4:oneBasedRowNo}, ${5:withoutView}, ${6:suppressExceptionIfNotAvailable})",		]
+	},
+	"BLOCKFUNC: XTAB.TryGetStrVal":	{
+		"prefix":	"🔐  BlockFunc.XTAB.TryGetStrVal",
+		"description":	["Bestimmten Wert (standardmässig unter Einbezug einer allfälligen View) als String abholen. Wenn Casting nicht möglich ist, wird '' (Leerstring) zurückgegeben. Standardmässig Fehler, wenn adressierter Wert nicht vorhanden ist. Wenn dieser Fehler unterdrückt wird, wird '' (Leerstring) geliefert."],
+		"body":	[
+			"\tvar ${1:stringVal} := XTAB.TryGetStrVal(${2:xTabName}, ${3:oneBasedColNo}, ${4:oneBasedRowNo}, ${5:withoutView}, ${6:suppressExceptionIfNotAvailable})",		]
+	},
+	"BLOCKFUNC: XTAB.TryGetStrValByColName":	{
+		"prefix":	"🔐  BlockFunc.XTAB.TryGetStrValByColName",
+		"description":	["Bestimmten Wert (standardmässig unter Einbezug einer allfälligen View) als String abholen. Wenn Casting nicht möglich ist, wird '' (Leerstring) zurückgegeben. Standardmässig Fehler, wenn adressierter Wert nicht vorhanden ist. Wenn dieser Fehler unterdrückt wird, wird '' (Leerstring) geliefert."],
+		"body":	[
+			"\tvar ${1:stringVal} := XTAB.TryGetStrValByColName(${2:xTabName}, ${3:colName}, ${4:oneBasedRowNo}, ${5:withoutView}, ${6:suppressExceptionIfNotAvailable})",		]
+	},
+	"BLOCKFUNC: XTAB.TrySetVal":	{
+		"prefix":	"🔐  BlockFunc.XTAB.TrySetVal",
+		"description":	["Einen Wert falls möglich setzen (standardmässig unter Einbezug einer allfälligen View). Im Constraint-Violation-Fehlerfall (üblicherweise Unique-Index-Verletzung) wird Wert nicht gesetzt. Im Casting-Fehlerfall (übergebener Wert passt nicht zur adressierten Spalte und kann auch nicht umgewandelt werden) wird Wert nicht gesetzt. Rückgabewert besagt, ob Wert gesetzt wurde oder nicht. Standardmässig Fehler, wenn Spalte oder Zeile nicht existiert."],
+		"body":	[
+			"\tvar ${1:boolVal} := XTAB.TrySetVal(${2:xTabName}, ${3:oneBasedColNo}, ${4:oneBasedRowNo}, ${5:value}, ${6:withoutView}, ${7:suppressExceptionIfNotAvailable})",		]
+	},
+	"BLOCKFUNC: XTAB.TrySetValByColName":	{
+		"prefix":	"🔐  BlockFunc.XTAB.TrySetValByColName",
+		"description":	["Einen Wert falls möglich setzen (standardmässig unter Einbezug einer allfälligen View). Im Constraint-Violation-Fehlerfall (üblicherweise Unique-Index-Verletzung) wird Wert nicht gesetzt. Im Casting-Fehlerfall (übergebener Wert passt nicht zur adressierten Spalte und kann auch nicht umgewandelt werden) wird Wert nicht gesetzt. Rückgabewert besagt, ob Wert gesetzt wurde oder nicht. Standardmässig Fehler, wenn Spalte oder Zeile nicht existiert."],
+		"body":	[
+			"\tvar ${1:boolVal} := XTAB.TrySetValByColName(${2:xTabName}, ${3:colName}, ${4:oneBasedRowNo}, ${5:value}, ${6:withoutView}, ${7:suppressExceptionIfNotAvailable})",		]
+	},
+}

@@ -1,0 +1,58 @@
+{
+    "COMMENT.Function": 
+    {
+        "prefix": "✅ COMMENT.Function",
+        "description": "Insert comment: function",
+        "body": [
+            "# ------------------------------------------------------------------------------------------------------\r",
+            "# ${1:COMMENT}\r",
+            ""
+        ]
+    },
+    "COMMENT.FunctionCall": 
+    {
+        "prefix": "✅ COMMENT.FunctionCall",
+        "description": "Insert comment: function call",
+        "body": [
+            "# --- ${1:COMMENT} ---\r",
+            ""
+        ]
+    },	
+    "COMMENT.FunctionDesc": 
+    {
+        "prefix": "✅ COMMENT.FunctionDescription",
+        "description": "Insert comment: function descriptor",
+        "body": [
+            "# ------------------------------------------------------------------------------------------------------\r",
+            "# ${1:COMMENT}\r",
+            "# ------------------------------------------------------------------------------------------------------\r",
+            ""
+        ]
+    },
+	"COMMENT.DefaultHeader":
+	{
+		"prefix": "✅ COMMENT.DefaultHeader",
+		"description": "Insert DefaultHeader\nPress <TAB>",
+		"body":
+		[
+			"# ******************************************************************************************************",
+			"# ${1:<ScriptTitle>}",
+			"# ",
+			"# Dateiname: ${TM_FILENAME/[\\.]/./}",
+			"# ",
+			"# Kunde:     ${2:<CustomerName>}",
+			"#",
+			"# Kontext:   ${3:<Context>}",
+			"# ",
+			"# Autor:     OPACC Software AG, Luzern - ${4:<CreatorName>}",
+			"# ",
+			"# Erstellt:  ${CURRENT_DATE}.${CURRENT_MONTH}.${CURRENT_YEAR} / ${5:<CreatorScut>}",
+			"# ",
+			"# Geändert:  <Datum> / <Kürzel> - <Kurzbeschreibung>",
+			"# ******************************************************************************************************",
+            "/headerreport",
+            "${6}",
+            "/"
+		]
+	}    
+}

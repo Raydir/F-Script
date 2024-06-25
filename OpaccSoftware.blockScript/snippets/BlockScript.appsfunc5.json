@@ -1,0 +1,66 @@
+{
+    "EXPRESSION: pad(string,length)":
+	{
+		"prefix": "✅ APSFUNCTION.Expression.pad",
+		"body": [
+			"var ${1:resultValue}\t:= pad(${2:'Hello World!'},${3:20})"
+		],
+		"description": "Returns a string in a fixed length (if shorter filled with trailing spaces)\rExample:\r'pad('Hello World!',20)' => 'Hello World!        '\r"
+	},
+    "EXPRESSION: lPad(string,length,char)":
+	{
+		"prefix": "✅ APSFUNCTION.Expression.lPad",
+		"body": [
+			"var ${1:resultValue}\t:= lPad(${2:'Hello World!'},${3:20}${4| ,\\,' ',\\,'_',\\,'-',\\,'0',\\,'etc.'|})"
+		],
+		"description": "Returns a string in a fixed length (filled with leading spaces / defined characters)\rExample:\r'lPad('Hello World!',20,'-')' => '--------Hello World!'\r"
+	},
+    "EXPRESSION: rPad(string,length,char)":
+	{
+		"prefix": "✅ APSFUNCTION.Expression.rPad",
+		"body": [
+			"var ${1:resultValue}\t:= rPad(${2:'Hello World!'},${3:20}${4| ,\\,' ',\\,'_',\\,'-',\\,'0',\\,'etc.'|})"
+		],
+		"description": "Returns a string in a fixed length (filled with trailing spaces / defined characters)\rExample:\r'rPad('Hello World!',20,'-')' => 'Hello World!--------'\r"
+	},
+    "EXPRESSION: lTruncPad(string,length,char)":
+	{
+		"prefix": "✅ APSFUNCTION.Expression.lTruncPad",
+		"body": [
+			"var ${1:resultValue}\t:= lTruncPad(${2:'Hello World!'},${3:20}${4| ,\\,' ',\\,'_',\\,'-',\\,'0',\\,'etc.'|})"
+		],
+		"description": "Returns a string in a fixed length (shortened if to long or filled with leading spaces / defined characters)\rExample:\r'lTruncPad('Hello World!',20,'-')' => '--------Hello World!'\r"
+	},
+    "EXPRESSION: rTruncPad(string,length,char)":
+	{
+		"prefix": "✅ APSFUNCTION.Expression.rTruncPad",
+		"body": [
+			"var ${1:resultValue}\t:= rTruncPad(${2:'Hello World!'},${3:20}${4| ,\\,' ',\\,'_',\\,'-',\\,'0',\\,'etc.'|})"
+		],
+		"description": "Returns a string in a fixed length  (shortened if to long or filled with trailing spaces / defined characters)\rExample:\r'rTruncPad('Hello World!',20,'-')' => 'Hello World!--------'\r"
+	},
+    "EXPRESSION: set_Add(valueSet,valueToAdd)":
+	{
+		"prefix": "✅ APSFUNCTION.Expression.set_add",
+		"body": [
+			"var ${1:resultValue}\t:= set_add(${2:valueSet},${3:valueToAdd})"
+		],
+		"description": "Adds a string (valueToAdd) to the given set (valueSet) and returns the new content.\rExample:\rset_add('AAA','BBB') => ' AAA BBB '\r"
+	},
+    "EXPRESSION: set_remove(valueSet,valueToRemove)":
+	{
+		"prefix": "✅ APSFUNCTION.Expression.set_remove",
+		"body": [
+			"var ${1:resultValue}\t:= set_remove(${2:valueSet},${3:valueToRemove})"
+		],
+		"description": "Removes a string (valueToRemove) from the given set (valueSet) and returns the new content.\rExample:\rset_remove(' AAA BBB ','BBB') => ' AAA '\r"
+	},
+    "EXPRESSION: set_contains(valueSet,valueToSearch)":
+	{
+		"prefix": "✅ APSFUNCTION.Expression.set_contains",
+		"body": [
+			"var ${1:resultValue}\t:= set_contains(${2:valueSet},${3:valueToSearch})"
+		],
+		"description": "Searchs a string (valueToSearch) within the given set (valueSet) and returns if it's found.\rExample:\rset_contains(' AAA BBB ','BBB') => '1'\r"
+	}
+}

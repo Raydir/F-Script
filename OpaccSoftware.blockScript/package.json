@@ -1,0 +1,296 @@
+{
+	"name": "blockscript",
+	"displayName": "Opacc BlockScript",
+	"description": "BlockScript is the modern version of how to implement F-Scripts for OXAS.",
+	"version": "24.1.1",
+	"publisher": "OpaccSoftwareAG",
+	"author": {
+		"name": "Opacc Software AG",
+		"url": "http://www.opacc.ch"
+	},
+	"icon": "images/opacc.png",
+	"engines": {
+		"vscode": "^1.70.0"
+	},
+	"categories": [
+		"Programming Languages",
+		"Snippets",
+		"Themes",
+		"Other"
+	],
+	"activationEvents": [
+		"onLanguage:blockScript"
+	],
+	"browser": "./dist/web/extension.js",
+	"contributes": {
+		"languages": [
+			{
+				"id": "blockScript",
+				"aliases": [
+					"blockScript",
+					"BlockScript",
+					"BlockScript for OXAS"
+				],
+				"extensions": [
+					".fbl",
+					".fbs"
+				],
+				"configuration": "./language-configuration.json"
+			}
+		],
+		"grammars": [
+			{
+				"language": "blockScript",
+				"scopeName": "source.f-script",
+				"path": "./syntaxes/f-script.tmLanguage.json"
+			},
+			{
+				"language": "blockScript",
+				"scopeName": "source.f-script.extended",
+				"path": "./syntaxes/f-script.extended.tmLanguage.json"
+			},
+			{
+				"language": "blockScript",
+				"scopeName": "source.f-script.context",
+				"path": "./syntaxes/f-script.context.tmLanguage.json"
+			},
+			{
+				"language": "blockScript",
+				"scopeName": "source.blockscript",
+				"path": "./syntaxes/blockScriptFunc.tmlanguage.json"
+			},
+			{
+				"language": "blockScript",
+				"scopeName": "source.blockScript.main",
+				"path": "./syntaxes/blockscript.tmlanguage.json"
+			}
+		],
+		"snippets": [
+			{
+				"language": "blockScript",
+				"path": "./snippets/BlockFunc.CSV.code-snippets"
+			},
+			{
+				"language": "blockScript",
+				"path": "./snippets/BlockFunc.IS.code-snippets"
+			},
+			{
+				"language": "blockScript",
+				"path": "./snippets/BlockFunc.JSON.code-snippets"
+			},
+			{
+				"language": "blockScript",
+				"path": "./snippets/BlockFunc.PROGRESS.code-snippets"
+			},
+			{
+				"language": "blockScript",
+				"path": "./snippets/BlockFunc.READ.code-snippets"
+			},
+			{
+				"language": "blockScript",
+				"path": "./snippets/BlockFunc.SPLIT.code-snippets"
+			},
+			{
+				"language": "blockScript",
+				"path": "./snippets/BlockFunc.WRITE.code-snippets"
+			},
+			{
+				"language": "blockScript",
+				"path": "./snippets/BlockFunc.X.code-snippets"
+			},
+			{
+				"language": "blockScript",
+				"path": "./snippets/BlockFunc.XARR.code-snippets"
+			},
+			{
+				"language": "blockScript",
+				"path": "./snippets/BlockFunc.XCNT.code-snippets"
+			},
+			{
+				"language": "blockScript",
+				"path": "./snippets/BlockFunc.XFAS.code-snippets"
+			},
+			{
+				"language": "blockScript",
+				"path": "./snippets/BlockFunc.XML.code-snippets"
+			},
+			{
+				"language": "blockScript",
+				"path": "./snippets/BlockFunc.XRES.code-snippets"
+			},
+			{
+				"language": "blockScript",
+				"path": "./snippets/BlockFunc.XSER.code-snippets"
+			},
+			{
+				"language": "blockScript",
+				"path": "./snippets/BlockFunc.XTAB.code-snippets"
+			},
+			{
+				"language": "blockScript",
+				"path": "./snippets/BlockScript.json"
+			},
+			{
+				"language": "blockScript",
+				"path": "./snippets/BlockScript.libaryfunc1.json"
+			},
+			{
+				"language": "blockScript",
+				"path": "./snippets/BlockScript.libaryfunc2.json"
+			},
+			{
+				"language": "blockScript",
+				"path": "./snippets/BlockScript.libaryfunc3.json"
+			},
+			{
+				"language": "blockScript",
+				"path": "./snippets/BlockScript.appsfunc1.json"
+			},
+			{
+				"language": "blockScript",
+				"path": "./snippets/BlockScript.appsfunc2.json"
+			},
+			{
+				"language": "blockScript",
+				"path": "./snippets/BlockScript.appsfunc3.json"
+			},
+			{
+				"language": "blockScript",
+				"path": "./snippets/BlockScript.appsfunc4.json"
+			},
+			{
+				"language": "blockScript",
+				"path": "./snippets/BlockScript.appsfunc5.json"
+			}
+		],
+		"keybindings": [
+			{
+				"command": "editor.action.insertSnippet",
+				"key": "ctrl+oem_2",
+				"description": "insert ALT+174 / ALT+175\r`",
+				"when": "editorTextFocus && !editorReadonly && editorLangId == 'blockScript'",
+				"args": {
+					"name": "fscript.brackets"
+				}
+			},
+			{
+				"command": "editor.action.insertSnippet",
+				"key": "ctrl+1",
+				"description": "Inserts File Template for usage with `System_RunScriptBlock`",
+				"when": "editorTextFocus && !editorReadonly && editorLangId == 'blockScript'",
+				"args": {
+					"name": "TEMPLATE: BlockScript `New File` for System_RunScriptBlock"
+				}
+			},
+			{
+				"command": "editor.action.insertSnippet",
+				"key": "ctrl+2",
+				"description": "Inserts function Template",
+				"when": "editorTextFocus && !editorReadonly && editorLangId == 'blockScript'",
+				"args": {
+					"name": "TEMPLATE: BlockScript `New Function`"
+				}
+			},
+			{
+				"command": "editor.foldAll",
+				"when": "editorTextFocus && !editorReadonly && editorLangId == 'blockScript'",
+				"key": "ctrl+shift+numpad_subtract"
+			},
+			{
+				"command": "editor.unfoldAll",
+				"when": "editorTextFocus && !editorReadonly && editorLangId == 'blockScript'",
+				"key": "ctrl+shift+numpad_add"
+			},
+			{
+				"key": "ctrl+numpad_decimal",
+				"command": "blockScript.changeLanguageMode",
+				"when": "editorLangId == blockScript"
+			}
+		],
+		"commands": [
+			{
+				"command": "blockScript.changeLanguageMode",
+				"title": "Change Language Mode to F-Script"
+			}
+		],
+		"themes": [
+			{
+				"label": "BlockScript dark",
+				"uiTheme": "vs-dark",
+				"path": "./themes/blockScript dark-color-theme.json"
+			},
+			{
+				"label": "BlockScript natural",
+				"uiTheme": "vs-dark",
+				"path": "./themes/blockScript natural-color-theme.json"
+			}
+		],
+		"configurationDefaults": {
+			"[blockScript]": {
+				"files.encoding": "utf8bom",
+				"files.autoGuessEncoding": false,
+				"editor.folding": true,
+				"editor.showFoldingControls": "always",
+				"editor.autoIndent": "advanced",
+				"editor.codeLens": true,
+				"editor.fontSize": 14,
+				"editor.fontWeight": "bold",
+				"editor.lineNumbers": "on",
+				"editor.tabSize": 4,
+				"editor.insertSpaces": false,
+				"editor.mouseWheelZoom": true,
+				"editor.renderLineHighlight": "all",
+				"editor.dragAndDrop": true,
+				"editor.matchBrackets": "always",
+				"editor.colorDecorators": true,
+				"editor.cursorBlinking": "phase",
+				"editor.copyWithSyntaxHighlighting": true,
+				"editor.foldingHighlight": true,
+				"editor.foldingStrategy": "indentation",
+				"editor.quickSuggestions": {
+					"other": true,
+					"comments": false,
+					"strings": false
+				},
+				"editor.quickSuggestionsDelay": 600,
+				"editor.guides.bracketPairs": true,
+				"editor.suggestFontSize": 0,
+				"editor.suggest.showStatusBar": true,
+				"editor.suggest.preview": true,
+				"editor.suggestLineHeight": 0,
+				"editor.suggest.insertMode": "replace",
+				"editor.suggest.showSnippets": true,
+				"editor.wordBasedSuggestions": "matchingDocuments",
+				"editor.snippetSuggestions": "top",
+				"editor.acceptSuggestionOnEnter": "off",
+				"editor.wordSeparators": "`~!@#$%^&*()-=+[{]}\\|;:'\",«»<>/?"
+			}
+		}
+	},
+	"scripts": {
+		"pretest": "npm run compile-web",
+		"vscode:prepublish": "npm run package-web",
+		"compile-web": "webpack",
+		"watch-web": "webpack --watch",
+		"package-web": "webpack --mode production --devtool hidden-source-map",
+		"lint": "eslint src --ext ts",
+		"run-in-browser": "vscode-test-web --browserType=chromium --extensionDevelopmentPath=. ."
+	},
+	"devDependencies": {
+		"@types/mocha": "^9.1.0",
+		"@types/vscode": "^1.70.0",
+		"@types/webpack-env": "^1.16.3",
+		"@typescript-eslint/eslint-plugin": "^5.12.1",
+		"@typescript-eslint/parser": "^5.12.1",
+		"@vscode/test-web": "^0.0.22",
+		"assert": "^2.0.0",
+		"copy-webpack-plugin": "^12.0.2",
+		"eslint": "^8.9.0",
+		"mocha": "^9.2.1",
+		"process": "^0.11.10",
+		"ts-loader": "^9.2.6",
+		"typescript": "^4.5.5",
+		"webpack": "^5.69.1",
+		"webpack-cli": "^4.9.2"
+	}
+}

@@ -1,0 +1,84 @@
+{
+	"SCRIPTFUNC.Init":
+	{
+		"prefix": "✅ SCRIPTFUNC.Init",
+		"description": "Insert Library initialisation\nPress <TAB>",
+		"body":
+		[
+		"# ------------------------------------------------------------------------------------------------------",
+            "# Layout Library initialisieren (Erzeugung X-Variablen)",
+            "«nX(<LIB:ST-LAYOUTS.LB)»",
+            "«X(ScriptFunc.Init.Print)»",
+            "«X(ScriptFunc.Init.General)»"
+		]
+	},
+	"SCRIPTFUNC.Rectangle":
+	{
+		"prefix": "✅ SCRIPTFUNC.Rectangle",
+		"description": "Insert Reactangle function\nPress <TAB>",
+		"body":
+		[
+		"# ------------------------------------------------------------------------------------------------------",
+            "# Definition Füllgrad (%)",
+            "«X(ScriptFunc.Rectangle.FillLevel=${1:10})»",
+            "# Länge des Rasters (cm)",
+            "«X(ScriptFunc.Rectangle.Width=${2:2.0})»",
+            "# Höhe des Rasters (cm)",
+            "«X(ScriptFunc.Rectangle.Height=${3:2.5})»",
+            "«X(ScriptFunc.Rectangle.Print)»"
+		]
+    },
+	"SCRIPTFUNC.Color":
+	{
+		"prefix": "✅ SCRIPTFUNC.Color",
+		"description": "Insert Color function\nPress <TAB>",
+		"body":
+		[
+			"# ------------------------------------------------------------------------------------------------------",
+            "# Graustufen initialisieren",
+            "«X(ScriptFunc.Color.SetCollection)»",
+            "# Farbe neu definieren",
+            "«X(ScriptFunc.Color.SetColor${1|1,2,3,4,3,4,5,6,7|}=${2:0,0,255})»",
+            "# Farbe aktivieren",
+			"«X(ScriptFunc.Color.UseColor$1)»${3:yourText}",
+			"# zurück auf schwarz stellen:",
+			"# «X(ScriptFunc.Color.UseColor0)»"
+		]
+	},
+	"SCRIPTFUNC.TextPos":
+	{
+		"prefix": "✅ SCRIPTFUNC.TextPos",
+		"description": "Insert TextPos with X-/Y-Coords\nPress <TAB>",
+		"body":
+		[
+		"# ------------------------------------------------------------------------------------------------------",
+		"# X-Achse setzen (cm)",
+		"«X(ScriptFunc.TextPos.XPosition=${1:10.0})»",
+		"# Y-Achse setzen (cm)",
+		"«X(ScriptFunc.TextPos.YPosition=${2:15.0})»",
+		"# Zu Koordinate springen und Text drucken",
+		"«X(ScriptFunc.TextPos.SetPosition)»${3:yourText}"
+		]
+	},
+	"SCRIPTFUNC.PicPos":
+	{
+		"prefix": "✅ SCRIPTFUNC.PicPos",
+		"description": "Insert PicPos with X-/Y-Coords\nPress <TAB>",
+		"body":
+		[
+		"# ------------------------------------------------------------------------------------------------------",
+		"# Bilddatei welche gedruckt werden soll",
+		"«X(ScriptFunc.PicPos.Picture=«SYS(FULLPATH)»${1:\\IP\\IMG\\MYIMAGE.PNG})»",
+		"# X-Achse setzen (cm)",
+		"«X(ScriptFunc.PicPos.XPosition=${2:19.5})»",
+		"# Y-Achse setzen (cm)",
+		"«X(ScriptFunc.PicPos.YPosition=${3:13.5})»",
+		"# Höhe des Bildes",
+		"«X(ScriptFunc.PicPos.Heigth=${4:5.5})»",
+		"# Breite des Bildes",
+		"«X(ScriptFunc.PicPos.Width=${5:4.5})»",
+		"# Bild drucken",
+		"«X(ScriptFunc.PicPos.SetPosition)»"
+		]
+	}
+}

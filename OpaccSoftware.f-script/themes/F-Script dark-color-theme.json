@@ -1,0 +1,216 @@
+{
+	"name": "F-Script dark",
+	"type": "dark",
+	"colors": {
+		"editor.background": "#3a3939",
+		"editor.foreground": "#d4d4d4",
+		"editor.lineHighlightBackground": "#504f4f",
+		"editor.lineHighlightBorder": "#504f4f",
+		"editor.findMatchHighlightBackground": "#79451b",
+		"editor.findMatchBackground": "#79451b",
+		"editorLineNumber.foreground": "#16bd5b80",
+		"editorLineNumber.activeForeground" :"#ad7306",		
+		"editorCursor.foreground": "#ffffff",
+		"editorCursor.background": "#ffffff",
+		"editorBracketMatch.border": "#e02727f5",
+		"editorSuggestWidget.selectedBackground": "#306d91",
+		"editorSuggestWidget.border": "#306d91",
+		"editorSuggestWidget.background": "#3d3c3c",
+		"activityBarBadge.background": "#007acc",
+		"sideBarTitle.foreground": "#bbbbbb",
+		"tab.hoverBackground" : "#6e6d6d",
+		"tab.hoverBorder":  "#6e6d6d",
+		"editor.inactiveSelectionBackground": "#ad7306",
+		"editor.selectionHighlightBorder": "#ad7306",
+		"editor.selectionBackground": "#ad7306",
+		"editorOverviewRuler.selectionHighlightForeground": "#ad7306"
+	},
+	
+	"tokenColors":  [
+		{
+			"name": "Brackets",
+			"scope":"entity.name.class",
+			"settings": {
+				"fontStyle": "bold",
+				"foreground": "#ee7f7fea"
+			}
+		},
+		{
+			"name": "ScriptBrackets",
+			"scope":"entity.name.tag",
+			"settings": {
+				"fontStyle": "bold",
+				"foreground": "#c0681c"
+			}
+		},	
+		{
+			"name": "Subroutines",
+			"scope": "support.class",
+			"settings": {
+				"fontStyle": "bold",
+				"foreground": "#f7c00c"
+			}
+		},
+		{
+			"name": "SubroutineCalls",
+			"scope":"support.function",
+			"settings": {
+				"fontStyle": "bold",
+				"foreground": "#f7d46d"
+			}
+		},
+		{
+			"name": "MetaSubroutines",
+			"scope": "markup.heading",
+			"settings": {
+				"fontStyle": "bold",
+				"foreground": "#b1ce0e"
+			}
+		},					
+		{
+			"name": "Comments",
+			"scope": "comment",
+			"settings": {
+				"fontStyle": "bold",
+				"foreground": "#1b8b48"
+			}
+		},
+		{
+			"name": "Comments",
+			"scope": "commentsDiv",
+			"settings": {
+				"fontStyle":"italic bold",
+				"foreground": "#1b8b48"
+			}
+		},
+		{
+			"name": "Comments",
+			"scope": "commentsAttention",
+			"settings": {
+				"fontStyle":"italic bold",
+				"foreground": "#bec924"
+			}
+		},
+		{
+			"name": "Comments",
+			"scope": "commentsTipp",
+			"settings": {
+				"fontStyle":"italic bold",
+				"foreground": "#57c55c"
+			}
+		},
+		{
+			"name": "Comments",
+			"scope": "commentsTodo",
+			"settings": {
+				"fontStyle":"italic bold",
+				"foreground": "#bf55df"
+			}
+		},				
+		{
+			"name": "Deprecated",
+			"scope": "deprecated",
+			"settings": {
+				"fontStyle": "bold",
+				"foreground": "#f54d4d"
+			}
+		},				
+		{
+			"name": "Format extensions",
+			"scope": "variable.other.readwrite",
+			"settings": {
+				"fontStyle": "bold",
+				"foreground": "#a19de4"
+			}
+		},
+		{
+			"name": "Variable prefixes",
+			"scope": "variable.language",
+			"settings": {
+				"fontStyle": "bold",
+				"foreground": "#a19de4"
+			}
+		},
+		{
+			"name": "Printer Commands",
+			"scope": "variable",
+			"settings": {
+				"fontStyle": "bold",
+				"foreground": "#d39de4"
+			}
+		},					
+		{
+			"name": "Libraries",
+			"scope": "keyword",
+			"settings": {
+				"fontStyle": "bold",
+				"foreground": "#be6fe9"
+			}
+		},				
+		{
+			"name": "Operators",
+			"scope": "constant.numeric.octal",
+			"settings": {
+				"fontStyle": "bold",
+				"foreground": "#4595f8"
+			}
+		},
+		{
+			"name": "Operations",
+			"scope": "entity.name.tag",
+			"settings": {
+				"fontStyle": "bold",
+				"foreground": "#47c2a3"
+			}
+		},
+		{
+			"name": "RequestResponse",
+			"scope": "constant.regexp",
+			"settings": {
+				"fontStyle": "bold",
+				"foreground": "#92bef3"
+			}
+		},
+		{
+			"name": "Context",
+			"scope": "constant.numeric.hex",
+			"settings": {
+				"fontStyle": "bold",
+				"foreground": "#5fe743"
+			}
+		},
+		{
+			"name": "XFAS",
+			"scope": "support.type.property-name",
+			"settings": {
+				"fontStyle": "bold",
+				"foreground": "#df913f"
+			}
+		},
+		{
+			"name": "Commands",
+			"scope": "constant.numeric.float",
+			"settings": {
+				"fontStyle": "bold",
+				"foreground": "#6fe9e3"
+			}
+		},
+		{
+			"name": "F-Script Attributes",
+			"scope": "constant.language",
+			
+			"settings": {
+				"fontStyle": "bold",
+				"foreground": "#999999"
+			}
+		},												
+		{
+			"name": "Strings",
+			"scope": "string",
+			"settings": {
+				"foreground": "#A9F5BC",
+				"fontStyle": "bold"
+			}
+		}
+	]
+}

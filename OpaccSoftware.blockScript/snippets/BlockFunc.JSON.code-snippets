@@ -1,0 +1,158 @@
+{
+	"BLOCKFUNC: JSON.CreateBool":	{
+		"prefix":	"🔐  BlockFunc.JSON.CreateBool",
+		"description":	["Erstellt einen bool'schen Eintrag."],
+		"body":	[
+			"\tvar ${1:stringVal} := JSON.CreateBool(${2:value})",		]
+	},
+	"BLOCKFUNC: JSON.CreateBoolMember":	{
+		"prefix":	"🔐  BlockFunc.JSON.CreateBoolMember",
+		"description":	["Erstellt ein JSON-Member mit einem bool'schen Eintrag."],
+		"body":	[
+			"\tvar ${1:stringVal} := JSON.CreateBoolMember(${2:name}, ${3:value})",		]
+	},
+	"BLOCKFUNC: JSON.CreateBoolMembers":	{
+		"prefix":	"🔐  BlockFunc.JSON.CreateBoolMembers",
+		"description":	["Erstellt mehrere JSON-Members mit je einem bool'schen Eintrag."],
+		"body":	[
+			"\tvar ${1:stringVal} := JSON.CreateBoolMembers(${2:nameAndValues})",		]
+	},
+	"BLOCKFUNC: JSON.CreateDate":	{
+		"prefix":	"🔐  BlockFunc.JSON.CreateDate",
+		"description":	["Erstellt einen Datums-Eintrag."],
+		"body":	[
+			"\tvar ${1:stringVal} := JSON.CreateDate(${2:value})",		]
+	},
+	"BLOCKFUNC: JSON.CreateDateMember":	{
+		"prefix":	"🔐  BlockFunc.JSON.CreateDateMember",
+		"description":	["Erstellt ein JSON-Member mit einem Datums-Eintrag."],
+		"body":	[
+			"\tvar ${1:stringVal} := JSON.CreateDateMember(${2:name}, ${3:value})",		]
+	},
+	"BLOCKFUNC: JSON.CreateDateMemberArray":	{
+		"prefix":	"🔐  BlockFunc.JSON.CreateDateMemberArray",
+		"description":	["Erstellt ein JSON-Member-Array mit Datums-Einträgen."],
+		"body":	[
+			"\tvar ${1:stringVal} := JSON.CreateDateMemberArray(${2:name}, ${3:values})",		]
+	},
+	"BLOCKFUNC: JSON.CreateDateMemberArrayFromXArr":	{
+		"prefix":	"🔐  BlockFunc.JSON.CreateDateMemberArrayFromXArr",
+		"description":	["Erstellt ein JSON-Member-Datums-Array mit den XARR-Einträgen. Ungültige Einträge können ignoriert werden (werden mit 'null' ersetzt)."],
+		"body":	[
+			"\tvar ${1:stringVal} := JSON.CreateDateMemberArrayFromXArr(${2:memberName}, ${3:xArrName}, ${4:ignoreErrors})",		]
+	},
+	"BLOCKFUNC: JSON.CreateDateMembers":	{
+		"prefix":	"🔐  BlockFunc.JSON.CreateDateMembers",
+		"description":	["Erstellt mehrere JSON-Members mit je einem Datums-Eintrag."],
+		"body":	[
+			"\tvar ${1:stringVal} := JSON.CreateDateMembers(${2:nameAndValues})",		]
+	},
+	"BLOCKFUNC: JSON.CreateEndArray":	{
+		"prefix":	"🔐  BlockFunc.JSON.CreateEndArray",
+		"description":	["Schliesst das aktuelle Array und retourniert die eckige Klammer."],
+		"body":	[
+			"\tvar ${1:stringVal} := JSON.CreateEndArray()",		]
+	},
+	"BLOCKFUNC: JSON.CreateEndObject":	{
+		"prefix":	"🔐  BlockFunc.JSON.CreateEndObject",
+		"description":	["Schliesst das aktuelle Objekt und retourniert die geschweifte Klammer."],
+		"body":	[
+			"\tvar ${1:stringVal} := JSON.CreateEndObject()",		]
+	},
+	"BLOCKFUNC: JSON.CreateNmb":	{
+		"prefix":	"🔐  BlockFunc.JSON.CreateNmb",
+		"description":	["Erstellt einen numerischen Eintrag."],
+		"body":	[
+			"\tvar ${1:stringVal} := JSON.CreateNmb(${2:value})",		]
+	},
+	"BLOCKFUNC: JSON.CreateNmbMember":	{
+		"prefix":	"🔐  BlockFunc.JSON.CreateNmbMember",
+		"description":	["Erstellt ein JSON-Member mit einem numerischen Eintrag."],
+		"body":	[
+			"\tvar ${1:stringVal} := JSON.CreateNmbMember(${2:name}, ${3:value})",		]
+	},
+	"BLOCKFUNC: JSON.CreateNmbMemberArray":	{
+		"prefix":	"🔐  BlockFunc.JSON.CreateNmbMemberArray",
+		"description":	["Erstellt ein JSON-Member-Array mit numerischen Einträgen."],
+		"body":	[
+			"\tvar ${1:stringVal} := JSON.CreateNmbMemberArray(${2:name}, ${3:values})",		]
+	},
+	"BLOCKFUNC: JSON.CreateNmbMemberArrayFromXArr":	{
+		"prefix":	"🔐  BlockFunc.JSON.CreateNmbMemberArrayFromXArr",
+		"description":	["Erstellt ein JSON-Member-Nummer-Array mit den XARR-Einträgen. Ungültige Einträge können ignoriert werden (werden mit 'null' ersetzt)."],
+		"body":	[
+			"\tvar ${1:stringVal} := JSON.CreateNmbMemberArrayFromXArr(${2:memberName}, ${3:xArrName}, ${4:ignoreErrors})",		]
+	},
+	"BLOCKFUNC: JSON.CreateNmbMembers":	{
+		"prefix":	"🔐  BlockFunc.JSON.CreateNmbMembers",
+		"description":	["Erstellt mehrere JSON-Members mit je einem numerischen Eintrag."],
+		"body":	[
+			"\tvar ${1:stringVal} := JSON.CreateNmbMembers(${2:nameAndValues})",		]
+	},
+	"BLOCKFUNC: JSON.CreateNull":	{
+		"prefix":	"🔐  BlockFunc.JSON.CreateNull",
+		"description":	["Erstellt einen NULL-Wert-Eintrag."],
+		"body":	[
+			"\tvar ${1:stringVal} := JSON.CreateNull()",		]
+	},
+	"BLOCKFUNC: JSON.CreateNullMember":	{
+		"prefix":	"🔐  BlockFunc.JSON.CreateNullMember",
+		"description":	["Erstellt ein JSON-Member mit einem NULL-Wert-Eintrag."],
+		"body":	[
+			"\tvar ${1:stringVal} := JSON.CreateNullMember(${2:name})",		]
+	},
+	"BLOCKFUNC: JSON.CreateNullMembers":	{
+		"prefix":	"🔐  BlockFunc.JSON.CreateNullMembers",
+		"description":	["Erstellt mehrere JSON-Members mit je einem NULL-Wert-Eintrag."],
+		"body":	[
+			"\tvar ${1:stringVal} := JSON.CreateNullMembers(${2:names})",		]
+	},
+	"BLOCKFUNC: JSON.CreateStartArray":	{
+		"prefix":	"🔐  BlockFunc.JSON.CreateStartArray",
+		"description":	["Öffnet ein neues Array und retourniert die eckige Klammer. Optional mit Arraynamen."],
+		"body":	[
+			"\tvar ${1:stringVal} := JSON.CreateStartArray(${2:name})",		]
+	},
+	"BLOCKFUNC: JSON.CreateStartObject":	{
+		"prefix":	"🔐  BlockFunc.JSON.CreateStartObject",
+		"description":	["Öffnet ein neues Objekt und retourniert die geschweifte Klammer. Optional mit Objektnamen."],
+		"body":	[
+			"\tvar ${1:stringVal} := JSON.CreateStartObject(${2:name})",		]
+	},
+	"BLOCKFUNC: JSON.CreateStr":	{
+		"prefix":	"🔐  BlockFunc.JSON.CreateStr",
+		"description":	["Erstellt einen String-Eintrag."],
+		"body":	[
+			"\tvar ${1:stringVal} := JSON.CreateStr(${2:value})",		]
+	},
+	"BLOCKFUNC: JSON.CreateStrMember":	{
+		"prefix":	"🔐  BlockFunc.JSON.CreateStrMember",
+		"description":	["Erstellt ein JSON-Member mit einem Text-Eintrag."],
+		"body":	[
+			"\tvar ${1:stringVal} := JSON.CreateStrMember(${2:name}, ${3:value})",		]
+	},
+	"BLOCKFUNC: JSON.CreateStrMemberArray":	{
+		"prefix":	"🔐  BlockFunc.JSON.CreateStrMemberArray",
+		"description":	["Erstellt ein JSON-Member-Array mit Text-Einträgen."],
+		"body":	[
+			"\tvar ${1:stringVal} := JSON.CreateStrMemberArray(${2:name}, ${3:values})",		]
+	},
+	"BLOCKFUNC: JSON.CreateStrMemberArrayFromXArr":	{
+		"prefix":	"🔐  BlockFunc.JSON.CreateStrMemberArrayFromXArr",
+		"description":	["Erstellt ein JSON-Member-Text-Array mit den XARR-Einträgen."],
+		"body":	[
+			"\tvar ${1:stringVal} := JSON.CreateStrMemberArrayFromXArr(${2:memberName}, ${3:xArrName})",		]
+	},
+	"BLOCKFUNC: JSON.CreateStrMembers":	{
+		"prefix":	"🔐  BlockFunc.JSON.CreateStrMembers",
+		"description":	["Erstellt mehrere JSON-Members mit je einem Text-Eintrag."],
+		"body":	[
+			"\tvar ${1:stringVal} := JSON.CreateStrMembers(${2:nameAndValues})",		]
+	},
+	"BLOCKFUNC: JSON.Initialize":	{
+		"prefix":	"🔐  BlockFunc.JSON.Initialize",
+		"description":	["Initialisiert Zeilenumbrüche und den Einzug."],
+		"body":	[
+			"JSON.Initialize(${2:lineBreakActive}, ${3:indentActive}, ${4:indentWidth})",		]
+	},
+}

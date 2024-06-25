@@ -1,0 +1,582 @@
+{
+	"Standard: `Standard: Using Library`": {
+		"prefix": "📒 Standard: Library_Using",
+		"scope": "blockScript",
+		"description": [
+			"Inserts using for Library\r"
+		],
+		"body": [
+				"using ${1|\"ST-BlockServices.FBL\",\"ST-BaseTools.FBL\",\"ST-DMASFunctions.FBL\",\"ST-SystemAdmin.FBL\"|}"
+				]
+	},
+	"Standard: `BlockServices_GetBo`": {
+		"prefix": "📕 Standard: BlockServices_GetBo",
+		"scope": "blockScript",
+		"description": [
+			"🔐 using \"ST-BlockServices.FBL\" 🔐\n",
+			"Inserts BlockService.GetBo\r"
+		],
+		"body": [
+				"// -----------------------------------------------------------------------------------------------------",
+				"X.Set('GetBo.BoType',\t'Addr')",
+				"X.Set('GetBo.Start',\t'Luzern')",
+				"X.Set('GetBo.Seek',\t\t'ne')",
+				"X.Set('GetBo.Index',\t'3')",
+				"X.Set('GetBo.Count',\t'10')",
+				"X.Set('GetBo.Fixed',\t'')",
+				"X.Set('GetBo.Filter',\t'Addr.LastName contains \"A\"')",
+				"X.Set('GetBo.Return',\t'')",
+				"X.Set('GetBo.Virt1',\t'v1=1')",
+				"X.Set('GetBo.VCount',\t'1')",
+				"X.Set('Log.Message',\t'')",
+				"// -----------------------------------------------------------------------------------------------------",
+				"// ATTENTION: using \"ST-BlockServices.FBL\"",
+				"var resultName\t:= BlockServices_GetBo('GetBoAddr',FALSE,FALSE) /// requestName, crossClient, returnAsXFAS"
+				]
+	},
+	"Standard: `BlockServices_SaveBo`": {
+		"prefix": "📕 Standard: BlockServices_SaveBo",
+		"scope": "blockScript",
+		"description": [
+			"🔐 using \"ST-BlockServices.FBL\" 🔐\n",
+			"Inserts BlockService.SaveBo\r"
+		],
+		"body": [
+				"// -----------------------------------------------------------------------------------------------------",
+				"X.Set('SaveBo.BoType',\t'Addr')",
+				"X.Set('SaveBo.Start',\t'2020')",
+				"X.Set('SaveBo.Seek',\t'e')",
+				"X.Set('SaveBo.Index',\t'')",
+				"X.Set('SaveBo.Verarb',\t'1')",
+				"X.Set('SaveBo.Fixed',\t'')",
+				"X.Set('SaveBo.Typ',\t'2')",
+				"X.Set('SaveBo.Prot',\t'1')",
+				"X.Set('SaveBo.Filter',\t'')",
+				"X.Set('SaveBo.Return',\t'*')",
+				"X.Set('SaveBo.Zuweis1',\t'Addr.FirstName=@Roman')",
+				"X.Set('SaveBo.Zuweis2',\t'Addr.LastName=@Vonwil')",
+				"X.Set('SaveBo.Zuweis3',\t'Addr.Line3=@'+timestampToStr(now(),'dd.MM.yyyy - HH:mm:ss'))",
+				"X.Set('SaveBo.ZuwCount','3')",
+				"X.Set('Log.Message', \t'')",
+				"// -----------------------------------------------------------------------------------------------------",
+				"// ATTENTION: using \"ST-BlockServices.FBL\"",
+				"var resultName := BlockServices_SaveBo('SaveBoAddr',FALSE,FALSE) /// requestName, crossClient, returnAsXFAS"
+		]
+	},
+	"Standard: `BlockServices_DeleteBo`": {
+		"prefix": "📕 Standard: BlockServices_DeleteBo",
+		"scope": "blockScript",
+		"description": [
+			"🔐 using \"ST-BlockServices.FBL\" 🔐\n",
+			"Inserts BlockService.DeleteBo\r"
+		],
+		"body": [
+				"// -----------------------------------------------------------------------------------------------------",
+				"X.Set('DeleteBo.BoType','AddrPoolItem')",
+				"X.Set('DeleteBo.Start',\t'2020')",
+				"X.Set('DeleteBo.Seek',\t'ne')",
+				"X.Set('DeleteBo.Index',\t'3')",
+				"X.Set('DeleteBo.Fixed',\t'1')",
+				"X.Set('DeleteBo.Test',\t'1')",
+				"X.Set('DeleteBo.Prot',\t'1')",
+				"X.Set('DeleteBo.Filter','')",
+				"X.Set('DeleteBo.Return','AddrPoolItem.AddrPoolNo,AddrPoolItem.AddrNo,AddrPoolItem.BoName')",
+				"X.Set('DeleteBo.NoScript','1')",
+				"X.Set('Log.Message',\t'')",
+				"// -----------------------------------------------------------------------------------------------------",
+				"// ATTENTION: using \"ST-BlockServices.FBL\"",
+				"var resultName := BlockServices_DeleteBo('DeleteBoAddrPoolItem',FALSE,FALSE) /// requestName, crossClient, returnAsXFAS"
+		]
+	},
+	"Standard: `BlockServices_System_RunScript`": {
+		"prefix": "📕 Standard: BlockServices_System_RunScript",
+		"scope": "blockScript",
+		"description": [
+			"🔐 using \"ST-BlockServices.FBL\" 🔐\n",
+			"Inserts BlockService.System_RunScript\r"
+		],
+		"body": [
+				"// -----------------------------------------------------------------------------------------------------",
+				"X.Set('RunScript.ScriptName',\t'rv-test.ff')",
+				"X.Set('RunScript.PrinterNo',\t'-1')",
+				"X.Set('RunScript.AusgTyp',\t\t'B')",
+				"X.Set('RunScript.Device',\t\t'')",
+				"X.Set('RunScript.Anzahl',\t\t'')",
+				"X.Set('RunScript.PrintPDF',\t\t'')",
+				"X.Set('RunScript.Language',\t\t'')",
+				"X.Set('RunScript.BoType',\t\t'Addr')",
+				"X.Set('RunScript.BoId',\t'2020')",
+				"X.Set('RunScript.Organizator','99')",
+				"X.Set('RunScript.Param1',\t'abc')",
+				"X.Set('RunScript.ParaCount',\t'2')",
+				"X.Set('Log.Message',\t\t\t'')",
+				"// ATTENTION: using \"ST-BlockServices.FBL\"",
+				"var resultName := BlockServices_System_RunScript('RunScript',FALSE,FALSE) /// requestName, crossClient, returnAsXFAS"
+
+		]
+	},
+	"Standard: `BlockServices_Common_AddLogEntry`": {
+		"prefix": "📕 Standard: BlockServices_Common_AddLogEntry",
+		"scope": "blockScript",
+		"description": [
+			"🔐 using \"ST-BlockServices.FBL\" 🔐\n",
+			"Inserts BlockService.Common_AddLogEntry\r"
+		],
+		"body": [
+				"// -----------------------------------------------------------------------------------------------------",
+				"// ATTENTION: using \"ST-BlockServices.FBL\"",
+				"var resultName := BlockServices_Common_AddLogEntry('AddLogEntry',2,'This is a Info-message')"
+			]
+	},
+	"Standard: `BaseTools_Library_Init`": {
+			"prefix": "📗 Standard: BaseTools_Library_Init",
+			"scope": "blockScript",
+			"description": [
+				"🔐 using \"ST-BaseTools.FBL\" 🔐\n",
+				"Description:\tInserts initialisation for key-value libraries using BaseTools",
+				"Arguments:\tlibName\t: string\t>containerName",
+				"\t\tfileName\t: string\t> library-file",
+				"\t\tdelimiter\t: string\t> (default: '|')",
+				"\t\tfolderName\t: string\t> systemfolder (default: 'F_Scripts')"
+			],
+			"body": [
+				"// -----------------------------------------------------------------------------------------------------",
+				"// ATTENTION: using \"ST-BaseTools.FBL\"",
+				"/// Arguments:\tlibName\t\t: string\t>containerName",
+				"/// \t\t\tfileName\t: string\t> library-file",
+				"/// \t\t\tdelimiter\t: string\t> (default: '|')",
+				"/// \t\t\tfolderName\t: string\t> systemfolder (default: 'F_Scripts')",
+				"BaseTools_Library_Init('${1:LibName}','${2:KD-TESTLibrary.LB}')",
+				"var libValue := BaseTools_Library_GetValue('${1}', '${3:Key1}')"
+		]
+	},
+	"Standard: `BaseTools_Read_GetFullFileContent`": {
+		"prefix": "📗 Standard: BaseTools_Read_GetFullFileContent",
+		"scope": "blockScript",
+		"description": [
+				"🔐 using \"ST-BaseTools.FBL\" 🔐\n",
+				"Description:\tInserts reading of full filecontent using BaseTools",
+				"Arguments:\tfilePathAndName\t: string",
+				"\t\tfileEncoding\t: string\t> default 'auto'",
+				"\t\tfileChannel\t: integer\t> default 4"
+		],
+		"body": [
+				"// -----------------------------------------------------------------------------------------------------",
+				"// ATTENTION: using \"ST-BaseTools.FBL\"",
+				"var filePath := '..\\\\\\\\${1|tmp,tx,ip,..\\\\DataExchange|}\\\\\\\\'",
+				"var fileName := '${2:bo.addr.csv}'",
+				"var fileContent :=  BaseTools_Read_GetFullFileContent(filePath+''+fileName,'${3|auto,utf8,utf8bom,oem850,ansi,utf16le|}')"
+		]
+	},
+	"Standard: `BaseTools_Read_InitFile`": {
+		"prefix": "📗 Standard: BaseTools_Read_InitFile",
+		"scope": "blockScript",
+		"description": [
+			"🔐 using \"ST-BaseTools.FBL\" 🔐\n",
+			"Description:\tInserts initialisation of filecontent reading using BaseTools",
+			"Arguments:\tfilePathAndName\t: string",
+			"\t\tfileEncoding\t: string\t> default 'auto'",
+			"\t\tfileChannel\t: integer\t> default 4",
+			"-----------------------------------------------------------------------------------------------------",
+			"\n"
+		],
+		"body": [
+			"// -----------------------------------------------------------------------------------------------------",
+			"// ATTENTION: using \"ST-BaseTools.FBL\"",
+			"var filePath := '..\\\\\\\\${1|tmp,tx,ip,..\\\\DataExchange|}\\\\\\\\'",
+			"var fileName := '${2:bo.addr.csv}'",
+			"if( BaseTools_Read_InitFile(filePath+''+fileName,'${3|auto,utf8,utf8bom,oem850,ansi,utf16le|}',${4|1,2,3,4|}) = FALSE )",
+			"\t{ throw 'Open file'+filePath+''+fileName+' not possible!'}"
+		]
+	},
+	"Standard: `BaseTools_Read_GetNextContentLine`": {
+		"prefix": "📗 Standard: BaseTools_Read_GetNextContentLine",
+		"scope": "blockScript",
+		"description": [
+			"🔐 using \"ST-BaseTools.FBL\" 🔐\n",
+			"Description:\tInserts reading of next content line using BaseTools",
+			"Arguments:\tfileChannel\t: integer\t> default 4",
+			"-----------------------------------------------------------------------------------------------------",
+			"\n"
+		],
+		"body": [
+			"// -----------------------------------------------------------------------------------------------------",
+			"while(READ.IsAtEnd(${4}) = FALSE)",
+			"{",
+			"\tvar lineContent := BaseTools_Read_GetNextContentLine(${4|1,2,3,4|})\t/// fileChannel  > default: '4'",
+			"}"
+		]
+	},
+	"Standard: `BaseTools_Read_GetFileLineByLine`": {
+		"prefix": "📗 Standard: BaseTools_Read_GetFileLineByLine",
+		"scope": "blockScript",
+		"description": [
+			"🔐 using \"ST-BaseTools.FBL\" 🔐\n",
+			"Description:\tInserts reading of filecontent line by line using BaseTools",
+			"Arguments:\tfilePathAndName\t: string",
+			"\t\tfileEncoding\t: string\t> default 'auto'",
+			"\t\tfileChannel\t: integer\t> default 4",
+			"-----------------------------------------------------------------------------------------------------",
+			"\n"
+		],
+		"body": [
+			"// -----------------------------------------------------------------------------------------------------",
+			"// ATTENTION: using \"ST-BaseTools.FBL\"",
+			"var filePath := '..\\\\\\\\${1|tmp,tx,ip,..\\\\DataExchange|}\\\\\\\\'",
+			"var fileName := '${2:bo.addr.csv}'",
+			"if( BaseTools_Read_InitFile(filePath+''+fileName,'${3|auto,utf8,utf8bom,oem850,ansi,utf16le|}',${4|1,2,3,4|}) = FALSE )",
+			"\t{ throw 'Open file'+filePath+''+fileName+' not possible!'}",
+			"// -----------------------------------------------------------------------------------------------------",
+			"while(READ.IsAtEnd(${4}) = FALSE)",
+			"{",
+			"\tvar lineContent := BaseTools_Read_GetNextContentLine($4)\t/// fileChannel  > default: '4'",
+			"}"
+		]
+	},
+	"Standard: `BaseTools_Logging_SetLogMessage`": {
+		"prefix": "📗 Standard: BaseTools_Logging_SetLogMessage",
+		"scope": "blockScript",
+		"description": [
+			"🔐 using \"ST-BaseTools.FBL\" 🔐\n",
+			"Description:\tcreate/add 'MessageText' to variable X.BaseTools.LogMessage using BaseTools",
+			"Arguments:\tlogMessage\t: string",
+			"\t\tcreateTimeStamp\t: boolean\t> default: TRUE",
+			"-----------------------------------------------------------------------------------------------------",
+			"\n"
+		],
+		"body": [
+			"// -----------------------------------------------------------------------------------------------------",
+			"// ATTENTION: using \"ST-BaseTools.FBL\"",
+			"BaseTools_Logging_SetLogMessage(${1:'MessageText'},${2|TRUE,FALSE|})",
+			"// X.Get('BaseTools.LogMessage')  // returnvalue (concatenated)"
+		]
+	},
+	"Standard: `BaseTools_Logging_WriteLogMessage`": {
+		"prefix": "📗 Standard: BaseTools_Logging_WriteLogMessage",
+		"scope": "blockScript",
+		"description": [
+			"🔐 using \"ST-BaseTools.FBL\" 🔐\n",
+			"Description:\twrites 'MessageText' to variable LogFile using BaseTools",
+			"Arguments:\tlogMessage\t: string",
+			"\t\tfilePathAndName\t: string",
+			"\t\tfileEncoding\t: string\t> default: utf8",
+			"\t\tfileChannel\t: integer\t> default: 4",
+			"\t\tappendFile\t: boolean\t> default: FALSE",
+			"-----------------------------------------------------------------------------------------------------",
+			"\n"
+		],
+		"body": [
+			"// -----------------------------------------------------------------------------------------------------",
+			"// ATTENTION: using \"ST-BaseTools.FBL\"",
+			"var filePath := '..\\\\\\\\${1|tmp,tx,ip,..\\\\DataExchange|}\\\\\\\\'",
+			"var fileName := dateToStr(today(),'yyyy-MM-dd')+'_${2:logFile.csv}'",
+			"BaseTools_Logging_WriteLogMessage(${3|'Message',X.Get('BaseTools.LogMessage')|},filePath+''+fileName,'${4|auto,utf8,utf8bom,oem850,ansi,utf16le|}',${5|1,2,3,4|},${6|FALSE,TRUE|})"
+		]
+	},
+	"Standard: `BaseTools_Transform_XRES_2_XFAS`": {
+		"prefix": "📗 Standard: BaseTools_Transform_XRES_2_XFAS",
+		"scope": "blockScript",
+		"description": [
+			"🔐 using \"ST-BaseTools.FBL\" 🔐\n",
+			"Description:\tInserts transformation of XRES to XFAS using BaseTools",
+			"Arguments:\tresultName\t: string > previously built resultobject",
+			"Return:\t\treturnValue\t: void\t> XFAS table",
+			"-----------------------------------------------------------------------------------------------------",
+			"\n"
+		],
+		"body": [
+			"// -----------------------------------------------------------------------------------------------------",
+			"/// Description:\tTransform XRES-Result to XFAS table (Clears previous XFAS!)",
+			"\t/// Arguments:\tresultName\t: string\t> name of the previously built resultobject",
+			"\t/// Return:\t\treturnValue\t: void\t\t> XFAS table",
+			"BaseTools_Transform_XRES_2_XFAS(${1:resultName})"
+		]
+	},
+	"Standard: `BaseTools_Transform_XRES_2_XTAB`": {
+		"prefix": "📗 Standard: BaseTools_Transform_XRES_2_XTAB",
+		"scope": "blockScript",
+		"description": [
+			"🔐 using \"ST-BaseTools.FBL\" 🔐\n",
+			"Description:\tInserts transformation of XRES to XTAB using BaseTools (Clears previous XTAB!)",
+			"Arguments:\tresultName\t\t: string > previously built resultobject",
+			"\t\txTabName\t\t: string > name of XTAB that should be created",
+			"\t\tsuppressDuplicates\t: boolean > suppress duplicate Attributes > default: TRUE",
+			"Return:\t\treturnValue\t\t: void\t> XTAB table",
+			"-----------------------------------------------------------------------------------------------------",
+			"\n"
+		],
+		"body": [
+			"// -----------------------------------------------------------------------------------------------------",
+			"/// Description:\tInserts transformation of XRES to XTAB using BaseTools (Clears previous XTAB!)",
+			"/// Arguments:\t\tresultName\t\t\t: string\t> name of the previously built resultobject",
+			"/// \t\t\t\txTabName\t\t\t: string\t> name of XTAB that should be created",
+			"/// \t\t\t\tsuppressDuplicates\t: boolean\t> suppress duplicate Attributes > default: TRUE",
+			"/// Return:\t\t\treturnValue\t\t\t: void\t\t> XTAB table",
+			"BaseTools_Transform_XRES_2_XTAB(${1:resultName},${2:xTabName},${3|TRUE,FALSE|})",
+			"var tabRows\t:= XTAB.GetNmbOfRows(xTabName)",
+			"var tabCols\t:= XTAB.GetNmbOfCols(xTabName)"
+		]
+	},
+	"Standard: `BaseTools_Transform_XTAB_2_XFAS`": {
+		"prefix": "📗 Standard: BaseTools_Transform_XTAB_2_XFAS",
+		"scope": "blockScript",
+		"description": [
+			"🔐 using \"ST-BaseTools.FBL\" 🔐\n",
+			"Description:\tInserts transformation of XTAB to XFAS table (Clears previous XFAS!)",
+			"Arguments:\txTabName\t\t: string > name of the previously built XTAB",
+			"\t\twithoutView\t\t: boolean > do not use view filter (default: TRUE)",
+			"Return:\t\treturnValue\t\t: void\t> XFAS table",
+			"-----------------------------------------------------------------------------------------------------",
+			"\n"
+		],
+		"body": [
+			"// -----------------------------------------------------------------------------------------------------",
+			"/// Description:\tTransform XRES-Result to XFAS table (Clears previous XFAS!)",
+			"/// Arguments:\t\txTabName\t: string\t> name of the previously built XTAB",
+			"/// \t\t\t\twithoutView\t: boolean\t> do not use view filter (default: TRUE)",
+			"/// Return:\t\t\treturnValue\t: void\t\t> XFAS table",
+			"BaseTools_Transform_XTAB_2_XFAS(${1:xTabName},${2|TRUE,FALSE|})"
+		]
+	},
+	"Standard: `BaseTools_MlsText`": {
+		"prefix": "📗 Standard: BaseTools_MlsText",
+		"scope": "blockScript",
+		"description": [
+			"🔐 using \"ST-BaseTools.FBL\" 🔐\n",
+			"Description:\tGetting MLS Text with given key - creates key if not found!",
+			"Arguments:\tmlsKey\t\t: string > key of wanted mlsText",
+			"\t\tuiLangNo\t: integer > desired UILangNo  (default according context)",
+			"\t\tnewText\t\t: string > new text if not found (german only)",
+			"\t\tnewShortText\t: string > new shorttext if not found (german only)",
+			"\t\tnewInfoText\t: string > new info if not found (german only)",
+			"\t\treplaceText<1-9>: string > replace text for %1 - %9 in info",
+			"Return:\t\treturnValue\t: string > resultName",
+			"-----------------------------------------------------------------------------------------------------",
+			"\n"
+		],
+		"body": [
+			"// -----------------------------------------------------------------------------------------------------",
+			"/// Description:\tGetting MLS Text with given key - creates key if not found!",
+			"/// Arguments:\t\tmlsKey\t\t\t: string\t> key of wanted mlsText",
+			"/// \t\t\t\tuiLangNo\t\t: integer\t> desired UILangNo  (default according context)",
+			"/// \t\t\t\tnewText\t\t\t: string\t> new text if not found (german only)",
+			"/// \t\t\t\tnewShortText\t: string\t> new shorttext if not found (german only)",
+			"/// \t\t\t\tnewInfoText\t\t: string\t> new info if not found (german only)",
+			"/// \t\t\t\treplaceText<1-9>: string\t> replace text for %1 - %9 in info",
+			"/// Return:\t\t\treturnValue\t\t: string\t> resultName",
+			"var resultName\t:= BaseTools_MlsText('${1:U.MlsKey}',${2|0,51,53,54,55|})",
+			"var mlsText\t\t:= XRES.GetColValByName(resultName, 'Text')",
+			"var mlsShortText:= XRES.GetColValByName(resultName, 'ShortText')",
+			"var mlsInfo\t\t:= XRES.GetColValByName(resultName, 'Info')"
+		]
+	},
+	"Standard: `BaseTools_MlsText_Text`": {
+		"prefix": "📗 Standard: BaseTools_MlsText_Text",
+		"scope": "blockScript",
+		"description": [
+			"🔐 using \"ST-BaseTools.FBL\" 🔐\n",
+			"Description:\tGetting MLS Text (TEXT only) with given key - creates key if not found!",
+			"Arguments:\tmlsKey\t\t: string > key of wanted mlsText",
+			"\t\tuiLangNo\t: integer > desired UILangNo  (default according context)",
+			"\t\tnewText\t\t: string > new text if not found (german only)",
+			"\t\tnewShortText\t: string > new shorttext if not found (german only)",
+			"\t\tnewInfoText\t: string > new info if not found (german only)",
+			"\t\treplaceText<1-9>: string > replace text for %1 - %9 in info",
+			"Return:\t\tmlsText\t: string > mlsText of mlsKey",
+			"-----------------------------------------------------------------------------------------------------",
+			"\n"
+		],
+		"body": [
+			"// -----------------------------------------------------------------------------------------------------",
+			"/// Description:\tGetting MLS Text (TEXT only) with given key - creates key if not found!",
+			"/// Arguments:\t\tmlsKey\t\t\t: string\t> key of wanted mlsText",
+			"/// \t\t\t\tuiLangNo\t\t: integer\t> desired UILangNo  (default according context)",
+			"/// \t\t\t\tnewText\t\t\t: string\t> new text if not found (german only)",
+			"/// \t\t\t\tnewShortText\t: string\t> new shorttext if not found (german only)",
+			"/// \t\t\t\tnewInfoText\t\t: string\t> new info if not found (german only)",
+			"/// \t\t\t\treplaceText<1-9>: string\t> replace text for %1 - %9 in info",
+			"/// Return:\t\t\tmlsText\t\t\t: string\t> mlsText of mlsKey",
+			"var mlsText := BaseTools_MlsText_Text('${1:U.MlsKey}',${2|0,51,53,54,55|})"
+		]
+	},
+	"Standard: `BaseTools_MlsText_ShortText`": {
+		"prefix": "📗 Standard: BaseTools_MlsText_ShortText",
+		"scope": "blockScript",
+		"description": [
+			"🔐 using \"ST-BaseTools.FBL\" 🔐\n",
+			"Description:\tGetting MLS Text (SHORTTEXT only) with given key - creates key if not found!",
+			"Arguments:\tmlsKey\t\t: string > key of wanted mlsText",
+			"\t\tuiLangNo\t: integer > desired UILangNo  (default according context)",
+			"\t\tnewText\t\t: string > new text if not found (german only)",
+			"\t\tnewShortText\t: string > new shorttext if not found (german only)",
+			"\t\tnewInfoText\t: string > new info if not found (german only)",
+			"\t\treplaceText<1-9>: string > replace text for %1 - %9 in info",
+			"Return:\t\tmlsShortText\t: string > mlsShortText of mlsKey",
+			"-----------------------------------------------------------------------------------------------------",
+			"\n"
+		],
+		"body": [
+			"// -----------------------------------------------------------------------------------------------------",
+			"/// Description:\tGetting MLS Text (SHORTTEXT only) with given key - creates key if not found!",
+			"/// Arguments:\t\tmlsKey\t\t\t: string\t> key of wanted mlsText",
+			"/// \t\t\t\tuiLangNo\t\t: integer\t> desired UILangNo  (default according context)",
+			"/// \t\t\t\tnewText\t\t\t: string\t> new text if not found (german only)",
+			"/// \t\t\t\tnewShortText\t: string\t> new shorttext if not found (german only)",
+			"/// \t\t\t\tnewInfoText\t\t: string\t> new info if not found (german only)",
+			"/// \t\t\t\treplaceText<1-9>: string\t> replace text for %1 - %9 in info",
+			"/// Return:\t\t\tmlsShortText\t: string\t> mlsShortText of mlsKey",
+			"var shortText := BaseTools_MlsText_ShortText('${1:U.MlsKey}',${2|0,51,53,54,55|})"
+		]
+	},
+	"Standard: `BaseTools_MlsText_Info`": {
+		"prefix": "📗 Standard: BaseTools_MlsText_Info",
+		"scope": "blockScript",
+		"description": [
+			"🔐 using \"ST-BaseTools.FBL\" 🔐\n",
+			"Description:\tGetting MLS Text (INFO only) with given key - creates key if not found!",
+			"Arguments:\tmlsKey\t\t: string > key of wanted mlsText",
+			"\t\tuiLangNo\t: integer > desired UILangNo  (default according context)",
+			"\t\tnewText\t\t: string > new text if not found (german only)",
+			"\t\tnewShortText\t: string > new shorttext if not found (german only)",
+			"\t\tnewInfoText\t: string > new info if not found (german only)",
+			"\t\treplaceText<1-9>: string > replace text for %1 - %9 in info",
+			"Return:\t\tmlsInfo\t\t: string > mlsInfo of mlsKey",
+			"-----------------------------------------------------------------------------------------------------",
+			"\n"
+		],
+		"body": [
+			"// -----------------------------------------------------------------------------------------------------",
+			"/// Description:\tGetting MLS Text (INFO only) with given key - creates key if not found!",
+			"/// Arguments:\t\tmlsKey\t\t\t: string\t> key of wanted mlsText",
+			"/// \t\t\t\tuiLangNo\t\t: integer\t> desired UILangNo  (default according context)",
+			"/// \t\t\t\tnewText\t\t\t: string\t> new text if not found (german only)",
+			"/// \t\t\t\tnewShortText\t: string\t> new shorttext if not found (german only)",
+			"/// \t\t\t\tnewInfoText\t\t: string\t> new info if not found (german only)",
+			"/// \t\t\t\treplaceText<1-9>: string\t> replace text for %1 - %9 in info",
+			"/// Return:\t\t\tmlsInfo\t\t\t: string\t> mlsInfo of mlsKey",
+			"var infoText := BaseTools_MlsText_Info('${1:U.MlsKey}',${2|0,51,53,54,55|})"
+		]
+	},
+	"Standard: `BaseTools_GetMlsText`": {
+		"prefix": "📗 Standard: BaseTools_GetMlsText",
+		"scope": "blockScript",
+		"description": [
+			"🔐 using \"ST-BaseTools.FBL\" 🔐\n",
+			"Description:\tGetting MLS Text with given key",
+			"Arguments:\tmlsKey\t\t: string > key of wanted mlsText",
+			"\t\tuiLangNo\t: integer > desired UILangNo  (default according context)",
+			"\t\treplaceText<1-9>: string > replace text for %1 - %9 in info",
+			"Return:\t\treturnValue\t: string > resultName",
+			"-----------------------------------------------------------------------------------------------------",
+			"\n"
+		],
+		"body": [
+			"// -----------------------------------------------------------------------------------------------------",
+			"/// Description:\tGetting MLS Text with given key",
+			"/// Arguments:\t\tmlsKey\t\t\t: string\t> key of wanted mlsText",
+			"/// \t\t\t\tuiLangNo\t\t: integer\t> desired UILangNo  (default according context)",
+			"/// \t\t\t\treplaceText<1-9>: string\t> replace text for %1 - %9 in info",
+			"/// Return:\t\t\treturnValue\t\t: string\t> resultName",
+			"var resultName\t:= BaseTools_GetMlsText('${1:U.MlsKey}',${2|0,51,53,54,55|},${3:'replaceText'})",
+			"var mlsText\t\t:= XRES.GetColValByName(resultName, 'Text')",
+			"var mlsShortText:= XRES.GetColValByName(resultName, 'ShortText')",
+			"var mlsInfo\t\t:= XRES.GetColValByName(resultName, 'Info')"
+		]
+	},
+
+
+	"Standard: `BaseTools_BOCreation`": {
+		"prefix": "📗 Standard: BaseTools_BOCreation",
+		"scope": "blockScript",
+		"description": [
+			"🔐 using \"ST-BaseTools.FBL\" 🔐\n",
+			"Description:\tInserts BOCreation Template using BaseTools",
+			"-----------------------------------------------------------------------------------------------------",
+			"function:\tBaseTools_BOCreation_AddArgument",
+			"> Description:\tAdd value to SaveBoArguments",
+			"",
+			"function:\tBaseTools_BOCreation_Execute",
+			"> Description:\tExecute BOCreation",
+			"-----------------------------------------------------------------------------------------------------",
+			"\n"
+		],
+		"body": [
+			"// -----------------------------------------------------------------------------------------------------",
+			"var boName := '${1:FreeTable}'",
+			"/// Description:\tAdd value to SaveBoArguments",
+			"\t/// Arguments:\t\tboName\t\t\t: string\t> BoType",
+			"\t/// \t\t\t\targName\t\t\t: string\t> BoType.BoAttribute",
+			"\t/// \t\t\t\targValue\t\t: string\t> Value",
+			"\t/// \t\t\t\tassingAsString\t: boolean\t> default: true",
+			"\t/// Return:\t\t\treturnValue\t\t: void",
+			"BaseTools_BOCreation_AddArgument(boName,boName+'.Number',${2:2020},FALSE)",
+			"BaseTools_BOCreation_AddArgument(boName,boName+'.ShortName@@1','Kurzbezeichnung')",
+			"BaseTools_BOCreation_AddArgument(boName,boName+'.Name@@1','Bezeichnung')",
+			"// -----------------------------------------------------------------------------------------------------",
+			"/// Description:\tExecute BOCreation",
+			"\t/// Arguments:\t\tboName \t\t\t: string\t> BoType",
+			"\t/// \t\t\t\tresultObject \t: string\t> default: ''",
+			"\t/// Return:\t\t\treturnValue\t\t: string\t> resultName",
+			"var resultName \t:= BaseTools_BOCreation_Execute(boName,boName+'.BoId')",
+			"var rows\t\t:= XRES.GetNmbOfRows(resultName)",
+			"var logMessage\t:= XRES.GetMsgText(resultName)",
+			"if(logMessage <> '')",
+			"{ throw logMessage }"
+		]
+	},
+	"Standard: `BaseTools_BOMutation`": {
+		"prefix": "📗 Standard: BaseTools_BOMutation",
+		"scope": "blockScript",
+		"description": [
+			"🔐 using \"ST-BaseTools.FBL\" 🔐\n",
+			"Description:\tInserts BOMutation Template using BaseTools",
+			"-----------------------------------------------------------------------------------------------------",
+			"function:\tBaseTools_BOMutation_SetSelection",
+			"> Description:\tSet selection for items that should be mutated",
+			"",
+			"function:\tBaseTools_BOMutation_AddArgument",
+			"> Description:\tAdd value to SaveBoArguments",
+			"",
+			"function:\tBaseTools_BOMutation_Execute",
+			"> Description:\tExecute BOMutation",
+			"",
+			"\n"
+		],
+		"body": [
+			"var boName\t\t:= '${1:FreeTable}'",
+			"var startKey \t:= yearOfDate(now())+1",
+			"// -----------------------------------------------------------------------------------------------------",
+			"/// Description:\tSet selection for items that should be mutated",
+			"\t/// Arguments:\t\tboName \t\t\t\t: string\t(must)",
+			"\t/// \t\t\t\tstartKey\t\t\t: string\t(must)",
+			"\t///\t\t\t\t\tsearchOperationCd\t: string \t> default: eif",
+			"\t///\t\t\t\t\tboIndex\t\t\t\t: string\t> default: ''",
+			"\t///\t\t\t\t\tsaveBoProcessingCd\t: string\t> default: '1'",
+			"\t///\t\t\t\t\tfixedSegsOfBoIndex\t: string\t> default: ''",
+			"\t///\t\t\t\t\tsaveBoModeCd\t\t: string\t> default: '2'",
+			"\t///\t\t\t\t\twithReport\t\t\t: string\t> default: '1'",
+			"\t///\t\t\t\t\tfilter\t\t\t\t: string\t> default: ''",
+			"\t///\t\t\t\t\tresultObject\t\t: string\t> default: ''",
+			"\t/// Return:\t\t\treturnValue\t\t\t: void",
+			"BaseTools_BOMutation_SetSelection(boName,startKey)",
+			"// -----------------------------------------------------------------------------------------------------",
+			"/// Description:\tAdd value to SaveBoArguments",
+			"\t/// Arguments:\t\tboName \t\t\t: string\t> BoType",
+			"\t/// \t\t\t\targName\t\t\t: string\t> BoType.BoAttribute",
+			"\t/// \t\t\t\targValue\t\t: string\t> Value",
+			"\t/// \t\t\t\tassingAsString\t: boolean\t> default: true",
+			"\t/// Return:\t\t\treturnValue\t\t: void",
+			"BaseTools_BOMutation_AddArgument(boName,boName+'.Name@@1','NewName')",
+			"BaseTools_BOMutation_AddArgument(boName,boName+'.ShortName@@1','NewShort')",
+			"// -----------------------------------------------------------------------------------------------------",
+			"/// Description:\tExecute BOMutation",
+			"\t/// Arguments:\t\tboName \t\t\t: string\t> BoType",
+			"\t/// Return:\t\t\treturnValue\t\t: string\t> resultName",
+			"var resultName \t:= BaseTools_BOMutation_Execute(boName)",
+			"var rows\t\t:= XRES.GetNmbOfRows(resultName)",
+			"var logMessage\t:= XRES.GetMsgText(resultName)",
+			"if(logMessage <> '')",
+			"{ throw logMessage }"
+		]
+	}
+}

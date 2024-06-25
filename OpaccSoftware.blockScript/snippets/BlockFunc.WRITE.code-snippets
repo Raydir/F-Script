@@ -1,0 +1,68 @@
+{
+	"BLOCKFUNC: WRITE.Close":	{
+		"prefix":	"🔐  BlockFunc.WRITE.Close",
+		"description":	["Geöffneten Ausgabekanal schliessen."],
+		"body":	[
+			"WRITE.Close(${2:channelNo})",		]
+	},
+	"BLOCKFUNC: WRITE.GetLineCount":	{
+		"prefix":	"🔐  BlockFunc.WRITE.GetLineCount",
+		"description":	["Liefert Anzahl Linien welche in den Kanal geschrieben wurden = Anzahl 'WRITE.OutLine()'-Aufrufe."],
+		"body":	[
+			"\tvar ${1:numberVal} := WRITE.GetLineCount(${2:channelNo})",		]
+	},
+	"BLOCKFUNC: WRITE.IsOpen":	{
+		"prefix":	"🔐  BlockFunc.WRITE.IsOpen",
+		"description":	["Ist ein bestimmter Ausgabekanal zum Schreiben geöffnet?"],
+		"body":	[
+			"\tvar ${1:boolVal} := WRITE.IsOpen(${2:channelNo})",		]
+	},
+	"BLOCKFUNC: WRITE.OpenAnsi":	{
+		"prefix":	"🔐  BlockFunc.WRITE.OpenAnsi",
+		"description":	["Ausgabekanal zum Schreiben einer ANSI-Datei öffnen. Standardmässig wird allenfalls bestehende Datei überschrieben."],
+		"body":	[
+			"WRITE.OpenAnsi(${2:channelNo}, ${3:filePath}, ${4:append})",		]
+	},
+	"BLOCKFUNC: WRITE.OpenOem850":	{
+		"prefix":	"🔐  BlockFunc.WRITE.OpenOem850",
+		"description":	["Ausgabekanal zum Schreiben einer OEM-850-Datei öffnen. Standardmässig wird allenfalls bestehende Datei überschrieben."],
+		"body":	[
+			"WRITE.OpenOem850(${2:channelNo}, ${3:filePath}, ${4:append})",		]
+	},
+	"BLOCKFUNC: WRITE.OpenUtf16Le":	{
+		"prefix":	"🔐  BlockFunc.WRITE.OpenUtf16Le",
+		"description":	["Ausgabekanal zum Schreiben einer UTF-16LE-Datei (Little-Endian inkl. BOM) öffnen. Standardmässig wird allenfalls bestehende Datei überschrieben."],
+		"body":	[
+			"WRITE.OpenUtf16Le(${2:channelNo}, ${3:filePath}, ${4:append})",		]
+	},
+	"BLOCKFUNC: WRITE.OpenUtf16LeWithoutBom":	{
+		"prefix":	"🔐  BlockFunc.WRITE.OpenUtf16LeWithoutBom",
+		"description":	["Ausgabekanal zum Schreiben einer UTF-16LE-Datei (Little-Endian ohne BOM) öffnen. Standardmässig wird allenfalls bestehende Datei überschrieben."],
+		"body":	[
+			"WRITE.OpenUtf16LeWithoutBom(${2:channelNo}, ${3:filePath}, ${4:append})",		]
+	},
+	"BLOCKFUNC: WRITE.OpenUtf8":	{
+		"prefix":	"🔐  BlockFunc.WRITE.OpenUtf8",
+		"description":	["Ausgabekanal zum Schreiben einer UTF-8-Datei (inkl. BOM) öffnen. Standardmässig wird allenfalls bestehende Datei überschrieben."],
+		"body":	[
+			"WRITE.OpenUtf8(${2:channelNo}, ${3:filePath}, ${4:append})",		]
+	},
+	"BLOCKFUNC: WRITE.OpenUtf8WithoutBom":	{
+		"prefix":	"🔐  BlockFunc.WRITE.OpenUtf8WithoutBom",
+		"description":	["Ausgabekanal zum Schreiben einer UTF-8-Datei (ohne BOM) öffnen. Standardmässig wird allenfalls bestehende Datei überschrieben."],
+		"body":	[
+			"WRITE.OpenUtf8WithoutBom(${2:channelNo}, ${3:filePath}, ${4:append})",		]
+	},
+	"BLOCKFUNC: WRITE.Out":	{
+		"prefix":	"🔐  BlockFunc.WRITE.Out",
+		"description":	["Schreiben des übergebenen Texts."],
+		"body":	[
+			"WRITE.Out(${2:channelNo}, ${3:text})",		]
+	},
+	"BLOCKFUNC: WRITE.OutLine":	{
+		"prefix":	"🔐  BlockFunc.WRITE.OutLine",
+		"description":	["Schreiben des übergebenen Texts inkl. einem zusätzlichen Zeilenumbruch."],
+		"body":	[
+			"WRITE.OutLine(${2:channelNo}, ${3:text})",		]
+	},
+}

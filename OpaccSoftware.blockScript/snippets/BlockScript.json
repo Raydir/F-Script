@@ -1,0 +1,434 @@
+{
+	"fscript.brackets":
+	{
+		"prefix": "✅ SYSTEM.Fscript.Brackets",
+		"description" : "insert ALT+174 / ALT+175\r",
+		"body":
+		[
+			"«$1»"
+		]
+	},
+	"TEMPLATE: BlockScript `New File` for System_RunScriptBlock": {
+		"isFileTemplate": true,
+		"scope": "blockScript",
+		"description": [
+			"🔐 BlockScript only 🔐\n",
+			"Inserts scriptBody for  `System_RunScriptBlock`"
+		],
+		"prefix": "📝TEMPLATE: New File",
+		"body": [
+			"// ------------------------------------------------------------------------------------------------------",
+			"// ${1:<ScriptTitle>}",
+			"// ------------------------------------------------------------------------------------------------------",
+			"// Dateiname: ${TM_FILENAME/[\\.]/./}",
+			"// Kunde:     ${2:<CustomerName>}",
+			"// Kontext:   ${3:<Context>}",
+			"// Autor:     OPACC Software AG, Luzern - ${4:<CreatorName>}",
+			"// ------------------------------------------------------------------------------------------------------",
+			"// Erstellt:  ${CURRENT_DATE}.${CURRENT_MONTH}.${CURRENT_YEAR} / ${5:<CreatorScut>}",
+			"// Geändert:  <Datum> / <Kürzel> - <Kurzbeschreibung>",
+			"// ------------------------------------------------------------------------------------------------------",
+			"{",
+			"\t${6|// using \"LibraryName.FBL\",using \"ST-BlockServices.FBL\", |}\n",
+			"\tfunction ${7:Main}() : ${8|void,string,number,integer,boolean,date,time,timestamp|}",
+			"\t{",
+			"\t\t${26:// start coding here}",
+			"\t}",
+			"\t${7}()",
+			"",
+			"\tfunction GetInfoScript() : void",
+			"\t{",
+			"\t\tXFAS.AddHeads('SupportsScreenOutput','SupportsBoArgs','SupportedBoType','MlsKey')",
+			"\t\tXFAS.SetCol('SupportsScreenOutput', '${9|0,1|}')",
+			"\t\tXFAS.SetCol('SupportsBoArgs', '${10|0,1|}')",
+			"\t\tXFAS.SetCol('SupportedBoType', '${11:Addr}')",
+			"\t\tXFAS.SetCol('MlsKey', 'U.'+XCNT.GetScriptName())",
+			"\t}",
+			"\tfunction GetInfoScriptArg() : void",
+			"\t{",
+			"\t\tXFAS.AddHeads('Argument','StateCd','DataTypeCd','Format','RelationshipCd','RelatedObject','RelatedIndex','RelatedConstraint','ConstraintType','CheckExpression','DefaultValue','EntryMode','WithPrevious','MlsKey')",
+			"\t\t// ------------------------------------------------------------------------------------------------------",
+			"\t\t// Argument-Definition",
+			"\t\tXFAS.SetCol('Argument',\t\t\t'${12:ScriptArg1}')",
+			"\t\tXFAS.SetCol('StateCd',\t\t\t'${13|1,0|}')\t\t// 0: passiv, 1: active",
+			"\t\tXFAS.SetCol('DataTypeCd',\t\t'${14|A,X,R,N,D,H,B,T|}')\t\t// A: AlphaAll, X: AlphaUC, R: NumAll, N: NumNotNeg, D: Date, H: Time, B: Boolean, T: Text",
+			"\t\tXFAS.SetCol('Format',\t\t\t'${15|100,10,10.0, |}')",
+			"\t\tXFAS.SetCol('RelationshipCd',\t'${16|0,1,1S,2,3,4,5,6,7,8,I,J|}')\t\t// 0: No, 1: Bo, 1S: BoSet, 2: BoOption, 3: Code, 4: CodeOption, 5: Range, 6: RangeOption, 7: ApsKeyword, 8: ApsKeywordOption, I: InstallationFile, J: FileStorage",
+			"\t\tXFAS.SetCol('RelatedObject',\t'${17| ,Addr.Number,DocState,Bo,Tx,FileStorageName,FreeTableItem.Value|}')\t\t\t// e.g.: No, Bo, Code, ApsKeyword, InstallationFile, FileStorage",
+			"\t\tXFAS.SetCol('RelatedIndex',\t\t'')",
+			"\t\tXFAS.SetCol('RelatedConstraint','')",
+			"\t\tXFAS.SetCol('ConstraintType',\t'')",
+			"\t\tXFAS.SetCol('CheckExpression',\t'')",
+			"\t\tXFAS.SetCol('DefaultValue',\t\t'${18:DefaultValue}')",
+			"\t\tXFAS.SetCol('EntryMode',\t\t'${19|0,1,2|}')\t\t// 0: Default, 1: Must, 2: Locked",
+			"\t\tXFAS.SetCol('WithPrevious',\t\t'${20|0,1|}')\t\t// 0: on new line, 1: on same line",
+			"\t\tXFAS.SetCol('MlsKey',\t\t\t'${12}')",
+			"\t}",
+			"\tfunction GetInfoScriptCol() : void",
+			"\t{",
+			"\t\tXFAS.AddHeads('Column','DataTypeCd','Format','RelationshipCd','RelatedObject','RelatedIndex','RelatedConstraint','AdditionalInfo','OnDemand','MlsKey')",
+			"\t\t// ------------------------------------------------------------------------------------------------------",
+			"\t\t// Rückgabespalten",
+			"\t\tXFAS.NewRow()",
+			"\t\tXFAS.SetCol('Column',\t\t\t'${21:ScriptCol1}')",
+			"\t\tXFAS.SetCol('DataTypeCd',\t\t'${22|A,X,R,N,D,H,B,T|}')\t\t\t// A: AlphaAll, X: AlphaUC, R: NumAll, N: NumNotNeg, D: Date, H: Time, B: Boolean, T: Text",
+			"\t\tXFAS.SetCol('Format',\t\t\t'${23|100,10,10.0,1, |}')",
+			"\t\tXFAS.SetCol('RelationshipCd',\t'${24|0,1,1S,2,3,4,5,6,7,8,I,J|}')\t\t\t// 0: No, 1: Bo, 1S: BoSet, 2: BoOption, 3: Code, 4: CodeOption, 5: Range, 6: RangeOption, 7: ApsKeyword, 8: ApsKeywordOption, I: InstallationFile, J: FileStorage",
+			"\t\tXFAS.SetCol('RelatedObject',\t'${25| ,Addr.Number,DocState,Bo,Tx,FileStorageName,FreeTableItem.Value|}')\t\t\t// e.g.: No, Bo, Code, ApsKeyword, InstallationFile, FileStorage",
+			"\t\tXFAS.SetCol('RelatedIndex',\t\t'')",
+			"\t\tXFAS.SetCol('RelatedConstraint','')",
+			"\t\tXFAS.SetCol('AdditionalInfo',\t'')",
+			"\t\tXFAS.SetCol('OnDemand',\t\t\t'0')",
+			"\t\tXFAS.SetCol('MlsKey',\t\t\t'${21}')",
+			"\t}",
+			"}"
+		]
+	},
+	"TEMPLATE: BlockScript `New Function`": {
+		"prefix": "📝TEMPLATE: New Function",
+		"scope": "blockScript",
+		"description": [
+			"🔐 BlockScript only 🔐\n",
+			"Inserts function body\r"
+		],
+		"body": [
+			"function ${1:FunctionName}(${2:arguments}) : ${3|void,string,number,integer,boolean,date,time,timestamp|}",
+			"{",
+			"\t${4}",
+			"}"
+		]
+	},
+	"TEMPLATE: BlockScript `New Function` with description": {
+		"prefix": "📝TEMPLATE: New Function with description",
+		"scope": "blockScript",
+		"description": [
+			"🔐 BlockScript only 🔐\n",
+			"Inserts function body\r"
+		],
+		"body": [
+			"/// Description:\t${1:Description}",
+			"/// Arguments:\t\t${2:argument}\t: ${3|string,number,integer,boolean,date,time,timestamp|}",
+			"/// Return:\t\t\t${4:returnValue}\t: ${5|void,string,number,integer,boolean,date,time,timestamp|}",
+			"function ${7:FunctionName}(var ${2} := ${8|\"\",0,0.0, |}) : ${5}",
+			"{",
+			"\treturn ${4}",
+			"}"
+		]
+	},
+	"CONTEXT: GetInfoScript": {
+		"prefix": "🔍 CONTEXT.Meta.GetInfoScript",
+		"scope": "blockScript",
+		"description": [
+			"🔐 BlockScript only 🔐\n",
+			"Insert GetInfoScript as Script-Block\r"
+		],
+		"body": [
+			"function GetInfoScript() : void",
+			"{",
+			"\tXFAS.AddHeads('SupportsScreenOutput','SupportsBoArgs','SupportedBoType','MlsKey')",
+			"\tXFAS.SetCol('SupportsScreenOutput', '${1|0,1|}')",
+			"\tXFAS.SetCol('SupportsBoArgs', '${2|0,1|}')",
+			"\tXFAS.SetCol('SupportedBoType', '${3:Addr}')",
+			"\tXFAS.SetCol('MlsKey', 'U.'+XCNT.GetScriptName())",
+			"}"
+		]
+	},
+	"CONTEXT: GetInfoScriptArg.AddAsCells": {
+		"prefix": "🔍 CONTEXT.Meta.GetInfoScriptArg.AddAsCells",
+		"scope": "blockScript",
+		"description": [
+			"🔐 BlockScript only 🔐\n",
+			"Insert GetInfoScriptArg as Script-Block\r"
+		],
+		"body": [
+			"function GetInfoScriptArg() : void",
+			"{",
+			"\tXFAS.AddHeads('Argument','StateCd','DataTypeCd','Format','RelationshipCd','RelatedObject','RelatedIndex','RelatedConstraint','ConstraintType','CheckExpression','DefaultValue','EntryMode','WithPrevious','MlsKey')",
+			"\t// ------------------------------------------------------------------------------------------------------",
+			"\t// Argument-Definition",
+			"\tXFAS.AddCells('ScriptArg1','1','N','8.0','1','Addr.Number','','','','','','0','0','ScriptArg1')",
+			"}"
+		]
+	},
+	"CONTEXT: GetInfoScriptArg": {
+		"prefix": "🔍 CONTEXT.Meta.GetInfoScriptArg",
+		"scope": "blockScript",
+		"description": [
+			"🔐 BlockScript only 🔐\n",
+			"Insert GetInfoScriptArg as Script-Block\r"
+		],
+		"body": [
+			"function GetInfoScriptArg() : void",
+			"{",
+			"\tXFAS.AddHeads('Argument','StateCd','DataTypeCd','Format','RelationshipCd','RelatedObject','RelatedIndex','RelatedConstraint','ConstraintType','CheckExpression','DefaultValue','EntryMode','WithPrevious','MlsKey')",
+			"\t// ------------------------------------------------------------------------------------------------------",
+			"\t// Argument-Definition",
+			"\tXFAS.NewRow()",
+			"\tXFAS.SetCol('Argument',\t\t\t'${1:ScriptArg1}')",
+			"\tXFAS.SetCol('StateCd',\t\t\t'${2|1,0|}')\t\t\t// 0: passiv, 1: active",
+			"\tXFAS.SetCol('DataTypeCd',\t\t'${3|A,X,R,N,D,H,B,T|}')\t\t\t// A: AlphaAll, X: AlphaUC, R: NumAll, N: NumNotNeg, D: Date, H: Time, B: Boolean, T: Text",
+			"\tXFAS.SetCol('Format',\t\t\t'${4|100,10,10.0, |}')",
+			"\tXFAS.SetCol('RelationshipCd',\t'${5|0,1,1S,2,3,4,5,6,7,8,I,J|}')\t\t\t// 0: No, 1: Bo, 1S: BoSet, 2: BoOption, 3: Code, 4: CodeOption, 5: Range, 6: RangeOption, 7: ApsKeyword, 8: ApsKeywordOption, I: InstallationFile, J: FileStorage",
+			"\tXFAS.SetCol('RelatedObject',\t'${6| ,Addr.Number,DocState,Bo,Tx,FileStorageName,FreeTableItem.Value|}')\t\t\t// e.g.: No, Bo, Code, ApsKeyword, InstallationFile, FileStorage",
+			"\tXFAS.SetCol('RelatedIndex',\t\t'')",
+			"\tXFAS.SetCol('RelatedConstraint','')",
+			"\tXFAS.SetCol('ConstraintType',\t'')",
+			"\tXFAS.SetCol('CheckExpression',\t'')",
+			"\tXFAS.SetCol('DefaultValue',\t\t'${7:DefaultValue}')",
+			"\tXFAS.SetCol('EntryMode',\t\t'${8|0,1,2|}')\t\t\t// 0: Default, 1: Must, 2: Locked",
+			"\tXFAS.SetCol('WithPrevious',\t\t'${9|0,1|}')\t\t\t// 0: on new line, 1: on same line",
+			"\tXFAS.SetCol('MlsKey',\t\t\t'${1}')",
+			"}"
+		]
+	},
+	"CONTEXT: GetInfoScriptArg.AddArgument": {
+		"prefix": "🔍 CONTEXT.Meta.GetInfoScriptArg.AddArgument",
+		"scope": "blockScript",
+		"description": [
+			"🔐 BlockScript only 🔐\n",
+			"Insert Argument for GetInfoScriptArg as Script-Block\r"
+		],
+		"body": [
+			"// ------------------------------------------------------------------------------------------------------",
+			"XFAS.NewRow()",
+			"XFAS.SetCol('Argument',\t\t\t'${1:ScriptArg1}')",
+			"XFAS.SetCol('StateCd',\t\t\t'${2|1,0|}')\t\t\t// 0: passiv, 1: active",
+			"XFAS.SetCol('DataTypeCd',\t\t'${3|A,X,R,N,D,H,B,T|}')\t\t\t// A: AlphaAll, X: AlphaUC, R: NumAll, N: NumNotNeg, D: Date, H: Time, B: Boolean, T: Text",
+			"XFAS.SetCol('Format',\t\t\t'${4|100,10,10.0,1, |}')",
+			"XFAS.SetCol('RelationshipCd',\t'${5|0,1,1S,2,3,4,5,6,7,8,I,J|}')\t\t\t// 0: No, 1: Bo, 1S: BoSet, 2: BoOption, 3: Code, 4: CodeOption, 5: Range, 6: RangeOption, 7: ApsKeyword, 8: ApsKeywordOption, I: InstallationFile, J: FileStorage",
+			"XFAS.SetCol('RelatedObject',\t'${6| ,Addr.Number,DocState,Bo,Tx,FileStorageName,FreeTableItem.Value|}')\t\t\t// e.g.: No, Bo, Code, ApsKeyword, InstallationFile, FileStorage",
+			"XFAS.SetCol('RelatedIndex',\t\t'')",
+			"XFAS.SetCol('RelatedConstraint','')",
+			"XFAS.SetCol('ConstraintType',\t'')",
+			"XFAS.SetCol('CheckExpression',\t'')",
+			"XFAS.SetCol('DefaultValue',\t\t'${7:DefaultValue}')",
+			"XFAS.SetCol('EntryMode',\t\t'${8|0,1,2|}')\t\t\t// 0: Default, 1: Must, 2: Locked",
+			"XFAS.SetCol('WithPrevious',\t\t'${9|0,1|}')\t\t\t// 0: on new line, 1: on same line",
+			"XFAS.SetCol('MlsKey',\t\t\t'${1}')"
+		]
+	},
+
+	"CONTEXT: GetInfoScriptArg Examples": {
+		"prefix": "🔍 CONTEXT.Meta.GetInfoScriptArg.Examples",
+		"scope": "blockScript",
+		"description": [
+			"🔐 BlockScript only 🔐\n",
+			"Insert Examples for GetInfoScriptArg as Script-Block\r"
+		],
+		"body": [
+			"function GetInfoScriptArg() : void",
+			"{",
+			"\tXFAS.AddHeads('Argument','StateCd','DataTypeCd','Format','RelationshipCd','RelatedObject','RelatedIndex','RelatedConstraint','ConstraintType','CheckExpression','DefaultValue','EntryMode','WithPrevious','MlsKey')",
+			"\t// -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------",
+			"\t// Status=0 --> unterdrücken (ACHTUNG trotzdem an Script übergeben!)",
+			"\t///\t\t\t\t\t\t\t\t\t\t\tRelationShipCd\t\t\t\t\tRelatedConstraint\t\t\t\t\tDefaultValue\tEntrymode",
+			"\tXFAS.AddCells('ScriptArg0','0','A','10',\t'0','','',\t\t\t\t\t\t'','','',\t\t\t\t\t\t\t'nok',\t\t\t'0','0','State.0')",
+			"\t// EntryMode=1 --> Eingabe zwingend",
+			"\tXFAS.AddCells('ScriptArg1','1','A','10',\t'0','','',\t\t\t\t\t\t'','','',\t\t\t\t\t\t\t'helloworld',\t'1','1','EntryMode.1')",
+			"\t// EntryMode=2 --> Eingabe gesperrt",
+			"\tXFAS.AddCells('ScriptArg2','1','A','10',\t'0','','',\t\t\t\t\t\t'','','',\t\t\t\t\t\t\t'xxx',\t\t\t'2','1','EntryMode.2')",
+			"\t// RelationShipCd=1 --> BO.Attribut",
+			"\tXFAS.AddCells('ScriptArg3','1','A','10',\t'1','Addr.Number','9',\t\t\t'','','',\t\t\t\t\t\t\t'',\t\t\t\t'0','1','Relationship.1')",
+			"\t// RelationShipCd=3 --> Code",
+			"\tXFAS.AddCells('ScriptArg4','1','A','10',\t'3','DocState','',\t\t\t\t'Value<>10','','',\t\t\t\t\t'30',\t\t\t'0','0','Relationship.3')",
+			"\t// RelationShipCd=5 --> Range (von-bis)",
+			"\tXFAS.AddCells('ScriptArg5','1','N','1.0',\t'5','2,9','',\t\t\t\t\t'','','',\t\t\t\t\t\t\t'1',\t\t\t'0','0','Relationship.5')",
+			"\t// RelationShipCd=1S --> BOSets (z.B. FreeTableItem)",
+			"\tXFAS.AddCells('ScriptArg6','1','A','500',\t'1S','FreeTableItem.Value','',\t'FreeTableItem.TableNo=1000','','',\tDELIM+'A'+DELIM+'B'+DELIM,'0','0','Relationship.1S')",
+			"\t// -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------",
+			"\t// Formatierung Alphanummerisch",
+			"\t///\t\t\t\t\t\t\t\t\t\t\tRelationShipCd\t\t\t\t\tRelatedConstraint\t\t\t\t\tDefaultValue\tEntrymode",
+			"\tXFAS.AddCells('ScriptArg7','1','A','10',\t'0','','',\t\t\t\t\t\t'','','',\t\t\t\t\t\t\t'Alpha',\t\t'0','0','DataType.A')",
+			"\t// Formatierung Uppercase",
+			"\tXFAS.AddCells('ScriptArg8','0','X','10',\t'0','','',\t\t\t\t\t\t'','','',\t\t\t\t\t\t\t'BIG',\t\t\t'0','0','DataType.X')",
+			"\t// Formatierung Nummerisch",
+			"\tXFAS.AddCells('ScriptArg9','1','R','8.2',\t'0','','',\t\t\t\t\t\t'','','',\t\t\t\t\t\t\t'-100.2',\t\t'0','0','DataType.R')",
+			"\t// Formatierung Nummerisch nicht negativ",
+			"\tXFAS.AddCells('ScriptArg10','1','N','8.2',\t'0','','',\t\t\t\t\t\t'','','',\t\t\t\t\t\t\t'100.2',\t\t'0','1','DataType.N')",
+			"\t// Formatierung Datum",
+			"\tXFAS.AddCells('ScriptArg11','1','D','',\t\t'0','','',\t\t\t\t\t\t'','','',\t\t\t\t\t\t\tdateToStr(today(),'dd.MM.yyyy'),'0','1','DataType.D')",
+			"\t// Formatierung Zeit",
+			"\tXFAS.AddCells('ScriptArg12','1','H','',\t\t'0','','',\t\t\t\t\t\t'','','',\t\t\t\t\t\t\ttimeToStr(time(now()),'HH.mm'),'0','1','DataType.H')",
+			"\t// Formatierung Boolean",
+			"\tXFAS.AddCells('ScriptArg13','1','B','',\t\t'0','','',\t\t\t\t\t\t'','','',\t\t\t\t\t\t\t'0',\t\t\t'0','0','DataType.B')",
+			"\t// Formatierung Textblock",
+			"\tXFAS.AddCells('ScriptArg14','1','T','4000',\t'0','','',\t\t\t\t\t\t'','','',\t\t\t\t\t\t\t'firstLine\\nsecondLine',\t\t\t'0','0','DataType.T')",
+			"\t// -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------",
+			"\t// CheckExpression",
+			"\t///\t\t\t\t\t\t\t\t\t\t\tRelationShipCd\t\t\t\t\tRelatedConstraint\t\t\t\t\tDefaultValue\tEntrymode",
+			"\tXFAS.AddCells('ScriptArg15','1','R','8.2',\t'0','','',\t\t\t\t\t\t'','','Value < -0.0',\t\t\t\t'-100.2',\t\t'0','0','CheckExpression')",
+			"\t// ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------",
+			"\t// RelationsShip 'File'",
+			"\t///\t\t\t\t\t\t\t\t\t\t\tRelationShipCd\t\t\t\t\tRelatedConstraint\t\t\t\t\tDefaultValue\tEntrymode",
+			"\tXFAS.AddCells('ScriptArg16','1','A','250',\t'I','TX','',\t\t\t\t\t'IMPORT\\\\\\*.CSV','','',\t\t\t\t'sample.csv',\t'0','0','RelationShip.I')",
+			"\t// ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------",
+			"\t// RelationsShip 'File'",
+			"\t///\t\t\t\t\t\t\t\t\t\t\tRelationShipCd\t\t\t\t\tRelatedConstraint\t\t\t\t\tDefaultValue\tEntrymode",
+			"\tXFAS.AddCells('ScriptArg17','1','A','250',\t'J','FileStorageName','',\t\t'','','',\t\t\t\t\t\t\t'sample.csv',\t'0','0','RelationShip.J')",
+			"}"
+		]
+	},
+	"CONTEXT: GetInfoScriptCol": {
+		"prefix": "🔍 CONTEXT.Meta.GetInfoScriptCol",
+		"scope": "blockScript",
+		"description": [
+			"🔐 BlockScript only 🔐\n",
+			"Insert GetInfoScriptCol as Script-Block\r"
+		],
+		"body": [
+			"function GetInfoScriptCol() : void",
+			"{",
+			"\tXFAS.AddHeads('Column','DataTypeCd','Format','RelationshipCd','RelatedObject','RelatedIndex','RelatedConstraint','AdditionalInfo','OnDemand','MlsKey')",
+			"\t// ------------------------------------------------------------------------------------------------------",
+			"\t// Rückgabespalten",
+			"\tXFAS.NewRow()",
+			"\tXFAS.SetCol('Column',\t\t\t'${1:ScriptCol1}')",
+			"\tXFAS.SetCol('DataTypeCd',\t\t'${2|A,X,R,N,D,H,B,T|}')\t\t\t// A: AlphaAll, X: AlphaUC, R: NumAll, N: NumNotNeg, D: Date, H: Time, B: Boolean, T: Text",
+			"\tXFAS.SetCol('Format',\t\t\t'${3|100,10,10.0,1, |}')",
+			"\tXFAS.SetCol('RelationshipCd',\t'${4|0,1,1S,2,3,4,5,6,7,8,I,J|}')\t\t\t// 0: No, 1: Bo, 1S: BoSet, 2: BoOption, 3: Code, 4: CodeOption, 5: Range, 6: RangeOption, 7: ApsKeyword, 8: ApsKeywordOption, I: InstallationFile, J: FileStorage",
+			"\tXFAS.SetCol('RelatedObject',\t'${5| ,Addr.Number,DocState,Bo,Tx,FileStorageName,FreeTableItem.Value|}')\t\t\t// e.g.: No, Bo, Code, ApsKeyword, InstallationFile, FileStorage",
+			"\tXFAS.SetCol('RelatedIndex',\t\t'')",
+			"\tXFAS.SetCol('RelatedConstraint','')",
+			"\tXFAS.SetCol('AdditionalInfo',\t'')",
+			"\tXFAS.SetCol('OnDemand',\t\t\t'0')",
+			"\tXFAS.SetCol('MlsKey',\t\t\t'${1}')",
+			"}"
+		]
+	},
+	"CONTEXT: GetInfoScriptCol.AddColumn": {
+		"prefix": "🔍 CONTEXT.Meta.GetInfoScriptCol.AddColumn",
+		"scope": "blockScript",
+		"description": [
+			"🔐 BlockScript only 🔐\n",
+			"Insert GetInfoScriptCol as Script-Block\r"
+		],
+		"body": [
+			"// ------------------------------------------------------------------------------------------------------",
+			"XFAS.NewRow()",
+			"XFAS.SetCol('Column',\t\t\t'${1:ScriptCol2}')",
+			"XFAS.SetCol('DataTypeCd',\t\t'${2|A,X,R,N,D,H,B,T|}')\t\t\t// A: AlphaAll, X: AlphaUC, R: NumAll, N: NumNotNeg, D: Date, H: Time, B: Boolean, T: Text",
+			"XFAS.SetCol('Format',\t\t\t'${3|100,10,10.0,1, |}')",
+			"XFAS.SetCol('RelationshipCd',\t'${4|0,1,1S,2,3,4,5,6,7,8,I,J|}')\t\t\t// 0: No, 1: Bo, 1S: BoSet, 2: BoOption, 3: Code, 4: CodeOption, 5: Range, 6: RangeOption, 7: ApsKeyword, 8: ApsKeywordOption, I: InstallationFile, J: FileStorage",
+			"XFAS.SetCol('RelatedObject',\t'${5| ,Addr.Number,DocState,Bo,Tx,FileStorageName,FreeTableItem.Value|}')\t\t\t// e.g.: No, Bo, Code, ApsKeyword, InstallationFile, FileStorage",
+			"XFAS.SetCol('RelatedIndex',\t\t'')",
+			"XFAS.SetCol('RelatedConstraint','')",
+			"XFAS.SetCol('AdditionalInfo',\t'')",
+			"XFAS.SetCol('OnDemand',\t\t\t'0')",
+			"XFAS.SetCol('MlsKey',\t\t\t'${1}')"
+		]
+	},
+	"CONTEXT: GetInfoScriptCol.AddAsCells": {
+		"prefix": "🔍 CONTEXT.Meta.GetInfoScriptCol.AddAsCells",
+		"scope": "blockScript",
+		"description": [
+			"🔐 BlockScript only 🔐\n",
+			"Insert GetInfoScriptCol as Script-Block\r"
+		],
+		"body": [
+			"function GetInfoScriptCol() : void",
+			"{",
+			"\tXFAS.AddHeads('Column','DataTypeCd','Format','RelationshipCd','RelatedObject','RelatedIndex','RelatedConstraint','AdditionalInfo','OnDemand','MlsKey')",
+			"\t// ------------------------------------------------------------------------------------------------------",
+			"\t// Rückgabespalten",
+			"\tXFAS.AddCells('ScriptCol1','A','100','0','','','','','0','Addr.Number')",
+			"\tXFAS.AddCells('ScriptCol2','A','250','I','TX','','','Info5','0','Output.File')",
+			"}"
+		]
+	},
+	"CONDITION.for": {
+		"prefix": "🔍 CONDITION.for",
+		"scope": "blockScript",
+		"description": [
+			"🔐 BlockScript only 🔐\n",
+			"Insert for-condition\r"
+		],
+		"body": [
+			"for(var ${1:i} := 1, ${1} <= ${2:rows}, ++${1})",
+			"{",
+			"\t${3:yourCode}",
+			"}"
+		]
+	},
+	"CONDITION.while": {
+		"prefix": "🔍 CONDITION.while",
+		"scope": "blockScript",
+		"description": [
+			"🔐 BlockScript only 🔐\n",
+			"Insert while-condition\r"
+		],
+		"body": [
+			"var ${1:varName} := ${2|0,1|}",
+			"while(${1} ${3|<,<=|} ${4|rows,10,100|})",
+			"{ ",
+			"",
+			"\t++${1}",
+			"}"
+		]
+	},
+	"CONDITION.if": {
+		"prefix": "🔍 CONDITION.if",
+		"scope": "blockScript",
+		"description": [
+			"🔐 BlockScript only 🔐\n",
+			"Insert if-condition\r"
+		],
+		"body": [
+			"if(${1:valueA} ${2|<,<=,=,>=,>,<>|} ${3:valueB})",
+			"{",
+			"\t${4:// do something}",
+			"}"
+		]
+	},
+	"CONDITION.ifelse": {
+		"prefix": "🔍 CONDITION.ifelse",
+		"scope": "blockScript",
+		"description": [
+			"🔐 BlockScript only 🔐\n",
+			"Insert if-/else-condition\r"
+		],
+		"body": [
+			"if(${1:valueA} ${2|<,<=,=,>=,>,<>|} ${3:valueB})",
+			"{",
+			"\t${4:// do something}",
+			"}",
+			"else",
+			"{",
+			"\t${5:// do something else}",
+			"}"
+		]
+	},
+	"COMMENT.DefaultHeader" :{
+		"prefix": "🔍 COMMENT.DefaultHeader",
+		"scope": "blockScript",
+		"description": [
+			"🔐 BlockScript only 🔐\n",
+			"Insert comment: DefaultHeader\r"
+		],
+		"body": [
+			"// ------------------------------------------------------------------------------------------------------",
+			"// ${1:<ScriptTitle>}",
+			"// ------------------------------------------------------------------------------------------------------",
+			"// Dateiname: ${TM_FILENAME/[\\.]/./}",
+			"// Kunde:     ${2:<CustomerName>}",
+			"// Kontext:   ${3:<Context>}",
+			"// Autor:     OPACC Software AG, Luzern - ${4:<CreatorName>}",
+			"// ------------------------------------------------------------------------------------------------------",
+			"// Erstellt:  ${CURRENT_DATE}.${CURRENT_MONTH}.${CURRENT_YEAR} / ${5:<CreatorScut>}",
+			"// Geändert:  <Datum> / <Kürzel> - <Kurzbeschreibung>",
+			"// ------------------------------------------------------------------------------------------------------"
+		]
+	},
+	"COMMENT.FunctionDesc" :{
+		"prefix": "🔍 COMMENT.FunctionDesc",
+		"scope": "blockScript",
+		"description": [
+			"🔐 BlockScript only 🔐\n",
+			"Insert comment: function descriptor\r"
+		],
+		"body": [
+			"/// Description:\t${1:Description}",
+			"/// Arguments:\t\t${2:argument}\t: ${3|string,number,integer,boolean,date,time,timestamp|}",
+			"/// Return:\t\t\t${4:returnValue}\t: ${5|void,string,number,integer,boolean,date,time,timestamp|}"
+			]
+	}
+}

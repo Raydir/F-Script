@@ -1,0 +1,155 @@
+{
+    "VALIDATION: isNumber(value)":
+	{
+		"prefix": "✅ APSFUNCTION.Validation.isNumber",
+		"description": "Is value a valid number\rReturns:\r0: false\r1: true\r",
+		"body": [
+			"var ${1:resultValue}\t:= isNumber(${2:'123456.50'})"
+		]
+	},
+    "VALIDATION: isInteger(value)":
+	{
+		"prefix": "✅ APSFUNCTION.Validation.isInteger",
+		"description": "Is value a valid integer\rReturns:\r0: false\r1: true\rNote: returns also true for decimals!\r",
+		"body": [
+			"var ${1:resultValue}\t:= isInteger(${2:'123456'})"
+		]
+	},
+    "VALIDATION: isDate(value)":
+	{
+		"prefix": "✅ APSFUNCTION.Validation.isDate",
+		"description": "Is value a valid date\rReturns:\r0: false\r1: true\r",
+		"body": [
+			"var ${1:resultValue}\t:= isDate(${2:'01.01.2018'})"
+		]
+	},
+    "VALIDATION: isTime(value)":
+	{
+		"prefix": "✅ APSFUNCTION.Validation.isTime",
+		"description": "Is value a valid time\rReturns:\r0: false\r1: true\r",
+		"body": [
+			"var ${1:resultValue}\t:= isTime(${2:'04.45'})"
+		]
+	},
+    "VALIDATION: isTimestamp(value)":
+	{
+		"prefix": "✅ APSFUNCTION.Validation.isTimestamp",
+		"description": "Is value a valid timestamp\rReturns:\r0: false\r1: true\r",
+		"body": [
+			"var ${1:resultValue}\t:= isTimestamp(${2:'01.01.2020 04:45:21'})"
+		]
+	},
+    "MATH: abs(number)":
+	{
+		"prefix": "✅ APSFUNCTION.Math.Absolute",
+		"description": "Absolute value of a number/integer\rExample:\r-123456.50 => 123465.50\r",
+		"body": [
+			"var ${1:resultValue}\t:= abs(${2:-123456.50})"
+		]
+	},
+    "MATH: round(number,rounTo,roundMode)":
+	{
+		"prefix": "✅ APSFUNCTION.Math.Round",
+		"description": "Rounds a number to a multiple of the passed value.\rround(value[,roundTo][,roundMode])\rroundTo:\raccuracy (e.g. 0.01)\rroundMode: \r0: round up\r1: round off\r",
+		"body": [
+			"var ${1:resultValue}\t:= round(${2:123456.147},${3|0,1,0.1,0.01,0.001,0.5,0.05|},${4|0,1,-1|})"
+		]
+	},
+    "MATH: random(number)":
+	{
+		"prefix": "✅ APSFUNCTION.Math.Random",
+		"description": "Returns a random integer from 0 to defined value.\r",
+		"body": [
+			"var ${1:resultValue}\t:= random(${2:100})"
+		]
+	},
+    "MATH: mod(intDividend,intDivisor)":
+	{
+		"prefix": "✅ APSFUNCTION.Math.Modulo",
+		"description": "Returns the remainder after division of two numbers\rExample: mod(17,5) => 2\r",
+		"body": [
+			"var ${1:resultValue}\t:= mod(${2:17},${3:5})"
+		]
+	},
+	"MATH: (value operator value)":
+	{
+		"prefix": "✅ APSFUNCTION.Math.Operation",
+		"description": "Insert mathematic operation\rReturns result according to selected operator:\r+,-,*,/,^ => result of operation\r\r<,<=,=,>=,>,<> => 0:false/1:true\r\rmax,min => bigger/smaller value\r",
+		"body":
+		[
+			"var ${1:operationResult}\t:= ${2:10} ${3|+,-,*,/,^,<,<=,=,>=,>,<>,max,min|} ${4:20}"
+		]
+	},
+	"MATH: (value + value )":
+	{
+		"prefix": "✅ APSFUNCTION.Math.Addition",
+		"description": "Insert sample expression for addition\r",
+		"body":
+		[
+			"var ${1:operationResult}\t:= ${2:10} + ${3:20}"
+		]
+	},
+	"MATH: (value - value)":
+	{
+		"prefix": "✅ APSFUNCTION.Math.Subtraction",
+		"description": "Insert sample expression for subtraction\r",
+		"body":
+		[
+			"var ${1:operationResult}\t:= ${2:10} - ${3:20}"
+		]
+	},
+	"MATH: (value / value)":
+	{
+		"prefix": "✅ APSFUNCTION.Math.Division",
+		"description": "Insert sample expression for division\r",
+		"body":
+		[
+			"var ${1:operationResult}\t:= ${2:10} / ${3:20}"
+		]
+	},
+	"MATH: (value * value)":
+	{
+		"prefix": "✅ APSFUNCTION.Math.Multiplication",
+		"description": "Insert sample expression for multiplication\r",
+		"body":
+		[
+			"var ${1:operationResult}\t:= ${2:10} * ${3:20}"
+		]
+	},
+	"MATH: (value ^ value)":
+	{
+		"prefix": "✅ APSFUNCTION.Math.Potential",
+		"description": "Insert sample expression for potential\r",
+		"body":
+		[
+			"var ${1:operationResult}\t:= ${2:10} ^ ${3:20}"
+		]
+	},
+	"MATH: sqrt(value)":
+	{
+		"prefix": "✅ APSFUNCTION.Math.SquareRoot",
+		"description": "Insert sample expression for squareroot\r",
+		"body":
+		[
+			"var ${1:operationResult}\t:= sqrt(${2:9})"
+		]
+	},
+	"MATH: date(date + intDays)":
+	{
+		"prefix": "✅ APSFUNCTION.Math.Addition.Date",
+		"description": "Insert sample expression for adding n days to a date\r",
+		"body":
+		[
+			"var ${1:operationResult}\t:= date( date(${2:28.02.2023}) + number(${3:1}) )"
+		]
+	},
+	"MATH: date(date - intDays)":
+	{
+		"prefix": "✅ APSFUNCTION.Math.Subtraction.Date",
+		"description": "Insert sample expression for removing n days from a date\r",
+		"body":
+		[
+			"var ${1:operationResult}\t:= date( date(${2:28.02.2023}) - number(${3:1}) )"
+		]
+	}
+}

@@ -1,0 +1,104 @@
+{
+	"BLOCKFUNC: XSER.AddArg":	{
+		"prefix":	"🔐  BlockFunc.XSER.AddArg",
+		"description":	["Service-Argument hinzufügen."],
+		"body":	[
+			"XSER.AddArg(${2:xSerName}, ${3:serviceArg})",		]
+	},
+	"BLOCKFUNC: XSER.AddArgs":	{
+		"prefix":	"🔐  BlockFunc.XSER.AddArgs",
+		"description":	["Service-Argumente hinzufügen."],
+		"body":	[
+			"XSER.AddArgs(${2:xSerName}, ${3:serviceArgs})",		]
+	},
+	"BLOCKFUNC: XSER.AddRedoArgs":	{
+		"prefix":	"🔐  BlockFunc.XSER.AddRedoArgs",
+		"description":	["Redo-Argumente hinzufügen."],
+		"body":	[
+			"XSER.AddRedoArgs(${2:xSerName}, ${3:redoArgs})",		]
+	},
+	"BLOCKFUNC: XSER.AddRedoData":	{
+		"prefix":	"🔐  BlockFunc.XSER.AddRedoData",
+		"description":	["Redo-Daten hinzufügen."],
+		"body":	[
+			"XSER.AddRedoData(${2:xSerName}, ${3:redoDataAsString})",		]
+	},
+	"BLOCKFUNC: XSER.AppendArg":	{
+		"prefix":	"🔐  BlockFunc.XSER.AppendArg",
+		"description":	["Wert zum letzten Service-Argument hinzufügen. Fehler, wenn noch kein Argument vorhanden ist."],
+		"body":	[
+			"XSER.AppendArg(${2:xSerName}, ${3:argValueToAppend})",		]
+	},
+	"BLOCKFUNC: XSER.AppendArgByNo":	{
+		"prefix":	"🔐  BlockFunc.XSER.AppendArgByNo",
+		"description":	["Wert zu einem bestimmten Service-Argument (identifiziert anhand Nummer) hinzufügen. Fehler, wenn Argument noch nicht vorhanden ist."],
+		"body":	[
+			"XSER.AppendArgByNo(${2:xSerName}, ${3:oneBasedArgNo}, ${4:argValueToAppend})",		]
+	},
+	"BLOCKFUNC: XSER.Clear":	{
+		"prefix":	"🔐  BlockFunc.XSER.Clear",
+		"description":	["XSer-Objekt zurücksetzen. Insbesondere adressierter Service und Argumente werden zurückgesetzt. Objekt selber existiert jedoch weiterhin."],
+		"body":	[
+			"XSER.Clear(${2:xSerName})",		]
+	},
+	"BLOCKFUNC: XSER.Execute":	{
+		"prefix":	"🔐  BlockFunc.XSER.Execute",
+		"description":	["Service ausführen, Resultat in XRes speichern und 'Erfolgreich'-Info als Rückgabewert."],
+		"body":	[
+			"\tvar ${1:boolVal} := XSER.Execute(${2:xSerName}, ${3:xResName}, ${4:clientNo}, ${5:userNo}, ${6:password}, ${7:impersonateAs}, ${8:uiLangNo}, ${9:dataLangNo})",		]
+	},
+	"BLOCKFUNC: XSER.ExecuteToXFasDirectResponse":	{
+		"prefix":	"🔐  BlockFunc.XSER.ExecuteToXFasDirectResponse",
+		"description":	["Service ausführen, Resultat in 'XFAS-Direct-Response' zurückgeben, Header-Infos auch via XRes mit Namen 'XFAS' verfügbar und 'Erfolgreich'-Info als Rückgabewert liefern."],
+		"body":	[
+			"\tvar ${1:boolVal} := XSER.ExecuteToXFasDirectResponse(${2:xSerName}, ${3:clientNo}, ${4:userNo}, ${5:password}, ${6:impersonateAs}, ${7:uiLangNo}, ${8:dataLangNo})",		]
+	},
+	"BLOCKFUNC: XSER.GetArgByNo":	{
+		"prefix":	"🔐  BlockFunc.XSER.GetArgByNo",
+		"description":	["Liefert den Wert eines bestimmten Arguments. Fehler, wenn Argument nicht vorhanden ist."],
+		"body":	[
+			"\tvar ${1:stringVal} := XSER.GetArgByNo(${2:xSerName}, ${3:oneBasedArgNo})",		]
+	},
+	"BLOCKFUNC: XSER.GetNmbOfArgs":	{
+		"prefix":	"🔐  BlockFunc.XSER.GetNmbOfArgs",
+		"description":	["Liefert Anzahl der aktuell vorhandenen Argumente."],
+		"body":	[
+			"\tvar ${1:numberVal} := XSER.GetNmbOfArgs(${2:xSerName})",		]
+	},
+	"BLOCKFUNC: XSER.GetService":	{
+		"prefix":	"🔐  BlockFunc.XSER.GetService",
+		"description":	["Aktuell gesetzten Service-Port und -Namen abholen."],
+		"body":	[
+			"\tvar ${1:stringVal} := XSER.GetService(${2:xSerName})",		]
+	},
+	"BLOCKFUNC: XSER.IsDefined":	{
+		"prefix":	"🔐  BlockFunc.XSER.IsDefined",
+		"description":	["Ermittelt, ob ein bestimmtes Objekt existiert."],
+		"body":	[
+			"\tvar ${1:boolVal} := XSER.IsDefined(${2:xSerName})",		]
+	},
+	"BLOCKFUNC: XSER.SetArgByNo":	{
+		"prefix":	"🔐  BlockFunc.XSER.SetArgByNo",
+		"description":	["Bestimmtes Service-Argument (identifiziert anhand Nummer) setzen."],
+		"body":	[
+			"XSER.SetArgByNo(${2:xSerName}, ${3:oneBasedArgNo}, ${4:argValue})",		]
+	},
+	"BLOCKFUNC: XSER.SetArgs":	{
+		"prefix":	"🔐  BlockFunc.XSER.SetArgs",
+		"description":	["Service-Argumente setzen. Allfällig vormals vorhandene Argumente werden zurückgesetzt."],
+		"body":	[
+			"XSER.SetArgs(${2:xSerName}, ${3:serviceArgs})",		]
+	},
+	"BLOCKFUNC: XSER.SetService":	{
+		"prefix":	"🔐  BlockFunc.XSER.SetService",
+		"description":	["XSer-Objekt für einen bestimmten Service-Aufruf erzeugen (falls nötig). Allfällig vormals vorhandene Argumente bleiben erhalten."],
+		"body":	[
+			"XSER.SetService(${2:xSerName}, ${3:servicePortAndName})",		]
+	},
+	"BLOCKFUNC: XSER.SetServiceAndArgs":	{
+		"prefix":	"🔐  BlockFunc.XSER.SetServiceAndArgs",
+		"description":	["XSer-Objekt für einen bestimmten Service-Aufruf erzeugen (falls nötig) und die übergebenen Argumente setzen. Allfällig vormals vorhandene Argumente werden zurückgesetzt."],
+		"body":	[
+			"XSER.SetServiceAndArgs(${2:xSerName}, ${3:servicePortAndName}, ${4:serviceArgs})",		]
+	},
+}

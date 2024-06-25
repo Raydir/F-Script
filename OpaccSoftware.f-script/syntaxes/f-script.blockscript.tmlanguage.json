@@ -1,0 +1,1135 @@
+{
+"\\$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+"name": "F-Script",
+"scopeName": "source.f-script.blockscript",
+	"patterns":
+	[{
+		"include": "#blockscriptfunc"
+	}],
+	"repository":
+	{
+		"blockscriptfunc": 
+		{
+			"patterns":
+			[
+			{
+				"name": "constant.numeric.octal",
+				"match": "[\\s]{0,}(CSV\\.|IS\\.|JSON\\.|PROGRESS\\.|READ\\.|SPLIT\\.|WRITE\\.|XARR\\.|XCNT\\.|XFAS\\.|XML\\.|XRES\\.|XSER\\.|XTAB\\.|X\\.)"
+			},
+			{
+				"name" : "constant.regexp",
+				"match" : "(?<=CSV.)CreateGridFromXRes\\b"
+			},
+			{
+				"name" : "constant.regexp",
+				"match" : "(?<=CSV.)CreateGridFromXTab\\b"
+			},
+			{
+				"name" : "constant.regexp",
+				"match" : "(?<=CSV.)CreateLine\\b"
+			},
+			{
+				"name" : "constant.regexp",
+				"match" : "(?<=CSV.)CreateLineFromXArr\\b"
+			},
+			{
+				"name" : "constant.regexp",
+				"match" : "(?<=CSV.)CreateText\\b"
+			},
+			{
+				"name" : "constant.regexp",
+				"match" : "(?<=IS.)AddArg\\b"
+			},
+			{
+				"name" : "constant.regexp",
+				"match" : "(?<=IS.)AddArgs\\b"
+			},
+			{
+				"name" : "constant.regexp",
+				"match" : "(?<=IS.)AppendArg\\b"
+			},
+			{
+				"name" : "constant.regexp",
+				"match" : "(?<=IS.)AppendArgByNo\\b"
+			},
+			{
+				"name" : "constant.regexp",
+				"match" : "(?<=IS.)Clear\\b"
+			},
+			{
+				"name" : "constant.regexp",
+				"match" : "(?<=IS.)Execute\\b"
+			},
+			{
+				"name" : "constant.regexp",
+				"match" : "(?<=IS.)GetArgByNo\\b"
+			},
+			{
+				"name" : "constant.regexp",
+				"match" : "(?<=IS.)GetIbos\\b"
+			},
+			{
+				"name" : "constant.regexp",
+				"match" : "(?<=IS.)GetIbosAndArgs\\b"
+			},
+			{
+				"name" : "constant.regexp",
+				"match" : "(?<=IS.)GetMsgKey\\b"
+			},
+			{
+				"name" : "constant.regexp",
+				"match" : "(?<=IS.)GetMsgText\\b"
+			},
+			{
+				"name" : "constant.regexp",
+				"match" : "(?<=IS.)GetOk\\b"
+			},
+			{
+				"name" : "constant.regexp",
+				"match" : "(?<=IS.)IsDefined\\b"
+			},
+			{
+				"name" : "constant.regexp",
+				"match" : "(?<=IS.)SetArgByNo\\b"
+			},
+			{
+				"name" : "constant.regexp",
+				"match" : "(?<=IS.)SetArgs\\b"
+			},
+			{
+				"name" : "constant.regexp",
+				"match" : "(?<=IS.)SetIbos\\b"
+			},
+			{
+				"name" : "constant.regexp",
+				"match" : "(?<=IS.)SetIbosAndArgs\\b"
+			},
+			{
+				"name" : "constant.regexp",
+				"match" : "(?<=IS.)SuppressExceptions\\b"
+			},
+			{
+				"name" : "constant.regexp",
+				"match" : "(?<=JSON.)CreateBool\\b"
+			},
+			{
+				"name" : "constant.regexp",
+				"match" : "(?<=JSON.)CreateBoolMember\\b"
+			},
+			{
+				"name" : "constant.regexp",
+				"match" : "(?<=JSON.)CreateBoolMembers\\b"
+			},
+			{
+				"name" : "constant.regexp",
+				"match" : "(?<=JSON.)CreateDate\\b"
+			},
+			{
+				"name" : "constant.regexp",
+				"match" : "(?<=JSON.)CreateDateMember\\b"
+			},
+			{
+				"name" : "constant.regexp",
+				"match" : "(?<=JSON.)CreateDateMemberArray\\b"
+			},
+			{
+				"name" : "constant.regexp",
+				"match" : "(?<=JSON.)CreateDateMemberArrayFromXArr\\b"
+			},
+			{
+				"name" : "constant.regexp",
+				"match" : "(?<=JSON.)CreateDateMembers\\b"
+			},
+			{
+				"name" : "constant.regexp",
+				"match" : "(?<=JSON.)CreateEndArray\\b"
+			},
+			{
+				"name" : "constant.regexp",
+				"match" : "(?<=JSON.)CreateEndObject\\b"
+			},
+			{
+				"name" : "constant.regexp",
+				"match" : "(?<=JSON.)CreateNmb\\b"
+			},
+			{
+				"name" : "constant.regexp",
+				"match" : "(?<=JSON.)CreateNmbMember\\b"
+			},
+			{
+				"name" : "constant.regexp",
+				"match" : "(?<=JSON.)CreateNmbMemberArray\\b"
+			},
+			{
+				"name" : "constant.regexp",
+				"match" : "(?<=JSON.)CreateNmbMemberArrayFromXArr\\b"
+			},
+			{
+				"name" : "constant.regexp",
+				"match" : "(?<=JSON.)CreateNmbMembers\\b"
+			},
+			{
+				"name" : "constant.regexp",
+				"match" : "(?<=JSON.)CreateNull\\b"
+			},
+			{
+				"name" : "constant.regexp",
+				"match" : "(?<=JSON.)CreateNullMember\\b"
+			},
+			{
+				"name" : "constant.regexp",
+				"match" : "(?<=JSON.)CreateNullMembers\\b"
+			},
+			{
+				"name" : "constant.regexp",
+				"match" : "(?<=JSON.)CreateStartArray\\b"
+			},
+			{
+				"name" : "constant.regexp",
+				"match" : "(?<=JSON.)CreateStartObject\\b"
+			},
+			{
+				"name" : "constant.regexp",
+				"match" : "(?<=JSON.)CreateStr\\b"
+			},
+			{
+				"name" : "constant.regexp",
+				"match" : "(?<=JSON.)CreateStrMember\\b"
+			},
+			{
+				"name" : "constant.regexp",
+				"match" : "(?<=JSON.)CreateStrMemberArray\\b"
+			},
+			{
+				"name" : "constant.regexp",
+				"match" : "(?<=JSON.)CreateStrMemberArrayFromXArr\\b"
+			},
+			{
+				"name" : "constant.regexp",
+				"match" : "(?<=JSON.)CreateStrMembers\\b"
+			},
+			{
+				"name" : "constant.regexp",
+				"match" : "(?<=JSON.)Initialize\\b"
+			},
+			{
+				"name" : "constant.regexp",
+				"match" : "(?<=PROGRESS.)CreateJob\\b"
+			},
+			{
+				"name" : "constant.regexp",
+				"match" : "(?<=PROGRESS.)CreateStep\\b"
+			},
+			{
+				"name" : "constant.regexp",
+				"match" : "(?<=PROGRESS.)CreateStepAndWait\\b"
+			},
+			{
+				"name" : "constant.regexp",
+				"match" : "(?<=PROGRESS.)GetId\\b"
+			},
+			{
+				"name" : "constant.regexp",
+				"match" : "(?<=PROGRESS.)GetInfo\\b"
+			},
+			{
+				"name" : "constant.regexp",
+				"match" : "(?<=PROGRESS.)IsActive\\b"
+			},
+			{
+				"name" : "constant.regexp",
+				"match" : "(?<=PROGRESS.)IsJobCancelRequested\\b"
+			},
+			{
+				"name" : "constant.regexp",
+				"match" : "(?<=PROGRESS.)IsProcessCancelRequested\\b"
+			},
+			{
+				"name" : "constant.regexp",
+				"match" : "(?<=PROGRESS.)IsStepCancelRequested\\b"
+			},
+			{
+				"name" : "constant.regexp",
+				"match" : "(?<=PROGRESS.)IsTimeoutCancelRequested\\b"
+			},
+			{
+				"name" : "constant.regexp",
+				"match" : "(?<=PROGRESS.)Refresh\\b"
+			},
+			{
+				"name" : "constant.regexp",
+				"match" : "(?<=PROGRESS.)RequestCancelOfJob\\b"
+			},
+			{
+				"name" : "constant.regexp",
+				"match" : "(?<=PROGRESS.)RequestCancelOfProcess\\b"
+			},
+			{
+				"name" : "constant.regexp",
+				"match" : "(?<=PROGRESS.)RequestCancelOfStep\\b"
+			},
+			{
+				"name" : "constant.regexp",
+				"match" : "(?<=PROGRESS.)ResetCancelRequests\\b"
+			},
+			{
+				"name" : "constant.regexp",
+				"match" : "(?<=PROGRESS.)SetActiveId\\b"
+			},
+			{
+				"name" : "constant.regexp",
+				"match" : "(?<=PROGRESS.)SetInfo\\b"
+			},
+			{
+				"name" : "constant.regexp",
+				"match" : "(?<=PROGRESS.)SetJobPercent\\b"
+			},
+			{
+				"name" : "constant.regexp",
+				"match" : "(?<=PROGRESS.)SetStepPercent\\b"
+			},
+			{
+				"name" : "constant.regexp",
+				"match" : "(?<=READ.)All\\b"
+			},
+			{
+				"name" : "constant.regexp",
+				"match" : "(?<=READ.)Close\\b"
+			},
+			{
+				"name" : "constant.regexp",
+				"match" : "(?<=READ.)GetSize\\b"
+			},
+			{
+				"name" : "constant.regexp",
+				"match" : "(?<=READ.)IsAtEnd\\b"
+			},
+			{
+				"name" : "constant.regexp",
+				"match" : "(?<=READ.)IsOpen\\b"
+			},
+			{
+				"name" : "constant.regexp",
+				"match" : "(?<=READ.)NextCharacters\\b"
+			},
+			{
+				"name" : "constant.regexp",
+				"match" : "(?<=READ.)NextLine\\b"
+			},
+			{
+				"name" : "constant.regexp",
+				"match" : "(?<=READ.)Open\\b"
+			},
+			{
+				"name" : "constant.regexp",
+				"match" : "(?<=READ.)OpenAnsi\\b"
+			},
+			{
+				"name" : "constant.regexp",
+				"match" : "(?<=READ.)OpenOem850\\b"
+			},
+			{
+				"name" : "constant.regexp",
+				"match" : "(?<=READ.)OpenUtf16Le\\b"
+			},
+			{
+				"name" : "constant.regexp",
+				"match" : "(?<=READ.)OpenUtf8\\b"
+			},
+			{
+				"name" : "constant.regexp",
+				"match" : "(?<=SPLIT.)IntoXArr\\b"
+			},
+			{
+				"name" : "constant.regexp",
+				"match" : "(?<=WRITE.)Close\\b"
+			},
+			{
+				"name" : "constant.regexp",
+				"match" : "(?<=WRITE.)GetLineCount\\b"
+			},
+			{
+				"name" : "constant.regexp",
+				"match" : "(?<=WRITE.)IsOpen\\b"
+			},
+			{
+				"name" : "constant.regexp",
+				"match" : "(?<=WRITE.)OpenAnsi\\b"
+			},
+			{
+				"name" : "constant.regexp",
+				"match" : "(?<=WRITE.)OpenOem850\\b"
+			},
+			{
+				"name" : "constant.regexp",
+				"match" : "(?<=WRITE.)OpenUtf16Le\\b"
+			},
+			{
+				"name" : "constant.regexp",
+				"match" : "(?<=WRITE.)OpenUtf16LeWithoutBom\\b"
+			},
+			{
+				"name" : "constant.regexp",
+				"match" : "(?<=WRITE.)OpenUtf8\\b"
+			},
+			{
+				"name" : "constant.regexp",
+				"match" : "(?<=WRITE.)OpenUtf8WithoutBom\\b"
+			},
+			{
+				"name" : "constant.regexp",
+				"match" : "(?<=WRITE.)Out\\b"
+			},
+			{
+				"name" : "constant.regexp",
+				"match" : "(?<=WRITE.)OutLine\\b"
+			},
+			{
+				"name" : "constant.regexp",
+				"match" : "(?<=X.)Append\\b"
+			},
+			{
+				"name" : "constant.regexp",
+				"match" : "(?<=X.)Get\\b"
+			},
+			{
+				"name" : "constant.regexp",
+				"match" : "(?<=X.)IsDefined\\b"
+			},
+			{
+				"name" : "constant.regexp",
+				"match" : "(?<=X.)Set\\b"
+			},
+			{
+				"name" : "constant.regexp",
+				"match" : "(?<=XARR.)AddItem\\b"
+			},
+			{
+				"name" : "constant.regexp",
+				"match" : "(?<=XARR.)AddItems\\b"
+			},
+			{
+				"name" : "constant.regexp",
+				"match" : "(?<=XARR.)AppendToItem\\b"
+			},
+			{
+				"name" : "constant.regexp",
+				"match" : "(?<=XARR.)Copy\\b"
+			},
+			{
+				"name" : "constant.regexp",
+				"match" : "(?<=XARR.)CreateOrClear\\b"
+			},
+			{
+				"name" : "constant.regexp",
+				"match" : "(?<=XARR.)DeleteItem\\b"
+			},
+			{
+				"name" : "constant.regexp",
+				"match" : "(?<=XARR.)GetCount\\b"
+			},
+			{
+				"name" : "constant.regexp",
+				"match" : "(?<=XARR.)GetItem\\b"
+			},
+			{
+				"name" : "constant.regexp",
+				"match" : "(?<=XARR.)IsDefined\\b"
+			},
+			{
+				"name" : "constant.regexp",
+				"match" : "(?<=XARR.)SetItem\\b"
+			},
+			{
+				"name" : "constant.regexp",
+				"match" : "(?<=XCNT.)GetBoId\\b"
+			},
+			{
+				"name" : "constant.regexp",
+				"match" : "(?<=XCNT.)GetBoOrganizerCd\\b"
+			},
+			{
+				"name" : "constant.regexp",
+				"match" : "(?<=XCNT.)GetBoType\\b"
+			},
+			{
+				"name" : "constant.regexp",
+				"match" : "(?<=XCNT.)GetConsumerComputerName\\b"
+			},
+			{
+				"name" : "constant.regexp",
+				"match" : "(?<=XCNT.)GetConsumerProcessName\\b"
+			},
+			{
+				"name" : "constant.regexp",
+				"match" : "(?<=XCNT.)GetConsumerWindowsUserDomain\\b"
+			},
+			{
+				"name" : "constant.regexp",
+				"match" : "(?<=XCNT.)GetConsumerWindowsUserName\\b"
+			},
+			{
+				"name" : "constant.regexp",
+				"match" : "(?<=XCNT.)GetFreeArgByName\\b"
+			},
+			{
+				"name" : "constant.regexp",
+				"match" : "(?<=XCNT.)GetFreeArgByNo\\b"
+			},
+			{
+				"name" : "constant.regexp",
+				"match" : "(?<=XCNT.)GetFreeArgCount\\b"
+			},
+			{
+				"name" : "constant.regexp",
+				"match" : "(?<=XCNT.)GetLangNo\\b"
+			},
+			{
+				"name" : "constant.regexp",
+				"match" : "(?<=XCNT.)GetNumberOfCopies\\b"
+			},
+			{
+				"name" : "constant.regexp",
+				"match" : "(?<=XCNT.)GetOutputDevice\\b"
+			},
+			{
+				"name" : "constant.regexp",
+				"match" : "(?<=XCNT.)GetOutputTypeCd\\b"
+			},
+			{
+				"name" : "constant.regexp",
+				"match" : "(?<=XCNT.)GetPrintAsPdf\\b"
+			},
+			{
+				"name" : "constant.regexp",
+				"match" : "(?<=XCNT.)GetPrinterNo\\b"
+			},
+			{
+				"name" : "constant.regexp",
+				"match" : "(?<=XCNT.)GetPrintJobPriority\\b"
+			},
+			{
+				"name" : "constant.regexp",
+				"match" : "(?<=XCNT.)GetScriptName\\b"
+			},
+			{
+				"name" : "constant.regexp",
+				"match" : "(?<=XCNT.)GetSessionClientNo\\b"
+			},
+			{
+				"name" : "constant.regexp",
+				"match" : "(?<=XCNT.)GetSessionDataLangNo\\b"
+			},
+			{
+				"name" : "constant.regexp",
+				"match" : "(?<=XCNT.)GetSessionImpersonatorNo\\b"
+			},
+			{
+				"name" : "constant.regexp",
+				"match" : "(?<=XCNT.)GetSessionUiLangNo\\b"
+			},
+			{
+				"name" : "constant.regexp",
+				"match" : "(?<=XCNT.)GetSessionUserAddrNo\\b"
+			},
+			{
+				"name" : "constant.regexp",
+				"match" : "(?<=XCNT.)GetSessionUserAdminLevelCd\\b"
+			},
+			{
+				"name" : "constant.regexp",
+				"match" : "(?<=XCNT.)GetSessionUserGroupNo\\b"
+			},
+			{
+				"name" : "constant.regexp",
+				"match" : "(?<=XCNT.)GetSessionUserNo\\b"
+			},
+			{
+				"name" : "constant.regexp",
+				"match" : "(?<=XCNT.)HasServiceBusConnection\\b"
+			},
+			{
+				"name" : "constant.regexp",
+				"match" : "(?<=XCNT.)SetNumberOfCopies\\b"
+			},
+			{
+				"name" : "constant.regexp",
+				"match" : "(?<=XCNT.)SetPrintJobPriority\\b"
+			},
+			{
+				"name" : "constant.regexp",
+				"match" : "(?<=XFAS.)AddBinaryHead\\b"
+			},
+			{
+				"name" : "constant.regexp",
+				"match" : "(?<=XFAS.)AddCell\\b"
+			},
+			{
+				"name" : "constant.regexp",
+				"match" : "(?<=XFAS.)AddCells\\b"
+			},
+			{
+				"name" : "constant.regexp",
+				"match" : "(?<=XFAS.)AddHead\\b"
+			},
+			{
+				"name" : "constant.regexp",
+				"match" : "(?<=XFAS.)AddHeads\\b"
+			},
+			{
+				"name" : "constant.regexp",
+				"match" : "(?<=XFAS.)AppendCell\\b"
+			},
+			{
+				"name" : "constant.regexp",
+				"match" : "(?<=XFAS.)AppendMlsTextParam\\b"
+			},
+			{
+				"name" : "constant.regexp",
+				"match" : "(?<=XFAS.)Clear\\b"
+			},
+			{
+				"name" : "constant.regexp",
+				"match" : "(?<=XFAS.)HasHead\\b"
+			},
+			{
+				"name" : "constant.regexp",
+				"match" : "(?<=XFAS.)IsActive\\b"
+			},
+			{
+				"name" : "constant.regexp",
+				"match" : "(?<=XFAS.)IsDefined\\b"
+			},
+			{
+				"name" : "constant.regexp",
+				"match" : "(?<=XFAS.)IsDirectResponse\\b"
+			},
+			{
+				"name" : "constant.regexp",
+				"match" : "(?<=XFAS.)NewRow\\b"
+			},
+			{
+				"name" : "constant.regexp",
+				"match" : "(?<=XFAS.)SetCol\\b"
+			},
+			{
+				"name" : "constant.regexp",
+				"match" : "(?<=XFAS.)SetMlsKey\\b"
+			},
+			{
+				"name" : "constant.regexp",
+				"match" : "(?<=XFAS.)SetMsgKey\\b"
+			},
+			{
+				"name" : "constant.regexp",
+				"match" : "(?<=XFAS.)SetMsgText\\b"
+			},
+			{
+				"name" : "constant.regexp",
+				"match" : "(?<=XFAS.)SetOk\\b"
+			},
+			{
+				"name" : "constant.regexp",
+				"match" : "(?<=XFAS.)SetRedoData\\b"
+			},
+			{
+				"name" : "constant.regexp",
+				"match" : "(?<=XML.)CreateAttribute\\b"
+			},
+			{
+				"name" : "constant.regexp",
+				"match" : "(?<=XML.)CreateComment\\b"
+			},
+			{
+				"name" : "constant.regexp",
+				"match" : "(?<=XML.)CreateElement\\b"
+			},
+			{
+				"name" : "constant.regexp",
+				"match" : "(?<=XML.)CreateElementWithAttribute\\b"
+			},
+			{
+				"name" : "constant.regexp",
+				"match" : "(?<=XML.)CreateElementWithAttributes\\b"
+			},
+			{
+				"name" : "constant.regexp",
+				"match" : "(?<=XML.)CreateEndElement\\b"
+			},
+			{
+				"name" : "constant.regexp",
+				"match" : "(?<=XML.)CreateStartElement\\b"
+			},
+			{
+				"name" : "constant.regexp",
+				"match" : "(?<=XML.)CreateStartElementWithAttribute\\b"
+			},
+			{
+				"name" : "constant.regexp",
+				"match" : "(?<=XML.)CreateText\\b"
+			},
+			{
+				"name" : "constant.regexp",
+				"match" : "(?<=XML.)InitAndCreateAnsiEncodingHeader\\b"
+			},
+			{
+				"name" : "constant.regexp",
+				"match" : "(?<=XML.)InitAndCreateUtf8EncodingHeader\\b"
+			},
+			{
+				"name" : "constant.regexp",
+				"match" : "(?<=XML.)SetIndent\\b"
+			},
+			{
+				"name" : "constant.regexp",
+				"match" : "(?<=XRES.)GetColName\\b"
+			},
+			{
+				"name" : "constant.regexp",
+				"match" : "(?<=XRES.)GetColValByName\\b"
+			},
+			{
+				"name" : "constant.regexp",
+				"match" : "(?<=XRES.)GetColValByNo\\b"
+			},
+			{
+				"name" : "constant.regexp",
+				"match" : "(?<=XRES.)GetDurationInMsec\\b"
+			},
+			{
+				"name" : "constant.regexp",
+				"match" : "(?<=XRES.)GetMsgKey\\b"
+			},
+			{
+				"name" : "constant.regexp",
+				"match" : "(?<=XRES.)GetMsgText\\b"
+			},
+			{
+				"name" : "constant.regexp",
+				"match" : "(?<=XRES.)GetMsgTextFull\\b"
+			},
+			{
+				"name" : "constant.regexp",
+				"match" : "(?<=XRES.)GetMsgTextLogMsg\\b"
+			},
+			{
+				"name" : "constant.regexp",
+				"match" : "(?<=XRES.)GetMsgTextUiMsg\\b"
+			},
+			{
+				"name" : "constant.regexp",
+				"match" : "(?<=XRES.)GetNmbOfCols\\b"
+			},
+			{
+				"name" : "constant.regexp",
+				"match" : "(?<=XRES.)GetNmbOfRows\\b"
+			},
+			{
+				"name" : "constant.regexp",
+				"match" : "(?<=XRES.)GetOk\\b"
+			},
+			{
+				"name" : "constant.regexp",
+				"match" : "(?<=XRES.)GetRedoData\\b"
+			},
+			{
+				"name" : "constant.regexp",
+				"match" : "(?<=XRES.)IsDefined\\b"
+			},
+			{
+				"name" : "constant.regexp",
+				"match" : "(?<=XRES.)Redo\\b"
+			},
+			{
+				"name" : "constant.regexp",
+				"match" : "(?<=XRES.)TakeLogAndUiMsg\\b"
+			},
+			{
+				"name" : "constant.regexp",
+				"match" : "(?<=XSER.)AddArg\\b"
+			},
+			{
+				"name" : "constant.regexp",
+				"match" : "(?<=XSER.)AddArgs\\b"
+			},
+			{
+				"name" : "constant.regexp",
+				"match" : "(?<=XSER.)AddRedoArgs\\b"
+			},
+			{
+				"name" : "constant.regexp",
+				"match" : "(?<=XSER.)AddRedoData\\b"
+			},
+			{
+				"name" : "constant.regexp",
+				"match" : "(?<=XSER.)AppendArg\\b"
+			},
+			{
+				"name" : "constant.regexp",
+				"match" : "(?<=XSER.)AppendArgByNo\\b"
+			},
+			{
+				"name" : "constant.regexp",
+				"match" : "(?<=XSER.)Clear\\b"
+			},
+			{
+				"name" : "constant.regexp",
+				"match" : "(?<=XSER.)Execute\\b"
+			},
+			{
+				"name" : "constant.regexp",
+				"match" : "(?<=XSER.)ExecuteToXFasDirectResponse\\b"
+			},
+			{
+				"name" : "constant.regexp",
+				"match" : "(?<=XSER.)GetArgByNo\\b"
+			},
+			{
+				"name" : "constant.regexp",
+				"match" : "(?<=XSER.)GetNmbOfArgs\\b"
+			},
+			{
+				"name" : "constant.regexp",
+				"match" : "(?<=XSER.)GetService\\b"
+			},
+			{
+				"name" : "constant.regexp",
+				"match" : "(?<=XSER.)IsDefined\\b"
+			},
+			{
+				"name" : "constant.regexp",
+				"match" : "(?<=XSER.)SetArgByNo\\b"
+			},
+			{
+				"name" : "constant.regexp",
+				"match" : "(?<=XSER.)SetArgs\\b"
+			},
+			{
+				"name" : "constant.regexp",
+				"match" : "(?<=XSER.)SetService\\b"
+			},
+			{
+				"name" : "constant.regexp",
+				"match" : "(?<=XSER.)SetServiceAndArgs\\b"
+			},
+			{
+				"name" : "constant.regexp",
+				"match" : "(?<=XTAB.)AddCol\\b"
+			},
+			{
+				"name" : "constant.regexp",
+				"match" : "(?<=XTAB.)AddIndexByColNames\\b"
+			},
+			{
+				"name" : "constant.regexp",
+				"match" : "(?<=XTAB.)AddIndexByColNos\\b"
+			},
+			{
+				"name" : "constant.regexp",
+				"match" : "(?<=XTAB.)AddRow\\b"
+			},
+			{
+				"name" : "constant.regexp",
+				"match" : "(?<=XTAB.)AddRowAndReturnNo\\b"
+			},
+			{
+				"name" : "constant.regexp",
+				"match" : "(?<=XTAB.)ClearView\\b"
+			},
+			{
+				"name" : "constant.regexp",
+				"match" : "(?<=XTAB.)ClearViewFilter\\b"
+			},
+			{
+				"name" : "constant.regexp",
+				"match" : "(?<=XTAB.)ClearViewOrder\\b"
+			},
+			{
+				"name" : "constant.regexp",
+				"match" : "(?<=XTAB.)CreateOrClear\\b"
+			},
+			{
+				"name" : "constant.regexp",
+				"match" : "(?<=XTAB.)DeleteRow\\b"
+			},
+			{
+				"name" : "constant.regexp",
+				"match" : "(?<=XTAB.)DeleteRows\\b"
+			},
+			{
+				"name" : "constant.regexp",
+				"match" : "(?<=XTAB.)FindFirstRow\\b"
+			},
+			{
+				"name" : "constant.regexp",
+				"match" : "(?<=XTAB.)FindRowByIndex\\b"
+			},
+			{
+				"name" : "constant.regexp",
+				"match" : "(?<=XTAB.)FindRowByIndexWithoutView\\b"
+			},
+			{
+				"name" : "constant.regexp",
+				"match" : "(?<=XTAB.)GetBoolVal\\b"
+			},
+			{
+				"name" : "constant.regexp",
+				"match" : "(?<=XTAB.)GetBoolValByColName\\b"
+			},
+			{
+				"name" : "constant.regexp",
+				"match" : "(?<=XTAB.)GetColDataTypeAndFormatByName\\b"
+			},
+			{
+				"name" : "constant.regexp",
+				"match" : "(?<=XTAB.)GetColDataTypeAndFormatByNo\\b"
+			},
+			{
+				"name" : "constant.regexp",
+				"match" : "(?<=XTAB.)GetColName\\b"
+			},
+			{
+				"name" : "constant.regexp",
+				"match" : "(?<=XTAB.)GetColNo\\b"
+			},
+			{
+				"name" : "constant.regexp",
+				"match" : "(?<=XTAB.)GetDateVal\\b"
+			},
+			{
+				"name" : "constant.regexp",
+				"match" : "(?<=XTAB.)GetDateValByColName\\b"
+			},
+			{
+				"name" : "constant.regexp",
+				"match" : "(?<=XTAB.)GetNmbOfCols\\b"
+			},
+			{
+				"name" : "constant.regexp",
+				"match" : "(?<=XTAB.)GetNmbOfRows\\b"
+			},
+			{
+				"name" : "constant.regexp",
+				"match" : "(?<=XTAB.)GetNmbVal\\b"
+			},
+			{
+				"name" : "constant.regexp",
+				"match" : "(?<=XTAB.)GetNmbValByColName\\b"
+			},
+			{
+				"name" : "constant.regexp",
+				"match" : "(?<=XTAB.)GetRowByKey\\b"
+			},
+			{
+				"name" : "constant.regexp",
+				"match" : "(?<=XTAB.)GetRowByKeyWithoutView\\b"
+			},
+			{
+				"name" : "constant.regexp",
+				"match" : "(?<=XTAB.)GetStrVal\\b"
+			},
+			{
+				"name" : "constant.regexp",
+				"match" : "(?<=XTAB.)GetStrValByColName\\b"
+			},
+			{
+				"name" : "constant.regexp",
+				"match" : "(?<=XTAB.)GetViewFilter\\b"
+			},
+			{
+				"name" : "constant.regexp",
+				"match" : "(?<=XTAB.)HasColWithName\\b"
+			},
+			{
+				"name" : "constant.regexp",
+				"match" : "(?<=XTAB.)HasColWithNo\\b"
+			},
+			{
+				"name" : "constant.regexp",
+				"match" : "(?<=XTAB.)HasIndex\\b"
+			},
+			{
+				"name" : "constant.regexp",
+				"match" : "(?<=XTAB.)HasKey\\b"
+			},
+			{
+				"name" : "constant.regexp",
+				"match" : "(?<=XTAB.)HasRowByIndex\\b"
+			},
+			{
+				"name" : "constant.regexp",
+				"match" : "(?<=XTAB.)HasRowByIndexWithoutView\\b"
+			},
+			{
+				"name" : "constant.regexp",
+				"match" : "(?<=XTAB.)HasRowByKey\\b"
+			},
+			{
+				"name" : "constant.regexp",
+				"match" : "(?<=XTAB.)HasRowByKeyWithoutView\\b"
+			},
+			{
+				"name" : "constant.regexp",
+				"match" : "(?<=XTAB.)IsDefined\\b"
+			},
+			{
+				"name" : "constant.regexp",
+				"match" : "(?<=XTAB.)SetKeyByColNames\\b"
+			},
+			{
+				"name" : "constant.regexp",
+				"match" : "(?<=XTAB.)SetKeyByColNos\\b"
+			},
+			{
+				"name" : "constant.regexp",
+				"match" : "(?<=XTAB.)SetVal\\b"
+			},
+			{
+				"name" : "constant.regexp",
+				"match" : "(?<=XTAB.)SetValByColName\\b"
+			},
+			{
+				"name" : "constant.regexp",
+				"match" : "(?<=XTAB.)SetViewFilter\\b"
+			},
+			{
+				"name" : "constant.regexp",
+				"match" : "(?<=XTAB.)SetViewOrderByColNames\\b"
+			},
+			{
+				"name" : "constant.regexp",
+				"match" : "(?<=XTAB.)SetViewOrderByColNos\\b"
+			},
+			{
+				"name" : "constant.regexp",
+				"match" : "(?<=XTAB.)SetViewOrderByIndex\\b"
+			},
+			{
+				"name" : "constant.regexp",
+				"match" : "(?<=XTAB.)SetViewOrderByKey\\b"
+			},
+			{
+				"name" : "constant.regexp",
+				"match" : "(?<=XTAB.)TryAddRow\\b"
+			},
+			{
+				"name" : "constant.regexp",
+				"match" : "(?<=XTAB.)TryAddRowAndReturnNo\\b"
+			},
+			{
+				"name" : "constant.regexp",
+				"match" : "(?<=XTAB.)TryGetBoolVal\\b"
+			},
+			{
+				"name" : "constant.regexp",
+				"match" : "(?<=XTAB.)TryGetBoolValByColName\\b"
+			},
+			{
+				"name" : "constant.regexp",
+				"match" : "(?<=XTAB.)TryGetDateVal\\b"
+			},
+			{
+				"name" : "constant.regexp",
+				"match" : "(?<=XTAB.)TryGetDateValByColName\\b"
+			},
+			{
+				"name" : "constant.regexp",
+				"match" : "(?<=XTAB.)TryGetNmbVal\\b"
+			},
+			{
+				"name" : "constant.regexp",
+				"match" : "(?<=XTAB.)TryGetNmbValByColName\\b"
+			},
+			{
+				"name" : "constant.regexp",
+				"match" : "(?<=XTAB.)TryGetStrVal\\b"
+			},
+			{
+				"name" : "constant.regexp",
+				"match" : "(?<=XTAB.)TryGetStrValByColName\\b"
+			},
+			{
+				"name" : "constant.regexp",
+				"match" : "(?<=XTAB.)TrySetVal\\b"
+			},
+			{
+				"name" : "constant.regexp",
+				"match" : "(?<=XTAB.)TrySetValByColName\\b"
+			},
+			{
+				"name" : "constant.numeric.float",
+				"match" : "^[\\t\\s]{1,}CSV(?=\\()\\b"
+			},
+			{
+				"name" : "constant.numeric.float",
+				"match" : "^[\\t\\s]{1,}IS(?=\\()\\b"
+			},
+			{
+				"name" : "constant.numeric.float",
+				"match" : "^[\\t\\s]{1,}JSON(?=\\()\\b"
+			},
+			{
+				"name" : "constant.numeric.float",
+				"match" : "^[\\t\\s]{1,}PROGRESS(?=\\()\\b"
+			},
+			{
+				"name" : "constant.numeric.float",
+				"match" : "^[\\t\\s]{1,}READ(?=\\()\\b"
+			},
+			{
+				"name" : "constant.numeric.float",
+				"match" : "^[\\t\\s]{1,}SPLIT(?=\\()\\b"
+			},
+			{
+				"name" : "constant.numeric.float",
+				"match" : "^[\\t\\s]{1,}WRITE(?=\\()\\b"
+			},
+			{
+				"name" : "constant.numeric.float",
+				"match" : "^[\\t\\s]{1,}XARR(?=\\()\\b"
+			},
+			{
+				"name" : "constant.numeric.float",
+				"match" : "^[\\t\\s]{1,}XCNT(?=\\()\\b"
+			},
+			{
+				"name" : "support.type.property-name",
+				"match" : "^[\\t\\s]{1,}XFAS(?=\\()\\b"
+			},
+			{
+				"name" : "constant.numeric.float",
+				"match" : "^[\\t\\s]{1,}XML(?=\\()\\b"
+			},
+			{
+				"name" : "constant.numeric.float",
+				"match" : "^[\\t\\s]{1,}XRES(?=\\()\\b"
+			},
+			{
+				"name" : "constant.numeric.float",
+				"match" : "^[\\t\\s]{1,}XSER(?=\\()\\b"
+			},
+			{
+				"name" : "constant.numeric.float",
+				"match" : "^[\\t\\s]{1,}XTAB(?=\\()\\b"
+			},
+			{
+				"name" : "constant.numeric.float",
+				"match" : "^[\\t\\s]{1,}X(?=\\()\\b"
+			},
+			{
+				"name" : "support.function",
+				"description" : "ACHTUNG EXCLUDES!",
+				"match" : "((?!(«|»)))(:=|\\t|\\s|(?<=([:=]{1}))\\s)(?!MEA|MEX|HARRAY|ARRAY)[A-Z]{1}[a-zA-Z0-9_]{1,}(?=\\()(?!CSV.|IS.|JSON.|PROGRESS.|READ.|SPLIT.|WRITE.|XARR.|XCNT.|XFAS.|XML.|XRES.|XSER.|XTAB.|SYS.|X.)"
+			},
+			{
+				"name" : "constant.numeric.float",
+				"match" : "(^(?!«))(:=|\\t|\\s|(?<=([:=]{0,1}))[\\s]{0,1}|[\\s]{0,1})X(?=\\(.*\\))\\b"
+			},
+			{
+				"name" : "entity.name.tag",
+				"match" : "^[\\t\\s]{1,}SYS(?=\\()\\b"
+			}
+			]
+		}
+	}
+}

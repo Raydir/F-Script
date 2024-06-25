@@ -1,0 +1,95 @@
+{
+	"\\$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"scopeName": "source.f-script.extended",
+	"name": "F-Script",
+	"patterns": [
+		{
+			"include": "#requestresponse"
+		},
+		{
+			"include": "#xfas"
+		}
+	],
+	"repository": {
+		"requestresponse": {
+			"patterns": [
+				{
+					"name": "constant.regexp",
+					"match": "(?<=(«|n|z|s|m|v|~|\\+|\\-|&|f|e|[0-9]| ))(XSER|XRES|XQRY|XQRS|IS\\((GETI:OK\\)|GETI:ERR_TXT\\)|GETI:ERR_KEY\\)|GETI|SETI:BEGIN\\)|SETI:END\\)|SETI: )|CB\\((GETI:OK\\)|GETI:ERR_TXT\\)|GETI:ERR_KEY\\)|GETI|SETI:BEGIN\\)|SETI:END\\)|SETI: )|SET:STOP:|IS\\()"
+				},
+				{
+					"name": "constant.regexp",
+					"match": "(?<=(«|n|z|s|m|v|~|\\+|\\-|&|f|e|[0-9]| ))(XSER|XRES|XQRY|XQRS|IS\\((GETI:OK\\)|GETI:ERR_TXT\\)|GETI:ERR_KEY\\)|GETI|SETI:BEGIN\\)|SETI:END\\)|SETI: )|CB\\((GETI:OK\\)|GETI:ERR_TXT\\)|GETI:ERR_KEY\\)|GETI|SETI:BEGIN\\)|SETI:END\\)|SETI: )|SET:STOP:|IS\\()"
+				},
+				{
+					"name": "constant.regexp",
+					"match": "(args[=]|addArgs[=]|addArg[=]|addArg[\\t=]|arg,[0-9]{1,}[=<+]|execute>XFAS|execute([>,]{0,})|clear|>MSG)"
+				},
+				{
+					"name": "constant.regexp",
+					"match": ":(ok|roType|cols|rows|mKey|duration|mTextFull|mTextLogMsg|mTextUiMsg|mText|col,[0-9]{1,}|redo[,neiplf0-9]{0,}|redoData[,neiplf0-9]{0,})"
+				},
+				{
+					"name": "constant.regexp",
+					"match": "(?<=XML\\()(STag:|ETag:|Text|Elem:|Comm:)"
+				},
+				{
+					"name": "constant.regexp",
+					"match": "(?<=CSV\\()(Text|XVar)"
+				},
+				{
+					"name": "constant.regexp",
+					"match": "XML\\((Encoding:ANSI|Encoding:UTF8)\\)"
+				},
+				{
+					"name": "constant.regexp",
+					"match": "XML(?=\\()"
+				},
+				{
+					"name": "constant.regexp",
+					"match": "CSV(?=\\()"
+				}
+			]
+		},
+		"xfas": {
+			"patterns": [
+				{
+					"name": "support.type.property-name",
+					"match": "(?<=(«|n|z|s|m|v|~|\\+|\\-|&|f|e|[0-9]| ))XFAS\\(col=(SupportsScreenOutput|SupportsBoArgs|SupportedBoType|MlsKey|Argument|StateCd|DataTypeCd|Format|RelationshipCd|RelatedObject|RelatedIndex|RelatedConstraint|ContraintType|CheckExpression|DefaultValue|EntryMode|WithPrevious|Column|AdditionalInfo|OnDemand),.*(?=\\)»)\\B"
+				},
+				{
+					"name": "support.type.property-name",
+					"match": "(?<=(«|n|z|s|m|v|~|\\+|\\-|&|f|e|[0-9]| ))XFAS\\((head=(SupportsScreenOutput|SupportsBoArgs|SupportedBoType|MlsKey|Argument|StateCd|DataTypeCd|Format|RelationshipCd|RelatedObject|RelatedIndex|RelatedConstraint|ContraintType|CheckExpression|DefaultValue|EntryMode|WithPrevious|Column|AdditionalInfo|OnDemand)\\)»)\\B"
+				},
+				{
+					"name": "support.type.property-name",
+					"match": "(?<=(«|n|z|s|m|v|~|\\+|\\-|&|f|e|[0-9]| ))XFAS\\((heads=(Argument,StateCd,DataTypeCd,Format,RelationshipCd,RelatedObject)\\)»)"
+				},
+				{
+					"name": "support.type.property-name",
+					"match": "(?<=(«|n|z|s|m|v|~|\\+|\\-|&|f|e|[0-9]| ))XFAS\\((heads=(RelatedIndex,RelatedConstraint,ConstraintType,CheckExpression,DefaultValue,EntryMode,WithPrevious,MlsKey)\\)»)"
+				},
+				{
+					"name": "support.type.property-name",
+					"match": "(?<=(«|n|z|s|m|v|~|\\+|\\-|&|f|e|[0-9]| ))XFAS\\((heads=(Argument,StateCd,DataTypeCd,Format,RelationshipCd,RelatedObject,RelatedIndex,RelatedConstraint,ConstraintType,CheckExpression,DefaultValue,EntryMode,WithPrevious,MlsKey)\\)»)"
+				},
+				{
+					"name": "support.type.property-name",
+					"match": "(?<=(«|n|z|s|m|v|~|\\+|\\-|&|f|e|[0-9]| ))XFAS\\((fasActive|clear|headBinary=|heads=|head=|cell=|cell<|cells=|cellAppend=|cellAppend<|col=|col<|ok=|mKey=|mText=|mMlsKey=|mMlsTextParam=)"
+				},
+				{
+					"name": "support.type.property-name",
+					"match": "(?<=(«|n|z|s|m|v|~|\\+|\\-|&|f|e|[0-9]| ))XFAS\\([(aA-zZ]{1,}\\)"
+				},
+				{
+					"name": "support.type.property-name",
+					"match": "(?<=(«|n|z|s|m|v|~|\\+|\\-|&|f|e|[0-9]| ))CB\\([0-9]{1,}\\)"
+				},
+				{
+					"name": "support.type.property-name",
+					"match": "(?<=(«|n|z|s|m|v|~|\\+|\\-|&|f|e|[0-9]| ))XFAS\\(heads<GetInfoScriptCol\\)»"
+				}
+			]
+		}
+	}
+}

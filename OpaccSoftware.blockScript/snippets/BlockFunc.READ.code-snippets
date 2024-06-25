@@ -1,0 +1,74 @@
+{
+	"BLOCKFUNC: READ.All":	{
+		"prefix":	"🔐  BlockFunc.READ.All",
+		"description":	["Liefert den gesamten Inhalt einer geöffneten Datei."],
+		"body":	[
+			"\tvar ${1:stringVal} := READ.All(${2:channelNo})",		]
+	},
+	"BLOCKFUNC: READ.Close":	{
+		"prefix":	"🔐  BlockFunc.READ.Close",
+		"description":	["Geöffneten Eingabekanal schliessen."],
+		"body":	[
+			"READ.Close(${2:channelNo})",		]
+	},
+	"BLOCKFUNC: READ.GetSize":	{
+		"prefix":	"🔐  BlockFunc.READ.GetSize",
+		"description":	["Liefert Grösse der Datei in Anzahl Bytes."],
+		"body":	[
+			"\tvar ${1:numberVal} := READ.GetSize(${2:channelNo})",		]
+	},
+	"BLOCKFUNC: READ.IsAtEnd":	{
+		"prefix":	"🔐  BlockFunc.READ.IsAtEnd",
+		"description":	["Am Ende der Datei eingekommen?"],
+		"body":	[
+			"\tvar ${1:boolVal} := READ.IsAtEnd(${2:channelNo})",		]
+	},
+	"BLOCKFUNC: READ.IsOpen":	{
+		"prefix":	"🔐  BlockFunc.READ.IsOpen",
+		"description":	["Ist ein bestimmter Eingabekanal zum Lesen geöffnet?"],
+		"body":	[
+			"\tvar ${1:boolVal} := READ.IsOpen(${2:channelNo})",		]
+	},
+	"BLOCKFUNC: READ.NextCharacters":	{
+		"prefix":	"🔐  BlockFunc.READ.NextCharacters",
+		"description":	["Liefert die nächsten Zeichen aus einer geöffneten Datei. Leerstring, wenn keine solchen mehr vorhanden sind."],
+		"body":	[
+			"\tvar ${1:stringVal} := READ.NextCharacters(${2:channelNo}, ${3:nmbOfCharacters})",		]
+	},
+	"BLOCKFUNC: READ.NextLine":	{
+		"prefix":	"🔐  BlockFunc.READ.NextLine",
+		"description":	["Liefert die nächste Linie aus einer geöffneten Datei. Leerstring, wenn keine solche vorhanden ist."],
+		"body":	[
+			"\tvar ${1:stringVal} := READ.NextLine(${2:channelNo})",		]
+	},
+	"BLOCKFUNC: READ.Open":	{
+		"prefix":	"🔐  BlockFunc.READ.Open",
+		"description":	["Eingabekanal zum Lesen einer Datei öffnen. Encoding wird automatisch anhand BOM bestimmt. Wenn kein BOM vorhanden ist, wird Datei mit UTF-8-Encoding eingelesen. Rückgabewert FALSE wenn Öffnen nicht möglich ist (oder Exception wenn mit entsprechendem Argument gefordert). Wenn Öffnen abhängig File-Security nicht erlaubt ist, führt dies immer zu einer Exception!"],
+		"body":	[
+			"\tvar ${1:boolVal} := READ.Open(${2:channelNo}, ${3:filePath}, ${4:exceptionIfOpenNotPossible})",		]
+	},
+	"BLOCKFUNC: READ.OpenAnsi":	{
+		"prefix":	"🔐  BlockFunc.READ.OpenAnsi",
+		"description":	["Eingabekanal zum Lesen einer ANSI-Datei öffnen. Rückgabewert FALSE wenn Öffnen nicht möglich ist (oder Exception wenn mit entsprechendem Argument gefordert). Wenn Öffnen abhängig File-Security nicht erlaubt ist, führt dies immer zu einer Exception!"],
+		"body":	[
+			"\tvar ${1:boolVal} := READ.OpenAnsi(${2:channelNo}, ${3:filePath}, ${4:exceptionIfOpenNotPossible})",		]
+	},
+	"BLOCKFUNC: READ.OpenOem850":	{
+		"prefix":	"🔐  BlockFunc.READ.OpenOem850",
+		"description":	["Eingabekanal zum Lesen einer OEM-850-Datei öffnen. Rückgabewert FALSE wenn Öffnen nicht möglich ist (oder Exception wenn mit entsprechendem Argument gefordert). Wenn Öffnen abhängig File-Security nicht erlaubt ist, führt dies immer zu einer Exception!"],
+		"body":	[
+			"\tvar ${1:boolVal} := READ.OpenOem850(${2:channelNo}, ${3:filePath}, ${4:exceptionIfOpenNotPossible})",		]
+	},
+	"BLOCKFUNC: READ.OpenUtf16Le":	{
+		"prefix":	"🔐  BlockFunc.READ.OpenUtf16Le",
+		"description":	["Eingabekanal zum Lesen einer UTF-16LE-Datei (mit oder ohne BOM) öffnen. Rückgabewert FALSE wenn Öffnen nicht möglich ist (oder Exception wenn mit entsprechendem Argument gefordert). Wenn Öffnen abhängig File-Security nicht erlaubt ist, führt dies immer zu einer Exception!"],
+		"body":	[
+			"\tvar ${1:boolVal} := READ.OpenUtf16Le(${2:channelNo}, ${3:filePath}, ${4:exceptionIfOpenNotPossible})",		]
+	},
+	"BLOCKFUNC: READ.OpenUtf8":	{
+		"prefix":	"🔐  BlockFunc.READ.OpenUtf8",
+		"description":	["Eingabekanal zum Lesen einer UTF-8-Datei (mit oder ohne BOM) öffnen. Rückgabewert FALSE wenn Öffnen nicht möglich ist (oder Exception wenn mit entsprechendem Argument gefordert). Wenn Öffnen abhängig File-Security nicht erlaubt ist, führt dies immer zu einer Exception!"],
+		"body":	[
+			"\tvar ${1:boolVal} := READ.OpenUtf8(${2:channelNo}, ${3:filePath}, ${4:exceptionIfOpenNotPossible})",		]
+	},
+}

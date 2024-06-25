@@ -1,0 +1,54 @@
+{
+	"Expression.today": {
+		"prefix": "✅ APSFUNCTION.Expression.today",
+		"body": [
+			"«(today())\\E»"
+		],
+		"description": "Returns the actual date\r"
+	},
+	"Expression.now": {
+		"prefix": "✅ APSFUNCTION.Expression.now",
+		"body": [
+			"«(now())\\E»"
+		],
+		"description": "Returns the actual date\rif casted with timestampToStr() returns timestamp"
+	},
+	"Expression.time": {
+		"prefix": "✅ APSFUNCTION.Expression.time",
+		"body": [
+			"«(time())\\E»"
+		],
+		"description": "Returns the actual time\r"
+	},
+	"Expression.dayOfDate": {
+		"prefix": "✅ APSFUNCTION.Expression.dayOfDate",
+		"body": [
+			"«(dayOfDate(now()))\\E»"
+		],
+		"description": "Returns the day of the date\r"
+	},
+	"Expression.monthOfDate": {
+		"prefix": "✅ APSFUNCTION.Expression.monthOfDate",
+		"body": [
+			"«(monthOfDate(now()))\\E»"
+		],
+		"description": "Returns the month of the date\r"
+	},
+	"Expression.yearOfDate": {
+		"prefix": "✅ APSFUNCTION.Expression.yearOfDate",
+		"body": [
+			"«(yearOfDate(now()))\\E»"
+		],
+		"description": "Returns the year of the date\r"
+	},
+	"Expression.dateAdd": {
+		"prefix": "✅ APSFUNCTION.Expression.dateAdd",
+		"body": [
+			"«X(${1:Date}\t\t\t=«(now())\\E»)»",
+			"«X(${2:ValueToAdd}\t=${3:7})»",
+			"«X(${4:DatePart}\t\t=${5|D,W,M,Y|})»",
+			"«(dateAdd(now(),$2,$4))\\E»"
+		],
+		"description": "Adds dateparts zu date and returns the new date ()\r"
+	}
+}

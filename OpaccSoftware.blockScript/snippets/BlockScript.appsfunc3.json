@@ -1,0 +1,178 @@
+{
+    "EXPRESSION: not(expression)":
+	{
+		"prefix": "✅ APSFUNCTION.Expression.not",
+		"body": [
+			"var ${1:resultValue}\t:= not(${21:'Hello World!'} = ${1:'Hello Mars!'})"
+		],
+		"description": "Returns the negated state of an expression (boolean)\r"
+	},
+    "EXPRESSION: length(value)":
+	{
+		"prefix": "✅ APSFUNCTION.Expression.length",
+		"body": [
+			"var ${1:resultValue}\t:= length(${2:'Hello World!'})"
+		],
+		"description": "Returns the length of a string\rExample:\r'Hello World' => 11\r"
+	},
+    "EXPRESSION: pos(subString,string)":
+	{
+		"prefix": "✅ APSFUNCTION.Expression.pos",
+		"body": [
+			"var ${1:resultValue}\t:= pos(${2:'subString'},${3:'This is a Text with a specific subString...'})"
+		],
+		"description": "Returns the position (index as integer) of subString in Value\rResults in 0 (zero) when not found\r"
+	},
+    "EXPRESSION: uppercase(string)":
+	{
+		"prefix": "✅ APSFUNCTION.Expression.uppercase",
+		"body": [
+			"var ${1:resultValue}\t:= uppercase(${2:'Hello World! This is Mars calling...'})"
+		],
+		"description": "Returns the string UPPERCASE formated\r"
+	},
+    "EXPRESSION: lowercase(string)":
+	{
+		"prefix": "✅ APSFUNCTION.Expression.lowercase",
+		"body": [
+			"var ${1:resultValue}\t:= lowercase(${2:'Hello World! This is Mars calling...'})"
+		],
+		"description": "Returns the string lowercase formated\r"
+	},
+    "EXPRESSION: append(string,string)":
+	{
+		"prefix": "✅ APSFUNCTION.Expression.append",
+		"body": [
+			"var ${1:resultValue}\t:= append(${2:'Hello World! '},${3:'This is Mars calling...'})"
+		],
+		"description": "Appends two strings (combining)\r"
+	},
+	"EXPRESSION: center(string,length)":
+	{
+		"prefix": "✅ APSFUNCTION.Expression.center",
+		"body": [
+			"var ${1:resultValue}\t:= center(${2:'Hello World!'},${3:20})"
+		],
+		"description": "Centers a strings according to the defined length\r"
+	},
+    "EXPRESSION: trim(string)":
+	{
+		"prefix": "✅ APSFUNCTION.Expression.trim",
+		"body": [
+			"var ${1:resultValue}\t:= trim(${2:' Hello World! '})"
+		],
+		"description": "Removes leading (at the beginning) and trailing spaces (at the end) from a String\rExample:\r' Hello World! ' => 'Hello World!'\r"
+	},
+    "EXPRESSION: ltrim(string)":
+	{
+		"prefix": "✅ APSFUNCTION.Expression.ltrim",
+		"body": [
+			"var ${1:resultValue}\t:= ltrim(${2:' Hello World! '})"
+		],
+		"description": "Removes trailing spaces (at the end) from a String\rExample:\r' Hello World! ' => ' Hello World!'\r"
+	},
+    "EXPRESSION: rtrim(string)":
+	{
+		"prefix": "✅ APSFUNCTION.Expression.rtrim",
+		"body": [
+			"var ${1:resultValue}\t:= rtrim(${2:' Hello World! '})"
+		],
+		"description": "Removes leading (at the beginning) and trailing spaces (at the end) from a String\rExample:\r' Hello World! ' => 'Hello World! '\r"
+	},
+    "EXPRESSION: right(string,length)":
+	{
+		"prefix": "✅ APSFUNCTION.Expression.right",
+		"body": [
+			"var ${1:resultValue}\t:= right(${2:'Hello World!'},${3:6})"
+		],
+		"description": "Returns n characters (intLength) of a string from the right side.\rExample:\r'right('Hello World!',6) ' => 'World!'\r"
+	},
+    "EXPRESSION: left(string,length)":
+	{
+		"prefix": "✅ APSFUNCTION.Expression.left",
+		"body": [
+			"var ${1:resultValue}\t:= left(${2:'Hello World!'},${3:6})"
+		],
+		"description": "Returns n characters (intLength) of a string from the left side.\rExample:\r'left('Hello World!',6) ' => 'World!'\r"
+	},
+    "EXPRESSION: mid(string,intLength,intAt)":
+	{
+		"prefix": "✅ APSFUNCTION.Expression.mid",
+		"body": [
+			"var ${1:resultValue}\t:= mid(${2:'Hello World!'},${3:6},${4:7})"
+		],
+		"description": "Returns n characters (intLength) of a string from position m (intAt).\rExample:\r'left('Hello World!',6,7) ' => 'World!'\r"
+	},
+    "EXPRESSION: replace(oldSubString,string,newSubString)":
+	{
+		"prefix": "✅ APSFUNCTION.Expression.replace",
+		"body": [
+			"var ${1:resultValue}\t:= replace(${2:'%%THEPLANET%%'},${3:'Hello %%THEPLANET%%! This is Mars calling...'},${4:'World'})"
+		],
+		"description": "Replaces  'OldSubstring' with 'NewSubstring' in string 'Value'\rExample:\r'replace('%%THEPLANET%%','Hello %%THEPLANET%%! This is Mars calling...','World') ' => 'Hello World! this is Mars calling...'\r"
+	},
+    "EXPRESSION: replaces(oldSubString,string,newSubString)":
+	{
+		"prefix": "✅ APSFUNCTION.Expression.replaces",
+		"body": [
+			"var ${1:resultValue}\t:= replaces(${2:'%%THEPLANET%%'},${3:'Hello %%THEPLANET%%! This is another %%THEPLANET%% calling...'},${4:'World'})"
+		],
+		"description": "Replaces any occuring 'OldSubstring'  with 'NewSubstring' in string 'Value'\rExample:\r'replaces('%%THEPLANET%%','Hello %%THEPLANET%%! This is another %%THEPLANET%% calling...','World') ' => 'Hello World! this is another World calling...'\r"
+    },
+    "EXPRESSION: insert(subString,string,intAt)":
+	{
+		"prefix": "✅ APSFUNCTION.Expression.insert",
+		"body": [
+			"var ${1:resultValue}\t:= insert(${2:' World'},${3:'Hello! This is Mars calling...'},${4:6})"
+		],
+		"description": "Inserts a substring into a string at defined position (intAt)\rExample:\r'insert('World','Hello! This is %%THEPLANET%% calling...','World')' => 'Hello World! This is Mars calling...'\r"
+	},
+    "EXPRESSION: repeat(string,intCount)":
+	{
+		"prefix": "✅ APSFUNCTION.Expression.repeat",
+		"body": [
+			"var ${1:resultValue}\t:= repeat(${2:'Hello World! '},${3:3})"
+		],
+		"description": "Returns a string n (intCount) times\rExample:\r'repeat('Hello World! ',3)' => 'Hello World! Hello World! Hello World! '\r"
+	},
+    "EXPRESSION: remove(string,intAt,intLength)":
+	{
+    "prefix": "✅ APSFUNCTION.Expression.remove",
+		"body": [
+			"var ${1:resultValue}\t:= remove(${2:'Hello World! This is Mars calling...'},${3:6},${4:6})"
+		],
+		"description": "Removes from string at defined position (intAt) n characters (intLength)\rExample:\r'remove('Hello World! This is Mars calling...',6,6)' => 'Hello! This is Mars calling...'\r"
+	},
+    "EXPRESSION: guid()":
+	{
+		"prefix": "✅ APSFUNCTION.Expression.guid",
+		"body": [
+			"var ${1:resultValue}\t:= guid()"
+		],
+		"description": "Returns a global unifier id (GUID)\rExample:\r'guid()' => BFD631B8-C12B-4CA6-B558-81DD79734DC1\r"
+	},
+    "EXPRESSION: regEx(string,regex)":
+	{
+		"prefix": "✅ APSFUNCTION.Expression.regEx",
+		"body": [
+			"var ${1:resultValue}\t:= regEx(${2:'10.00'},${3:'^\\d*.{0,1}\\d+$'})"
+		],
+		"description": "Checks if string matches regex pattern\rExample:\rregEx('10.00','^\\d*.{0,1}\\d+$') => 1\rregEx('10.-','^\\d*.{0,1}\\d+$') => 0\r"
+	},
+    "EXPRESSION: regExCi(string,regex)":
+	{
+		"prefix": "✅ APSFUNCTION.Expression.regExCi",
+		"body": [
+			"var ${1:resultValue}\t:= regExCi(${2:'hELlo WoRlD'},${3:'world'})"
+		],
+		"description": "Checks if string matches regex pattern (Case Insensitiv)\rExample:\rregExCi('hELlo WoRlD',world) => 1\rregEx('hELlo WoRlD','world') => 0 (not Ci version)\r"
+	},
+	"EXPRESSION: split(string,delim,intSegment)":
+	{
+		"prefix": "✅ APSFUNCTION.Expression.split",
+		"body": [
+			"var ${1:resultValue}\t:= split(${2:'A|B|C|D|E'},\"${3|\\|,\\,,;,-,_,#|}\"${4| ,\\,1,\\,2,\\,3,\\,...|})"
+		],
+		"description": "splits a String at defined character and returns the defined segment\r"
+	}
+}

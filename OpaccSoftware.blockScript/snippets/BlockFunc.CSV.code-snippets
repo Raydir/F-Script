@@ -1,0 +1,32 @@
+{
+	"BLOCKFUNC: CSV.CreateGridFromXRes":	{
+		"prefix":	"🔐  BlockFunc.CSV.CreateGridFromXRes",
+		"description":	["Konvertiert ein XRES in ein gültiges CSV-Grid. Optional kann die Ausgabe ohne Spaltenheader oder umschliessende Anführungszeichen erfolgen. Dabei werden die Delimiter aus den Elementen entfernt und Zeilenumbrüche mit Leerzeichen ersetzt."],
+		"body":	[
+			"\tvar ${1:stringVal} := CSV.CreateGridFromXRes(${2:delimiter}, ${3:xResName}, ${4:withoutHeader}, ${5:withoutDoubleQuotes})",		]
+	},
+	"BLOCKFUNC: CSV.CreateGridFromXTab":	{
+		"prefix":	"🔐  BlockFunc.CSV.CreateGridFromXTab",
+		"description":	["Konvertiert ein XTAB in ein gültiges CSV-Grid. Optional kann die Ausgabe ohne Spaltenheader oder umschliessende Anführungszeichen erfolgen. Dabei werden die Delimiter aus den Elementen entfernt und Zeilenumbrüche mit Leerzeichen ersetzt."],
+		"body":	[
+			"\tvar ${1:stringVal} := CSV.CreateGridFromXTab(${2:delimiter}, ${3:xTabName}, ${4:withoutView}, ${5:withoutHeader}, ${6:withoutDoubleQuotes})",		]
+	},
+	"BLOCKFUNC: CSV.CreateLine":	{
+		"prefix":	"🔐  BlockFunc.CSV.CreateLine",
+		"description":	["Konvertiert mehrere Elemente in eine gültige CSV-Eintrags-Linie."],
+		"body":	[
+			"\tvar ${1:stringVal} := CSV.CreateLine(${2:delimiter}, ${3:elementObjects})",		]
+	},
+	"BLOCKFUNC: CSV.CreateLineFromXArr":	{
+		"prefix":	"🔐  BlockFunc.CSV.CreateLineFromXArr",
+		"description":	["Konvertiert ein XArray in eine gültige CSV-Eintrags-Linie. Optional kann die Ausgabe ohne umschliessende Anführungszeichen erfolgen. Dabei werden die Delimiter aus den Elementen entfernt und Zeilenumbrüche mit Leerzeichen ersetzt."],
+		"body":	[
+			"\tvar ${1:stringVal} := CSV.CreateLineFromXArr(${2:delimiter}, ${3:xArrName}, ${4:withoutDoubleQuotes})",		]
+	},
+	"BLOCKFUNC: CSV.CreateText":	{
+		"prefix":	"🔐  BlockFunc.CSV.CreateText",
+		"description":	["Konvertiert einen Text in ein gültiges CSV-Format."],
+		"body":	[
+			"\tvar ${1:stringVal} := CSV.CreateText(${2:text})",		]
+	},
+}

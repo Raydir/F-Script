@@ -1,0 +1,1135 @@
+{
+"\\$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+"name": "blockScript",
+"scopeName": "source.blockscript",
+	"patterns":
+	[{
+		"include": "#blockscriptfunc"
+	}],
+	"repository":
+	{
+		"blockscriptfunc": 
+		{
+			"patterns":
+			[
+			{
+				"name": "entity.name.class",
+				"match": "[\\s]{0,}(CSV\\.|IS\\.|JSON\\.|PROGRESS\\.|READ\\.|SPLIT\\.|WRITE\\.|XARR\\.|XCNT\\.|XFAS\\.|XML\\.|XRES\\.|XSER\\.|XTAB\\.|X\\.)"
+			},
+			{
+				"name" : "meta.preprocessor.numeric",
+				"match" : "(?<=CSV.)CreateGridFromXRes\\b"
+			},
+			{
+				"name" : "meta.preprocessor.numeric",
+				"match" : "(?<=CSV.)CreateGridFromXTab\\b"
+			},
+			{
+				"name" : "meta.preprocessor.numeric",
+				"match" : "(?<=CSV.)CreateLine\\b"
+			},
+			{
+				"name" : "meta.preprocessor.numeric",
+				"match" : "(?<=CSV.)CreateLineFromXArr\\b"
+			},
+			{
+				"name" : "meta.preprocessor.numeric",
+				"match" : "(?<=CSV.)CreateText\\b"
+			},
+			{
+				"name" : "meta.preprocessor.numeric",
+				"match" : "(?<=IS.)AddArg\\b"
+			},
+			{
+				"name" : "meta.preprocessor.numeric",
+				"match" : "(?<=IS.)AddArgs\\b"
+			},
+			{
+				"name" : "meta.preprocessor.numeric",
+				"match" : "(?<=IS.)AppendArg\\b"
+			},
+			{
+				"name" : "meta.preprocessor.numeric",
+				"match" : "(?<=IS.)AppendArgByNo\\b"
+			},
+			{
+				"name" : "meta.preprocessor.numeric",
+				"match" : "(?<=IS.)Clear\\b"
+			},
+			{
+				"name" : "meta.preprocessor.numeric",
+				"match" : "(?<=IS.)Execute\\b"
+			},
+			{
+				"name" : "meta.preprocessor.numeric",
+				"match" : "(?<=IS.)GetArgByNo\\b"
+			},
+			{
+				"name" : "meta.preprocessor.numeric",
+				"match" : "(?<=IS.)GetIbos\\b"
+			},
+			{
+				"name" : "meta.preprocessor.numeric",
+				"match" : "(?<=IS.)GetIbosAndArgs\\b"
+			},
+			{
+				"name" : "meta.preprocessor.numeric",
+				"match" : "(?<=IS.)GetMsgKey\\b"
+			},
+			{
+				"name" : "meta.preprocessor.numeric",
+				"match" : "(?<=IS.)GetMsgText\\b"
+			},
+			{
+				"name" : "meta.preprocessor.numeric",
+				"match" : "(?<=IS.)GetOk\\b"
+			},
+			{
+				"name" : "meta.preprocessor.numeric",
+				"match" : "(?<=IS.)IsDefined\\b"
+			},
+			{
+				"name" : "meta.preprocessor.numeric",
+				"match" : "(?<=IS.)SetArgByNo\\b"
+			},
+			{
+				"name" : "meta.preprocessor.numeric",
+				"match" : "(?<=IS.)SetArgs\\b"
+			},
+			{
+				"name" : "meta.preprocessor.numeric",
+				"match" : "(?<=IS.)SetIbos\\b"
+			},
+			{
+				"name" : "meta.preprocessor.numeric",
+				"match" : "(?<=IS.)SetIbosAndArgs\\b"
+			},
+			{
+				"name" : "meta.preprocessor.numeric",
+				"match" : "(?<=IS.)SuppressExceptions\\b"
+			},
+			{
+				"name" : "meta.preprocessor.numeric",
+				"match" : "(?<=JSON.)CreateBool\\b"
+			},
+			{
+				"name" : "meta.preprocessor.numeric",
+				"match" : "(?<=JSON.)CreateBoolMember\\b"
+			},
+			{
+				"name" : "meta.preprocessor.numeric",
+				"match" : "(?<=JSON.)CreateBoolMembers\\b"
+			},
+			{
+				"name" : "meta.preprocessor.numeric",
+				"match" : "(?<=JSON.)CreateDate\\b"
+			},
+			{
+				"name" : "meta.preprocessor.numeric",
+				"match" : "(?<=JSON.)CreateDateMember\\b"
+			},
+			{
+				"name" : "meta.preprocessor.numeric",
+				"match" : "(?<=JSON.)CreateDateMemberArray\\b"
+			},
+			{
+				"name" : "meta.preprocessor.numeric",
+				"match" : "(?<=JSON.)CreateDateMemberArrayFromXArr\\b"
+			},
+			{
+				"name" : "meta.preprocessor.numeric",
+				"match" : "(?<=JSON.)CreateDateMembers\\b"
+			},
+			{
+				"name" : "meta.preprocessor.numeric",
+				"match" : "(?<=JSON.)CreateEndArray\\b"
+			},
+			{
+				"name" : "meta.preprocessor.numeric",
+				"match" : "(?<=JSON.)CreateEndObject\\b"
+			},
+			{
+				"name" : "meta.preprocessor.numeric",
+				"match" : "(?<=JSON.)CreateNmb\\b"
+			},
+			{
+				"name" : "meta.preprocessor.numeric",
+				"match" : "(?<=JSON.)CreateNmbMember\\b"
+			},
+			{
+				"name" : "meta.preprocessor.numeric",
+				"match" : "(?<=JSON.)CreateNmbMemberArray\\b"
+			},
+			{
+				"name" : "meta.preprocessor.numeric",
+				"match" : "(?<=JSON.)CreateNmbMemberArrayFromXArr\\b"
+			},
+			{
+				"name" : "meta.preprocessor.numeric",
+				"match" : "(?<=JSON.)CreateNmbMembers\\b"
+			},
+			{
+				"name" : "meta.preprocessor.numeric",
+				"match" : "(?<=JSON.)CreateNull\\b"
+			},
+			{
+				"name" : "meta.preprocessor.numeric",
+				"match" : "(?<=JSON.)CreateNullMember\\b"
+			},
+			{
+				"name" : "meta.preprocessor.numeric",
+				"match" : "(?<=JSON.)CreateNullMembers\\b"
+			},
+			{
+				"name" : "meta.preprocessor.numeric",
+				"match" : "(?<=JSON.)CreateStartArray\\b"
+			},
+			{
+				"name" : "meta.preprocessor.numeric",
+				"match" : "(?<=JSON.)CreateStartObject\\b"
+			},
+			{
+				"name" : "meta.preprocessor.numeric",
+				"match" : "(?<=JSON.)CreateStr\\b"
+			},
+			{
+				"name" : "meta.preprocessor.numeric",
+				"match" : "(?<=JSON.)CreateStrMember\\b"
+			},
+			{
+				"name" : "meta.preprocessor.numeric",
+				"match" : "(?<=JSON.)CreateStrMemberArray\\b"
+			},
+			{
+				"name" : "meta.preprocessor.numeric",
+				"match" : "(?<=JSON.)CreateStrMemberArrayFromXArr\\b"
+			},
+			{
+				"name" : "meta.preprocessor.numeric",
+				"match" : "(?<=JSON.)CreateStrMembers\\b"
+			},
+			{
+				"name" : "meta.preprocessor.numeric",
+				"match" : "(?<=JSON.)Initialize\\b"
+			},
+			{
+				"name" : "meta.preprocessor.numeric",
+				"match" : "(?<=PROGRESS.)CreateJob\\b"
+			},
+			{
+				"name" : "meta.preprocessor.numeric",
+				"match" : "(?<=PROGRESS.)CreateStep\\b"
+			},
+			{
+				"name" : "meta.preprocessor.numeric",
+				"match" : "(?<=PROGRESS.)CreateStepAndWait\\b"
+			},
+			{
+				"name" : "meta.preprocessor.numeric",
+				"match" : "(?<=PROGRESS.)GetId\\b"
+			},
+			{
+				"name" : "meta.preprocessor.numeric",
+				"match" : "(?<=PROGRESS.)GetInfo\\b"
+			},
+			{
+				"name" : "meta.preprocessor.numeric",
+				"match" : "(?<=PROGRESS.)IsActive\\b"
+			},
+			{
+				"name" : "meta.preprocessor.numeric",
+				"match" : "(?<=PROGRESS.)IsJobCancelRequested\\b"
+			},
+			{
+				"name" : "meta.preprocessor.numeric",
+				"match" : "(?<=PROGRESS.)IsProcessCancelRequested\\b"
+			},
+			{
+				"name" : "meta.preprocessor.numeric",
+				"match" : "(?<=PROGRESS.)IsStepCancelRequested\\b"
+			},
+			{
+				"name" : "meta.preprocessor.numeric",
+				"match" : "(?<=PROGRESS.)IsTimeoutCancelRequested\\b"
+			},
+			{
+				"name" : "meta.preprocessor.numeric",
+				"match" : "(?<=PROGRESS.)Refresh\\b"
+			},
+			{
+				"name" : "meta.preprocessor.numeric",
+				"match" : "(?<=PROGRESS.)RequestCancelOfJob\\b"
+			},
+			{
+				"name" : "meta.preprocessor.numeric",
+				"match" : "(?<=PROGRESS.)RequestCancelOfProcess\\b"
+			},
+			{
+				"name" : "meta.preprocessor.numeric",
+				"match" : "(?<=PROGRESS.)RequestCancelOfStep\\b"
+			},
+			{
+				"name" : "meta.preprocessor.numeric",
+				"match" : "(?<=PROGRESS.)ResetCancelRequests\\b"
+			},
+			{
+				"name" : "meta.preprocessor.numeric",
+				"match" : "(?<=PROGRESS.)SetActiveId\\b"
+			},
+			{
+				"name" : "meta.preprocessor.numeric",
+				"match" : "(?<=PROGRESS.)SetInfo\\b"
+			},
+			{
+				"name" : "meta.preprocessor.numeric",
+				"match" : "(?<=PROGRESS.)SetJobPercent\\b"
+			},
+			{
+				"name" : "meta.preprocessor.numeric",
+				"match" : "(?<=PROGRESS.)SetStepPercent\\b"
+			},
+			{
+				"name" : "meta.preprocessor.numeric",
+				"match" : "(?<=READ.)All\\b"
+			},
+			{
+				"name" : "meta.preprocessor.numeric",
+				"match" : "(?<=READ.)Close\\b"
+			},
+			{
+				"name" : "meta.preprocessor.numeric",
+				"match" : "(?<=READ.)GetSize\\b"
+			},
+			{
+				"name" : "meta.preprocessor.numeric",
+				"match" : "(?<=READ.)IsAtEnd\\b"
+			},
+			{
+				"name" : "meta.preprocessor.numeric",
+				"match" : "(?<=READ.)IsOpen\\b"
+			},
+			{
+				"name" : "meta.preprocessor.numeric",
+				"match" : "(?<=READ.)NextCharacters\\b"
+			},
+			{
+				"name" : "meta.preprocessor.numeric",
+				"match" : "(?<=READ.)NextLine\\b"
+			},
+			{
+				"name" : "meta.preprocessor.numeric",
+				"match" : "(?<=READ.)Open\\b"
+			},
+			{
+				"name" : "meta.preprocessor.numeric",
+				"match" : "(?<=READ.)OpenAnsi\\b"
+			},
+			{
+				"name" : "meta.preprocessor.numeric",
+				"match" : "(?<=READ.)OpenOem850\\b"
+			},
+			{
+				"name" : "meta.preprocessor.numeric",
+				"match" : "(?<=READ.)OpenUtf16Le\\b"
+			},
+			{
+				"name" : "meta.preprocessor.numeric",
+				"match" : "(?<=READ.)OpenUtf8\\b"
+			},
+			{
+				"name" : "meta.preprocessor.numeric",
+				"match" : "(?<=SPLIT.)IntoXArr\\b"
+			},
+			{
+				"name" : "meta.preprocessor.numeric",
+				"match" : "(?<=WRITE.)Close\\b"
+			},
+			{
+				"name" : "meta.preprocessor.numeric",
+				"match" : "(?<=WRITE.)GetLineCount\\b"
+			},
+			{
+				"name" : "meta.preprocessor.numeric",
+				"match" : "(?<=WRITE.)IsOpen\\b"
+			},
+			{
+				"name" : "meta.preprocessor.numeric",
+				"match" : "(?<=WRITE.)OpenAnsi\\b"
+			},
+			{
+				"name" : "meta.preprocessor.numeric",
+				"match" : "(?<=WRITE.)OpenOem850\\b"
+			},
+			{
+				"name" : "meta.preprocessor.numeric",
+				"match" : "(?<=WRITE.)OpenUtf16Le\\b"
+			},
+			{
+				"name" : "meta.preprocessor.numeric",
+				"match" : "(?<=WRITE.)OpenUtf16LeWithoutBom\\b"
+			},
+			{
+				"name" : "meta.preprocessor.numeric",
+				"match" : "(?<=WRITE.)OpenUtf8\\b"
+			},
+			{
+				"name" : "meta.preprocessor.numeric",
+				"match" : "(?<=WRITE.)OpenUtf8WithoutBom\\b"
+			},
+			{
+				"name" : "meta.preprocessor.numeric",
+				"match" : "(?<=WRITE.)Out\\b"
+			},
+			{
+				"name" : "meta.preprocessor.numeric",
+				"match" : "(?<=WRITE.)OutLine\\b"
+			},
+			{
+				"name" : "meta.preprocessor.numeric",
+				"match" : "(?<=X.)Append\\b"
+			},
+			{
+				"name" : "meta.preprocessor.numeric",
+				"match" : "(?<=X.)Get\\b"
+			},
+			{
+				"name" : "meta.preprocessor.numeric",
+				"match" : "(?<=X.)IsDefined\\b"
+			},
+			{
+				"name" : "meta.preprocessor.numeric",
+				"match" : "(?<=X.)Set\\b"
+			},
+			{
+				"name" : "meta.preprocessor.numeric",
+				"match" : "(?<=XARR.)AddItem\\b"
+			},
+			{
+				"name" : "meta.preprocessor.numeric",
+				"match" : "(?<=XARR.)AddItems\\b"
+			},
+			{
+				"name" : "meta.preprocessor.numeric",
+				"match" : "(?<=XARR.)AppendToItem\\b"
+			},
+			{
+				"name" : "meta.preprocessor.numeric",
+				"match" : "(?<=XARR.)Copy\\b"
+			},
+			{
+				"name" : "meta.preprocessor.numeric",
+				"match" : "(?<=XARR.)CreateOrClear\\b"
+			},
+			{
+				"name" : "meta.preprocessor.numeric",
+				"match" : "(?<=XARR.)DeleteItem\\b"
+			},
+			{
+				"name" : "meta.preprocessor.numeric",
+				"match" : "(?<=XARR.)GetCount\\b"
+			},
+			{
+				"name" : "meta.preprocessor.numeric",
+				"match" : "(?<=XARR.)GetItem\\b"
+			},
+			{
+				"name" : "meta.preprocessor.numeric",
+				"match" : "(?<=XARR.)IsDefined\\b"
+			},
+			{
+				"name" : "meta.preprocessor.numeric",
+				"match" : "(?<=XARR.)SetItem\\b"
+			},
+			{
+				"name" : "meta.preprocessor.numeric",
+				"match" : "(?<=XCNT.)GetBoId\\b"
+			},
+			{
+				"name" : "meta.preprocessor.numeric",
+				"match" : "(?<=XCNT.)GetBoOrganizerCd\\b"
+			},
+			{
+				"name" : "meta.preprocessor.numeric",
+				"match" : "(?<=XCNT.)GetBoType\\b"
+			},
+			{
+				"name" : "meta.preprocessor.numeric",
+				"match" : "(?<=XCNT.)GetConsumerComputerName\\b"
+			},
+			{
+				"name" : "meta.preprocessor.numeric",
+				"match" : "(?<=XCNT.)GetConsumerProcessName\\b"
+			},
+			{
+				"name" : "meta.preprocessor.numeric",
+				"match" : "(?<=XCNT.)GetConsumerWindowsUserDomain\\b"
+			},
+			{
+				"name" : "meta.preprocessor.numeric",
+				"match" : "(?<=XCNT.)GetConsumerWindowsUserName\\b"
+			},
+			{
+				"name" : "meta.preprocessor.numeric",
+				"match" : "(?<=XCNT.)GetFreeArgByName\\b"
+			},
+			{
+				"name" : "meta.preprocessor.numeric",
+				"match" : "(?<=XCNT.)GetFreeArgByNo\\b"
+			},
+			{
+				"name" : "meta.preprocessor.numeric",
+				"match" : "(?<=XCNT.)GetFreeArgCount\\b"
+			},
+			{
+				"name" : "meta.preprocessor.numeric",
+				"match" : "(?<=XCNT.)GetLangNo\\b"
+			},
+			{
+				"name" : "meta.preprocessor.numeric",
+				"match" : "(?<=XCNT.)GetNumberOfCopies\\b"
+			},
+			{
+				"name" : "meta.preprocessor.numeric",
+				"match" : "(?<=XCNT.)GetOutputDevice\\b"
+			},
+			{
+				"name" : "meta.preprocessor.numeric",
+				"match" : "(?<=XCNT.)GetOutputTypeCd\\b"
+			},
+			{
+				"name" : "meta.preprocessor.numeric",
+				"match" : "(?<=XCNT.)GetPrintAsPdf\\b"
+			},
+			{
+				"name" : "meta.preprocessor.numeric",
+				"match" : "(?<=XCNT.)GetPrinterNo\\b"
+			},
+			{
+				"name" : "meta.preprocessor.numeric",
+				"match" : "(?<=XCNT.)GetPrintJobPriority\\b"
+			},
+			{
+				"name" : "meta.preprocessor.numeric",
+				"match" : "(?<=XCNT.)GetScriptName\\b"
+			},
+			{
+				"name" : "meta.preprocessor.numeric",
+				"match" : "(?<=XCNT.)GetSessionClientNo\\b"
+			},
+			{
+				"name" : "meta.preprocessor.numeric",
+				"match" : "(?<=XCNT.)GetSessionDataLangNo\\b"
+			},
+			{
+				"name" : "meta.preprocessor.numeric",
+				"match" : "(?<=XCNT.)GetSessionImpersonatorNo\\b"
+			},
+			{
+				"name" : "meta.preprocessor.numeric",
+				"match" : "(?<=XCNT.)GetSessionUiLangNo\\b"
+			},
+			{
+				"name" : "meta.preprocessor.numeric",
+				"match" : "(?<=XCNT.)GetSessionUserAddrNo\\b"
+			},
+			{
+				"name" : "meta.preprocessor.numeric",
+				"match" : "(?<=XCNT.)GetSessionUserAdminLevelCd\\b"
+			},
+			{
+				"name" : "meta.preprocessor.numeric",
+				"match" : "(?<=XCNT.)GetSessionUserGroupNo\\b"
+			},
+			{
+				"name" : "meta.preprocessor.numeric",
+				"match" : "(?<=XCNT.)GetSessionUserNo\\b"
+			},
+			{
+				"name" : "meta.preprocessor.numeric",
+				"match" : "(?<=XCNT.)HasServiceBusConnection\\b"
+			},
+			{
+				"name" : "meta.preprocessor.numeric",
+				"match" : "(?<=XCNT.)SetNumberOfCopies\\b"
+			},
+			{
+				"name" : "meta.preprocessor.numeric",
+				"match" : "(?<=XCNT.)SetPrintJobPriority\\b"
+			},
+			{
+				"name" : "meta.preprocessor.numeric",
+				"match" : "(?<=XFAS.)AddBinaryHead\\b"
+			},
+			{
+				"name" : "meta.preprocessor.numeric",
+				"match" : "(?<=XFAS.)AddCell\\b"
+			},
+			{
+				"name" : "meta.preprocessor.numeric",
+				"match" : "(?<=XFAS.)AddCells\\b"
+			},
+			{
+				"name" : "meta.preprocessor.numeric",
+				"match" : "(?<=XFAS.)AddHead\\b"
+			},
+			{
+				"name" : "meta.preprocessor.numeric",
+				"match" : "(?<=XFAS.)AddHeads\\b"
+			},
+			{
+				"name" : "meta.preprocessor.numeric",
+				"match" : "(?<=XFAS.)AppendCell\\b"
+			},
+			{
+				"name" : "meta.preprocessor.numeric",
+				"match" : "(?<=XFAS.)AppendMlsTextParam\\b"
+			},
+			{
+				"name" : "meta.preprocessor.numeric",
+				"match" : "(?<=XFAS.)Clear\\b"
+			},
+			{
+				"name" : "meta.preprocessor.numeric",
+				"match" : "(?<=XFAS.)HasHead\\b"
+			},
+			{
+				"name" : "meta.preprocessor.numeric",
+				"match" : "(?<=XFAS.)IsActive\\b"
+			},
+			{
+				"name" : "meta.preprocessor.numeric",
+				"match" : "(?<=XFAS.)IsDefined\\b"
+			},
+			{
+				"name" : "meta.preprocessor.numeric",
+				"match" : "(?<=XFAS.)IsDirectResponse\\b"
+			},
+			{
+				"name" : "meta.preprocessor.numeric",
+				"match" : "(?<=XFAS.)NewRow\\b"
+			},
+			{
+				"name" : "meta.preprocessor.numeric",
+				"match" : "(?<=XFAS.)SetCol\\b"
+			},
+			{
+				"name" : "meta.preprocessor.numeric",
+				"match" : "(?<=XFAS.)SetMlsKey\\b"
+			},
+			{
+				"name" : "meta.preprocessor.numeric",
+				"match" : "(?<=XFAS.)SetMsgKey\\b"
+			},
+			{
+				"name" : "meta.preprocessor.numeric",
+				"match" : "(?<=XFAS.)SetMsgText\\b"
+			},
+			{
+				"name" : "meta.preprocessor.numeric",
+				"match" : "(?<=XFAS.)SetOk\\b"
+			},
+			{
+				"name" : "meta.preprocessor.numeric",
+				"match" : "(?<=XFAS.)SetRedoData\\b"
+			},
+			{
+				"name" : "meta.preprocessor.numeric",
+				"match" : "(?<=XML.)CreateAttribute\\b"
+			},
+			{
+				"name" : "meta.preprocessor.numeric",
+				"match" : "(?<=XML.)CreateComment\\b"
+			},
+			{
+				"name" : "meta.preprocessor.numeric",
+				"match" : "(?<=XML.)CreateElement\\b"
+			},
+			{
+				"name" : "meta.preprocessor.numeric",
+				"match" : "(?<=XML.)CreateElementWithAttribute\\b"
+			},
+			{
+				"name" : "meta.preprocessor.numeric",
+				"match" : "(?<=XML.)CreateElementWithAttributes\\b"
+			},
+			{
+				"name" : "meta.preprocessor.numeric",
+				"match" : "(?<=XML.)CreateEndElement\\b"
+			},
+			{
+				"name" : "meta.preprocessor.numeric",
+				"match" : "(?<=XML.)CreateStartElement\\b"
+			},
+			{
+				"name" : "meta.preprocessor.numeric",
+				"match" : "(?<=XML.)CreateStartElementWithAttribute\\b"
+			},
+			{
+				"name" : "meta.preprocessor.numeric",
+				"match" : "(?<=XML.)CreateText\\b"
+			},
+			{
+				"name" : "meta.preprocessor.numeric",
+				"match" : "(?<=XML.)InitAndCreateAnsiEncodingHeader\\b"
+			},
+			{
+				"name" : "meta.preprocessor.numeric",
+				"match" : "(?<=XML.)InitAndCreateUtf8EncodingHeader\\b"
+			},
+			{
+				"name" : "meta.preprocessor.numeric",
+				"match" : "(?<=XML.)SetIndent\\b"
+			},
+			{
+				"name" : "meta.preprocessor.numeric",
+				"match" : "(?<=XRES.)GetColName\\b"
+			},
+			{
+				"name" : "meta.preprocessor.numeric",
+				"match" : "(?<=XRES.)GetColValByName\\b"
+			},
+			{
+				"name" : "meta.preprocessor.numeric",
+				"match" : "(?<=XRES.)GetColValByNo\\b"
+			},
+			{
+				"name" : "meta.preprocessor.numeric",
+				"match" : "(?<=XRES.)GetDurationInMsec\\b"
+			},
+			{
+				"name" : "meta.preprocessor.numeric",
+				"match" : "(?<=XRES.)GetMsgKey\\b"
+			},
+			{
+				"name" : "meta.preprocessor.numeric",
+				"match" : "(?<=XRES.)GetMsgText\\b"
+			},
+			{
+				"name" : "meta.preprocessor.numeric",
+				"match" : "(?<=XRES.)GetMsgTextFull\\b"
+			},
+			{
+				"name" : "meta.preprocessor.numeric",
+				"match" : "(?<=XRES.)GetMsgTextLogMsg\\b"
+			},
+			{
+				"name" : "meta.preprocessor.numeric",
+				"match" : "(?<=XRES.)GetMsgTextUiMsg\\b"
+			},
+			{
+				"name" : "meta.preprocessor.numeric",
+				"match" : "(?<=XRES.)GetNmbOfCols\\b"
+			},
+			{
+				"name" : "meta.preprocessor.numeric",
+				"match" : "(?<=XRES.)GetNmbOfRows\\b"
+			},
+			{
+				"name" : "meta.preprocessor.numeric",
+				"match" : "(?<=XRES.)GetOk\\b"
+			},
+			{
+				"name" : "meta.preprocessor.numeric",
+				"match" : "(?<=XRES.)GetRedoData\\b"
+			},
+			{
+				"name" : "meta.preprocessor.numeric",
+				"match" : "(?<=XRES.)IsDefined\\b"
+			},
+			{
+				"name" : "meta.preprocessor.numeric",
+				"match" : "(?<=XRES.)Redo\\b"
+			},
+			{
+				"name" : "meta.preprocessor.numeric",
+				"match" : "(?<=XRES.)TakeLogAndUiMsg\\b"
+			},
+			{
+				"name" : "meta.preprocessor.numeric",
+				"match" : "(?<=XSER.)AddArg\\b"
+			},
+			{
+				"name" : "meta.preprocessor.numeric",
+				"match" : "(?<=XSER.)AddArgs\\b"
+			},
+			{
+				"name" : "meta.preprocessor.numeric",
+				"match" : "(?<=XSER.)AddRedoArgs\\b"
+			},
+			{
+				"name" : "meta.preprocessor.numeric",
+				"match" : "(?<=XSER.)AddRedoData\\b"
+			},
+			{
+				"name" : "meta.preprocessor.numeric",
+				"match" : "(?<=XSER.)AppendArg\\b"
+			},
+			{
+				"name" : "meta.preprocessor.numeric",
+				"match" : "(?<=XSER.)AppendArgByNo\\b"
+			},
+			{
+				"name" : "meta.preprocessor.numeric",
+				"match" : "(?<=XSER.)Clear\\b"
+			},
+			{
+				"name" : "meta.preprocessor.numeric",
+				"match" : "(?<=XSER.)Execute\\b"
+			},
+			{
+				"name" : "meta.preprocessor.numeric",
+				"match" : "(?<=XSER.)ExecuteToXFasDirectResponse\\b"
+			},
+			{
+				"name" : "meta.preprocessor.numeric",
+				"match" : "(?<=XSER.)GetArgByNo\\b"
+			},
+			{
+				"name" : "meta.preprocessor.numeric",
+				"match" : "(?<=XSER.)GetNmbOfArgs\\b"
+			},
+			{
+				"name" : "meta.preprocessor.numeric",
+				"match" : "(?<=XSER.)GetService\\b"
+			},
+			{
+				"name" : "meta.preprocessor.numeric",
+				"match" : "(?<=XSER.)IsDefined\\b"
+			},
+			{
+				"name" : "meta.preprocessor.numeric",
+				"match" : "(?<=XSER.)SetArgByNo\\b"
+			},
+			{
+				"name" : "meta.preprocessor.numeric",
+				"match" : "(?<=XSER.)SetArgs\\b"
+			},
+			{
+				"name" : "meta.preprocessor.numeric",
+				"match" : "(?<=XSER.)SetService\\b"
+			},
+			{
+				"name" : "meta.preprocessor.numeric",
+				"match" : "(?<=XSER.)SetServiceAndArgs\\b"
+			},
+			{
+				"name" : "meta.preprocessor.numeric",
+				"match" : "(?<=XTAB.)AddCol\\b"
+			},
+			{
+				"name" : "meta.preprocessor.numeric",
+				"match" : "(?<=XTAB.)AddIndexByColNames\\b"
+			},
+			{
+				"name" : "meta.preprocessor.numeric",
+				"match" : "(?<=XTAB.)AddIndexByColNos\\b"
+			},
+			{
+				"name" : "meta.preprocessor.numeric",
+				"match" : "(?<=XTAB.)AddRow\\b"
+			},
+			{
+				"name" : "meta.preprocessor.numeric",
+				"match" : "(?<=XTAB.)AddRowAndReturnNo\\b"
+			},
+			{
+				"name" : "meta.preprocessor.numeric",
+				"match" : "(?<=XTAB.)ClearView\\b"
+			},
+			{
+				"name" : "meta.preprocessor.numeric",
+				"match" : "(?<=XTAB.)ClearViewFilter\\b"
+			},
+			{
+				"name" : "meta.preprocessor.numeric",
+				"match" : "(?<=XTAB.)ClearViewOrder\\b"
+			},
+			{
+				"name" : "meta.preprocessor.numeric",
+				"match" : "(?<=XTAB.)CreateOrClear\\b"
+			},
+			{
+				"name" : "meta.preprocessor.numeric",
+				"match" : "(?<=XTAB.)DeleteRow\\b"
+			},
+			{
+				"name" : "meta.preprocessor.numeric",
+				"match" : "(?<=XTAB.)DeleteRows\\b"
+			},
+			{
+				"name" : "meta.preprocessor.numeric",
+				"match" : "(?<=XTAB.)FindFirstRow\\b"
+			},
+			{
+				"name" : "meta.preprocessor.numeric",
+				"match" : "(?<=XTAB.)FindRowByIndex\\b"
+			},
+			{
+				"name" : "meta.preprocessor.numeric",
+				"match" : "(?<=XTAB.)FindRowByIndexWithoutView\\b"
+			},
+			{
+				"name" : "meta.preprocessor.numeric",
+				"match" : "(?<=XTAB.)GetBoolVal\\b"
+			},
+			{
+				"name" : "meta.preprocessor.numeric",
+				"match" : "(?<=XTAB.)GetBoolValByColName\\b"
+			},
+			{
+				"name" : "meta.preprocessor.numeric",
+				"match" : "(?<=XTAB.)GetColDataTypeAndFormatByName\\b"
+			},
+			{
+				"name" : "meta.preprocessor.numeric",
+				"match" : "(?<=XTAB.)GetColDataTypeAndFormatByNo\\b"
+			},
+			{
+				"name" : "meta.preprocessor.numeric",
+				"match" : "(?<=XTAB.)GetColName\\b"
+			},
+			{
+				"name" : "meta.preprocessor.numeric",
+				"match" : "(?<=XTAB.)GetColNo\\b"
+			},
+			{
+				"name" : "meta.preprocessor.numeric",
+				"match" : "(?<=XTAB.)GetDateVal\\b"
+			},
+			{
+				"name" : "meta.preprocessor.numeric",
+				"match" : "(?<=XTAB.)GetDateValByColName\\b"
+			},
+			{
+				"name" : "meta.preprocessor.numeric",
+				"match" : "(?<=XTAB.)GetNmbOfCols\\b"
+			},
+			{
+				"name" : "meta.preprocessor.numeric",
+				"match" : "(?<=XTAB.)GetNmbOfRows\\b"
+			},
+			{
+				"name" : "meta.preprocessor.numeric",
+				"match" : "(?<=XTAB.)GetNmbVal\\b"
+			},
+			{
+				"name" : "meta.preprocessor.numeric",
+				"match" : "(?<=XTAB.)GetNmbValByColName\\b"
+			},
+			{
+				"name" : "meta.preprocessor.numeric",
+				"match" : "(?<=XTAB.)GetRowByKey\\b"
+			},
+			{
+				"name" : "meta.preprocessor.numeric",
+				"match" : "(?<=XTAB.)GetRowByKeyWithoutView\\b"
+			},
+			{
+				"name" : "meta.preprocessor.numeric",
+				"match" : "(?<=XTAB.)GetStrVal\\b"
+			},
+			{
+				"name" : "meta.preprocessor.numeric",
+				"match" : "(?<=XTAB.)GetStrValByColName\\b"
+			},
+			{
+				"name" : "meta.preprocessor.numeric",
+				"match" : "(?<=XTAB.)GetViewFilter\\b"
+			},
+			{
+				"name" : "meta.preprocessor.numeric",
+				"match" : "(?<=XTAB.)HasColWithName\\b"
+			},
+			{
+				"name" : "meta.preprocessor.numeric",
+				"match" : "(?<=XTAB.)HasColWithNo\\b"
+			},
+			{
+				"name" : "meta.preprocessor.numeric",
+				"match" : "(?<=XTAB.)HasIndex\\b"
+			},
+			{
+				"name" : "meta.preprocessor.numeric",
+				"match" : "(?<=XTAB.)HasKey\\b"
+			},
+			{
+				"name" : "meta.preprocessor.numeric",
+				"match" : "(?<=XTAB.)HasRowByIndex\\b"
+			},
+			{
+				"name" : "meta.preprocessor.numeric",
+				"match" : "(?<=XTAB.)HasRowByIndexWithoutView\\b"
+			},
+			{
+				"name" : "meta.preprocessor.numeric",
+				"match" : "(?<=XTAB.)HasRowByKey\\b"
+			},
+			{
+				"name" : "meta.preprocessor.numeric",
+				"match" : "(?<=XTAB.)HasRowByKeyWithoutView\\b"
+			},
+			{
+				"name" : "meta.preprocessor.numeric",
+				"match" : "(?<=XTAB.)IsDefined\\b"
+			},
+			{
+				"name" : "meta.preprocessor.numeric",
+				"match" : "(?<=XTAB.)SetKeyByColNames\\b"
+			},
+			{
+				"name" : "meta.preprocessor.numeric",
+				"match" : "(?<=XTAB.)SetKeyByColNos\\b"
+			},
+			{
+				"name" : "meta.preprocessor.numeric",
+				"match" : "(?<=XTAB.)SetVal\\b"
+			},
+			{
+				"name" : "meta.preprocessor.numeric",
+				"match" : "(?<=XTAB.)SetValByColName\\b"
+			},
+			{
+				"name" : "meta.preprocessor.numeric",
+				"match" : "(?<=XTAB.)SetViewFilter\\b"
+			},
+			{
+				"name" : "meta.preprocessor.numeric",
+				"match" : "(?<=XTAB.)SetViewOrderByColNames\\b"
+			},
+			{
+				"name" : "meta.preprocessor.numeric",
+				"match" : "(?<=XTAB.)SetViewOrderByColNos\\b"
+			},
+			{
+				"name" : "meta.preprocessor.numeric",
+				"match" : "(?<=XTAB.)SetViewOrderByIndex\\b"
+			},
+			{
+				"name" : "meta.preprocessor.numeric",
+				"match" : "(?<=XTAB.)SetViewOrderByKey\\b"
+			},
+			{
+				"name" : "meta.preprocessor.numeric",
+				"match" : "(?<=XTAB.)TryAddRow\\b"
+			},
+			{
+				"name" : "meta.preprocessor.numeric",
+				"match" : "(?<=XTAB.)TryAddRowAndReturnNo\\b"
+			},
+			{
+				"name" : "meta.preprocessor.numeric",
+				"match" : "(?<=XTAB.)TryGetBoolVal\\b"
+			},
+			{
+				"name" : "meta.preprocessor.numeric",
+				"match" : "(?<=XTAB.)TryGetBoolValByColName\\b"
+			},
+			{
+				"name" : "meta.preprocessor.numeric",
+				"match" : "(?<=XTAB.)TryGetDateVal\\b"
+			},
+			{
+				"name" : "meta.preprocessor.numeric",
+				"match" : "(?<=XTAB.)TryGetDateValByColName\\b"
+			},
+			{
+				"name" : "meta.preprocessor.numeric",
+				"match" : "(?<=XTAB.)TryGetNmbVal\\b"
+			},
+			{
+				"name" : "meta.preprocessor.numeric",
+				"match" : "(?<=XTAB.)TryGetNmbValByColName\\b"
+			},
+			{
+				"name" : "meta.preprocessor.numeric",
+				"match" : "(?<=XTAB.)TryGetStrVal\\b"
+			},
+			{
+				"name" : "meta.preprocessor.numeric",
+				"match" : "(?<=XTAB.)TryGetStrValByColName\\b"
+			},
+			{
+				"name" : "meta.preprocessor.numeric",
+				"match" : "(?<=XTAB.)TrySetVal\\b"
+			},
+			{
+				"name" : "meta.preprocessor.numeric",
+				"match" : "(?<=XTAB.)TrySetValByColName\\b"
+			},
+			{
+				"name" : "constant.numeric.float",
+				"match" : "^[\\t\\s]{1,}CSV(?=\\()\\b"
+			},
+			{
+				"name" : "constant.numeric.float",
+				"match" : "^[\\t\\s]{1,}IS(?=\\()\\b"
+			},
+			{
+				"name" : "constant.numeric.float",
+				"match" : "^[\\t\\s]{1,}JSON(?=\\()\\b"
+			},
+			{
+				"name" : "constant.numeric.float",
+				"match" : "^[\\t\\s]{1,}PROGRESS(?=\\()\\b"
+			},
+			{
+				"name" : "constant.numeric.float",
+				"match" : "^[\\t\\s]{1,}READ(?=\\()\\b"
+			},
+			{
+				"name" : "constant.numeric.float",
+				"match" : "^[\\t\\s]{1,}SPLIT(?=\\()\\b"
+			},
+			{
+				"name" : "constant.numeric.float",
+				"match" : "^[\\t\\s]{1,}WRITE(?=\\()\\b"
+			},
+			{
+				"name" : "constant.numeric.float",
+				"match" : "^[\\t\\s]{1,}XARR(?=\\()\\b"
+			},
+			{
+				"name" : "constant.numeric.float",
+				"match" : "^[\\t\\s]{1,}XCNT(?=\\()\\b"
+			},
+			{
+				"name" : "support.type.property-name",
+				"match" : "^[\\t\\s]{1,}XFAS(?=\\()\\b"
+			},
+			{
+				"name" : "constant.numeric.float",
+				"match" : "^[\\t\\s]{1,}XML(?=\\()\\b"
+			},
+			{
+				"name" : "constant.numeric.float",
+				"match" : "^[\\t\\s]{1,}XRES(?=\\()\\b"
+			},
+			{
+				"name" : "constant.numeric.float",
+				"match" : "^[\\t\\s]{1,}XSER(?=\\()\\b"
+			},
+			{
+				"name" : "constant.numeric.float",
+				"match" : "^[\\t\\s]{1,}XTAB(?=\\()\\b"
+			},
+			{
+				"name" : "constant.numeric.float",
+				"match" : "^[\\t\\s]{1,}X(?=\\()\\b"
+			},
+			{
+				"name" : "support.function",
+				"description" : "ACHTUNG EXCLUDES!",
+				"match" : "((?!(«|»)))(:=|\\t|\\s|(?<=([:=]{1}))\\s)(?!MEA|MEX|HARRAY|ARRAY)[A-Z]{1}[a-zA-Z0-9_]{1,}(?=\\()(?!CSV.|IS.|JSON.|PROGRESS.|READ.|SPLIT.|WRITE.|XARR.|XCNT.|XFAS.|XML.|XRES.|XSER.|XTAB.|SYS.|X.)"
+			},
+			{
+				"name" : "constant.numeric.float",
+				"match" : "(^(?!«))(:=|\\t|\\s|(?<=([:=]{0,1}))[\\s]{0,1}|[\\s]{0,1})X(?=\\(.*\\))\\b"
+			},
+			{
+				"name" : "entity.name.tag",
+				"match" : "^[\\t\\s]{1,}SYS(?=\\()\\b"
+			}
+			]
+		}
+	}
+}

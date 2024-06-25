@@ -1,0 +1,26 @@
+{
+	"\\$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "F-Script",
+	"patterns": [
+		{
+			"include": "#blockscript"
+		}
+	],
+	"repository": {
+		"blockscript": {
+			"patterns": [
+				{
+					"name": "markup.heading",
+					"match": "using[\\s]{1,}[\"]{1}[aA-zZ0-9._-]{3,}[.]{1}(FBL|Fbl|fbl)[\"]{1}\\B"
+				},
+				{
+					"name": "entity.name.tag",
+					"match": "(?<=function[\\s][A-Z]{1}[a-zA-Z0-9_.]{3,}\\(.*\\))[(\\s|\\t)]{1,}:[(\\s|\\t)]{1,}(void|string|number|integer|boolean|date|timestamp|time)"
+				}
+			]
+		}
+	},
+	"scopeName": "source.f-script.blockscript2"
+}
+
+

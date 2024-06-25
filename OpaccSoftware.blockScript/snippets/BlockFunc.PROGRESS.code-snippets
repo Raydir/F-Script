@@ -1,0 +1,116 @@
+{
+	"BLOCKFUNC: PROGRESS.CreateJob":	{
+		"prefix":	"🔐  BlockFunc.PROGRESS.CreateJob",
+		"description":	["Erzeugt einen neuen Job. Optional kann verhindert werden, dass der Abbruch verlangt werden kann."],
+		"body":	[
+			"PROGRESS.CreateJob(${2:name}, ${3:cancelSupported})",		]
+	},
+	"BLOCKFUNC: PROGRESS.CreateStep":	{
+		"prefix":	"🔐  BlockFunc.PROGRESS.CreateStep",
+		"description":	["Erzeugt einen neuen Schritt. Optional kann verhindert werden, dass der Abbruch verlangt werden kann."],
+		"body":	[
+			"PROGRESS.CreateStep(${2:name}, ${3:cancelSupported})",		]
+	},
+	"BLOCKFUNC: PROGRESS.CreateStepAndWait":	{
+		"prefix":	"🔐  BlockFunc.PROGRESS.CreateStepAndWait",
+		"description":	["Erzeugt einen neuen Schritt, welcher die Verarbeitung pausiert. Es sind dabei nur Zehnerschritte möglich. Optional kann verhindert werden, dass der Abbruch verlangt werden kann. Retourniert TRUE wenn das Warten abgebrochen wurde."],
+		"body":	[
+			"\tvar ${1:boolVal} := PROGRESS.CreateStepAndWait(${2:name}, ${3:pauseInSeconds}, ${4:cancelSupported})",		]
+	},
+	"BLOCKFUNC: PROGRESS.GetId":	{
+		"prefix":	"🔐  BlockFunc.PROGRESS.GetId",
+		"description":	["Liefert die ID des Monitor-Objekts zurück."],
+		"body":	[
+			"\tvar ${1:numberVal} := PROGRESS.GetId()",		]
+	},
+	"BLOCKFUNC: PROGRESS.GetInfo":	{
+		"prefix":	"🔐  BlockFunc.PROGRESS.GetInfo",
+		"description":	["Liefert den Info-Text des aktiven Progress-Objekts zurück."],
+		"body":	[
+			"\tvar ${1:stringVal} := PROGRESS.GetInfo()",		]
+	},
+	"BLOCKFUNC: PROGRESS.IsActive":	{
+		"prefix":	"🔐  BlockFunc.PROGRESS.IsActive",
+		"description":	["Besitzt die Ausführung ein laufendes Monitor-Objekt?"],
+		"body":	[
+			"\tvar ${1:boolVal} := PROGRESS.IsActive()",		]
+	},
+	"BLOCKFUNC: PROGRESS.IsJobCancelRequested":	{
+		"prefix":	"🔐  BlockFunc.PROGRESS.IsJobCancelRequested",
+		"description":	["Wurde beim Job der Abbruch verlangt?"],
+		"body":	[
+			"\tvar ${1:boolVal} := PROGRESS.IsJobCancelRequested()",		]
+	},
+	"BLOCKFUNC: PROGRESS.IsProcessCancelRequested":	{
+		"prefix":	"🔐  BlockFunc.PROGRESS.IsProcessCancelRequested",
+		"description":	["Wurde bei der Verarbeitung der Abbruch verlangt?"],
+		"body":	[
+			"\tvar ${1:boolVal} := PROGRESS.IsProcessCancelRequested()",		]
+	},
+	"BLOCKFUNC: PROGRESS.IsStepCancelRequested":	{
+		"prefix":	"🔐  BlockFunc.PROGRESS.IsStepCancelRequested",
+		"description":	["Wurde beim Schritt der Abbruch verlangt?"],
+		"body":	[
+			"\tvar ${1:boolVal} := PROGRESS.IsStepCancelRequested()",		]
+	},
+	"BLOCKFUNC: PROGRESS.IsTimeoutCancelRequested":	{
+		"prefix":	"🔐  BlockFunc.PROGRESS.IsTimeoutCancelRequested",
+		"description":	["Wurde Verarbeitungs-Abbruch infolge Timeout verlangt?"],
+		"body":	[
+			"\tvar ${1:boolVal} := PROGRESS.IsTimeoutCancelRequested()",		]
+	},
+	"BLOCKFUNC: PROGRESS.Refresh":	{
+		"prefix":	"🔐  BlockFunc.PROGRESS.Refresh",
+		"description":	["Frischt das Progress-Objekt auf und setzt es auf 'Running' (falls auf 'NotResponding')."],
+		"body":	[
+			"PROGRESS.Refresh()",		]
+	},
+	"BLOCKFUNC: PROGRESS.RequestCancelOfJob":	{
+		"prefix":	"🔐  BlockFunc.PROGRESS.RequestCancelOfJob",
+		"description":	["Verlangt den Abbruch beim Job."],
+		"body":	[
+			"PROGRESS.RequestCancelOfJob()",		]
+	},
+	"BLOCKFUNC: PROGRESS.RequestCancelOfProcess":	{
+		"prefix":	"🔐  BlockFunc.PROGRESS.RequestCancelOfProcess",
+		"description":	["Verlangt den Abbruch bei der Verarbeitung."],
+		"body":	[
+			"PROGRESS.RequestCancelOfProcess()",		]
+	},
+	"BLOCKFUNC: PROGRESS.RequestCancelOfStep":	{
+		"prefix":	"🔐  BlockFunc.PROGRESS.RequestCancelOfStep",
+		"description":	["Verlangt den Abbruch beim Schritt."],
+		"body":	[
+			"PROGRESS.RequestCancelOfStep()",		]
+	},
+	"BLOCKFUNC: PROGRESS.ResetCancelRequests":	{
+		"prefix":	"🔐  BlockFunc.PROGRESS.ResetCancelRequests",
+		"description":	["Setzt die verlangten Abbrüche beim Schritt, Job und der Verarbeitung zurück."],
+		"body":	[
+			"PROGRESS.ResetCancelRequests()",		]
+	},
+	"BLOCKFUNC: PROGRESS.SetActiveId":	{
+		"prefix":	"🔐  BlockFunc.PROGRESS.SetActiveId",
+		"description":	["Setzt ein laufendes Monitor-Objekt für die Ausführung. Fehler, falls bereits ein laufendes Monitor-Objekt existiert."],
+		"body":	[
+			"PROGRESS.SetActiveId(${2:progressId})",		]
+	},
+	"BLOCKFUNC: PROGRESS.SetInfo":	{
+		"prefix":	"🔐  BlockFunc.PROGRESS.SetInfo",
+		"description":	["Setzt den Info-Text des aktiven Progress-Objekts."],
+		"body":	[
+			"PROGRESS.SetInfo(${2:info})",		]
+	},
+	"BLOCKFUNC: PROGRESS.SetJobPercent":	{
+		"prefix":	"🔐  BlockFunc.PROGRESS.SetJobPercent",
+		"description":	["Setzt den Fortschritts-Balken des aktiven Jobs. (Erlaubter Bereich: 0-100)"],
+		"body":	[
+			"PROGRESS.SetJobPercent(${2:progress})",		]
+	},
+	"BLOCKFUNC: PROGRESS.SetStepPercent":	{
+		"prefix":	"🔐  BlockFunc.PROGRESS.SetStepPercent",
+		"description":	["Setzt den Fortschritts-Balken des aktiven Schritts (Erlaubter Bereich: 0-100)."],
+		"body":	[
+			"PROGRESS.SetStepPercent(${2:progress})",		]
+	},
+}

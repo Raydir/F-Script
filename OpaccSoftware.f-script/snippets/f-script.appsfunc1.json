@@ -1,0 +1,210 @@
+﻿{
+	"CAST.string": 
+	{
+		"prefix": "✅ APSFUNCTION.CastTo.string",
+		"description": "Cast value (e.g. number) to string\r",
+		"body": [
+			"«X(${1:Value}\t=Hello World!)»",
+			"«(string($1))\\E»"
+		]
+	},
+	"CAST.number": 
+	{
+		"prefix": "✅ APSFUNCTION.CastTo.number",
+		"description": "Cast string to number\r",
+		"body": [
+			"«X(${1:Value}\t=123456.50)»",
+			"«(number($1))\\E»"
+		]
+	},
+	"CAST.integer": 
+	{
+		"prefix": "✅ APSFUNCTION.CastTo.integer",
+		"description": "Cast string to integer\r",
+		"body": [
+			"«X(${1:Value}\t=123456)»",
+			"«(integer($1))\\E»"
+		]
+	},
+	"CAST.date": 
+	{
+		"prefix": "✅ APSFUNCTION.CastTo.date",
+		"description": "Cast string/number to date\r(dd.mm.yyyy)\r",
+		"body": [
+			"«X(${1:Value}\t=01.01.2018)»",
+			"«(date($1))\\E»"
+		]
+	},			
+	"CAST.asNumber": 
+	{
+		"prefix": "✅ APSFUNCTION.CastTo.asNumber",
+		"description": "Cast string to number.\r0.0 when not possible\r",
+		"body": [
+			"«X(${1:Value}\t=123456.50)»",
+			"«(asNumber($1))\\E»"
+		]
+	},
+	"CAST.asInteger": 
+	{
+		"prefix": "✅ APSFUNCTION.CastTo.asInteger",
+		"description": "Cast string to integer.\r0 when not possible\r",
+		"body": [
+			"«X(${1:Value}\t=123456)»",
+			"«(asInteger($1))\\E»"
+		]
+	},
+	"CAST.asDate": 
+	{
+		"prefix": "✅ APSFUNCTION.CastTo.asDate",
+		"description": "Cast string/number to date\r(dd.mm.yyyy)\rEmpty string when not possible\r",
+		"body": [
+			"«X(${1:Value}\t=01.01.2018)»",
+			"«(asDate($1))\\E»"
+		]
+	},
+	"CAST.ascii": 
+	{
+		"prefix": "✅ APSFUNCTION.CastTo.ascii",
+		"description": "Cast ASCII-character to bytenumber\rExample:\r@ => 64\r",
+		"body": [
+			"«X(${1:Charater}\t=@)»",
+			"«(ascii($1))\\E»"
+		]
+	},
+	"CAST.character": 
+	{
+		"prefix": "✅ APSFUNCTION.CastTo.character",
+		"description": "Cast bytenumber to ASCII-character\rExample:\r64 => @\r",
+		"body": [
+			"«X(${1:ByteNumber}\t=64)»",
+			"«(character($1))\\E»"
+		]
+	},
+	"CAST.uc_int": 
+	{
+		"prefix": "✅ APSFUNCTION.CastTo.uc_int",
+		"description": "Cast Unicode-character to Unicode-Number\rExample:\r @ => 64",
+		"body": [
+			"«X(${1:Character}\t=@)»",
+			"«(uc_int($1))\\E»"
+		]
+	},
+	"CAST.uc_char": 
+	{
+		"prefix": "✅ APSFUNCTION.CastTo.uc_char",
+		"description": "Cast Unicode-Number to Character\rExample '❄':\r10052 = '&#10052;'\r$2744 (hex) = 'U+2744'\r",
+		"body": [
+			"«X(${1:UniCodeNumber}\t=${2|10052,$2744|})»",
+			"«(uc_char($1))\\E»"
+		]
+	},	
+	"CAST.encodeBase64": 
+	{
+		"prefix": "✅ APSFUNCTION.CastTo.encodeBase64",
+		"description": "Cast string to base64String\rExample:\rHello World! => SGVsbG8gV29ybGQh\r",
+		"body": [
+			"«X(${1:Value}\t=Hello World!)»",
+			"«(encodeBase64($1))\\E»"
+		]
+	},
+	"CAST.decodeBase64": 
+	{
+		"prefix": "✅ APSFUNCTION.CastTo.decodeBase64",
+		"description": "Cast base64String to string\rExample:\rSGVsbG8gV29ybGQh => Hello World!\r",
+		"body": [
+			"«X(${1:Base64String}\t=SGVsbG8gV29ybGQh)»",
+			"«(decodeBase64($1))\\E»"
+		]
+	},
+	"CAST.escapeUriData": 
+	{
+		"prefix": "✅ APSFUNCTION.CastTo.escapeUriData",
+		"description": "Cast string to uriData\rExample:\rHello World!  => Hello%20World!\r",
+		"body": [
+			"«X(${1:Value}\t=Hello World!)»",
+			"«(escapeUriData($1))\\E»"
+		]
+	},
+	"CAST.unescapeUriData": 
+	{
+		"prefix": "✅ APSFUNCTION.CastTo.unescapeUriData",
+		"description": "Cast uriData to string\rExample:\rHello%20World! => Hello World!\r",
+		"body": [
+			"«X(${1:UriData}\t=Hello%20World!)»",
+			"«(unescapeUriData($1))\\E»"
+		]
+	},
+	"CAST.computeMd5()": 
+	{
+		"prefix": "✅ APSFUNCTION.CastTo.computeMd5",
+		"description": "Cast string to Md5String\rExample:\rHello World! => ed076287532e86365e841e92bfc50d8c\r",
+		"body": [
+			"«X(${1:Value}\t=Hello World!)»",
+			"«(computeMd5($1))\\E»"
+		]
+	},
+	"CAST.computeSha256()": 
+	{
+		"prefix": "✅ APSFUNCTION.CastTo.computeSha256",
+		"description": "Cast string to SHA256 String\rExample:\rHello World! => 7f83b1657ff1fc53b92dc18148a1d65dfc2d4b1fa3d677284addd200126d9069\r",
+		"body": [
+			"«X(${1:Value}\t=Hello World!)»",
+			"«(computeSha256($1))\\E»"
+		]
+	},	
+	"CAST.computeSha512()": 
+	{
+		"prefix": "✅ APSFUNCTION.CastTo.computeSha512",
+		"description": "Cast string to SHA512 String\rExample:\rHello World! => 861844d6704e8573fec34d967e20bcfef3d424cf48be04e6dc08f2bd58c729743371015ead891cc3cf1c9d34b49264b510751b1ff9e537937bc46b5d6ff4ecc8\r",
+		"body": [
+			"«X(${1:Value}\t=Hello World!)»",
+			"«(computeSha512($1))\\E»"
+		]
+	},
+	"CAST.asTime": 
+	{
+		"prefix": "✅ APSFUNCTION.CastTo.asTime",
+		"description": "Cast string/number to time\r(hh.mm.ss)\rEmpty string when not possible\r",
+		"body": [
+			"«X(${1:Value}\t=4.45)»",
+			"«(asTime($1))\\E»"
+		]
+	},
+	"CAST.dateToStr": 
+	{
+		"prefix": "✅ APSFUNCTION.CastTo.dateToStr",
+		"description": "Cast date to string in the specified format\r",
+		"body": [
+			"«X(${1:Date}\t=«(today())\\E»)»",
+			"«(dateToStr($1,'yyyy-MM-dd'))\\E»"
+		]
+	},
+	"CAST.timeToStr": 
+	{
+		"prefix": "✅ APSFUNCTION.CastTo.timeToStr",
+		"description": "Cast time to string in the specified format\r",
+		"body": [
+			"«X(${1:Time}\t=«(time(now()))\\E»)»",
+			"«(timeToStr($1,'HH:mm:ss'))\\E»"
+		]
+	},
+	"CAST.timestampToStr": 
+	{
+		"prefix": "✅ APSFUNCTION.CastTo.timestampToStr",
+		"description": "Cast timestamp to string in the specified format\r",
+		"body": [
+			"«X(${1:Value}\t=«(now())\\E»)»",
+			"«(timestampToStr($1,'dd.MM.yyyy - HH:mm:ss'))\\E»"
+		]
+	},
+	"CAST.nmbToStr": 
+	{
+		"prefix": "✅ APSFUNCTION.CastTo.nmbToStr",
+		"description": "Cast number to string in the specified format\r",
+		"body": [
+			"«X(${1:Value}\t=${2:123456.789})»",
+			"«(nmbToStr($1,${3|\"\",\".\",\"\\,\".2\",\",\"8\",\"8.0\",\"8\\,0\",\".0\",\"8.4\",\".\\'\",\"8\\,2'\",\"8.4\\'\",\"0. -4\",\"10.0 -4\",\"14.8 -4\"|}))\\E»"
+		]
+	}
+	
+}

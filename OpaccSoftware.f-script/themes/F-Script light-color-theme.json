@@ -1,0 +1,214 @@
+{
+	"name": "F-Script light",
+	"type": "light",
+	
+	"colors": {
+		"editor.background": "#E9E9E9",
+		"editor.foreground": "#000000",
+		"editor.lineHighlightBackground": "#dbdbdb",
+		"editor.lineHighlightBorder": "#504f4f",
+		"editor.findMatchHighlightBackground": "#f1b07a",
+		"editor.findMatchBackground": "#f1b07a",
+		"editorLineNumber.foreground": "#15522f80",
+		"editorLineNumber.activeForeground" :"#85c4ff",		
+		"editorCursor.background": "#ff0000",
+		"editorCursor.foreground": "#000000",
+		"editorBracketMatch.border": "#e02727f5",
+		"editorSuggestWidget.selectedBackground": "#c8cbcc",
+		"editorSuggestWidget.border": "#306d91",
+		"editorSuggestWidget.background": "#E9E9E9",
+		"activityBarBadge.background": "#007acc",
+		"sideBarTitle.foreground": "#bbbbbb",
+		"tab.hoverBackground" : "#cac9c9",
+		"tab.hoverBorder":  "#cac9c9",
+		"editor.selectionBackground": "#85c4ff",
+		"editor.selectionHighlightBorder": "#85c4ff",
+		"editorOverviewRuler.selectionHighlightForeground": "#85c4ff"
+	},
+		"tokenColors":  [
+			{
+				"name": "Brackets",
+				"scope":"entity.name.class",
+				"settings": {
+					"fontStyle": "bold",
+					"foreground": "#da0a0a"
+				}
+			},
+			{
+				"name": "ScriptBrackets",
+				"scope":"entity.name.tag",
+				"settings": {
+					"fontStyle": "bold",
+					"foreground": "#000000"
+				}
+			},	
+			{
+				"name": "Subroutines",
+				"scope":"support.class",
+				"settings": {
+					"fontStyle": "bold",
+					"foreground": "#8B6508"
+				}
+			},
+			{
+				"name": "SubroutineCalls",
+				"scope":"support.function",
+				"settings": {
+					"fontStyle": "bold",
+					"foreground": "#CD950C"
+				}
+			},
+			{
+            "name": "MetaSubroutines",
+            "scope": "markup.heading",
+            "settings": {
+                "fontStyle": "bold",
+                "foreground": "#5b690a"
+	            }
+    	    },                  
+			{
+				"name": "Comments",
+				"scope": "comment",
+				"settings": {
+					"fontStyle": "bold",
+					"foreground": "#067e34"
+				}
+			},
+			{
+				"name": "Comments",
+				"scope": "commentsDiv",
+				"settings": {
+					"fontStyle":"italic bold",
+					"foreground": "#1b8b48"
+				}
+			},
+			{
+				"name": "Comments",
+				"scope": "commentsAttention",
+				"settings": {
+					"fontStyle":"italic bold",
+					"foreground": "#c96e24"
+				}
+			},
+			{
+				"name": "Comments",
+				"scope": "commentsTipp",
+				"settings": {
+					"fontStyle":"italic bold",
+					"foreground": "#57c55c"
+				}
+			},
+			{
+				"name": "Comments",
+				"scope": "commentsTodo",
+				"settings": {
+					"fontStyle":"italic bold",
+					"foreground": "#55d5df"
+				}
+			},
+			{
+				"name": "Deprecated",
+				"scope": "deprecated",
+				"settings": {
+					"fontStyle": "bold",
+					"foreground": "#f54d4d"
+				}
+			},					
+			{
+				"name": "Format extensions",
+				"scope": "variable.other.readwrite",
+				"settings": {
+					"fontStyle": "bold",
+					"foreground": "#da0a0a"
+				}
+			},
+			{
+				"name": "Variable prefixes",
+				"scope": "variable.language",
+				"settings": {
+					"fontStyle": "bold",
+					"foreground": "#1100ff"
+				}
+			},
+			{
+			"name": "Printer Commands",
+			"scope": "variable",
+			"settings": {
+				"fontStyle": "bold",
+				"foreground": "#CD2990"
+			}
+			},			
+			{
+				"name": "Libraries",
+				"scope": "keyword",
+				"settings": {
+					"fontStyle": "bold",
+					"foreground": "#790cb8"
+				}
+			},				
+			{
+				"name": "Operators",
+				"scope": "constant.numeric.octal",
+				"settings": {
+					"fontStyle": "bold",
+					"foreground": "#c20b85"
+				}
+			},
+			{
+				"name": "Operations",
+				"scope": "entity.name.tag",
+				"settings": {
+					"fontStyle": "bold",
+					"foreground": "#96160a"
+				}
+			},
+			{
+				"name": "RequestResponse",
+				"scope": "constant.regexp",
+				"settings": {
+					"fontStyle": "bold",
+					"foreground": "#5497df"
+				}
+			},
+			{
+				"name": "Context",
+				"scope": "constant.numeric.hex",
+				"settings": {
+					"fontStyle": "bold",
+					"foreground": "#e78d06"
+				}
+			},
+			{
+				"name": "XFAS",
+				"scope": "support.type.property-name",
+				"settings": {
+					"fontStyle": "bold",
+					"foreground": "#c45800"
+				}
+			},
+			{
+				"name": "Commands",
+				"scope": "constant.numeric.float",
+				"settings": {
+					"fontStyle": "bold",
+					"foreground": "#2b9e95"
+				}
+			},
+			{
+			"name": "F-Script Attributes",
+			"scope": "constant.language",
+			"settings": {
+				"fontStyle": "bold",
+				"foreground": "#3943ca"
+				}
+			},														
+				{
+				"name": "Strings",
+				"scope": "string",
+				"settings": {
+					"foreground": "#f02dbf",
+					"fontStyle": "bold"
+				}
+			}
+		]
+	}

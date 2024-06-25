@@ -1,0 +1,62 @@
+{
+	"Library.LanguageInit":
+	{
+		"prefix": "✅ SYSTEM.Library.LanguageInit",
+		"description": "Insert initialisation for language related library.\r",
+		"body": 
+		[
+            "# ------------------------------------------------------------------------------------------------------",
+            "# Sprachlibrary initialisieren",
+			"«nz SPR-ACTIVE(«SYS(LOGADRSPR)»)\\I»",
+			"«LIB(#,${1|«X(CustShortCut)»,«XCNT(arg:ScriptName)\\A2»,KD,ST|}-${2:LibraryName}.${3:LB«SPR-KBZ»})»",
+			""
+		]
+	},
+	"Library.Language.Value":
+	{
+		"prefix": "✅ SYSTEM.Library.Language.Value",
+		"description": "Insert command for label/value from initialised library.\r",
+		"body": 
+		[
+            "# ------------------------------------------------------------------------------------------------------",
+			"«LIB(${1:Library.EntryName}|,#)»",
+			""
+		]
+    },	
+	
+	"Library.Internal":
+	{
+		"prefix": "✅ SYSTEM.Library.Internal",
+		"description": "Insert command for label/value from internal library.\r",
+		"body": 
+		[
+            "# ------------------------------------------------------------------------------------------------------",
+			"«LIB(${1:Library.EntryName}|)»",
+			""
+		]
+    },
+	"Library.External":
+	{
+		"prefix": "✅ SYSTEM.Library.External",
+		"description": "Insert command for label/value from external library.\r",
+		"body": 
+		[
+            "# ------------------------------------------------------------------------------------------------------",
+			"«LIB(${1:Library.EntryName}|,${2|«X(CustShortCut)»,«XCNT(arg:ScriptName)\\A2»,KD,ST|}-${3:LibraryName}.${4:LB«SPR-KBZ»})»",
+			""
+		]
+    } ,
+	"Library.XVarCreation":
+	{
+		"prefix": "✅ SYSTEM.Library.XVarCreation",
+		"description": "Insert command to automaticly create X-Vars according to entries in library.\r",
+		"body": 
+		[
+            "# ------------------------------------------------------------------------------------------------------",
+			"«nX(<LIB:${1|«X(CustShortCut)»,«XCNT(arg:ScriptName)\\A2»,KD,ST|}-${2:LibraryName}.${3:LB«SPR-KBZ»})»",
+			""
+			
+		]
+    }       
+
+}	

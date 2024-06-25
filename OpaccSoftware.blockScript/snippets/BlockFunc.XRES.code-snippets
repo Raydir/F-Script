@@ -1,0 +1,98 @@
+{
+	"BLOCKFUNC: XRES.GetColName":	{
+		"prefix":	"🔐  BlockFunc.XRES.GetColName",
+		"description":	["Liefert Spalten-Namen anhand Spalten-Nummer. Fehler wenn nicht vorhanden"],
+		"body":	[
+			"\tvar ${1:stringVal} := XRES.GetColName(${2:xResName}, ${3:oneBasedColNo})",		]
+	},
+	"BLOCKFUNC: XRES.GetColValByName":	{
+		"prefix":	"🔐  BlockFunc.XRES.GetColValByName",
+		"description":	["Liefert Wert einer Spalte anhand Spalten-Namen und Zeilen-Nummer (ohne Übergabe Zeile 1). Fehler wenn nicht vorhanden"],
+		"body":	[
+			"\tvar ${1:stringVal} := XRES.GetColValByName(${2:xResName}, ${3:colName}, ${4:oneBasedRowNo})",		]
+	},
+	"BLOCKFUNC: XRES.GetColValByNo":	{
+		"prefix":	"🔐  BlockFunc.XRES.GetColValByNo",
+		"description":	["Liefert Wert einer Spalte anhand Spalten-Nummer und Zeilen-Nummer (ohne Übergabe Zeile 1). Fehler wenn nicht vorhanden"],
+		"body":	[
+			"\tvar ${1:stringVal} := XRES.GetColValByNo(${2:xResName}, ${3:oneBasedColNo}, ${4:oneBasedRowNo})",		]
+	},
+	"BLOCKFUNC: XRES.GetDurationInMsec":	{
+		"prefix":	"🔐  BlockFunc.XRES.GetDurationInMsec",
+		"description":	["Liefert Dauer der Ausführung in Millisekunden"],
+		"body":	[
+			"\tvar ${1:numberVal} := XRES.GetDurationInMsec(${2:xResName})",		]
+	},
+	"BLOCKFUNC: XRES.GetMsgKey":	{
+		"prefix":	"🔐  BlockFunc.XRES.GetMsgKey",
+		"description":	["Liefert Meldungs-Schlüssel"],
+		"body":	[
+			"\tvar ${1:stringVal} := XRES.GetMsgKey(${2:xResName})",		]
+	},
+	"BLOCKFUNC: XRES.GetMsgText":	{
+		"prefix":	"🔐  BlockFunc.XRES.GetMsgText",
+		"description":	["Liefert Meldungs-Text (ohne allfällige UI- und Log-Meldungen)"],
+		"body":	[
+			"\tvar ${1:stringVal} := XRES.GetMsgText(${2:xResName})",		]
+	},
+	"BLOCKFUNC: XRES.GetMsgTextFull":	{
+		"prefix":	"🔐  BlockFunc.XRES.GetMsgTextFull",
+		"description":	["Liefert Meldungs-Text (inkl. allfällige UI- und Log-Meldungen)"],
+		"body":	[
+			"\tvar ${1:stringVal} := XRES.GetMsgTextFull(${2:xResName})",		]
+	},
+	"BLOCKFUNC: XRES.GetMsgTextLogMsg":	{
+		"prefix":	"🔐  BlockFunc.XRES.GetMsgTextLogMsg",
+		"description":	["Liefert in Meldungs-Text enthaltene Log-Meldungen (in JSON-Format)"],
+		"body":	[
+			"\tvar ${1:stringVal} := XRES.GetMsgTextLogMsg(${2:xResName})",		]
+	},
+	"BLOCKFUNC: XRES.GetMsgTextUiMsg":	{
+		"prefix":	"🔐  BlockFunc.XRES.GetMsgTextUiMsg",
+		"description":	["Liefert in Meldungs-Text enthaltene UI-Meldungen (in JSON-Format)"],
+		"body":	[
+			"\tvar ${1:stringVal} := XRES.GetMsgTextUiMsg(${2:xResName})",		]
+	},
+	"BLOCKFUNC: XRES.GetNmbOfCols":	{
+		"prefix":	"🔐  BlockFunc.XRES.GetNmbOfCols",
+		"description":	["Liefert Anzahl Rückgabespalten"],
+		"body":	[
+			"\tvar ${1:numberVal} := XRES.GetNmbOfCols(${2:xResName})",		]
+	},
+	"BLOCKFUNC: XRES.GetNmbOfRows":	{
+		"prefix":	"🔐  BlockFunc.XRES.GetNmbOfRows",
+		"description":	["Liefert Anzahl Zeilen"],
+		"body":	[
+			"\tvar ${1:numberVal} := XRES.GetNmbOfRows(${2:xResName})",		]
+	},
+	"BLOCKFUNC: XRES.GetOk":	{
+		"prefix":	"🔐  BlockFunc.XRES.GetOk",
+		"description":	["Liefert Info, ob Service-Ausführung erfolgreich war"],
+		"body":	[
+			"\tvar ${1:boolVal} := XRES.GetOk(${2:xResName})",		]
+	},
+	"BLOCKFUNC: XRES.GetRedoData":	{
+		"prefix":	"🔐  BlockFunc.XRES.GetRedoData",
+		"description":	["Redo-Daten abholen (geliefertes Daten-Format ist 'private')"],
+		"body":	[
+			"\tvar ${1:stringVal} := XRES.GetRedoData(${2:xResName})",		]
+	},
+	"BLOCKFUNC: XRES.IsDefined":	{
+		"prefix":	"🔐  BlockFunc.XRES.IsDefined",
+		"description":	["Ermittelt, ob ein bestimmtes Objekt existiert."],
+		"body":	[
+			"\tvar ${1:boolVal} := XRES.IsDefined(${2:xResName})",		]
+	},
+	"BLOCKFUNC: XRES.Redo":	{
+		"prefix":	"🔐  BlockFunc.XRES.Redo",
+		"description":	["Service erneut ausführen und 'Erfolgreich'-Info zurückgeben"],
+		"body":	[
+			"\tvar ${1:boolVal} := XRES.Redo(${2:xResName}, ${3:redoArgs})",		]
+	},
+	"BLOCKFUNC: XRES.TakeLogAndUiMsg":	{
+		"prefix":	"🔐  BlockFunc.XRES.TakeLogAndUiMsg",
+		"description":	["Log- und UI-Meldungen in eigene/aktuelle Response übernehmen"],
+		"body":	[
+			"XRES.TakeLogAndUiMsg(${2:xResName})",		]
+	},
+}

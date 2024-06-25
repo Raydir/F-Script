@@ -1,0 +1,176 @@
+{
+	"BLOCKFUNC: XCNT.GetBoId":	{
+		"prefix":	"🔐  BlockFunc.XCNT.GetBoId",
+		"description":	["Liefert die Objekt-ID des Start-BO des aktiven F-Scripts."],
+		"body":	[
+			"\tvar ${1:stringVal} := XCNT.GetBoId()",		]
+	},
+	"BLOCKFUNC: XCNT.GetBoOrganizerCd":	{
+		"prefix":	"🔐  BlockFunc.XCNT.GetBoOrganizerCd",
+		"description":	["Liefert den BO-Organizator des aktiven Scripts."],
+		"body":	[
+			"\tvar ${1:numberVal} := XCNT.GetBoOrganizerCd()",		]
+	},
+	"BLOCKFUNC: XCNT.GetBoType":	{
+		"prefix":	"🔐  BlockFunc.XCNT.GetBoType",
+		"description":	["Liefert das Start-BO des aktiven F-Scripts."],
+		"body":	[
+			"\tvar ${1:stringVal} := XCNT.GetBoType()",		]
+	},
+	"BLOCKFUNC: XCNT.GetConsumerComputerName":	{
+		"prefix":	"🔐  BlockFunc.XCNT.GetConsumerComputerName",
+		"description":	["Liefert die Computer-Namen gemäss Consumer-Token des aktiven Service-Requests."],
+		"body":	[
+			"\tvar ${1:stringVal} := XCNT.GetConsumerComputerName()",		]
+	},
+	"BLOCKFUNC: XCNT.GetConsumerProcessName":	{
+		"prefix":	"🔐  BlockFunc.XCNT.GetConsumerProcessName",
+		"description":	["Liefert den Prozess-Namen gemäss Consumer-Token des aktiven Service-Requests."],
+		"body":	[
+			"\tvar ${1:stringVal} := XCNT.GetConsumerProcessName()",		]
+	},
+	"BLOCKFUNC: XCNT.GetConsumerWindowsUserDomain":	{
+		"prefix":	"🔐  BlockFunc.XCNT.GetConsumerWindowsUserDomain",
+		"description":	["Liefert die Windows-Benutzer-Domäne gemäss Consumer-Token des aktiven Service-Requests."],
+		"body":	[
+			"\tvar ${1:stringVal} := XCNT.GetConsumerWindowsUserDomain()",		]
+	},
+	"BLOCKFUNC: XCNT.GetConsumerWindowsUserName":	{
+		"prefix":	"🔐  BlockFunc.XCNT.GetConsumerWindowsUserName",
+		"description":	["Liefert den Windows-Benutzer-Namen gemäss Consumer-Token des aktiven Service-Requests."],
+		"body":	[
+			"\tvar ${1:stringVal} := XCNT.GetConsumerWindowsUserName()",		]
+	},
+	"BLOCKFUNC: XCNT.GetFreeArgByName":	{
+		"prefix":	"🔐  BlockFunc.XCNT.GetFreeArgByName",
+		"description":	["Liefert den Inhalt eines an das F-Script übergebenen freien Arguments. Damit innerhalb eines F-Script-Blocks auf die Script-Argumente "byName" zugegriffen werden kann, muss im klassischen Script-Bereich zuerst «XCNT(freeArgs<GetInfoScriptArg)» ausgeführt werden! Dies ist nicht nötig, wenn es sich um ein reines Block-Script handelt, welches mittels "System_RunScriptBlock" ausgeführt wird."],
+		"body":	[
+			"\tvar ${1:stringVal} := XCNT.GetFreeArgByName(${2:argumentName})",		]
+	},
+	"BLOCKFUNC: XCNT.GetFreeArgByNo":	{
+		"prefix":	"🔐  BlockFunc.XCNT.GetFreeArgByNo",
+		"description":	["Liefert den Inhalt eines an das F-Script übergebenen freien Arguments."],
+		"body":	[
+			"\tvar ${1:stringVal} := XCNT.GetFreeArgByNo(${2:oneBasedFreeArgNo})",		]
+	},
+	"BLOCKFUNC: XCNT.GetFreeArgCount":	{
+		"prefix":	"🔐  BlockFunc.XCNT.GetFreeArgCount",
+		"description":	["Liefert die Anzahl der an das aktive F-Script übergebenen freien Argumente."],
+		"body":	[
+			"\tvar ${1:numberVal} := XCNT.GetFreeArgCount()",		]
+	},
+	"BLOCKFUNC: XCNT.GetLangNo":	{
+		"prefix":	"🔐  BlockFunc.XCNT.GetLangNo",
+		"description":	["Liefert die im F-Script eingestellte Sprachnummer."],
+		"body":	[
+			"\tvar ${1:numberVal} := XCNT.GetLangNo()",		]
+	},
+	"BLOCKFUNC: XCNT.GetNumberOfCopies":	{
+		"prefix":	"🔐  BlockFunc.XCNT.GetNumberOfCopies",
+		"description":	["Liefert die im F-Script eingestellte Anzahl Druck-Exemplare. Ist nur im Ausgabetyp 'D' (Drucker) von Bedeutung."],
+		"body":	[
+			"\tvar ${1:numberVal} := XCNT.GetNumberOfCopies()",		]
+	},
+	"BLOCKFUNC: XCNT.GetOutputDevice":	{
+		"prefix":	"🔐  BlockFunc.XCNT.GetOutputDevice",
+		"description":	["Liefert den im F-Script aktiven Ausgabetyp."],
+		"body":	[
+			"\tvar ${1:stringVal} := XCNT.GetOutputDevice()",		]
+	},
+	"BLOCKFUNC: XCNT.GetOutputTypeCd":	{
+		"prefix":	"🔐  BlockFunc.XCNT.GetOutputTypeCd",
+		"description":	["Liefert den im F-Script aktiven Ausgabetyp."],
+		"body":	[
+			"\tvar ${1:stringVal} := XCNT.GetOutputTypeCd()",		]
+	},
+	"BLOCKFUNC: XCNT.GetPrintAsPdf":	{
+		"prefix":	"🔐  BlockFunc.XCNT.GetPrintAsPdf",
+		"description":	["Liefert die im F-Script eingestellte PDF-Ausgabe."],
+		"body":	[
+			"\tvar ${1:numberVal} := XCNT.GetPrintAsPdf()",		]
+	},
+	"BLOCKFUNC: XCNT.GetPrinterNo":	{
+		"prefix":	"🔐  BlockFunc.XCNT.GetPrinterNo",
+		"description":	["Liefert die im F-Script aktive Druckernummer."],
+		"body":	[
+			"\tvar ${1:numberVal} := XCNT.GetPrinterNo()",		]
+	},
+	"BLOCKFUNC: XCNT.GetPrintJobPriority":	{
+		"prefix":	"🔐  BlockFunc.XCNT.GetPrintJobPriority",
+		"description":	["Liefert die im F-Script eingestellte Print-Job-Priorität (0...99). Ist nur relevant wenn Drucken via Agent erfolgt."],
+		"body":	[
+			"\tvar ${1:numberVal} := XCNT.GetPrintJobPriority()",		]
+	},
+	"BLOCKFUNC: XCNT.GetScriptName":	{
+		"prefix":	"🔐  BlockFunc.XCNT.GetScriptName",
+		"description":	["Liefert den Namen des aktiven F-Scripts."],
+		"body":	[
+			"\tvar ${1:stringVal} := XCNT.GetScriptName()",		]
+	},
+	"BLOCKFUNC: XCNT.GetSessionClientNo":	{
+		"prefix":	"🔐  BlockFunc.XCNT.GetSessionClientNo",
+		"description":	["Liefert Mandanten-Nummer der aktuellen Session."],
+		"body":	[
+			"\tvar ${1:numberVal} := XCNT.GetSessionClientNo()",		]
+	},
+	"BLOCKFUNC: XCNT.GetSessionDataLangNo":	{
+		"prefix":	"🔐  BlockFunc.XCNT.GetSessionDataLangNo",
+		"description":	["Liefert aktive Datensprache der aktuellen Session."],
+		"body":	[
+			"\tvar ${1:numberVal} := XCNT.GetSessionDataLangNo()",		]
+	},
+	"BLOCKFUNC: XCNT.GetSessionImpersonatorNo":	{
+		"prefix":	"🔐  BlockFunc.XCNT.GetSessionImpersonatorNo",
+		"description":	["Liefert Impersonation-Benutzer-Nummer in der aktuellen Session (Leerstring, wenn keine Impersonation vorliegt)."],
+		"body":	[
+			"\tvar ${1:stringVal} := XCNT.GetSessionImpersonatorNo()",		]
+	},
+	"BLOCKFUNC: XCNT.GetSessionUiLangNo":	{
+		"prefix":	"🔐  BlockFunc.XCNT.GetSessionUiLangNo",
+		"description":	["Liefert aktive Benutzersprache der aktuellen Session."],
+		"body":	[
+			"\tvar ${1:numberVal} := XCNT.GetSessionUiLangNo()",		]
+	},
+	"BLOCKFUNC: XCNT.GetSessionUserAddrNo":	{
+		"prefix":	"🔐  BlockFunc.XCNT.GetSessionUserAddrNo",
+		"description":	["Liefert Adress-Nummer des in der aktuellen Session angemeldeten Benutzers."],
+		"body":	[
+			"\tvar ${1:numberVal} := XCNT.GetSessionUserAddrNo()",		]
+	},
+	"BLOCKFUNC: XCNT.GetSessionUserAdminLevelCd":	{
+		"prefix":	"🔐  BlockFunc.XCNT.GetSessionUserAdminLevelCd",
+		"description":	["Liefert Administrator-Stufe des in der aktuellen Session angemeldeten Benutzers."],
+		"body":	[
+			"\tvar ${1:numberVal} := XCNT.GetSessionUserAdminLevelCd()",		]
+	},
+	"BLOCKFUNC: XCNT.GetSessionUserGroupNo":	{
+		"prefix":	"🔐  BlockFunc.XCNT.GetSessionUserGroupNo",
+		"description":	["Liefert Gruppen-Nummer des in der aktuellen Session angemeldeten Benutzers."],
+		"body":	[
+			"\tvar ${1:numberVal} := XCNT.GetSessionUserGroupNo()",		]
+	},
+	"BLOCKFUNC: XCNT.GetSessionUserNo":	{
+		"prefix":	"🔐  BlockFunc.XCNT.GetSessionUserNo",
+		"description":	["Liefert Nummer des in der aktuellen Session angemeldeten Benutzers (Gruppen-Nummer, wenn keine Adressnummer existiert)."],
+		"body":	[
+			"\tvar ${1:numberVal} := XCNT.GetSessionUserNo()",		]
+	},
+	"BLOCKFUNC: XCNT.HasServiceBusConnection":	{
+		"prefix":	"🔐  BlockFunc.XCNT.HasServiceBusConnection",
+		"description":	["Prüft, ob eine Opacc ServiceBus-Verbindung vorhanden ist."],
+		"body":	[
+			"\tvar ${1:boolVal} := XCNT.HasServiceBusConnection()",		]
+	},
+	"BLOCKFUNC: XCNT.SetNumberOfCopies":	{
+		"prefix":	"🔐  BlockFunc.XCNT.SetNumberOfCopies",
+		"description":	["Setzt die im F-Script eingestellte Anzahl Druck-Exemplare. Entspricht der Ausgabetyp nicht 'D' (Drucker), wird immer ein Exemplar hinterlegt. Liefert true zurück, wenn der Wert geändert wurde."],
+		"body":	[
+			"\tvar ${1:boolVal} := XCNT.SetNumberOfCopies(${2:nmbOfCopies})",		]
+	},
+	"BLOCKFUNC: XCNT.SetPrintJobPriority":	{
+		"prefix":	"🔐  BlockFunc.XCNT.SetPrintJobPriority",
+		"description":	["Setzt die im F-Script eingestellte Print-Job-Priorität (0...99). Ist nur relevant wenn Drucken via Agent erfolgt. Liefert true zurück, wenn der Wert geändert wurde."],
+		"body":	[
+			"\tvar ${1:boolVal} := XCNT.SetPrintJobPriority(${2:printJobPriority})",		]
+	},
+}

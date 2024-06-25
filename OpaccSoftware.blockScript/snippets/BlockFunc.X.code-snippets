@@ -1,0 +1,26 @@
+{
+	"BLOCKFUNC: X.Append":	{
+		"prefix":	"🔐  BlockFunc.X.Append",
+		"description":	["Wert einer bestimmten X-Variable ergänzen."],
+		"body":	[
+			"X.Append(${2:xVarName}, ${3:xVarValueToAppend}, ${4:errorIfUndefined})",		]
+	},
+	"BLOCKFUNC: X.Get":	{
+		"prefix":	"🔐  BlockFunc.X.Get",
+		"description":	["Wert einer bestimmten X-Variable abholen."],
+		"body":	[
+			"\tvar ${1:stringVal} := X.Get(${2:xVarName}, ${3:errorIfUndefined})",		]
+	},
+	"BLOCKFUNC: X.IsDefined":	{
+		"prefix":	"🔐  BlockFunc.X.IsDefined",
+		"description":	["Ist eine bestimmte X-Variable definiert?"],
+		"body":	[
+			"\tvar ${1:boolVal} := X.IsDefined(${2:xVarName})",		]
+	},
+	"BLOCKFUNC: X.Set":	{
+		"prefix":	"🔐  BlockFunc.X.Set",
+		"description":	["Wert einer bestimmten X-Variable setzen."],
+		"body":	[
+			"X.Set(${2:xVarName}, ${3:xVarValue})",		]
+	},
+}

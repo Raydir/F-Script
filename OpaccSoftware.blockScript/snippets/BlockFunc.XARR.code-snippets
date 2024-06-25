@@ -1,0 +1,62 @@
+{
+	"BLOCKFUNC: XARR.AddItem":	{
+		"prefix":	"🔐  BlockFunc.XARR.AddItem",
+		"description":	["Wert zu Array hinzufügen. Liefert neue Anzahl Einträge."],
+		"body":	[
+			"\tvar ${1:numberVal} := XARR.AddItem(${2:xArrName}, ${3:value})",		]
+	},
+	"BLOCKFUNC: XARR.AddItems":	{
+		"prefix":	"🔐  BlockFunc.XARR.AddItems",
+		"description":	["Alle Einträge eines Arrays zu einem anderen hinzufügen. Liefert neue Anzahl Einträge. Beide Arrays müssen bereits existieren."],
+		"body":	[
+			"\tvar ${1:numberVal} := XARR.AddItems(${2:xSourceArrName}, ${3:xTargetArrName})",		]
+	},
+	"BLOCKFUNC: XARR.AppendToItem":	{
+		"prefix":	"🔐  BlockFunc.XARR.AppendToItem",
+		"description":	["Bestimmten Eintrag durch übergebenen Wert ergänzen. Fehler wenn noch kein Eintrag mit der übergebenen Nummer existiert."],
+		"body":	[
+			"XARR.AppendToItem(${2:xArrName}, ${3:oneBasedItemIndex}, ${4:value})",		]
+	},
+	"BLOCKFUNC: XARR.Copy":	{
+		"prefix":	"🔐  BlockFunc.XARR.Copy",
+		"description":	["Erstellt eine Kopie eines Arrays. Liefert neue Anzahl Einträge. Allenfalls vormals bestehende Einträge werden gelöscht."],
+		"body":	[
+			"\tvar ${1:numberVal} := XARR.Copy(${2:xSourceArrName}, ${3:xTargetArrName}, ${4:overwriteTargetArray})",		]
+	},
+	"BLOCKFUNC: XARR.CreateOrClear":	{
+		"prefix":	"🔐  BlockFunc.XARR.CreateOrClear",
+		"description":	["Neuen Array definieren resp. bestehenden Array zurücksetzen."],
+		"body":	[
+			"XARR.CreateOrClear(${2:xArrName})",		]
+	},
+	"BLOCKFUNC: XARR.DeleteItem":	{
+		"prefix":	"🔐  BlockFunc.XARR.DeleteItem",
+		"description":	["Bestimmten Eintrag entfernen. Fehler, wenn Eintrag nicht vorhanden ist. Geliefert wird neue Anzahl Einträge."],
+		"body":	[
+			"\tvar ${1:numberVal} := XARR.DeleteItem(${2:xArrName}, ${3:oneBasedItemIndex})",		]
+	},
+	"BLOCKFUNC: XARR.GetCount":	{
+		"prefix":	"🔐  BlockFunc.XARR.GetCount",
+		"description":	["Liefert Anzahl Einträge. Fehler, wenn Array nicht definiert wurde."],
+		"body":	[
+			"\tvar ${1:numberVal} := XARR.GetCount(${2:xArrName})",		]
+	},
+	"BLOCKFUNC: XARR.GetItem":	{
+		"prefix":	"🔐  BlockFunc.XARR.GetItem",
+		"description":	["Bestimmten Eintrag abholen. Fehler wenn dieser nicht existiert."],
+		"body":	[
+			"\tvar ${1:stringVal} := XARR.GetItem(${2:xArrName}, ${3:oneBasedItemIndex})",		]
+	},
+	"BLOCKFUNC: XARR.IsDefined":	{
+		"prefix":	"🔐  BlockFunc.XARR.IsDefined",
+		"description":	["Ermittelt, ob ein bestimmter Array existiert."],
+		"body":	[
+			"\tvar ${1:boolVal} := XARR.IsDefined(${2:xArrName})",		]
+	},
+	"BLOCKFUNC: XARR.SetItem":	{
+		"prefix":	"🔐  BlockFunc.XARR.SetItem",
+		"description":	["Bestimmten Eintrag setzen resp. ersetzen. Array wächst automatisch falls nötig."],
+		"body":	[
+			"XARR.SetItem(${2:xArrName}, ${3:oneBasedItemIndex}, ${4:value})",		]
+	},
+}

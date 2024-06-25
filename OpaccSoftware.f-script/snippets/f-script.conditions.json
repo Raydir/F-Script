@@ -1,0 +1,277 @@
+{
+	"CONDITION.REPEAT_LOOP":
+	{
+		"prefix": "✅ CONDITION.REPEAT.LOOP",
+		"description": "Insert classic REPEAT/LOOP construct\r",
+		"body": 
+		[
+			"# ------------------------------------------------------------------------------------------------------",
+			"«X(${1:Repeat.Count}=${2:<integer>})»",
+			"«nNO(${3|1,2,3,4,5,6,7,8,9|},NULL)»",
+			"«REPEAT($3)»",
+			"«nNO($3)»",
+			"${4:do something}",
+			"«nz NO($3,0)<«X(${1})\\N»\\N»«LOOP($3)»"
+		]
+	},
+	"CONDITION.GOTO":
+	{
+		"prefix": "✅ CONDITION.GOTO.END",
+		"description": "Insert GOTO(/) condition (end of subroutine)\r",
+		"body": 
+		[
+			"«GOTO(/)»",
+			""
+		]
+	},	
+	"CONDITION.GOTO.COMMENT":
+	{
+		"prefix": "✅ CONDITION.GOTO.JUMP",
+		"description": "Insert GOTO(# JUMP) condition (to comment)\r",
+		"body": 
+		[
+			"«GOTO(# JUMP.${1:CommentName})»",
+			"\r",
+			"# JUMP.$1"
+		]
+	},	
+	"CONDITION.Zeile":
+	{
+		"prefix": "✅ CONDITION.Zeile",
+		"description": "Insert a z-condition\rIf true, the rest of the line will be executed.\r",
+		"body": 
+		[
+			"«nz${1| ,~|}X(${2:Value})${3|\\I,\\N,\\A,=0\\N,=abc\\A,=|}»${4:do something}",
+			""
+		]
+	},
+	"CONDITION.AND":
+	{
+		"prefix": "✅ CONDITION.Zeile.And",
+		"description": "Insert two z-conditions connected with AND \rIf true, the rest of the line will be executed.\r",
+		"body": 
+		[
+			"«nz${1| ,~|}X(${2:ValueA})${3|\\I,\\N,\\A,=0\\N,=abc\\A,=|}»«nz${4| ,~|}X(${5:ValueB})${6|\\I,\\N,\\A,=0\\N,=abc\\A,=|}»${7:do something}",
+			""
+		]
+	},
+	"CONDITION.OR":
+	{
+		"prefix": "✅ CONDITION.Zeile.Or",
+		"description": "Insert two z-conditions connected with OR \rIf true, the rest of the line will be executed.\r",
+		"body": 
+		[
+			"«n ${1| ,~|}X(${2:ValueA})${3|\\I,\\N,\\A,=0\\N,=abc\\A,=|}»«nz${4| ,~|}X(${5:ValueB})${6|\\I,\\N,\\A,=0\\N,=abc\\A,=|}»${7:do something}",
+			""
+		]
+	},
+	"CONDITION.Segment":
+	{
+		"prefix": "✅ CONDITION.Segment",
+		"description": "Insert a s-condition\rIf true, the code in [] will be executed.\r",
+		"body": 
+		[
+			"«ns${1| ,~|}X(${2:Value})${3|\\I,\\N,\\A,=0\\N,=abc\\A,=|}»[${4:do someting}]"
+		]
+	},
+	"CONDITION.POS":
+	{
+		"prefix": "✅ CONDITION.POS",
+		"description": "Insert z-condition 'POS' to check XVar vs. list\r nz POS(|«X(Document.Type)»|,|AA|BB|)\\I»\r",
+		"body":
+		[
+			"# ------------------------------------------------------------------------------------------------------",
+			"«nz POS(|«X(${1:Document.Type})»|,|${2:1A|1B}|)\\I»«/${3:SubFunction.Name}»",
+			""
+		]
+	},
+	"CONDITION.LogAdrNr": 
+	{
+		"prefix": "✅ CONDITION.LOGADRNR",
+		"description": "Insert z-condition for «SYS(LOGADRNR)»\r",
+		"body": [
+			"«nz SYS(LOGADRNR)=${1|9999,99999,999|}\\N»${2:do something}",
+			""
+		]
+	},
+	"CONDITION.DateInRange": 
+	{
+		"prefix": "✅ CONDITION.DateInRange",
+		"description": "Insert z-condition to check if date is in defined date-range\r",
+		"body": [
+			"«X(${1:Date.Value}\t=«TODAY\\D10»)»",
+			"«X(${2:Range.Start}\t=20.03.2018)»",
+			"«X(${3:Range.End}\t=03.04.2018)»",
+			"«nz («(date($1) >= date($2) and date($1) <= date($3))\\E»)\\I»${4:do something}",
+			""
+		]
+	},		
+	"CONDITION.Compare":
+	{
+		"prefix": "✅ CONDITION.Compare",
+		"description": "Insert a z-condition that compares 2 variables.\rIf true, the rest of the line will be executed.\r",
+		"body": 
+		[
+			"«X(${1:ValueA}\t=10)»",
+			"«X(${2:ValueB}\t=20)»",
+			"«nz ( «( $1 ${3|=,<>,<,<=,>=,>,contains,matches|} $2)\\E» )\\I»${4:do something}"
+		]
+	},	
+    "Condition.if": 
+	{
+		"prefix": "✅ CONDITION.if",
+		"description": "'Final' if-Condition\rEfficient validation of conditions\r\rfinal:\tstring is used 'as is'\rContained commands are ignored!\r",
+		"body": [
+			"«X(${1:ValueA}\t=10)»",
+			"«X(${2:ValueB}\t=20)»",
+			"«if($1 ${3|contains,matches,<,<=,=,>=,>,<>|} $2)\\C»[${4:«/Subroutine.True»}][${5:«/Subroutine.False»}]\r"
+		]
+	},
+
+	"IO.Write.File":
+	{
+		"scope":	"f-script",
+ 		"prefix": "✅ SYSTEM.IO.Write.File",
+		"description": "Insert WRITE constructor\r",
+		"body": 
+		[
+			"# ------------------------------------------------------------------------------------------------------",
+			"«WRITE(${1|1,2,3,4|}:${2|DIRECT,APPEND|} «SYS(FULLPATH)»TMP\\\\${3:PathAndFile})»",
+			"«WRITE($1:${4| ,ANSI ,UTF8 ,UT-8 |}${5:yourText})»",
+			"«WRITE($1:CLOSE)»",
+			""	
+		]
+	},
+	"IO.Write.XMLFile":
+	{
+		"scope":	"f-script",
+		"prefix": "✅ SYSTEM.IO.Write.XMLFile",
+		"description": "Insert XML WRITE constructor\r",
+		"body": 
+		[
+			"# ------------------------------------------------------------------------------------------------------",
+			"«WRITE(${1|1,2,3,4|}:${2|DIRECT,APPEND|} «SYS(FULLPATH)»TMP\\\\${3:PathAndFile})»",
+			"«WRITE($1:${4|ANSI,UTF8|} «XML(Encoding:$4)»)»",
+			"«WRITE($1:$4 «XML(STag:${5:TagName})»)»",
+			"«WRITE($1:$4 «'\\t'»«XML(STag:${6:TagName})»«XML(Text:ipsum lorum)»«XML(ETag:${6:TagName})»)»",
+			"«WRITE($1:$4 «XML(ETag:${5:TagName})»)»",
+			"«WRITE($1:CLOSE)»",
+			""
+		]
+	},	
+	"IO.Read.File":
+	{
+		"prefix": "✅ SYSTEM.IO.Read.File",
+		"description": "Insert READ constructor\rATTENTION: Select different Values for REPEAT/LOOP!",
+		"body": 
+		[
+			"# ------------------------------------------------------------------------------------------------------",
+			"# Öffnen des Lesekanals",
+			"«nz~READ(${1|1,2,3,4|}:${2|DIRECT,DIRECTANSI,DIRECTUTF8|} «SYS(FULLPATH)»TMP\\\\${3:PathAndFile})\\I»«GOTO(/)»",
+			"«nREPEAT(${4|1,2,3,4,5,6,7,8,9|})»",
+			"# ------------------------------------------------------------------------------------------------------",
+			"# Bei letzter Zeile abbrechen",
+			"«nz~READ($1:)\\I»«GOTO(# JUMP.${5:END.OF.FILE})»",
+			"# ------------------------------------------------------------------------------------------------------",
+			"# Komplette Zeile direkt in X-Variable speichern",
+			"«nREAD($1:MEM>CompleteLine)»",
+			"# ------------------------------------------------------------------------------------------------------",
+			"# X-Variable splitten und in X-ARRAY speichern",
+			"«nSPLIT(${6:;},CompleteLine>Record)»",
+			"# ------------------------------------------------------------------------------------------------------",
+			"# Einzelne Elemente des X-ARRAYs durchlaufen",
+			"«nNO(${7|2,1,3,4,5,6,7,8,9|},NULL)»",
+			"«REPEAT($7)»",
+			"«nNO($7)»",
+			"# ------------------------------------------------------------------------------------------------------",
+			"# Splte ausgeben:",
+			"«XARR(Record[«NO($7,0)»])»",
+			"# ------------------------------------------------------------------------------------------------------",
+			"# LOOP solange Counter <  XARRAY (Länge)",
+			"«nz NO($7,0)<«XARR(Record)\\N»\\N»«LOOP($7)»",
+			"«LOOP($4)»",
+			"# JUMP.$5",
+			"«READ($1:CLOSE)»",
+			""
+		]
+	},
+	"IO.Read.Text":
+	{
+		"prefix": "✅ SYSTEM.IO.Read.Text",
+		"description": "Insert READ constructor for text (line by line)\r",
+		"body": 
+		[
+			"«X(${1:Value}\t=Hello World! This is Mars calling...)»",
+			"«nm${2|1,2,3,4,5,6,7,8,9|}X($1,W${3:100})\\N»",
+			"«nz MEM($2)=0\\N»«GOTO(# JUMP.${4:TEXTBLOCK.END})»",
+			"«nREPEAT($2)»",
+			"«nNO($2)»",
+			"# ------------------------------------------------------------------------------------------------------",
+			"# Output:",
+			"«READ(«NO($2,0)»)»",
+			"«nz NO($2,0)<«MEM($2)\\N»\\N»«LOOP($2)»",
+			"# JUMP.$4",
+			""
+		]
+	},	
+	"OPERATION.IBOSArgArray":
+	{
+		"prefix": "✅ OPERATION.Ibos.ArgArray",
+		"description": "Insert IBOS constructor with argument Array\r",
+		"body":
+		[
+			"# ------------------------------------------------------------------------------------------------------",
+			"«nIS(${1:IBOSOPERATION},${2:arg,arg,arg})»",
+			"«nz~IS(GETI:OK)\\I»«SYS(MSG ERROR ${3:ErrorText} «IS(GETI:ERR_TXT)»)»«SYS(STOP)»",
+			""
+		]
+	},
+	"OPERATION.IBOSSingleArg":
+	{
+		"prefix": "✅ OPERATION.Ibos.ArgSingle",
+		"description": "Insert IBOS constructor with single line arguments\r",
+		"body":
+		[
+			"# ------------------------------------------------------------------------------------------------------",
+			
+			"«nIS(SETI:BEGIN)»",
+			"«nIS(SETI: ${3:arg1})»",
+			"«nIS(SETI: ${4:arg2})»",
+			"«nIS(SETI: ${5:arg3})»",
+			"«nIS(SETI: ${6:arg4})»",
+			"«nIS(SETI: ${7:arg5})»",
+			"«nIS(SETI:END)»",
+			"«nIS(${1:IBOSOPERATION})»",
+			"«nz~IS(GETI:OK)\\I»«SYS(MSG ERROR ${2:ErrorText} «IS(GETI:ERR_TXT)»)»«SYS(STOP)»",
+			""
+		]
+	},
+	"STRING.Split": {
+		"prefix": "✅ SYSTEM.String.Split",
+		"description": "Insert SPLIT-Function and Array-List\r",
+		"body": [
+			"«X(${1:InputXVar}=A;B;C;D)»",
+			"# ------------------------------------------------------------------------------------------------------",
+			"«nSPLIT(${2|;,\\,,\\|,/,#,@|},$1>${3:ArrayListd})»",
+			"«nz XARR($3)=0\\N»«GOTO(# JUMP.${4:ARRAYLIST.END})»",
+			"«nNO(${5|1,2,3,4,5,6,7,8,9|},NULL)»",
+			"«nREPEAT($5)»",
+			"«nNO($5)»",
+			"# ------------------------------------------------------------------------------------------------------",
+			"# Output:",
+			"«XARR($3[«NO($5,0)»])»",
+			"«nz NO($5,0)<«XARR($3)\\N»\\N»«LOOP($5)»",
+			"# JUMP.$4",
+			""
+		]
+	},
+	"String.Format": 
+	{
+		"prefix": "✅ SYSTEM.String.Format",
+		"description": "Most used format extensions\r\\N => numeric\r\\N,.00 => numeric, dec. symbol (.), 2 decs. (00)\r\\N,.00t'p => numeric, dec. symbol (.), 2 decs. (00), thousend sep. (t), right bounded (p)\r\\A => alphanumeric\r\\Ap => alphanumeric, right bounded\r\\A10 => alphanumeric, 10 chars\r\\A10F0 => alphanumeric, 10 chars, fill with 0\r\\D10 => date, dd.mm.yyyy\r",
+		"body": [
+					"${1|\\N,\\N\\,.00,\\N\\,.00t'p,\\A,\\Ap,\\A10,\\A10F0,\\D10|}"
+		]
+	}	
+}
+

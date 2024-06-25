@@ -1,0 +1,8 @@
+{
+	"BLOCKFUNC: SPLIT.IntoXArr":	{
+		"prefix":	"🔐  BlockFunc.SPLIT.IntoXArr",
+		"description":	["Einen String mit dem übergebenen Delimiter auftrennen und die einzelnen Bestandteile in einen X-Array abfüllen (falls nötig, wird dieser zuerst geleert). Zurückgegeben wird die Anzahl Einträge. Optional ist Unterdrücken leerer Einträge und einfaches Filtern möglich."],
+		"body":	[
+			"\tvar ${1:numberVal} := SPLIT.IntoXArr(${2:delimiter}, ${3:stringToSplit}, ${4:xArrName}, ${5:removeEmptyEntries}, ${6:entryFilter})",		]
+	},
+}

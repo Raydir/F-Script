@@ -1,0 +1,74 @@
+{
+	"BLOCKFUNC: XML.CreateAttribute":	{
+		"prefix":	"🔐  BlockFunc.XML.CreateAttribute",
+		"description":	["Schreibt ein XML-Attribut-Element."],
+		"body":	[
+			"\tvar ${1:stringVal} := XML.CreateAttribute(${2:xmlAttributeName}, ${3:xmlAttributeValue})",		]
+	},
+	"BLOCKFUNC: XML.CreateComment":	{
+		"prefix":	"🔐  BlockFunc.XML.CreateComment",
+		"description":	["Konvertiert einen Text in ein XML-Kommentar mit gültigem Format. Optional können F-Script-Klammern bei XML-Kommentaren mit '{' resp. '}' ersetzt werden"],
+		"body":	[
+			"\tvar ${1:stringVal} := XML.CreateComment(${2:xmlText}, ${3:suppressIndent}, ${4:convertFScriptBrackets})",		]
+	},
+	"BLOCKFUNC: XML.CreateElement":	{
+		"prefix":	"🔐  BlockFunc.XML.CreateElement",
+		"description":	["Schreibt ein XML-Element, optional mit Text."],
+		"body":	[
+			"\tvar ${1:stringVal} := XML.CreateElement(${2:xmlElementName}, ${3:xmlText})",		]
+	},
+	"BLOCKFUNC: XML.CreateElementWithAttribute":	{
+		"prefix":	"🔐  BlockFunc.XML.CreateElementWithAttribute",
+		"description":	["Schreibt ein XML-Element mit einem Attribut, optional mit Text. Das Attribut wird dabei XML-konform konvertiert."],
+		"body":	[
+			"\tvar ${1:stringVal} := XML.CreateElementWithAttribute(${2:xmlElementName}, ${3:xmlAttributeName}, ${4:xmlAttributeValue}, ${5:xmlText})",		]
+	},
+	"BLOCKFUNC: XML.CreateElementWithAttributes":	{
+		"prefix":	"🔐  BlockFunc.XML.CreateElementWithAttributes",
+		"description":	["Schreibt ein XML-Element mit Attributen, optional mit Text. Die Attribute werden dabei nicht XML-konform konvertiert."],
+		"body":	[
+			"\tvar ${1:stringVal} := XML.CreateElementWithAttributes(${2:xmlElementName}, ${3:xmlAttributes}, ${4:xmlText})",		]
+	},
+	"BLOCKFUNC: XML.CreateEndElement":	{
+		"prefix":	"🔐  BlockFunc.XML.CreateEndElement",
+		"description":	["Schreibt ein XML-End-Element."],
+		"body":	[
+			"\tvar ${1:stringVal} := XML.CreateEndElement(${2:xmlElementName}, ${3:suppressIndent})",		]
+	},
+	"BLOCKFUNC: XML.CreateStartElement":	{
+		"prefix":	"🔐  BlockFunc.XML.CreateStartElement",
+		"description":	["Schreibt ein XML-Start-Element, optional mit Attributen. Die Attribute werden dabei nicht XML-konform konvertiert."],
+		"body":	[
+			"\tvar ${1:stringVal} := XML.CreateStartElement(${2:xmlElementName}, ${3:xmlAttributes})",		]
+	},
+	"BLOCKFUNC: XML.CreateStartElementWithAttribute":	{
+		"prefix":	"🔐  BlockFunc.XML.CreateStartElementWithAttribute",
+		"description":	["Schreibt ein XML-Start-Element mit einem Attribut. Das Attribut wird dabei XML-konform konvertiert."],
+		"body":	[
+			"\tvar ${1:stringVal} := XML.CreateStartElementWithAttribute(${2:xmlElementName}, ${3:xmlAttributeName}, ${4:xmlAttributeValue})",		]
+	},
+	"BLOCKFUNC: XML.CreateText":	{
+		"prefix":	"🔐  BlockFunc.XML.CreateText",
+		"description":	["Konvertiert einen Text in ein gültiges XML-Format."],
+		"body":	[
+			"\tvar ${1:stringVal} := XML.CreateText(${2:xmlText}, ${3:suppressIndent})",		]
+	},
+	"BLOCKFUNC: XML.InitAndCreateAnsiEncodingHeader":	{
+		"prefix":	"🔐  BlockFunc.XML.InitAndCreateAnsiEncodingHeader",
+		"description":	["Retourniert den ANSI XML-Header und initialisiert den Einzug."],
+		"body":	[
+			"\tvar ${1:stringVal} := XML.InitAndCreateAnsiEncodingHeader(${2:activateIndent}, ${3:numberOfSpaces})",		]
+	},
+	"BLOCKFUNC: XML.InitAndCreateUtf8EncodingHeader":	{
+		"prefix":	"🔐  BlockFunc.XML.InitAndCreateUtf8EncodingHeader",
+		"description":	["Retourniert den UTF-8 XML-Header und initialisiert den Einzug."],
+		"body":	[
+			"\tvar ${1:stringVal} := XML.InitAndCreateUtf8EncodingHeader(${2:activateIndent}, ${3:numberOfSpaces})",		]
+	},
+	"BLOCKFUNC: XML.SetIndent":	{
+		"prefix":	"🔐  BlockFunc.XML.SetIndent",
+		"description":	["Sollen automatisierte Einzüge aktiviert werden? Dabei können die Anzahl der Spaces bei den Einzügen gesetzt werden."],
+		"body":	[
+			"XML.SetIndent(${2:activateIndent}, ${3:numberOfSpaces})",		]
+	},
+}

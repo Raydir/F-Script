@@ -1,0 +1,110 @@
+{
+	"BLOCKFUNC: IS.AddArg":	{
+		"prefix":	"🔐  BlockFunc.IS.AddArg",
+		"description":	["IBOS-Argument hinzufügen."],
+		"body":	[
+			"IS.AddArg(${2:ibosArg})",		]
+	},
+	"BLOCKFUNC: IS.AddArgs":	{
+		"prefix":	"🔐  BlockFunc.IS.AddArgs",
+		"description":	["IBOS-Argumente hinzufügen."],
+		"body":	[
+			"IS.AddArgs(${2:ibosArgs})",		]
+	},
+	"BLOCKFUNC: IS.AppendArg":	{
+		"prefix":	"🔐  BlockFunc.IS.AppendArg",
+		"description":	["Wert zum letzten IBOS-Argument hinzufügen. Fehler, wenn noch kein Argument vorhanden ist."],
+		"body":	[
+			"IS.AppendArg(${2:argValueToAppend})",		]
+	},
+	"BLOCKFUNC: IS.AppendArgByNo":	{
+		"prefix":	"🔐  BlockFunc.IS.AppendArgByNo",
+		"description":	["Wert zu einem bestimmten IBOS-Argument (identifiziert anhand Nummer) hinzufügen. Fehler, wenn Argument noch nicht vorhanden ist."],
+		"body":	[
+			"IS.AppendArgByNo(${2:oneBasedArgNo}, ${3:argValueToAppend})",		]
+	},
+	"BLOCKFUNC: IS.Clear":	{
+		"prefix":	"🔐  BlockFunc.IS.Clear",
+		"description":	["IS-Objekt zurücksetzen."],
+		"body":	[
+			"IS.Clear()",		]
+	},
+	"BLOCKFUNC: IS.Execute":	{
+		"prefix":	"🔐  BlockFunc.IS.Execute",
+		"description":	["IBOS ausführen, IBOS-Rückgabe (falls vorhanden) als Rückgabewert (ansonsten Leerstring). Falls isTest=true, nur Argumentenprüfung."],
+		"body":	[
+			"\tvar ${1:stringVal} := IS.Execute(${2:isTest})",		]
+	},
+	"BLOCKFUNC: IS.GetArgByNo":	{
+		"prefix":	"🔐  BlockFunc.IS.GetArgByNo",
+		"description":	["Liefert den Wert eines bestimmten Arguments. Fehler, wenn Argument nicht vorhanden ist."],
+		"body":	[
+			"\tvar ${1:stringVal} := IS.GetArgByNo(${2:oneBasedArgNo})",		]
+	},
+	"BLOCKFUNC: IS.GetIbos":	{
+		"prefix":	"🔐  BlockFunc.IS.GetIbos",
+		"description":	["Aktuell gesetzten IBOS-Namen abholen."],
+		"body":	[
+			"\tvar ${1:stringVal} := IS.GetIbos()",		]
+	},
+	"BLOCKFUNC: IS.GetIbosAndArgs":	{
+		"prefix":	"🔐  BlockFunc.IS.GetIbosAndArgs",
+		"description":	["Aktuell gesetzten IBOS-Aufruf mit dem Namen und den übergebenen Argumenten abholen."],
+		"body":	[
+			"\tvar ${1:stringVal} := IS.GetIbosAndArgs()",		]
+	},
+	"BLOCKFUNC: IS.GetMsgKey":	{
+		"prefix":	"🔐  BlockFunc.IS.GetMsgKey",
+		"description":	["Liefert Meldungs-Schlüssel."],
+		"body":	[
+			"\tvar ${1:stringVal} := IS.GetMsgKey()",		]
+	},
+	"BLOCKFUNC: IS.GetMsgText":	{
+		"prefix":	"🔐  BlockFunc.IS.GetMsgText",
+		"description":	["Liefert Meldungs-Schlüssel."],
+		"body":	[
+			"\tvar ${1:stringVal} := IS.GetMsgText()",		]
+	},
+	"BLOCKFUNC: IS.GetOk":	{
+		"prefix":	"🔐  BlockFunc.IS.GetOk",
+		"description":	["Liefert Info, ob IBOS-Ausführung erfolgreich war."],
+		"body":	[
+			"\tvar ${1:boolVal} := IS.GetOk()",		]
+	},
+	"BLOCKFUNC: IS.IsDefined":	{
+		"prefix":	"🔐  BlockFunc.IS.IsDefined",
+		"description":	["Ermittelt, ob ein IBOS definiert wurde."],
+		"body":	[
+			"\tvar ${1:boolVal} := IS.IsDefined()",		]
+	},
+	"BLOCKFUNC: IS.SetArgByNo":	{
+		"prefix":	"🔐  BlockFunc.IS.SetArgByNo",
+		"description":	["Bestimmtes IBOS-Argument (identifiziert anhand Nummer) setzen."],
+		"body":	[
+			"IS.SetArgByNo(${2:oneBasedArgNo}, ${3:argValue})",		]
+	},
+	"BLOCKFUNC: IS.SetArgs":	{
+		"prefix":	"🔐  BlockFunc.IS.SetArgs",
+		"description":	["IBOS-Argumente setzen. Allfällig vormals vorhandene Argumente werden zurückgesetzt."],
+		"body":	[
+			"IS.SetArgs(${2:ibosArgs})",		]
+	},
+	"BLOCKFUNC: IS.SetIbos":	{
+		"prefix":	"🔐  BlockFunc.IS.SetIbos",
+		"description":	["IBOS-Name für den IBOS-Aufruf setzen. Es kann definiert werden, ob vormals vorhandene Argumente erhalten bleiben sollen."],
+		"body":	[
+			"IS.SetIbos(${2:ibosName}, ${3:clearArgs})",		]
+	},
+	"BLOCKFUNC: IS.SetIbosAndArgs":	{
+		"prefix":	"🔐  BlockFunc.IS.SetIbosAndArgs",
+		"description":	["IBOS-Name für den IBOS-Aufruf und IBOS-Argumente setzen. Allfällig vormals vorhandene Argumente werden zurückgesetzt."],
+		"body":	[
+			"IS.SetIbosAndArgs(${2:ibosName}, ${3:ibosArgs})",		]
+	},
+	"BLOCKFUNC: IS.SuppressExceptions":	{
+		"prefix":	"🔐  BlockFunc.IS.SuppressExceptions",
+		"description":	["Fehler führen nicht zu einem Script-Abbruch. Fehler-Infos können via 'GetOk', 'GetMsgKey' und 'GetMsgText' abgeholt werden. Wird nicht via 'IS.Clear()' zurückgesetzt."],
+		"body":	[
+			"IS.SuppressExceptions(${2:suppressException})",		]
+	},
+}

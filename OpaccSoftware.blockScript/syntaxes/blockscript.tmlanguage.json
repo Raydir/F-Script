@@ -1,0 +1,256 @@
+{
+	"\\$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "blockScript",
+	"scopeName": "source.blockScript.main",
+
+	"patterns": [
+		{
+			"include": "#brackets"
+		},
+		{
+			"include": "#legacyFunctions"
+		},
+		{
+			"include": "source.f-script"
+		},
+		{
+			"include": "source.f-script.extended"
+		},
+		{
+			"include": "source.f-script.context"
+		},
+
+		{
+			"include": "#blockscript"
+		},
+		{
+			"include": "#commentsDiv"
+		},
+		{
+			"include": "#comments"
+		},
+		{
+			"include": "#operators"
+		},
+		{
+			"include": "#strings"
+		},
+		{
+			"include": "source.blockscript"
+		}
+	],
+	"repository": {
+		"brackets": {
+			"patterns": [
+				{
+					"name": "entity.name.tag",
+					"match": "[(){}]{1,}"
+				}
+			]
+		},
+		"legacyFunctions": {
+			"patterns": [
+				{
+					"name": "support.other.excluded",
+					"match": "[\\s]{0,}(LAGER_BESTAND|LAGER_PREIS|PLAN_BEWEGUNG|LAGER_BEWEGUNG)(?=\\(.*\\))"
+				},
+				{
+					"name": "support.other.excluded",
+					"match": "[\\s]{0,}(ART_ACTIVE|ART_ACTIVE5)(?=\\(.*\\))"
+				}
+			]
+		},
+		"blockscript": {
+			"patterns": [
+				{
+					"name": "keyword.control",
+					"match": "using[\\s]{1,}(?=[\"]{1}[aA-zZ0-9._-]{3,}[.]{1}(FBL|Fbl|fbl)[\"]{1})"
+				},
+				{
+					"name": "support.class",
+					"match": "(?<=function[\\s][A-Z]{1}[a-zA-Z0-9_.]{3,}\\(.*\\))[(\\s|\\t)]{0,}:[(\\s|\\t)]{0,}(void|string|number|integer|boolean|date|timestamp|time)"
+				},
+				{
+					"name": "support.class",
+					"match": "X(?!.*X)(?=\\(.*\\)[»]{0,})"
+				},
+				{
+					"name": "keyword.control",
+					"match": "(?<=using[\\s]{1,})[\"]{1}[aA-zZ0-9._-]{3,}[.]{1}(FBL|Fbl|fbl)[\"]{1}"
+				},
+				{
+					"name": "entity.name.function",
+					"match": "function[\\s]{1,}(?!(GetInfoScriptCol|GetInfoScriptArg|GetInfoScript))[aA-zZ0-9_]{3,}"
+				},
+				{
+					"name": "entity.name.function",
+					"match": "[\\s]{1,}(?!(GetInfoScriptCol|GetInfoScriptArg|GetInfoScript))[aA-zZ0-9_]{3,}(?=\\()(?=\\))"
+				},
+				{
+					"name": "keyword.other.unit",
+					"match": "function[\\s]{1,}(GetInfoScriptCol|GetInfoScriptArg|GetInfoScript)"
+				},
+
+				{
+					"name": "keyword.other.unit",
+					"match": "[\\s]{1,}(GetInfoScriptCol|GetInfoScriptArg|GetInfoScript)(?=[\\(|\\)])"
+				},
+				{
+					"name": "keyword.other.using",
+					"match": "var[\\s]{1,}(?=[aA-zZ0-9._-]{1,}[\\s]{0,}:=[\\s]{0,})"
+				}
+			]
+		},
+		"commentsDiv": {
+			"patterns": [
+				{
+					"name": "commentsDiv",
+					"match": "\\s[/]{2}\\s(?!(ACHTUNG|ATTENTION|TIPP|INFO|HINWEIS|TODO|FIXME)).*"
+				},
+				{
+					"name": "commentsAttention",
+					"match": "[\\s]{0,}[/]{2}\\s(ACHTUNG|ATTENTION).*"
+				},
+				{
+					"name": "commentsAttention",
+					"match": "^#\\s(ACHTUNG|ATTENTION).*"
+				},
+				{
+					"name": "commentsFunc",
+					"match": "///\\s(Description|Arguments|Return):"
+				},
+				{
+					"name": "commentsFunc",
+					"match": "///\\s"
+				},
+				{
+					"name": "commentsFuncDesc",
+					"match": "(?<=///\\s(Description|Arguments|Return):).*"
+				},
+				{
+					"name": "commentsFuncDesc",
+					"match": "(?<=///\\s).*"
+				},
+				{
+					"name": "commentsTipp",
+					"match": "[\\s]{0,}[/]{2}\\s(TIPP|INFO|HINWEIS).*"
+				},
+				{
+					"name": "commentsTipp",
+					"match": "^#\\s(TIPP|INFO|HINWEIS).*"
+				},
+				{
+					"name": "commentsTodo",
+					"match": "[\\s]{0,}[/]{2}\\s(TODO|FIXME).*"
+				},
+				{
+					"name": "commentsTodo",
+					"match": "^#\\s(TODO|FIXME).*"
+				},
+				{
+					"name": "comment",
+					"match": "([\\s]{0,}//\\s.*|^#\\s.*)"
+				}
+			]
+		},
+		"comments": {
+			"patterns": [
+				{
+					"name": "comment",
+					"match": "\\s[/]{2}\\s.*"
+				},
+				{
+					"name": "comment",
+					"match": "^((#\\s)|(^# «)|(#\\s)|(#[,]{0,1}[0-9]{1,})).{0,}[*-/─?_]{0,}"
+				},
+				{
+					"name": "comment",
+					"match": "#[,]{0,1}[0-9]{1,}"
+				},
+				{
+					"name": "comment",
+					"match": "^#\\B"
+				}
+			]
+		},
+		"operators": {
+			"patterns": [
+				{
+					"name": "entity.name.tag",
+					"match": "(:={1})"
+				},
+				{
+					"name": "entity.name.tag",
+					"match": "([/:/+-/*/|///<=/>]{1})"
+				},
+				{
+					"name": "entity.name.tag",
+					"match": "(?<= )(and|or|contains|matches|max|min)(?= )"
+				},
+				{
+					"name": "entity.name.tag",
+					"match": "\\bDELIM\\b"
+				},
+				{
+					"name": "entity.name.tag",
+					"match": "((?<=\\()|)(set_remove|set_add|set_contains)(?=\\()\\b"
+				},
+				{
+					"name": "entity.name.tag",
+					"match": "((?<=\\()|)(append|assign|ascii|character|center|date|if|else|insert|integer|left|length|lowercase|ltrim|mid|mod|not|number|overstrike|pad|pos|random|remove|repeat|replaces|replace|right|rtrim|round|string|trim|uc_char|uc_int|uppercase|guid|regExCi|regEx|asDate|asInteger|asNumber|computeSha256|computeSha512|computeMd5|decodeBase64|encodeBase64|escapeUriData|unescapeUriData|abs|sqrt)(?=\\()\\b"
+				},
+				{
+					"name": "entity.name.tag",
+					"match": "((?<=\\()|)(else)(?!\\()\\b"
+				},
+				{
+					"name": "entity.name.tag",
+					"match": "((?<=\\()|)(time|timestamp|asTime|asTimestamp|isTime|isTimestamp|dateToStr|timeToStr|timestampToStr|today|now|dateAdd|dayOfDate|monthOfDate|yearOfDate|dateInTz|timeInTz|timestampInTz|dateStrInTz|timeStrInTz|timestampStrInTz|encrypt|decrypt)(?=\\()\\b"
+				},
+				{
+					"name": "entity.name.tag",
+					"match": "((?<=\\()|)(lPad|rPad|lTruncPad|rTruncPad|nmbToStr|nmbToStrEx|split)(?=\\()\\b"
+				},
+				{
+					"name": "keyword.control",
+					"match": "(if|else|return|throw|TRUE|FALSE|for(?=\\()|while(?=\\())\\b"
+				},
+				{
+					"name": "entity.name.tag",
+					"match": "((?<=\\()|)(isDate|isInteger|isNumber)(?=\\()\\b"
+				},
+				{
+					"name": "entity.name.tag",
+					"match": "(?<=SYS\\()(STOP|ANZEXEMP|FULLPATH|FULLPASS|GUID CREATE|LOGADRNR|LOGUSERNR|LOGADMLEVEL|LOGIMPERSNR|LOGADRSPR|MANDANT|MEMORY|SECONDS|STACK_LEVEL|START_SESSION|LOGPASSNR|OUTTYPE|LOGSYSSPR|MENUNR|OUTNAME|PATHTX|USEDMEM|USERCOUNT)(?=\\)»)\\b"
+				},
+				{
+					"name": "entity.name.tag",
+					"match": "(?<=SYS\\()(MSG INFO|MSG EXCL|MSG CRIT|MSG ERROR|CHAIN|COPYFILE|CREATEDIR|DECRYPT_SYM|ENCRYPT_SYM|DECRYPT|ENCRYPT|DELETEDIR|ERASEFILE|EXISTFILE|RUNI|TIME|RUNM|RUN|WAIT|MOVEFILE|RENAMEFILE|OUTNAME=|EXISTDIR|GETENV|DIALOG)"
+				},
+				{
+					"name": "entity.name.tag",
+					"match": "(?<=PROGRESS\\()(Active|ProcCancel|JobCancel|StepCancel|SetNoCancel|SetProcCancel|SetJobCancel|SetStepCancel|Id)(?=\\)»)"
+				},
+				{
+					"name": "entity.name.tag",
+					"match": "(?<=PROGRESS\\()(NewJob,[a-zA-Z0-9|_.\\-«»/(/)]{1,},[0-1]{1}|Job,[0-9]{1,3}|NewStep,[a-zA-Z0-9|_.\\-«»/(/)]{1,},[0-1]{1}|Step,[0-9]{1,3}|NewStepPause,[1-9]{1,},[a-zA-Z0-9|_.\\-«»/(/)]{1,})(?=\\)»)"
+				}
+			]
+		},
+		"strings": {
+
+			"patterns": [
+				{
+					"name": "string",
+					"match": "(\"((?:\"\"|[^\"])*)\")"
+				},
+				{
+					"name": "string",
+					"match": "('((?:''|[^'])*)')"
+				}
+			]
+		}
+	}
+}
+
+

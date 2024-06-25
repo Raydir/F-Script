@@ -1,0 +1,96 @@
+{
+	"\\$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "F-Script",
+	"patterns": [
+		{
+			"include": "#context"
+		}
+	],
+	"repository": {
+		"context": {
+			"patterns": [
+				{
+					"name": "constant.numeric.hex",
+					"match": "(?<=«)XCNT\\(freeArgNames[<]GetInfoScriptArg\\)(?=»)"
+				},
+				{
+					"name": "constant.numeric.hex",
+					"match": "(?<=(«|n|z|s|m|v|~|\\+|\\-|&|f|e|[0-9]| ))XCNT\\((busActive|boTypes|arg:ScriptName|arg:PrinterNo|arg:OutputTypeCd|arg:OutputDevice|arg:NumberOfCopies|arg:PrintAsPdf|arg:LangNo|arg:BoType|arg:BoId|arg:BoOrganizerCd)\\)(?=[\\\\]{0,1}[NDIAEa]{0,1}[0-9]{0,})"
+				},
+				{
+					"name": "constant.numeric.hex",
+					"match": "(?<=(«|n|z|s|m|v|~|\\+|\\-|&|f|e|[0-9]| ))XCNT\\((arg:DuplexModeCd|arg:ImageDpi|arg:ImageQuality|arg:BackgroundPdfModeCd|arg:BackgroundPdfFirstPage|arg:BackgroundPdfLastPage|arg:BackgroundPdfOtherPages)\\)(?=[\\\\]{0,1}[NDIAEa]{0,1}[0-9]{0,})"
+				},
+				{
+					"name": "constant.numeric.hex",
+					"match": "(?<=(«|n|z|s|m|v|~|\\+|\\-|&|f|e|[0-9]| ))XCNT\\((arg:PrintFromPage|arg:PrintToPage|arg:PrintCollate)\\)(?=[\\\\]{0,1}[NDIAEa]{0,1}[0-9]{0,})"
+				},
+				{
+					"name": "constant.numeric.hex",
+					"match": "(?<=(«|n|z|s|m|v|~|\\+|\\-|&|f|e|[0-9]| ))XCNT\\(freeArg:[a-zA-Z0-9_.,-]{1,}[>a-zA-Z0-9_.-]{0,}\\)(?=[\\\\]{0,1}[NDIAEa]{0,1}[0-9]{0,}»)"
+				},
+				{
+					"name": "constant.numeric.hex",
+					"match": "(?<=(«|n|z|s|m|v|~|\\+|\\-|&|f|e|[0-9]| ))XCNT\\(freeArgs[<]{1}GetInfoScriptArg\\)»"
+				},
+				{
+					"name": "constant.numeric.hex",
+					"match": "(?<=(«|n|z|s|m|v|~|\\+|\\-|&|f|e|[0-9]| ))XCNT\\((freeArgCount|colCount|(colName:|colType:|colActive:)[1-9]{1,}|(colNo:|colType:|colActive:)[a-zA-Z._]{1,})\\)\\B"
+				},
+				{
+					"name": "constant.numeric.hex",
+					"match": "(?<=(«|n|z|s|m|v|~|\\+|\\-|&|f|e|[0-9]| ))XCNT\\((arg:BackgroundPdfFirstPage=|arg:BackgroundPdfLastPage=|arg:BackgroundPdfOtherPages=)[^..].*\\)(?=(»|\\\\N»))"
+				},
+				{
+					"name": "constant.numeric.hex",
+					"match": "(?<=(«|n|z|s|m|v|~|\\+|\\-|&|f|e|[0-9]| ))XCNT\\(arg:BackgroundPdfModeCd=[0-2]{1}\\)(?=(»|\\\\N»))"
+				},
+				{
+					"name": "constant.numeric.hex",
+					"match": "(?<=(«|n|z|s|m|v|~|\\+|\\-|&|f|e|[0-9]| ))XCNT\\(arg:DuplexModeCd=[0-3]{1}\\)(?=(»|\\\\N»))"
+				},
+				{
+					"name": "constant.numeric.hex",
+					"match": "(?<=(«|n|z|s|m|v|~|\\+|\\-|&|f|e|[0-9]| ))XCNT\\(arg:ImageQuality=(?:100|[1-9]?[0-9])\\)(?=(»|\\\\N»))"
+				},
+				{
+					"name": "constant.numeric.hex",
+					"match": "(?<=(«|n|z|s|m|v|~|\\+|\\-|&|f|e|[0-9]| ))XCNT\\(arg:ImageDpi=(?:[1-9]?[0-9]?[0-9]?[0-9])\\)(?=(»|\\\\N»))"
+				},
+				{
+					"name": "constant.numeric.hex",
+					"match": "(?<=(«|n|z|s|m|v|~|\\+|\\-|&|f|e|[0-9]| ))XCNT\\((arg:PrintFromPage=|arg:PrintToPage=)[1-9]{1,}\\)(?=(»|\\\\N»))"
+				},
+				{
+					"name": "constant.numeric.hex",
+					"match": "(?<=(«|n|z|s|m|v|~|\\+|\\-|&|f|e|[0-9]| ))XCNT\\(arg:PrintCollate=(?:[0-1])\\)(?=(»|\\\\N»))"
+				},
+				{
+					"name": "constant.numeric.hex",
+					"match": "(?<=(«|n|z|s|m|v|~|\\+|\\-|&|f|e|[0-9]| ))XCNT\\(arg:PrintJobPriority=(?:[0-1])\\)(?=(»|\\\\N»))"
+				},
+				{
+					"name": "constant.numeric.hex",
+					"match": "(?<=(«|n|z|s|m|v|~|\\+|\\-|&|f|e|[0-9]| ))XCNT\\(scriptExecution(=0\\)|=1\\)|=7\\)|=9\\)|\\)=0|\\)=1|\\)=7|\\)=9|\\)){0,1}(?=(»|\\\\N»))"
+				},
+				{
+					"name": "constant.numeric.hex",
+					"match": "(?<=(«|n|z|s|m|v|~|\\+|\\-|&|f|e|[0-9]| ))XCNT\\(scriptStopOnError(=0\\)|=1\\)|\\)|\\)=1|\\)=0){1}(?=(»|\\\\N»))"
+				},
+				{
+					"name": "constant.numeric.hex",
+					"match": "(?<=(«|n|z|s|m|v|~|\\+|\\-|&|f|e|[0-9]| ))XCNT\\(consumer:(WindowsUser|WindowsDomain|Computer|Process)\\)(?=»)"
+				},
+				{
+					"name": "constant.numeric.hex",
+					"match": "(?<=(«|n|z|s|m|v|~|\\+|\\-|&|f|e|[0-9]| ))XCNT\\(session:(ClientNo|UserAddrNo|UserNo|UserGroupNo|UserAdminLevelCd|ImpersonatorNo|UiLangNo|DataLangNo)\\)(?=»)"
+				},
+				{
+					"name": "constant.numeric.hex",
+					"match": "(?<=(«|n|z|s|m|v|~|\\+|\\-|&|f|e|[0-9]| ))XCNT"
+				}
+			]
+		}
+	},
+	"scopeName": "source.f-script.context"
+}

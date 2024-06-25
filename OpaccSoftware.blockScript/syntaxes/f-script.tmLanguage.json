@@ -1,0 +1,185 @@
+{
+	"\\$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"scopeName": "source.f-script",
+	"name": "F-Script",
+	"patterns": [
+		{
+			"include": "#scriptbrackets"
+		},
+		{
+			"include": "#subroutines"
+		},
+		{
+			"include": "#metasubroutines"
+		},
+		{
+			"include": "#subroutinecalls"
+		},
+		{
+			"include": "#formatextensions"
+		},
+		{
+			"include": "#variableprefixes"
+		},
+		{
+			"include": "#libraries"
+		},
+		{
+			"include": "#operations"
+		}
+	],
+	"repository": {
+		"scriptbrackets": {
+			"patterns": [
+				{
+					"name": "entity.name.tag",
+					"match": "[«»]{1}"
+				}
+			]
+		},
+		"subroutines": {
+			"patterns": [
+				{
+					"name": "meta.diff.header",
+					"match": "(^/[a-zA-Z0-9|_.\\-«»()]{1,})"
+				}
+			]
+		},
+		"metasubroutines": {
+			"patterns": [
+				{
+					"name": "keyword.other.unit",
+					"match": "^/(GetInfoScriptCol|GetInfoScriptArg|GetInfoScript)"
+				}
+			]
+		},
+		"subroutinecalls": {
+			"patterns": [
+				{
+					"name": "support.function",
+					"match": "(?<=«/).*(?=»)\\b"
+				},
+				{
+					"name": "support.function",
+					"match": "/(?!«)[a-zA-Z0-9_.\\-«»\\(\\)]{1,}(?=»)\\b"
+				},
+				{
+					"name": "support.function",
+					"match": "/(?!«)[a-zA-Z0-9_.\\-«»\\(\\)]{1,}(?=\\)»)"
+				},
+				{
+					"name": "support.function",
+					"match": "/(?![«]{0})[a-zA-Z0-9_.\\-«»\\(\\)]{1,}|(?=\\)»)"
+				},
+				{
+					"name": "support.function",
+					"match": "GOTO[(]{1}(# [a-zA-Z0-9|_.-]{1,}|/)[)]{1}"
+				},
+				{
+					"name": "support.function",
+					"match": "^(#\\s)JUMP.*"
+				},
+				{
+					"name": "support.function",
+					"match": "«\\.([a-zA-Z]{2}|«X\\(FFKZ\\)»)-[a-zA-Z0-9]{1,}\\.[a-zA-Z]{2,3}[1-9]{,2}"
+				},
+				{
+					"name": "support.function",
+					"match": "/(?!=«)[a-zA-Z0-9_.\\-«»\\(\\)]{1,}[,-:.a-zA-Z0-9]{0,}(?=\\)»)"
+				},
+				{
+					"name": "support.function",
+					"match": ".ST-BIZSERVICES.FS"
+				}
+			]
+		},
+		"formatextensions": {
+			"patterns": [
+				{
+					"name": "variable.other",
+					"match": "\\\\[NDIEa]{1}[ 0-9,.F'tp]{0,}\\b"
+				},
+				{
+					"name": "variable.other",
+					"match": "\\\\[A]{1}[-]{0,1}[ 0-9,.F'tp]{0,}\\b"
+				},
+				{
+					"name": "variable.other",
+					"match": "\\[(N,0vt0|N,000t0|N,.00t'|N[0-9]{0,},F0|A[0-9]{0,})\\][p]{0,1}(?=»)"
+				},
+				{
+					"name": "variable.other",
+					"match": "(?<=\\N,)0vt0p(?=»)"
+				},
+				{
+					"name": "variable.other",
+					"match": "(?!«)(fi|if|ei|ie)\\(.*\\)\\\\C»"
+				}
+			]
+		},
+		"variableprefixes": {
+			"patterns": [
+				{
+					"name": "variable.language",
+					"match": "(?<=«)[nszvmfe&~ ]{1,}[0-9]{,1}"
+				}
+			]
+		},
+		"libraries": {
+			"patterns": [
+				{
+					"name": "keyword",
+					"match": "(?<=LIB\\()[a-zA-Z0-9\\s\\(\\)/\\-.|,#]{1,}(?=\\)»)"
+				},
+				{
+					"name": "keyword",
+					"match": "(?<=LIB\\()[a-zA-Z0-9\\s\\(\\)/\\-.\\|│,#]{1,}(?=\\)»)"
+				},
+				{
+					"name": "keyword",
+					"match": "(?<=LIB\\()[a-zA-Z0-9\\s\\(\\)/\\-.\\|│,#]{1,}(?=\\)\\\\A1»)"
+				},
+				{
+					"name": "keyword",
+					"match": "(?<=(«|n|z|s|m|v|~|\\+|\\-|&|f|e|[0-9]| ))LIB(?=\\()"
+				},
+				{
+					"name": "keyword",
+					"match": "(?<=(=|:=|return|,|\\()[\\s]{0,})(TRUE|FALSE)\\b"
+				}
+			]
+		},
+		"operations": {
+			"patterns": [
+				{
+					"name": "variable.other.constant",
+					"match": "(?<=(«|n|z|s|~|f|e| ))(REPEAT|LOOP)[(]{0,1}[0-9,]{0,}[)]{0,1}"
+				},
+				{
+					"name": "variable.other.constant",
+					"match": "(?<=(«|n|z|s|~|f|e| ))WRITE[(]{0,1}[1-4]{1}:(DIRECT |APPEND |ANSI |UTF8 |UT-8 |-ANSI |-UTF8 |-UT-8 |ANSI<|UTF8<|UT-8<|-ANSI<|-UTF8<|-UT-8<|LINECOUNT|CLOSE|-<|<|)[)]{,1}"
+				},
+				{
+					"name": "variable.other.constant",
+					"match": "(?<=(«|n|z|s|~|f|e| ))READ[(]{0,1}[1-4]{1}:(DIRECT DIR: |DIRECTANSI DIR |DIRECTUTF8 DIR |DIRECT |DIRECTANSI |DIRECTUTF8 |BLOCK |MEM|SIZE|CLOSE|)[)]{,1}"
+				},
+				{
+					"name": "variable.other.constant",
+					"match": "(?<=(«|n|z|s|~|f|e| ))READ(?=\\()\\b"
+				},
+				{
+					"name": "variable.other.constant",
+					"match": "(?<=(«|n|z|s|m|v|~|\\+|\\-|&|f|e|[0-9]| ))(NO[(]{0,1}[0-9]{0,1}[,]{0,1}(NULL|[0-9]{1,}|)[)]{0,1})(?=»)"
+				},
+				{
+					"name": "variable.other.constant",
+					"match": "(?<=(«|n|z|s|m|v|~|\\+|\\-|&|f|e|[0-9]| ))(NO[(]{0,1}[0-9]{0,1}[,]{0,1}(NULL|[0-9]{1,}|)[)]{1})"
+				},
+				{
+					"name": "variable.other.constant",
+					"match": "(?<=(«|n|z|s|m|v|~|\\+|\\-|&|f|e|[0-9]| ))(TODAY\\((F|DY|DW|DN|D|MN|M|W|Y2W|YW|Y2|Y)|«(n|z|s|m|v|~|\\+|\\-|&|f|e|[1-9]{0,1}| )|TODAY)"
+				}
+			]
+		}
+	}
+}

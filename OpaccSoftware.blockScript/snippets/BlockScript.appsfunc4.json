@@ -1,0 +1,59 @@
+{
+    "EXPRESSION: today()":
+	{
+		"prefix": "✅ APSFUNCTION.Expression.today",
+		"body": [
+			"var ${1:resultValue}\t:= today()"
+		],
+		"description": "Returns the actual date\r"
+	},
+    "EXPRESSION: now()":
+	{
+		"prefix": "✅ APSFUNCTION.Expression.now",
+		"body": [
+			"var ${1:resultValue}\t:= now()"
+		],
+		"description": "Returns the actual date\rif casted with timestampToStr() returns timestamp"
+	},
+    "EXPRESSION: time()":
+	{
+		"prefix": "✅ APSFUNCTION.Expression.time",
+		"body": [
+			"var ${1:resultValue}\t:= time()"
+		],
+		"description": "Returns the actual time\r"
+	},
+    "EXPRESSION: dayOfDate(date)":
+	{
+		"prefix": "✅ APSFUNCTION.Expression.dayOfDate",
+		"body": [
+			"var ${1:resultValue}\t:= dayOfDate(now())"
+		],
+		"description": "Returns the day of the date\r"
+	},
+    "EXPRESSION: monthOfDate(date)":
+	{
+		"prefix": "✅ APSFUNCTION.Expression.monthOfDate",
+		"body": [
+			"var ${1:resultValue}\t:= monthOfDate(now())"
+		],
+		"description": "Returns the month of the date\r"
+	},
+    "EXPRESSION: yearOfDate(date)":
+	{
+		"prefix": "✅ APSFUNCTION.Expression.yearOfDate",
+		"body": [
+			"var ${1:resultValue}\t:= yearOfDate(now())"
+		],
+		"description": "Returns the year of the date\r"
+	},
+    "EXPRESSION: dateAdd(date,integer,datePart)":
+	{
+		"prefix": "✅ APSFUNCTION.Expression.dateAdd",
+		"body": [
+			"var ${1:resultValue}\t:= dateAdd(${2|'28.02.2023',now()|},${3:1},${4|'D','W','M','Y'|})"
+
+		],
+		"description": "Adds/Removes dateparts from date and returns the new date\r"
+	}
+}

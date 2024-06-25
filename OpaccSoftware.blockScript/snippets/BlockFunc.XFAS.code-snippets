@@ -1,0 +1,116 @@
+{
+	"BLOCKFUNC: XFAS.AddBinaryHead":	{
+		"prefix":	"🔐  BlockFunc.XFAS.AddBinaryHead",
+		"description":	["Eine Spalte für die Rückgabe von Binärdaten hinzufügen. Als Werte müssen Dateinamen mit Pfad abgefüllt werden. Abkürzung für 'XFAS(headBinary=name)'."],
+		"body":	[
+			"XFAS.AddBinaryHead(${2:head})",		]
+	},
+	"BLOCKFUNC: XFAS.AddCell":	{
+		"prefix":	"🔐  BlockFunc.XFAS.AddCell",
+		"description":	["Wert für die nächste Zelle hinzufügen. Abkürzung für 'XFAS(cell=value)'."],
+		"body":	[
+			"XFAS.AddCell(${2:value})",		]
+	},
+	"BLOCKFUNC: XFAS.AddCells":	{
+		"prefix":	"🔐  BlockFunc.XFAS.AddCells",
+		"description":	["Mehrere Zellen hinzufügen. Abkürzung für 'XFAS(cells=val1,val2,...)'."],
+		"body":	[
+			"XFAS.AddCells(${2:cells})",		]
+	},
+	"BLOCKFUNC: XFAS.AddHead":	{
+		"prefix":	"🔐  BlockFunc.XFAS.AddHead",
+		"description":	["Eine Spalte hinzufügen. Abkürzung für 'XFAS(head=name)'."],
+		"body":	[
+			"XFAS.AddHead(${2:head})",		]
+	},
+	"BLOCKFUNC: XFAS.AddHeads":	{
+		"prefix":	"🔐  BlockFunc.XFAS.AddHeads",
+		"description":	["Mehrere Spalten hinzufügen. Abkürzung für 'Abkürzung für 'XFAS(heads=name1,name2,...)'."],
+		"body":	[
+			"XFAS.AddHeads(${2:heads})",		]
+	},
+	"BLOCKFUNC: XFAS.AppendCell":	{
+		"prefix":	"🔐  BlockFunc.XFAS.AppendCell",
+		"description":	["Wert für die letzte Zelle ergänzen. Abkürzung für 'XFAS(cellAppend=value)'."],
+		"body":	[
+			"XFAS.AppendCell(${2:value})",		]
+	},
+	"BLOCKFUNC: XFAS.AppendMlsTextParam":	{
+		"prefix":	"🔐  BlockFunc.XFAS.AppendMlsTextParam",
+		"description":	["MLS-Meldungs-Parameter hinzufügen (Mehrfachaufruf möglich). Abkürzung für 'XFAS(mMlsTextParam=text)'."],
+		"body":	[
+			"XFAS.AppendMlsTextParam(${2:mlsTextParam})",		]
+	},
+	"BLOCKFUNC: XFAS.Clear":	{
+		"prefix":	"🔐  BlockFunc.XFAS.Clear",
+		"description":	["Aktuellen Inhalt (insbesondere Spalten und Zeilen) zurücksetzen. Abkürzung für 'XFAS(clear)'."],
+		"body":	[
+			"XFAS.Clear()",		]
+	},
+	"BLOCKFUNC: XFAS.HasHead":	{
+		"prefix":	"🔐  BlockFunc.XFAS.HasHead",
+		"description":	["Ist eine Spalte mit dem übergebenen Namen vorhanden? Abkürzung für 'XFAS(head?name)'."],
+		"body":	[
+			"\tvar ${1:boolVal} := XFAS.HasHead(${2:head})",		]
+	},
+	"BLOCKFUNC: XFAS.IsActive":	{
+		"prefix":	"🔐  BlockFunc.XFAS.IsActive",
+		"description":	["Ist XFAS-Rückgabe im aktuellen Kontext möglich? Abkürzung für 'XFAS(fasActive)'."],
+		"body":	[
+			"\tvar ${1:boolVal} := XFAS.IsActive()",		]
+	},
+	"BLOCKFUNC: XFAS.IsDefined":	{
+		"prefix":	"🔐  BlockFunc.XFAS.IsDefined",
+		"description":	["Ist XFAS-Rückgabe definiert? Sprich: Liefert der Script-Aufruf eine XFAS-Rückgabe oder nicht."],
+		"body":	[
+			"\tvar ${1:boolVal} := XFAS.IsDefined()",		]
+	},
+	"BLOCKFUNC: XFAS.IsDirectResponse":	{
+		"prefix":	"🔐  BlockFunc.XFAS.IsDirectResponse",
+		"description":	["Ist aktuell eine 'Direct-Response' vorhanden?"],
+		"body":	[
+			"\tvar ${1:boolVal} := XFAS.IsDirectResponse()",		]
+	},
+	"BLOCKFUNC: XFAS.NewRow":	{
+		"prefix":	"🔐  BlockFunc.XFAS.NewRow",
+		"description":	["Eine Zeile abschliessen und gleichzeitig eine neue eröffnen. Abkürzung für 'XFAS(newRow)'."],
+		"body":	[
+			"XFAS.NewRow()",		]
+	},
+	"BLOCKFUNC: XFAS.SetCol":	{
+		"prefix":	"🔐  BlockFunc.XFAS.SetCol",
+		"description":	["Wert für eine bestimmte Spalte setzen. Abkürzung für 'XFAS(col=ColName,value)'."],
+		"body":	[
+			"XFAS.SetCol(${2:colName}, ${3:value})",		]
+	},
+	"BLOCKFUNC: XFAS.SetMlsKey":	{
+		"prefix":	"🔐  BlockFunc.XFAS.SetMlsKey",
+		"description":	["MLS-Meldungs-Schlüssel setzen (setzt allfällig gesetzte Parameter zurück). Abkürzung für 'XFAS(mMlsKey=key)'."],
+		"body":	[
+			"XFAS.SetMlsKey(${2:mlsKey})",		]
+	},
+	"BLOCKFUNC: XFAS.SetMsgKey":	{
+		"prefix":	"🔐  BlockFunc.XFAS.SetMsgKey",
+		"description":	["Meldungs-Schlüssel setzen. Abkürzung für 'XFAS(mKey=key)'."],
+		"body":	[
+			"XFAS.SetMsgKey(${2:messageKey})",		]
+	},
+	"BLOCKFUNC: XFAS.SetMsgText":	{
+		"prefix":	"🔐  BlockFunc.XFAS.SetMsgText",
+		"description":	["Meldungs-Text setzen. Abkürzung für 'XFAS(mText=text)'."],
+		"body":	[
+			"XFAS.SetMsgText(${2:messageText})",		]
+	},
+	"BLOCKFUNC: XFAS.SetOk":	{
+		"prefix":	"🔐  BlockFunc.XFAS.SetOk",
+		"description":	["'Erfolgreich'-Flag setzen. Abkürzung für 'XFAS(ok=0|1)'."],
+		"body":	[
+			"XFAS.SetOk(${2:successful})",		]
+	},
+	"BLOCKFUNC: XFAS.SetRedoData":	{
+		"prefix":	"🔐  BlockFunc.XFAS.SetRedoData",
+		"description":	["Redo-Daten setzen. Abkürzung für 'XFAS(redoData=redoData)'."],
+		"body":	[
+			"XFAS.SetRedoData(${2:redoData})",		]
+	},
+}

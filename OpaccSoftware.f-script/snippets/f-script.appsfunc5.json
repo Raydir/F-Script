@@ -1,0 +1,51 @@
+{
+    "Expression.pad":
+	{
+		"prefix": "✅ APSFUNCTION.Expression.pad",
+		"body": [
+			"«X(${1:Value}\t=Hello World!)»",
+			"«(pad($1,${2:20}))\\E»"
+		],
+		"description": "Returns a string in a fixed length (if shorter filled with trailing spaces)\rExample:\r'pad('Hello World!',20)' => 'Hello World!        '\r"
+	},	
+    "Expression.lPad":
+	{
+		"prefix": "✅ APSFUNCTION.Expression.lPad",
+		"body": [
+			"«X(${1:Value}\t=Hello World!)»",
+			"«(lPad($1,${2:20}${3| ,\\,' ',\\,'_',\\,'-',\\,'0',\\,'etc.'|}))\\E»"
+		],
+		"description": "Returns a string in a fixed length (filled with leading spaces / defined characters)\rExample:\r'lPad('Hello World!',20,'-')' => '--------Hello World!'\r"
+	},
+    "Expression.rPad":
+	{
+		"prefix": "✅ APSFUNCTION.Expression.rPad",
+		"body": [
+			"«X(${1:Value}\t=Hello World!)»",
+			"«(rPad($1,${2:20}${3| ,\\,' ',\\,'_',\\,'-',\\,'0',\\,'etc.'|}))\\E»"
+
+		],
+		"description": "Returns a string in a fixed length (filled with trailing spaces / defined characters)\rExample:\r'rPad('Hello World!',20,'-')' => 'Hello World!--------'\r"
+	},
+    "Expression.lTruncPad":
+	{
+		"prefix": "✅ APSFUNCTION.Expression.lTruncPad",
+		"body": [
+			"«X(${1:Value}\t=Hello World!)»",
+			"«(lTruncPad($1,${2:20}${3| ,\\,' ',\\,'_',\\,'-',\\,'0',\\,'etc.'|}))\\E»"
+			
+		],
+		"description": "Returns a string in a fixed length (shortened if to long or filled with leading spaces / defined characters)\rExample:\r'lTruncPad('Hello World!',20,'-')' => '--------Hello World!'\r"
+	},
+    "Expression.rTruncPad":
+	{
+		"prefix": "✅ APSFUNCTION.Expression.rTruncPad",
+		"body": [
+			"«X(${1:Value}\t=Hello World!)»",
+			"«(rTruncPad($1,${2:20}${3| ,\\,' ',\\,'_',\\,'-',\\,'0',\\,'etc.'|}))\\E»"
+
+		],
+		"description": "Returns a string in a fixed length  (shortened if to long or filled with trailing spaces / defined characters)\rExample:\r'rTruncPad('Hello World!',20,'-')' => 'Hello World!--------'\r"
+	}	
+				
+}

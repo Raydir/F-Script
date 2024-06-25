@@ -1,0 +1,285 @@
+{
+	"name": "f-script",
+	"displayName": "Opacc F-Script",
+	"description": "F-Script Syntax for OpaccERP",
+	"version": "24.1.0",
+	"publisher": "OpaccSoftwareAG",
+	"author": {
+		"name": "Opacc Software AG",
+		"url": "http://www.opacc.ch"
+	},
+	"icon": "images/opacc.png",
+	"engines": {
+		"vscode": "^1.50.0"
+	},
+	"activationEvents": [
+		"onCommand:extension.OpaccSearch"
+	],
+	"categories": [
+		"Programming Languages",
+		"Snippets",
+		"Themes",
+		"Other"
+	],
+	"browser": "./dist/web/extension.js",
+	"contributes": {
+		"menus": {
+			"editor/context": [
+				{
+					"when": "editorHasSelection",
+					"command": "extension.OpaccSearch",
+					"group": "navigation"
+				}
+			]
+		},
+		"commands": [
+			{
+				"command": "extension.OpaccSearch",
+				"title": "Suche: OpaccManuals"
+			},
+			{
+				"command": "fscript.changeLanguageMode",
+				"title": "Change Language Mode to Block-Script"
+			}
+		],
+		"configuration": {
+			"title": "Opacc F-Script",
+			"type": "object",
+			"properties": {
+				"OpaccSearch.QueryTemplate": {
+					"type": "string",
+					"default": "https://manuals.opacc.ch/lib/manualsSearch/ManualsSearch_ajax.php?manual=doku1710&topic=*&search=%SELECTION%",
+					"description": "F-Script Manuals Opacc Version 17.10"
+				}
+			}
+		},
+		"languages": [
+			{
+				"id": "f-script",
+				"aliases": [
+					"F-Script",
+					"f-script"
+				],
+				"extensions": [
+					".ff",
+					".fs",
+					".fss",
+					".fx",
+					".lb",
+					".lbd",
+					".lbf",
+					".lbe",
+					".lbi",
+					".lbx",
+					".lb51",
+					".lb53",
+					".lb54",
+					".lb55",
+					".config"
+				],
+				"configuration": "./language-configuration.json"
+			}
+		],
+		"keybindings": [
+			{
+				"key": "ctrl+oem_2",
+				"command": "editor.action.insertSnippet",
+				"description": "insert 'f-script brackets' ALT+174 / ALT+175",
+				"when": "editorTextFocus && !editorReadonly && editorLangId == 'f-script'",
+				"args": {
+					"name": "fscript.brackets"
+				}
+			},
+			{
+				"key": "ctrl+1",
+				"command": "editor.action.insertSnippet",
+				"description": "Insert  «{ Main() }»",
+				"when": "editorTextFocus && !editorReadonly && editorLangId == 'f-script'",
+				"args": {
+					"name": "TEMPLATE: BlockScript `New File` for System_RunScript"
+				}
+			},
+			{
+				"key": "ctrl+2",
+				"command": "editor.action.insertSnippet",
+				"description": "Insert  «{ Main() }»",
+				"when": "editorTextFocus && !editorReadonly && editorLangId == 'f-script'",
+				"args": {
+					"name": "TEMPLATE: BlockScript with function : `Main`"
+				}
+			},
+			{
+				"key": "ctrl+3",
+				"command": "editor.action.insertSnippet",
+				"description": "Einfügen der F-Script Klammern (Alt+174 / Alt+175)",
+				"when": "editorTextFocus && !editorReadonly && editorLangId == 'f-script'",
+				"args": {
+					"name": "TEMPLATE: BlockScript with function : `Simple`"
+				}
+			},
+			{
+				"key": "ctrl+numpad_decimal",
+				"command": "fscript.changeLanguageMode",
+				"when": "editorLangId == f-script"
+			}
+		],
+		"grammars": [
+			{
+				"language": "f-script",
+				"scopeName": "source.f-script.blockscript",
+				"path": "./syntaxes/f-script.blockscript.tmlanguage.json"
+			},
+			{
+				"language": "f-script",
+				"scopeName": "source.f-script.blockscript2",
+				"path": "./syntaxes/f-script.blockscript2.tmlanguage.json"
+			},
+			{
+				"language": "f-script",
+				"scopeName": "source.f-script.extended",
+				"path": "./syntaxes/f-script.extended.tmLanguage.json"
+			},
+			{
+				"language": "f-script",
+				"scopeName": "source.f-script.deprecated",
+				"path": "./syntaxes/f-script.deprecated.tmLanguage.json"
+			},
+			{
+				"language": "f-script",
+				"scopeName": "source.f-script.context",
+				"path": "./syntaxes/f-script.context.tmLanguage.json"
+			},
+			{
+				"language": "f-script",
+				"scopeName": "source.f-script.attributes",
+				"path": "./syntaxes/f-script.attributes.tmLanguage.json"
+			},
+			{
+				"language": "f-script",
+				"scopeName": "source.f-script.main",
+				"path": "./syntaxes/f-script.tmLanguage.json"
+			}
+		],
+		"snippets": [
+			{
+				"language": "f-script",
+				"path": "./snippets/f-script.json"
+			},
+			{
+				"language": "f-script",
+				"path": "./snippets/f-script.context.json"
+			},
+			{
+				"language": "f-script",
+				"path": "./snippets/f-script.conditions.json"
+			},
+			{
+				"language": "f-script",
+				"path": "./snippets/f-script.scriptfunc.json"
+			},
+			{
+				"language": "f-script",
+				"path": "./snippets/f-script.comment.json"
+			},
+			{
+				"language": "f-script",
+				"path": "./snippets/f-script.appsfunc1.json"
+			},
+			{
+				"language": "f-script",
+				"path": "./snippets/f-script.appsfunc2.json"
+			},
+			{
+				"language": "f-script",
+				"path": "./snippets/f-script.appsfunc3.json"
+			},
+			{
+				"language": "f-script",
+				"path": "./snippets/f-script.appsfunc4.json"
+			},
+			{
+				"language": "f-script",
+				"path": "./snippets/f-script.appsfunc5.json"
+			},
+			{
+				"language": "f-script",
+				"path": "./snippets/f-script.lib.json"
+			},
+			{
+				"language": "f-script",
+				"path": "./snippets/f-script.services.json"
+			}
+		],
+		"themes": [
+			{
+				"label": "F-Script dark",
+				"uiTheme": "vs-dark",
+				"path": "./themes/F-Script dark-color-theme.json"
+			},
+			{
+				"label": "F-Script light",
+				"uiTheme": "vs",
+				"path": "./themes/F-Script light-color-theme.json"
+			}
+		],
+		"configurationDefaults": {
+			"[f-script]": {
+				"files.encoding": "utf8bom",
+				"files.autoGuessEncoding": false,
+				"editor.fontFamily": "Courier New,monospace",
+				"editor.fontSize": 14,
+				"editor.fontWeight": "bold",
+				"editor.folding": true,
+				"editor.showFoldingControls": "always",
+				"editor.autoIndent": "advanced",
+				"editor.codeLens": true,
+				"editor.lineNumbers": "on",
+				"editor.tabSize": 4,
+				"editor.insertSpaces": false,
+				"editor.mouseWheelZoom": true,
+				"editor.renderLineHighlight": "gutter",
+				"editor.dragAndDrop": true,
+				"editor.matchBrackets": "always",
+				"editor.colorDecorators": true,
+				"editor.cursorBlinking": "phase",
+				"editor.quickSuggestions": {
+					"other": true,
+					"comments": false,
+					"strings": false
+				},
+				"editor.quickSuggestionsDelay": 600,
+				"editor.wordBasedSuggestions": true,
+				"editor.wordBasedSuggestionsMode": "matchingDocuments",
+				"editor.snippetSuggestions": "top",
+				"editor.acceptSuggestionOnEnter": "off",
+				"editor.wordSeparators": "`~!@#$%^&*()-=+[{]}\\|;:'\",.«»<>/?"
+			}
+		}
+	},
+	"scripts": {
+		"test": "vscode-test-web --browserType=chromium --extensionDevelopmentPath=. --extensionTestsPath=dist/web/test/suite/index.js",
+		"pretest": "npm run compile-web",
+		"vscode:prepublish": "npm run package-web",
+		"compile-web": "webpack",
+		"watch-web": "webpack --watch",
+		"package-web": "webpack --mode production --devtool hidden-source-map",
+		"lint": "eslint src --ext ts",
+		"run-in-browser": "vscode-test-web --browserType=chromium --extensionDevelopmentPath=. ."
+	},
+	"devDependencies": {
+		"@types/vscode": "^1.50.0",
+		"@types/mocha": "^9.1.0",
+		"eslint": "^8.9.0",
+		"@typescript-eslint/eslint-plugin": "^5.12.1",
+		"@typescript-eslint/parser": "^5.12.1",
+		"mocha": "^9.2.1",
+		"typescript": "^4.5.5",
+		"@vscode/test-web": "^0.0.22",
+		"ts-loader": "^9.2.6",
+		"webpack": "^5.69.1",
+		"webpack-cli": "^4.9.2",
+		"@types/webpack-env": "^1.16.3",
+		"assert": "^2.0.0",
+		"process": "^0.11.10"
+	}
+}

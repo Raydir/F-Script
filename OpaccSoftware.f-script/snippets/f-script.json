@@ -1,0 +1,136 @@
+{
+	"fscript.brackets":
+	{
+		"prefix": "✅ SYSTEM.Fscript.Brackets",
+		"description" : "insert ALT+174 / ALT+175\r",
+		"body":
+		[
+			"«$1»"
+		]
+	},
+	"TEMPLATE: BlockScript `New File` for System_RunScript": {
+		"isFileTemplate": true,
+		"scope": [
+			"f-script",
+			"blockScript"
+		],
+		"description": "Inserts File Template for usage with `System_RunScript`",
+		"prefix": "📝 TEMPLATE: New File (⚠️classic⚠️)",
+		"body": [
+			"/headerreport",
+			"«/${1:ScriptBlock.Execution}»",
+			"/\n",
+			"/${1}",
+			"«\n{",
+			"\t${2|using \"ST-BlockServices.FBL\",// using \"LibraryName.FBL\", |}",
+			"\tfunction ${3:Main}() : ${4|void,string,number,integer,boolean,date,time,timestamp|}",
+			"\t{",
+			"\t\t// start coding here",
+			"\t\t${5:}",
+			"\t}",
+			"\t${3}()",
+			"}\n»",
+			"/"
+		]
+	},
+	"TEMPLATE: BlockScript with function : `Main`": {
+		"prefix": "📝 TEMPLATE: BlockScript.Main (⚠️classic⚠️)",
+		"scope": [
+			"f-script",
+			"blockScript"
+		],
+		"description": "insert scriptBody including «{ Main() }» for `System_RunScript`\r",
+		"body": [
+			"«",
+			"{",
+			"\tfunction Main()",
+			"\t{",
+			"\t\t// ------------------------------------------------------------------------------------------------------\r",
+			"\t\t// your code goes here!",
+			"\t\t$1",
+			"\t}",
+			"\t// calling function Main()",
+			"\tMain()",
+			"}",
+			"»"
+		]
+	},
+	"TEMPLATE: BlockScript with function : `Simple`": {
+		"prefix": "📝 TEMPLATE: BlockScript.Simple (⚠️classic⚠️)",
+		"scope": [
+			"f-script",
+			"blockScript"
+		],
+		"description": "Inserts «{  }»\r for `System_RunScript`",
+		"body": [
+			"«",
+			"{",
+			"\t// ------------------------------------------------------------------------------------------------------\r",
+			"\t// your code goes here!",
+			"\t$1",
+			"}",
+			"»"
+		]
+	},	
+	"fscript.DefaultRoutines":
+	{
+		"prefix": "✅ SYSTEM.Fscript.DefaultRoutines",
+		"description" : "Insert default F-Script routines\r",
+		"body":
+		[
+			"/headerreport\n/\n",
+			"/body\n/\n",
+			"/totalreport\n/\n"
+		]
+	},
+	"fscript.headerreport":
+	{
+		"prefix": "✅ SYSTEM.Fscript.headerreport",
+		"description" : "Insert default routine /headerreport\r",
+		"body":
+		[
+			"/headerreport\n/\n"
+		]
+	},
+	"fscript.body":
+	{
+		"prefix": "✅ SYSTEM.Fscript.body",
+		"description" : "Insert default routine /body\r",
+		"body":
+		[
+			"/body\n/\n"
+		]
+	},
+	"fscript.totalreport":
+	{
+		"prefix": "✅ SYSTEM.Fscript.totalreport",
+		"description" : "Insert default routine /totalreport\r",
+		"body":
+		[
+			"/totalreport\n/\n"
+		]
+	},
+	"XFAS.Header":
+	{
+		"prefix": "✅ CONTEXT.XFAS.CreateHeader",
+		"description": "Insert XFAS headerline\r",
+		"body":
+		[
+			"«XFAS(head=${1:ScriptCol.01})»«XFAS(head=${2:ScriptCol.02})»«XFAS(head=${3:ScriptCol.03})»",
+			""
+		]
+	},
+	"XFAS.ROW":
+	{
+		"prefix": "✅ CONTEXT.XFAS.CreateRow",
+		"description": "Insert XFAS table row\r",
+		"body":
+		[
+			"«XFAS(newRow)»",
+			"«XFAS(col=${1:ScriptCol.01},${2:ValueA})»",
+			"«XFAS(col=${3:ScriptCol.02},${4:ValueB})»",
+			"«XFAS(col=${5:ScriptCol.03},${6:ValueC})»"
+		]
+	}
+}
+

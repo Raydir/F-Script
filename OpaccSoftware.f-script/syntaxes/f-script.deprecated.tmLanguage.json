@@ -1,0 +1,40 @@
+{
+    "\\$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+    "name": "F-Script",
+    "patterns": [
+        {
+            "include": "#deprecated"
+        }
+    ],
+    "repository": {
+        "deprecated": {
+            "patterns": [
+                {
+                    "name": "deprecated",
+                    "match": "(?!«)CB\\(SET:.*\\)(?=.*»)"
+                },
+                {
+                    "name": "deprecated",
+                    "match": "(?!«).*{0,}#[0-9]{1,3} [0-9]{1,3}.*(?=»)"
+                },
+                {
+                    "name": "deprecated",
+                    "match": ".*{0,}#[0-9]{1,3} [0-9]{1,3}"
+                },
+                {
+                    "name": "deprecated",
+                    "match": "(?!«)(RESET|FF)(?=»)"
+                },
+                {
+                    "name": "deprecated",
+                    "match": "(?<=«SYS\\()(SESSION|KEY.*)(?=\\)»)"
+                },
+                {
+                    "name": "deprecated",
+                    "match": "(?<=«SYS\\()(PATHFF)(?=\\)»)"
+                }				
+            ]
+        }
+    },
+    "scopeName": "source.f-script.deprecated"
+}

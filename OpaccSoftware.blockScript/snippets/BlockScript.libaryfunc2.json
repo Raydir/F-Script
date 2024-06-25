@@ -1,0 +1,51 @@
+{
+	"Standard: `SystemAdmin_EncryptPasswordForAssembly`": {
+		"prefix": "📗 Standard: SystemAdmin_EncryptPasswordForAssembly",
+		"scope": "blockScript",
+		"description": [
+			"🔐 using \"ST-SystemAdmin.FBL\" 🔐\n",
+			"Description:\tInserts Password encryption for assembly using SystemAdmin",
+			"Arguments:\tplainPassord\t: string",
+			"\t\tassemblyName\t: string\t> default: 'Opacc.ServiceBus.Connector.Biz.Df'",
+			"Return:\t\treturnValue\t: string\t> encryptedPassword",
+			"-----------------------------------------------------------------------------------------------------",
+			"\n"
+		],
+		"body": [
+		"// -----------------------------------------------------------------------------------------------------",
+		"/// Description:\tPassword encryption for assembly",
+		"// ATTENTION: should only be used temporarily!",
+		"var encryptedPassword := SystemAdmin_EncryptPasswordForAssembly('${1:PlainPassword}','${2:Opacc.ServiceBus.Connector.Biz.Df}')"
+		]
+	},
+	"Standard: `SystemAdmin_EchoWithDelay`": {
+		"prefix": "📗 Standard: SystemAdmin_EchoWithDelay",
+		"scope": "blockScript",
+		"description": [
+			"🔐 using \"ST-SystemAdmin.FBL\" 🔐\n",
+			"Description:\tInserts Echo with delay aka «SYS(WAIT <n>)» using SystemAdmin",
+			"Arguments:\tmilliseconds\t: integer\t> default: 1000",
+			"\t\tmessage\t\t: string\t> default: 'echo'",
+			"-----------------------------------------------------------------------------------------------------",
+			"\n"
+		],
+		"body": [
+		"// -----------------------------------------------------------------------------------------------------",
+		"SystemAdmin_EchoWithDelay(${1:1000})"
+		]
+	},
+	"Standard: `SystemAdmin_GetFullPath`": {
+		"prefix": "📗 Standard: SystemAdmin_GetFullPath",
+		"scope": "blockScript",
+		"description": [
+			"🔐 using \"ST-SystemAdmin.FBL\" 🔐\n",
+			"Description:\tInserts FullPath aka «SYS(FULLPATH)» using SystemAdmin",
+			"-----------------------------------------------------------------------------------------------------",
+			"\n"
+		],
+		"body": [
+		"// -----------------------------------------------------------------------------------------------------",
+		"var fullPath := SystemAdmin_GetFullPath()"
+		]
+	}
+}
